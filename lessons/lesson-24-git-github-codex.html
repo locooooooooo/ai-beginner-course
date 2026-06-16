@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第7课 提示词进阶</title>
+  <title>第24课 Git、GitHub与Codex协作</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -177,9 +177,9 @@ li { margin-bottom: 8px; }
 </nav>
 <header class="hero">
   <div>
-    <div class="eyebrow">第二章：先学会用再学原理 · 第7课</div>
-    <h1>第7课：提示词进阶</h1>
-    <p class="lead">掌握拆任务、分步骤和多轮追问，让复杂任务更稳。</p>
+    <div class="eyebrow">第六章：Codex 扩展学习 · 第24课</div>
+    <h1>第24课：Git、GitHub与Codex协作</h1>
+    <p class="lead">理解 Git 记录本地修改，GitHub 托管和发布代码，Codex 可以帮助提交、推送和验证线上结果。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
@@ -188,10 +188,10 @@ li { margin-bottom: 8px; }
   <aside class="progress-panel" aria-label="学习进度">
     <strong>当前进度</strong>
     <div class="progress-meta">
-      <span>7 / 24</span>
-      <span>29%</span>
+      <span>24 / 24</span>
+      <span>100%</span>
     </div>
-    <div class="progress-bar"><span style="width:29%"></span></div>
+    <div class="progress-bar"><span style="width:100%"></span></div>
     <ol class="mini-steps">
       <li>先读核心问题</li>
       <li>抓住 3 个最小原理</li>
@@ -202,65 +202,65 @@ li { margin-bottom: 8px; }
 <section class="callout" id="start">
   <span class="label">为什么要学</span>
   <h2>核心问题</h2>
-  <p>为什么复杂任务最容易失败？因为你把本该分阶段完成的工作一次性压给了模型。</p>
+  <p>为什么本地已经改好了，线上网站却没有变化？因为还缺少提交、推送、发布和缓存验证这条链路。</p>
 </section>
 <div class="grid">
   <main>
     <article class="card">
       <span class="label">先记住</span>
       <h2>本课只抓 3 件事</h2>
-      <ul><li>复杂任务不要一次性全塞给模型</li><li>可以先让模型澄清，再执行</li><li>分步骤输出通常更可靠</li></ul>
+      <ul><li>Git 负责记录修改历史，commit 是一次明确的版本快照</li><li>GitHub 负责远端托管，push 后线上仓库才会更新</li><li>GitHub Pages 还需要等待构建和缓存刷新，必须线上验证</li></ul>
     </article>
     <article class="card">
       <span class="label">想明白</span>
       <h2>第一性拆解</h2>
-      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>复杂任务失败的核心原因不是模型太差，而是问题没有被拆成稳定子问题。</span></div><div class="principle-block"><strong>拆解 2</strong><span>先把任务拆到每一步都能验证，再决定交给模型怎么做。</span></div><div class="principle-block"><strong>拆解 3</strong><span>让模型先澄清信息，本质上是在减少错误假设。</span></div></div>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把软件发布拆成两个世界：本地文件变化和线上用户看到的变化。</span></div><div class="principle-block"><strong>拆解 2</strong><span>Git 只负责记录版本，GitHub 负责远端同步，Pages 负责把文件变成网站。</span></div><div class="principle-block"><strong>拆解 3</strong><span>Codex 可以帮你执行链路，但每一步都要看状态和证据，不能跳过验证。</span></div></div>
     </article>
     <article class="card">
       <span class="label">可迁移</span>
       <h2>最小原理</h2>
-      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：可验证的子任务比一个笼统大任务更容易成功。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：拆解顺序影响结果质量。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：多轮交互的价值在于逐步降低不确定性。</span></div></div>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：没 commit 的修改只是工作区状态，不是版本历史。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：没 push 的提交只在本地，线上仓库不会变化。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：push 成功也不等于用户马上看到，Pages 构建和缓存需要验证。</span></div></div>
     </article>
     <article class="card">
       <span class="label">怎么讲</span>
       <h2>讲解结构</h2>
-      <ul><li>为什么复杂任务容易失败</li><li>拆任务的方法</li><li>多轮追问技巧</li><li>先澄清再执行</li></ul>
+      <ul><li>Git 的基本概念：工作区、暂存区、提交</li><li>GitHub 的基本概念：远端仓库、分支、Pages</li><li>Codex 下的常见流程：status、add、commit、push、线上检查</li><li>如何保护已有改动，避免误删和误覆盖</li></ul>
     </article>
     <article class="card">
       <span class="label">看案例</span>
       <h2>真实案例</h2>
-      <ul><li>先列大纲再写文章</li><li>先确认平台规则再写文案</li><li>先检查缺失信息再输出结果</li></ul>
+      <ul><li>本地新增 codex.html 后，线上没有入口，因为还没 push</li><li>推送成功后，GitHub Pages 需要等待缓存刷新</li><li>用链接检查确认发布目录没有断链</li></ul>
     </article>
   </main>
   <aside class="lesson-side">
     <article class="card">
       <span class="label">马上用</span>
       <h2>应用方法</h2>
-      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先拆，再做；先问清，再执行。</span></div><div class="principle-block"><strong>方法 2</strong><span>给每一步设置中间产物，比如大纲、提纲、表格、草稿。</span></div><div class="principle-block"><strong>方法 3</strong><span>每一步只改一个关键变量，便于判断问题出在哪。</span></div></div>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>让 Codex 先运行 git status，确认哪些文件会被提交。</span></div><div class="principle-block"><strong>方法 2</strong><span>提交前看 diff 或 diff --stat，避免把无关文件带进去。</span></div><div class="principle-block"><strong>方法 3</strong><span>推送后访问线上 URL，并用 cache-busting 或强刷新确认页面更新。</span></div></div>
     </article>
     <article class="card">
       <span class="label">避坑</span>
       <h2>反常识提醒</h2>
-      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>把所有要求一口气砸给模型。</span></div><div class="principle-block"><strong>误区 2</strong><span>不给中间检查点。</span></div><div class="principle-block"><strong>误区 3</strong><span>模型一旦偏了，还沿着错误路径继续推进。</span></div></div>
+      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>以为本地文件改了，GitHub Pages 就会自动更新。</span></div><div class="principle-block"><strong>误区 2</strong><span>不看 git status，直接把一堆无关文件提交。</span></div><div class="principle-block"><strong>误区 3</strong><span>推送后不验线上页面，导致用户还在看旧版本。</span></div></div>
     </article>
     <article class="card" id="practice">
       <span class="label">完成标准</span>
       <h2>做完这件事才算学会</h2>
       <div class="meta">
-        <div class="meta-item"><strong>本课产物</strong><span>把“帮我做一个新品推广方案”拆成 4 个连续步骤，并写成多轮提示。</span></div>
+        <div class="meta-item"><strong>本课产物</strong><span>写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span></div>
         <div class="meta-item"><strong>验收方式</strong><span>能用自己的话解释本课概念，并把它套到一个真实工作或生活场景里。</span></div>
       </div>
     </article>
     <article class="card">
       <span class="label">课件</span>
       <h2>PPT 页面结构</h2>
-      <ul class="ppt-list"><li>封面：提示词进阶</li><li>复杂任务拆解</li><li>多轮追问示例</li><li>澄清信息模板</li><li>练习页</li></ul>
+      <ul class="ppt-list"><li>封面：Git、GitHub 与 Codex</li><li>本地和线上的区别</li><li>Git 四个动作</li><li>GitHub Pages 发布链路</li><li>Codex 如何帮你操作和验收</li><li>课堂练习页</li></ul>
     </article>
   </aside>
 </div>
 <nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-06-prompt-basics.html">上一课：提示词基础</a>
-  <a class="btn primary" href="./lesson-08-verify-results.html">下一课：结果验证与纠错</a>
+  <a class="btn" href="./lesson-23-codex-web-design.html">上一课：如何用Codex制作好看的网页</a>
+  <a class="btn primary" href="../course.html">回到课程总览</a>
 </nav>
 <div class="footer">AI新手入门20节课 · 第一性原则版逐课教程</div>
 </main>
