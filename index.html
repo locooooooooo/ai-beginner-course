@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI新手入门24节课</title>
+  <title>AI学习路线：新手入门、老鸟进阶、实战演示</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -123,8 +123,9 @@ li { margin-bottom: 8px; }
 .footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
 .section-title { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin: 28px 0 14px; }
 .section-title p { color: var(--muted); font-size: 0.92rem; }
-.path-grid, .chapters, .notes-wrap, .mindmap-grid { display: grid; gap: 16px; }
+.path-grid, .track-grid, .chapters, .notes-wrap, .mindmap-grid { display: grid; gap: 16px; }
 .path-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.track-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 18px; }
 .chapters, .mindmap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .notes-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
 .starter-panel { padding: 18px; }
@@ -135,11 +136,40 @@ li { margin-bottom: 8px; }
 .path-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
 .path-card strong { display: block; margin-bottom: 6px; }
 .path-card span { color: var(--muted); font-size: 0.94rem; }
+.track-card {
+  display: flex;
+  min-height: 178px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+.track-card strong { display: block; font-size: 1.16rem; margin-bottom: 6px; }
+.track-card span { color: var(--muted); font-size: 0.94rem; }
+.track-card .track-meta { color: var(--primary); font-weight: 800; font-size: 0.9rem; }
+.track-card.primary-track { color: #ffffff; background: var(--primary); border-color: var(--primary); }
+.track-card.primary-track span, .track-card.primary-track .track-meta { color: rgba(255, 255, 255, 0.88); }
+.track-block { margin-top: 22px; }
+.placeholder-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px dashed rgba(15, 118, 110, 0.45);
+  border-radius: var(--radius);
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 @media (max-width: 920px) {
   .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid { grid-template-columns: 1fr; }
-  .path-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
 }
 @media (max-width: 640px) {
@@ -152,7 +182,9 @@ li { margin-bottom: 8px; }
   h2 { font-size: 1.25rem; }
   .lead { font-size: 1rem; }
   .toolbar .btn, .pager .btn { width: 100%; }
-  .path-grid, .stat-grid { grid-template-columns: 1fr; }
+  .path-grid, .track-grid, .stat-grid { grid-template-columns: 1fr; }
+  .track-card { min-height: 0; }
+  .placeholder-track { display: block; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
   .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
@@ -167,49 +199,60 @@ li { margin-bottom: 8px; }
 <body>
   <main class="wrap">
     
-<nav class="topbar" aria-label="站点导航">
-  <a class="brand" href="./course.html">AI新手20课</a>
+<nav class="topbar" aria-label="站点导航" id="top">
+  <a class="brand" href="./course.html">AI入门课</a>
   <div class="navlinks">
-    <a href="#path">学习路径</a>
-    <a href="#lessons">课程目录</a>
-    <a href="./codex.html">Codex</a>
+    <a href="#beginner">新手入门</a>
+    <a href="#advanced">老鸟进阶</a>
+    <a href="#showcase">实战演示</a>
     <a href="./mindmap-hub.html">资源</a>
   </div>
 </nav>
 <header class="hero course-hero">
   <div>
-    <div class="eyebrow">零基础 · 第一性原则 · 手机友好</div>
-    <h1>AI 新手入门 24 节课</h1>
+    <div class="eyebrow">三大类 · 第一性原则 · 手机友好</div>
+    <h1>AI 学习路线：新手入门、老鸟进阶、实战演示</h1>
     <p class="lead">
-      不先背名词，先学会判断：AI 在解决什么任务、输入输出是什么、结果能不能直接用、怎样把一次问答变成可复用流程。
+      先把 AI 基础学明白，再进入 Codex 这类能交付的工作方式；后续实战演示会放你本地用 AI 制作工具的总结。
     </p>
     <div class="toolbar">
-      <a class="btn primary" href="./lessons/lesson-01-ai-overview.html">从第 1 课开始</a>
-      <a class="btn" href="#path">看学习路径</a>
+      <a class="btn primary" href="#advanced">进入老鸟进阶</a>
+      <a class="btn" href="./lessons/lesson-01-ai-overview.html">从新手入门开始</a>
+    </div>
+    <div class="track-grid" aria-label="课程三大类">
+      <a class="track-card" href="#beginner">
+        <div><strong>新手入门</strong><span>保留现有基础课，先学 AI 概念、提问、验证、工作流和电商落地。</span></div>
+        <div class="track-meta">20 节基础课</div>
+      </a>
+      <a class="track-card primary-track" href="#advanced">
+        <div><strong>老鸟进阶</strong><span>放 Codex 扩展学习：Codex 能做什么、Loop Engineering、网页制作、GitHub 协作。</span></div>
+        <div class="track-meta">4 节 Codex 课</div>
+      </a>
+      <a class="track-card" href="#showcase">
+        <div><strong>实战演示</strong><span>后续放你本地用 AI 制作的工具总结，当前只保留入口。</span></div>
+        <div class="track-meta">待补充</div>
+      </a>
     </div>
   </div>
   <aside class="starter-panel">
-    <strong>7 天新手路线</strong>
+    <strong>推荐学习顺序</strong>
     <ol>
-      <li>第 1 天：弄清 AI 和大模型边界。</li>
-      <li>第 2 天：练会提问和提示词。</li>
-      <li>第 3 天：学会验证 AI 输出。</li>
-      <li>第 4-5 天：做办公、内容、图片、知识库练习。</li>
-      <li>第 6-7 天：理解工作流、Agent、MCP、Skill 和电商落地。</li>
-      <li>第 8 天：学习 Codex、Loop Engineering、网页制作和 GitHub 发布。</li>
+      <li>零基础先走“新手入门”，不要急着背工具名。</li>
+      <li>已经会基础 AI，再进入“老鸟进阶”学习 Codex 交付。</li>
+      <li>等本地 AI 工具案例整理好，再放进“实战演示”。</li>
     </ol>
     <div class="stat-grid">
-      <div class="stat"><strong>24</strong><span>节短课</span></div>
-      <div class="stat"><strong>6</strong><span>章路径</span></div>
-      <div class="stat"><strong>1</strong><span>套落地地图</span></div>
+      <div class="stat"><strong>3</strong><span>大类</span></div>
+      <div class="stat"><strong>24</strong><span>节已上线</span></div>
+      <div class="stat"><strong>1</strong><span>个实战入口</span></div>
     </div>
   </aside>
 </header>
 
 <section id="path">
   <div class="section-title">
-    <h2>先按这 5 步学</h2>
-    <p>把复杂名词拆成新手能执行的顺序。</p>
+    <h2>新手入门先按这 5 步学</h2>
+    <p>如果刚开始学 AI，先走基础路径，不要直接跳到工具堆叠。</p>
   </div>
   <div class="path-grid">
     <article class="path-card"><strong>1. 建认知</strong><span>先分清 AI、模型、产品、工具，不被品牌名带偏。</span></article>
@@ -223,48 +266,85 @@ li { margin-bottom: 8px; }
 
 <section id="lessons">
   <div class="section-title">
-    <h2>六章结构，24 节课</h2>
-    <p>前 20 课建立 AI 能力，第六章扩展到 Codex 交付能力。</p>
+    <h2>三大类课程目录</h2>
+    <p>先把基础能力学稳，再进入 Codex 扩展；实战演示等你后续补充本地 AI 工具案例。</p>
   </div>
-  <div class="chapters">
-    
+  <article class="track-block" id="beginner">
+    <div class="section-title">
+      <h2>新手入门</h2>
+      <p>目前先保留这 20 节基础课，帮助新手建立 AI 概念、提示词、验证、工作流和电商落地认知。</p>
+    </div>
+    <div class="chapters">
 <article class="chapter-card">
-  <div class="eyebrow">CHAPTER-1</div>
+  <div class="eyebrow">入门-1</div>
   <h3>第一章：先建立正确认知</h3>
   <p>先把概念边界理清，避免一上来被术语和产品名带偏。</p>
   <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-01-ai-overview.html"><span class="lesson-no">1</span><span><strong>第1课：AI是什么</strong><span>理解 AI 不是单一软件，而是一整类让机器完成智能任务的方法与系统。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-02-llm-agent-mcp-skill.html"><span class="lesson-no">2</span><span><strong>第2课：大模型、LLM、Agent、MCP、Skill</strong><span>建立课程里最核心的一张概念地图，知道每个词分别解决什么问题。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-03-model-families.html"><span class="lesson-no">3</span><span><strong>第3课：主流模型家族</strong><span>理解不同模型家族的定位差异，避免把所有模型看成一回事。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-04-ai-boundaries.html"><span class="lesson-no">4</span><span><strong>第4课：AI能做什么不能做什么</strong><span>建立边界意识，知道 AI 强在哪里，也知道它会错在哪里。</span></span></a></li></ul>
 </article>
 <article class="chapter-card">
-  <div class="eyebrow">CHAPTER-2</div>
+  <div class="eyebrow">入门-2</div>
   <h3>第二章：先学会用再学原理</h3>
   <p>围绕提问、提示词和验证，建立新手最先需要的使用能力。</p>
   <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-05-ask-better-questions.html"><span class="lesson-no">5</span><span><strong>第5课：怎么提一个高质量问题</strong><span>学会让 AI 更快理解你，减少空泛回答。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-06-prompt-basics.html"><span class="lesson-no">6</span><span><strong>第6课：提示词基础</strong><span>理解提示词的基本构造，能写出稳定的基础提示。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-07-prompt-advanced.html"><span class="lesson-no">7</span><span><strong>第7课：提示词进阶</strong><span>掌握拆任务、分步骤和多轮追问，让复杂任务更稳。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-08-verify-results.html"><span class="lesson-no">8</span><span><strong>第8课：结果验证与纠错</strong><span>建立 AI 输出之后的检查流程，避免把错内容直接拿去用。</span></span></a></li></ul>
 </article>
 <article class="chapter-card">
-  <div class="eyebrow">CHAPTER-3</div>
+  <div class="eyebrow">入门-3</div>
   <h3>第三章：把 AI 用进日常工作</h3>
   <p>从办公、内容、图像、知识检索切入，先形成可见的使用成果。</p>
   <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-09-office-and-learning.html"><span class="lesson-no">9</span><span><strong>第9课：办公与学习场景</strong><span>学会把 AI 用到总结、邮件、笔记、表格等高频办公任务里。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-10-content-creation.html"><span class="lesson-no">10</span><span><strong>第10课：内容创作场景</strong><span>学会用 AI 辅助文章、脚本、商品文案和社媒内容生产。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-11-image-and-video.html"><span class="lesson-no">11</span><span><strong>第11课：图片与视频生成</strong><span>理解图像模型和视频模型能做什么，以及怎样在业务里正确使用。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-12-rag-and-qa.html"><span class="lesson-no">12</span><span><strong>第12课：搜索、知识库与问答</strong><span>理解为什么有些问题必须接知识库，而不能只靠模型本身。</span></span></a></li></ul>
 </article>
 <article class="chapter-card">
-  <div class="eyebrow">CHAPTER-4</div>
+  <div class="eyebrow">入门-4</div>
   <h3>第四章：从工具使用到工作流</h3>
   <p>从单次问答升级到可重复、可执行、可验证的业务流程。</p>
   <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-13-workflow.html"><span class="lesson-no">13</span><span><strong>第13课：什么是工作流</strong><span>理解 AI 工作流不是问一句答一句，而是一串可重复步骤。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-14-agent.html"><span class="lesson-no">14</span><span><strong>第14课：什么是Agent</strong><span>理解 Agent 为什么比普通聊天模型更接近“会做事的人”。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-15-mcp.html"><span class="lesson-no">15</span><span><strong>第15课：什么是MCP</strong><span>理解 MCP 为什么是 AI 真正连接业务系统的重要一层。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-16-skill.html"><span class="lesson-no">16</span><span><strong>第16课：什么是Skill</strong><span>理解 Skill 不是普通提示词，而是任务方法的可复用资产。</span></span></a></li></ul>
 </article>
 <article class="chapter-card">
-  <div class="eyebrow">CHAPTER-5</div>
+  <div class="eyebrow">入门-5</div>
   <h3>第五章：电商场景落地</h3>
   <p>把模型、Agent、MCP、Skill 组合起来，形成电商 AI 系统视角。</p>
   <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-17-ecommerce-content.html"><span class="lesson-no">17</span><span><strong>第17课：电商内容生产</strong><span>理解 AI 在商品文案、SEO文章、社媒内容和海报上的落地方式。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-18-ecommerce-leads-private-domain.html"><span class="lesson-no">18</span><span><strong>第18课：电商获客与私域</strong><span>理解 AI 如何帮助评论私信承接、表单入库、欢迎 SOP 和标签分层。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-19-ecommerce-service-retention.html"><span class="lesson-no">19</span><span><strong>第19课：电商客服与复购</strong><span>理解 AI 在售前、售后、会员运营和复购中的应用方式。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-20-ecommerce-system-view.html"><span class="lesson-no">20</span><span><strong>第20课：电商AI系统全景</strong><span>把前面 19 节课串起来，形成一张完整的电商 AI 落地地图。</span></span></a></li></ul>
+</article></div>
+  </article>
+  <article class="track-block" id="advanced">
+    <div class="section-title">
+      <h2>老鸟进阶</h2>
+      <p>Codex 扩展学习类目：理解它能做什么，再学习 Loop Engineering、网页制作和 GitHub 发布。</p>
+    </div>
+    <div class="chapters">
+<article class="chapter-card">
+  <span class="label">第 21 课</span>
+  <h3>Codex能做什么</h3>
+  <p>理解 Codex 不是普通聊天机器人，而是能进入项目现场读、改、跑、验收的 AI 工作助手。</p>
+  <div class="toolbar"><a class="btn primary" href="./lessons/lesson-21-codex-overview.html">进入课程</a></div>
 </article>
 <article class="chapter-card">
-  <div class="eyebrow">CHAPTER-6</div>
-  <h3>第六章：Codex 扩展学习</h3>
-  <p>把 Codex 当成能交付的软件工作助手来学，掌握多会话、网页制作和 GitHub 发布。</p>
-  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-21-codex-overview.html"><span class="lesson-no">21</span><span><strong>第21课：Codex能做什么</strong><span>理解 Codex 不是普通聊天机器人，而是能进入项目现场读、改、跑、验收的 AI 工作助手。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-22-loop-engineering.html"><span class="lesson-no">22</span><span><strong>第22课：Loop Engineering是什么</strong><span>理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-23-codex-web-design.html"><span class="lesson-no">23</span><span><strong>第23课：如何用Codex制作好看的网页</strong><span>学会把目标用户、页面结构、视觉规范和移动端验收交给 Codex，让网页既能看又能用。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-24-git-github-codex.html"><span class="lesson-no">24</span><span><strong>第24课：Git、GitHub与Codex协作</strong><span>理解 Git 记录本地修改，GitHub 托管和发布代码，Codex 可以帮助提交、推送和验证线上结果。</span></span></a></li></ul>
+  <span class="label">第 22 课</span>
+  <h3>Loop Engineering是什么</h3>
+  <p>理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。</p>
+  <div class="toolbar"><a class="btn primary" href="./lessons/lesson-22-loop-engineering.html">进入课程</a></div>
 </article>
-  </div>
+<article class="chapter-card">
+  <span class="label">第 23 课</span>
+  <h3>如何用Codex制作好看的网页</h3>
+  <p>学会把目标用户、页面结构、视觉规范和移动端验收交给 Codex，让网页既能看又能用。</p>
+  <div class="toolbar"><a class="btn primary" href="./lessons/lesson-23-codex-web-design.html">进入课程</a></div>
+</article>
+<article class="chapter-card">
+  <span class="label">第 24 课</span>
+  <h3>Git、GitHub与Codex协作</h3>
+  <p>理解 Git 记录本地修改，GitHub 托管和发布代码，Codex 可以帮助提交、推送和验证线上结果。</p>
+  <div class="toolbar"><a class="btn primary" href="./lessons/lesson-24-git-github-codex.html">进入课程</a></div>
+</article></div>
+  </article>
+  <article class="track-block placeholder-track" id="showcase">
+    <div>
+      <span class="label">后续补充</span>
+      <h2>实战演示</h2>
+      <p>这里后续用来放你本地用 AI 制作的工具总结。当前先保留入口，不伪造案例、不补不存在的工具清单。</p>
+    </div>
+    <div class="toolbar"><a class="btn" href="#top">先回到课程入口</a></div>
+  </article>
 </section>
 
 <section class="notes-wrap">
@@ -297,14 +377,14 @@ li { margin-bottom: 8px; }
   </div>
   <div class="toolbar">
     <a class="btn" href="./mindmap-hub.html">打开脑图资源库</a>
-    <a class="btn" href="./codex.html">进入第六章扩展学习</a>
+    <a class="btn" href="./codex.html">进入老鸟进阶</a>
     <a class="btn" href="./ppt-structure.html">查看 PPT 页面结构</a>
     <a class="btn" href="./ai-beginner-20-lessons-course.png">打开课程总脑图</a>
   </div>
 </section>
 
 <div class="footer">
-  生成时间：2026-06-16 · 课程定位：AI 新手入门 · 形式：移动端友好的教程站点
+  生成时间：2026-06-16 · 课程定位：AI 学习路线 · 形式：移动端友好的教程站点
 </div>
 
   </main>

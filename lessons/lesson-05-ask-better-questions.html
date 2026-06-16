@@ -123,8 +123,9 @@ li { margin-bottom: 8px; }
 .footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
 .section-title { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin: 28px 0 14px; }
 .section-title p { color: var(--muted); font-size: 0.92rem; }
-.path-grid, .chapters, .notes-wrap, .mindmap-grid { display: grid; gap: 16px; }
+.path-grid, .track-grid, .chapters, .notes-wrap, .mindmap-grid { display: grid; gap: 16px; }
 .path-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.track-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 18px; }
 .chapters, .mindmap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .notes-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
 .starter-panel { padding: 18px; }
@@ -135,11 +136,40 @@ li { margin-bottom: 8px; }
 .path-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
 .path-card strong { display: block; margin-bottom: 6px; }
 .path-card span { color: var(--muted); font-size: 0.94rem; }
+.track-card {
+  display: flex;
+  min-height: 178px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+.track-card strong { display: block; font-size: 1.16rem; margin-bottom: 6px; }
+.track-card span { color: var(--muted); font-size: 0.94rem; }
+.track-card .track-meta { color: var(--primary); font-weight: 800; font-size: 0.9rem; }
+.track-card.primary-track { color: #ffffff; background: var(--primary); border-color: var(--primary); }
+.track-card.primary-track span, .track-card.primary-track .track-meta { color: rgba(255, 255, 255, 0.88); }
+.track-block { margin-top: 22px; }
+.placeholder-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px dashed rgba(15, 118, 110, 0.45);
+  border-radius: var(--radius);
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 @media (max-width: 920px) {
   .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid { grid-template-columns: 1fr; }
-  .path-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
 }
 @media (max-width: 640px) {
@@ -152,7 +182,9 @@ li { margin-bottom: 8px; }
   h2 { font-size: 1.25rem; }
   .lead { font-size: 1rem; }
   .toolbar .btn, .pager .btn { width: 100%; }
-  .path-grid, .stat-grid { grid-template-columns: 1fr; }
+  .path-grid, .track-grid, .stat-grid { grid-template-columns: 1fr; }
+  .track-card { min-height: 0; }
+  .placeholder-track { display: block; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
   .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
@@ -167,11 +199,11 @@ li { margin-bottom: 8px; }
 <body>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI新手20课</a>
+  <a class="brand" href="../course.html">AI入门课</a>
   <div class="navlinks">
-    <a href="../course.html#path">学习路径</a>
-    <a href="../course.html#lessons">课程目录</a>
-    <a href="../codex.html">Codex</a>
+    <a href="../course.html#beginner">新手入门</a>
+    <a href="../course.html#advanced">老鸟进阶</a>
+    <a href="../course.html#showcase">实战演示</a>
     <a href="../mindmap-hub.html">资源</a>
   </div>
 </nav>
@@ -262,7 +294,7 @@ li { margin-bottom: 8px; }
   <a class="btn" href="./lesson-04-ai-boundaries.html">上一课：AI能做什么不能做什么</a>
   <a class="btn primary" href="./lesson-06-prompt-basics.html">下一课：提示词基础</a>
 </nav>
-<div class="footer">AI新手入门20节课 · 第一性原则版逐课教程</div>
+<div class="footer">AI学习路线 · 第一性原则版逐课教程</div>
 </main>
 </body>
 </html>

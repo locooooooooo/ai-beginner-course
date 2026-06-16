@@ -123,8 +123,9 @@ li { margin-bottom: 8px; }
 .footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
 .section-title { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin: 28px 0 14px; }
 .section-title p { color: var(--muted); font-size: 0.92rem; }
-.path-grid, .chapters, .notes-wrap, .mindmap-grid { display: grid; gap: 16px; }
+.path-grid, .track-grid, .chapters, .notes-wrap, .mindmap-grid { display: grid; gap: 16px; }
 .path-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.track-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 18px; }
 .chapters, .mindmap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .notes-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
 .starter-panel { padding: 18px; }
@@ -135,11 +136,40 @@ li { margin-bottom: 8px; }
 .path-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
 .path-card strong { display: block; margin-bottom: 6px; }
 .path-card span { color: var(--muted); font-size: 0.94rem; }
+.track-card {
+  display: flex;
+  min-height: 178px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+.track-card strong { display: block; font-size: 1.16rem; margin-bottom: 6px; }
+.track-card span { color: var(--muted); font-size: 0.94rem; }
+.track-card .track-meta { color: var(--primary); font-weight: 800; font-size: 0.9rem; }
+.track-card.primary-track { color: #ffffff; background: var(--primary); border-color: var(--primary); }
+.track-card.primary-track span, .track-card.primary-track .track-meta { color: rgba(255, 255, 255, 0.88); }
+.track-block { margin-top: 22px; }
+.placeholder-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px dashed rgba(15, 118, 110, 0.45);
+  border-radius: var(--radius);
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 @media (max-width: 920px) {
   .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid { grid-template-columns: 1fr; }
-  .path-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
 }
 @media (max-width: 640px) {
@@ -152,7 +182,9 @@ li { margin-bottom: 8px; }
   h2 { font-size: 1.25rem; }
   .lead { font-size: 1rem; }
   .toolbar .btn, .pager .btn { width: 100%; }
-  .path-grid, .stat-grid { grid-template-columns: 1fr; }
+  .path-grid, .track-grid, .stat-grid { grid-template-columns: 1fr; }
+  .track-card { min-height: 0; }
+  .placeholder-track { display: block; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
   .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
@@ -168,11 +200,11 @@ li { margin-bottom: 8px; }
   <main class="wrap">
     
 <nav class="topbar" aria-label="站点导航">
-  <a class="brand" href="./course.html">AI新手20课</a>
+  <a class="brand" href="./course.html">AI入门课</a>
   <div class="navlinks">
-    <a href="./course.html#path">学习路径</a>
-    <a href="./course.html#lessons">课程目录</a>
-    <a href="./codex.html">Codex</a>
+    <a href="./course.html#beginner">新手入门</a>
+    <a href="./course.html#advanced">老鸟进阶</a>
+    <a href="./course.html#showcase">实战演示</a>
     <a href="#resources">资源</a>
   </div>
 </nav>
@@ -191,7 +223,7 @@ li { margin-bottom: 8px; }
   <aside class="starter-panel">
       <strong>推荐打开顺序</strong>
       <ul>
-        <li>先看“AI新手入门20节课”，理解总课程结构。</li>
+        <li>先看“AI学习路线”，理解三大类结构。</li>
         <li>再看“第一性原则版”，理解课程为什么这样拆。</li>
         <li>接着看“模型分类”“大模型与Agent”，补全认知边界。</li>
         <li>然后看“讲法脑图”和“练习脑图”，把课程变成可教可练。</li>
@@ -211,9 +243,9 @@ li { margin-bottom: 8px; }
     
 <article class="chapter-card">
   <div class="eyebrow">总览</div>
-  <h3>AI新手入门24节课</h3>
-  <p>课程总览，前 20 课打基础，第六章扩展到 Codex、Loop、网页和 GitHub。</p>
-  <img class="gallery-thumb" src="./ai-beginner-20-lessons-course.png" alt="AI新手入门24节课" loading="lazy" />
+  <h3>AI学习路线</h3>
+  <p>课程总览：新手入门打基础，老鸟进阶学习 Codex、Loop、网页和 GitHub，实战演示后续补充。</p>
+  <img class="gallery-thumb" src="./ai-beginner-20-lessons-course.png" alt="AI学习路线" loading="lazy" />
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./ai-beginner-20-lessons-course.png">PNG</a>
     <a class="btn" href="./ai-beginner-20-lessons-course.mmd">MMD</a>
