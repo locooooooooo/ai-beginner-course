@@ -591,7 +591,7 @@ li { margin-bottom: 8px; }
   <div>
     <div class="eyebrow">老鸟进阶：Codex 扩展学习 · 第25课</div>
     <h1>第25课：你真的会用Dify吗？</h1>
-    <p class="lead">理解 Dify 不是简单拖节点，而是把入口、分流、可信执行、验收和脱敏发布串成可复用工作流。</p>
+    <p class="lead">学会用 Codex 搭建 Dify 平台、完成 Docker 部署，并把 Wiki 发布、Bug 汇总和自动 Code Review 做成自动化流程。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
@@ -614,7 +614,7 @@ li { margin-bottom: 8px; }
 <section class="callout" id="start">
   <span class="label">为什么要学</span>
   <h2>核心问题</h2>
-  <p>为什么很多人会搭 Dify 流程，一到真实项目就暴露密钥、重复执行、状态丢失，或者让模型越权？</p>
+  <p>为什么只会拖 Dify 节点还不够，真正项目要同时处理平台部署、流程设计、任务触发、结果发布和持续 review？</p>
 </section>
 <div class="grid">
   <main>
@@ -627,55 +627,55 @@ li { margin-bottom: 8px; }
       <div class="flow">
         <div class="flow-step">
           <strong>1. 先说人话</strong>
-          <span>用自己的话回答：这节课到底解决什么困惑？可以先照着核心问题复述一遍：为什么很多人会搭 Dify 流程，一到真实项目就暴露密钥、重复执行、状态丢失，或者让模型越权？</span>
+          <span>用自己的话回答：这节课到底解决什么困惑？可以先照着核心问题复述一遍：为什么只会拖 Dify 节点还不够，真正项目要同时处理平台部署、流程设计、任务触发、结果发布和持续 review？</span>
         </div>
         <div class="flow-step">
           <strong>2. 只抓三句</strong>
-          <span>先记住前 3 个重点，不急着背完整定义：Dify 适合做编排层：接收输入、分流任务、记录状态、决定下一步；Codex 适合做执行层，但要通过本地可信服务读取规则、限制写入、验证结果；可发布的 Dify 工作流只能公开模式、模板和验收标准，不能公开密钥、真实链接、人员和内网配置。</span>
+          <span>先记住前 3 个重点，不急着背完整定义：Codex 可以先搭建 Dify 运行环境：读文档、准备 Docker 配置、启动服务并做访问验证；Dify 负责自动化流程编排：把输入、条件分支、外部服务调用和结果输出串起来；真实落地重点是 Wiki 发布、Bug 汇总成飞书文档、自动 Code Review，而不是只做聊天机器人。</span>
         </div>
         <div class="flow-step">
           <strong>3. 套进场景</strong>
-          <span>从案例里挑一个最熟的场景，例如“代码审计 Workflow：Dify 收集输入，Minister 调 Codex，报告只发布脱敏摘要”，写出输入、AI 做什么、人工怎么检查。</span>
+          <span>从案例里挑一个最熟的场景，例如“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”，写出输入、AI 做什么、人工怎么检查。</span>
         </div>
         <div class="flow-step">
           <strong>4. 留下产物</strong>
-          <span>完成本课产物：把一个 Dify + Codex 工作流画成 5 层结构：入口、编排、可信执行、验收、发布，并写出 6 条脱敏规则。</span>
+          <span>完成本课产物：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span>
         </div></div>
     </section>
     <article class="card">
       <span class="label">先记住</span>
       <h2>本课只抓 3 件事</h2>
-      <ul><li>Dify 适合做编排层：接收输入、分流任务、记录状态、决定下一步</li><li>Codex 适合做执行层，但要通过本地可信服务读取规则、限制写入、验证结果</li><li>可发布的 Dify 工作流只能公开模式、模板和验收标准，不能公开密钥、真实链接、人员和内网配置</li></ul>
+      <ul><li>Codex 可以先搭建 Dify 运行环境：读文档、准备 Docker 配置、启动服务并做访问验证</li><li>Dify 负责自动化流程编排：把输入、条件分支、外部服务调用和结果输出串起来</li><li>真实落地重点是 Wiki 发布、Bug 汇总成飞书文档、自动 Code Review，而不是只做聊天机器人</li></ul>
     </article>
     <article class="card">
       <span class="label">想明白</span>
       <h2>第一性拆解</h2>
-      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把 Dify 从执行器里拆出来：它更适合做流程编排、条件分支和状态追踪，而不是直接控制本地仓库。</span></div><div class="principle-block"><strong>拆解 2</strong><span>再把 Codex 放回执行层：它可以改文件、跑命令、做验证，但必须带着项目规则、写入边界和验收标准执行。</span></div><div class="principle-block"><strong>拆解 3</strong><span>最后把可发布内容和真实运行配置分开：公开的是流程模式和模板，隐藏的是密钥、内网地址、真实人员和项目细节。</span></div></div>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先让 Codex 处理平台搭建：看官方部署要求、整理 Docker Compose、启动 Dify 服务并检查访问是否正常。</span></div><div class="principle-block"><strong>拆解 2</strong><span>再让 Dify 做流程编排：把触发入口、任务分支、Codex 执行、文档输出和状态记录串成自动化链路。</span></div><div class="principle-block"><strong>拆解 3</strong><span>最后把三类高频任务产品化：Wiki 发布、Bug 汇总成飞书文档、自动 Code Review 都应该能重复运行。</span></div></div>
     </article>
     <article class="card">
       <span class="label">可迁移</span>
       <h2>最小原理</h2>
-      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：Dify 的价值是编排，不是把所有秘密和执行权限都塞进节点里。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：Codex 的价值是交付执行，但执行必须受边界、上下文和验证约束。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：能发布共享的不是原始配置，而是脱敏后的流程资产、提示模板、检查表和验收标准。</span></div></div>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：Dify 是流程平台，重点是把多步任务稳定编排起来。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：Codex 是搭建和执行助手，适合处理部署、脚本、文档生成、代码审查和验证。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：真正有价值的是可复用自动化流程，而不是单次问答或临时节点截图。</span></div></div>
     </article>
     <article class="card">
       <span class="label">怎么学</span>
       <h2>读完后怎么把它用出来</h2>
-      <ul><li>Dify 在 AI 工具链里的真实位置</li><li>Dify + 本地可信执行层 + Codex 的分工</li><li>公开教程和共享工作流如何脱敏</li><li>从一次自动化执行沉淀成团队可复用流程资产</li></ul>
+      <ul><li>用 Codex 准备 Dify 平台和 Docker 部署</li><li>Dify 工作流的入口、节点、分支和输出</li><li>把 Wiki 发布、Bug 文档和 Code Review 做成三条自动化流程</li><li>从一次跑通沉淀成团队可复用的流程资产</li></ul>
     </article>
     <article class="card">
       <span class="label">怎么读案例</span>
       <h2>先看这 2 类真实场景</h2>
       <div class="case-read-grid">
         <div class="case-read-card">
-          <strong>代码审计 Workflow：Dify 收集输入，Minister 调 Codex，报告只发布脱敏摘要</strong>
+          <strong>Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果</strong>
           <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
         </div>
         <div class="case-read-card">
-          <strong>受控代码生成 Workflow：Dify 分流，Minister 读取项目规则，Codex 执行，Git 和验证包收口</strong>
+          <strong>Bug 汇总 Workflow：自动抓取 Bug 线索，Dify 分组归纳，再生成飞书文档</strong>
           <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
         </div>
         <div class="case-read-card">
-          <strong>需求池 Poller：本地服务发现需求，Dify 编排单个任务，不把长期轮询和密钥塞进节点</strong>
+          <strong>自动 Code Review Workflow：Dify 接收仓库或 PR 信息，Codex 执行审查，输出 review 报告</strong>
           <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
         </div></div>
     </article>
@@ -685,18 +685,18 @@ li { margin-bottom: 8px; }
     <article class="card">
       <span class="label">马上用</span>
       <h2>应用方法</h2>
-      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先画五层：入口、编排、本地可信执行、验收、发布。</span></div><div class="principle-block"><strong>方法 2</strong><span>真实 token、API Key、飞书链接、内网地址和本地路径不要写进公开教程，统一改成占位符或说明。</span></div><div class="principle-block"><strong>方法 3</strong><span>给每个节点定义成功、失败、可重试、需人工处理四类状态，不能只看 HTTP 200。</span></div></div>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先用 Codex 把 Dify 的 Docker 部署步骤整理清楚，并跑通启动、登录和基础工作流测试。</span></div><div class="principle-block"><strong>方法 2</strong><span>再拆三条自动化链路：Wiki 发布、Bug 飞书文档、自动 Code Review，每条都写清输入、处理、输出和验收。</span></div><div class="principle-block"><strong>方法 3</strong><span>最后把流程版本化：每次改节点、改提示词、改输出格式，都要留下可回滚的配置记录。</span></div></div>
     </article>
     <article class="card">
       <span class="label">避坑</span>
       <h2>反常识提醒</h2>
-      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>把真实 API Key、飞书链接、内网 IP、人员姓名、仓库路径直接写进教程或 workflow。</span></div><div class="principle-block"><strong>误区 2</strong><span>让 Dify 直接调用 Codex 改仓库，不经过本地规则、脏工作区、白名单和验收检查。</span></div><div class="principle-block"><strong>误区 3</strong><span>只追求节点能跑通，不做幂等、失败回流、验证包和版本化管理。</span></div></div>
+      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>只学拖节点，不会用 Codex 把 Dify 平台真正部署起来。</span></div><div class="principle-block"><strong>误区 2</strong><span>只做聊天入口，不把 Wiki、Bug 文档、Code Review 这些真实任务流程化。</span></div><div class="principle-block"><strong>误区 3</strong><span>只追求第一次跑通，不做失败重试、输出验收、流程版本管理和后续维护。</span></div></div>
     </article>
     <article class="card" id="practice">
       <span class="label">完成标准</span>
       <h2>做完这件事才算学会</h2>
       <div class="meta">
-        <div class="meta-item"><strong>本课产物</strong><span>把一个 Dify + Codex 工作流画成 5 层结构：入口、编排、可信执行、验收、发布，并写出 6 条脱敏规则。</span></div>
+        <div class="meta-item"><strong>本课产物</strong><span>设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span></div>
         <div class="meta-item"><strong>验收方式</strong><span>能用自己的话解释本课概念，并把它套到一个真实工作或生活场景里。</span></div>
       </div>
     </article>
@@ -705,14 +705,14 @@ li { margin-bottom: 8px; }
       <h2>给 AI 的跟做提示</h2>
       <pre class="copy-prompt"><code>我正在学习「你真的会用Dify吗？」，请用新手能听懂的话教我。
 先用 120 字以内解释它，不要堆术语。
-再结合这两个场景举例：代码审计 Workflow：Dify 收集输入，Minister 调 Codex，报告只发布脱敏摘要；受控代码生成 Workflow：Dify 分流，Minister 读取项目规则，Codex 执行，Git 和验证包收口。
+再结合这两个场景举例：Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果；Bug 汇总 Workflow：自动抓取 Bug 线索，Dify 分组归纳，再生成飞书文档。
 然后问我 3 个检查理解的问题。
-最后帮我完成这个练习：把一个 Dify + Codex 工作流画成 5 层结构：入口、编排、可信执行、验收、发布，并写出 6 条脱敏规则。</code></pre>
+最后帮我完成这个练习：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</code></pre>
     </article>
     <article class="card">
       <span class="label">自检</span>
       <h2>学完请确认这 4 件事</h2>
-      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「你真的会用Dify吗？」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：把一个 Dify + Codex 工作流画成 5 层结构：入口、编排、可信执行、验收、发布，并写出 6 条脱敏规则。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「你真的会用Dify吗？」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
     </article>
   </aside>
 </div>
