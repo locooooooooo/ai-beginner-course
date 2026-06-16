@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第25课 用Codex写小说并制作视频</title>
+  <style>
+    :root {
+      --canvas: #f6f7fb;
+      --surface: #ffffff;
+      --surface-soft: #f2f7f6;
+      --ink: #171a21;
+      --muted: #5f6876;
+      --line: #dfe5ee;
+      --primary: #0f766e;
+      --coral: #d3543f;
+      --blue: #2563eb;
+      --max: 1120px;
+      --radius: 8px;
+      --shadow: 0 14px 30px rgba(23, 26, 33, 0.08);
+      --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+      --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--canvas) 0%, #fff 48%, #eef7f5 100%);
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 18px 76px; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      margin-inline: -18px;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: rgba(246, 247, 251, 0.94);
+      border-bottom: 1px solid rgba(223, 229, 238, 0.9);
+      backdrop-filter: blur(14px);
+    }
+    .brand { font-weight: 800; text-decoration: none; white-space: nowrap; }
+    .navlinks { display: flex; align-items: center; justify-content: flex-end; gap: 8px; overflow-x: auto; }
+    .navlinks a {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      padding: 7px 8px;
+      border-radius: var(--radius);
+    }
+    .navlinks a:hover { color: var(--primary); background: rgba(15, 118, 110, 0.08); }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 20px;
+      align-items: end;
+      padding: 34px 0 18px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      color: var(--primary);
+      font-size: 0.86rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    h1, h2, h3 { margin: 0; font-family: var(--serif); line-height: 1.22; }
+    h1 { font-size: 2.35rem; margin-bottom: 10px; max-width: 820px; }
+    h2 { font-size: 1.45rem; margin-bottom: 12px; }
+    h3 { font-size: 1.12rem; margin-bottom: 8px; }
+    p { margin: 0; }
+    .lead { color: var(--muted); max-width: 780px; font-size: 1.05rem; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      font-weight: 700;
+    }
+    .btn.primary { color: #fff; background: var(--primary); border-color: var(--primary); }
+    .panel, .card, .callout {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .panel { padding: 18px; }
+    .panel strong { display: block; margin-bottom: 10px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .stat {
+      padding: 12px;
+      border-radius: var(--radius);
+      background: var(--surface-soft);
+      border: 1px solid rgba(15, 118, 110, 0.12);
+    }
+    .stat span { display: block; color: var(--muted); font-size: 0.88rem; }
+    .stat b { display: block; font-size: 1.18rem; }
+    .callout { padding: 18px; border-left: 4px solid var(--coral); margin-bottom: 18px; }
+    .callout p { color: var(--muted); }
+    .label { display: inline-block; color: var(--coral); font-weight: 800; font-size: 0.88rem; margin-bottom: 6px; }
+    .grid { display: grid; gap: 18px; grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr); align-items: start; }
+    .card { padding: 20px; }
+    .card + .card { margin-top: 18px; }
+    ul, ol { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    .blocks { display: grid; gap: 10px; }
+    .block {
+      padding: 14px;
+      border-radius: var(--radius);
+      background: var(--surface-soft);
+      border: 1px solid rgba(15, 118, 110, 0.12);
+    }
+    .block strong { display: block; margin-bottom: 4px; }
+    .block span { color: var(--muted); }
+    .pipeline { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+    .pipeline li {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border-radius: var(--radius);
+      background: #f8fafc;
+      border: 1px solid var(--line);
+    }
+    .step-no {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+    }
+    .artifact-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+    .artifact-list li {
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      background: #f8fafc;
+      border: 1px solid var(--line);
+    }
+    code {
+      font-family: Consolas, "Cascadia Mono", monospace;
+      color: var(--primary);
+      word-break: break-all;
+    }
+    .lesson-side { position: sticky; top: 78px; }
+    .pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; }
+    .pager .btn { flex: 1 1 0; }
+    .footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
+    @media (max-width: 920px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      .lesson-side { position: static; }
+    }
+    @media (max-width: 640px) {
+      .wrap { padding-inline: 14px; padding-bottom: 56px; }
+      .topbar { margin-inline: -14px; padding-inline: 14px; align-items: flex-start; }
+      .navlinks { max-width: 68vw; }
+      h1 { font-size: 1.85rem; }
+      h2 { font-size: 1.25rem; }
+      .toolbar .btn, .pager .btn { width: 100%; }
+      .stat-grid { grid-template-columns: 1fr; }
+      .pipeline li { grid-template-columns: 38px minmax(0, 1fr); }
+      .step-no { width: 38px; height: 38px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="topbar" aria-label="课程导航">
+      <a class="brand" href="../course.html">AI入门课</a>
+      <div class="navlinks">
+        <a href="../course.html#beginner">新手入门</a>
+        <a href="../course.html#advanced">老鸟进阶</a>
+        <a href="../course.html#showcase">实战演示</a>
+        <a href="../mindmap-hub.html">资源</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <div class="eyebrow">实战案例 · Codex 内容生产链</div>
+        <h1>用 Codex 写小说，并制作成视频</h1>
+        <p class="lead">以《重生之我在同福客栈》第 01 集为例，把一个原创穿越故事推进到小说正文、视频脚本、分镜、结构化数据、字幕、角色设定和 MP4 review 成片。</p>
+        <div class="toolbar">
+          <a class="btn primary" href="#workflow">查看工作流</a>
+          <a class="btn" href="#practice">复用模板</a>
+        </div>
+      </div>
+      <aside class="panel" aria-label="案例结果">
+        <strong>本次交付结果</strong>
+        <div class="stat-grid">
+          <div class="stat"><span>场景</span><b>15 个</b></div>
+          <div class="stat"><span>成片</span><b>114 秒</b></div>
+          <div class="stat"><span>画幅</span><b>16:9</b></div>
+          <div class="stat"><span>规格</span><b>1080p / 30fps</b></div>
+        </div>
+      </aside>
+    </header>
+
+    <section class="callout" id="start">
+      <span class="label">一句话案例</span>
+      <h2>Codex 不只是写文案，而是把内容推进到可交付</h2>
+      <p>这个项目从一个故事想法开始，最后形成一套可以继续生产第 02 集的内容工程。核心价值不是某一段文字写得好，而是把“小说”和“视频”中间的所有转换步骤都显式化、文件化、可复用。</p>
+    </section>
+
+    <div class="grid">
+      <main>
+        <article class="card">
+          <span class="label">项目定位</span>
+          <h2>做的是一集古装轻喜剧短剧样片</h2>
+          <div class="blocks">
+            <div class="block"><strong>题材</strong><span>古装轻喜剧、穿越、客栈群像、微悬疑。</span></div>
+            <div class="block"><strong>剧情核心</strong><span>现代短视频编导林舟穿进同福客栈，靠“客栈生存簿”救场并留下。</span></div>
+            <div class="block"><strong>结尾钩子</strong><span>半页账纸上出现“葵花派”，为第 02 集埋下悬疑线。</span></div>
+          </div>
+        </article>
+
+        <article class="card" id="workflow">
+          <span class="label">工作流</span>
+          <h2>Codex 实际做了这 8 步</h2>
+          <ol class="pipeline">
+            <li><span class="step-no">1</span><span><strong>确定题材和钩子</strong><br />先明确穿越、客栈群像、轻喜剧和微悬疑，不让内容跑散。</span></li>
+            <li><span class="step-no">2</span><span><strong>生成小说正文</strong><br />先写完整故事，保证人物关系、冲突和结尾统一。</span></li>
+            <li><span class="step-no">3</span><span><strong>压缩视频脚本</strong><br />把正文改成适合旁白、口播和短视频节奏的脚本。</span></li>
+            <li><span class="step-no">4</span><span><strong>拆镜头分镜</strong><br />按画面、动作、对白和情绪拆成可生成的视频镜头。</span></li>
+            <li><span class="step-no">5</span><span><strong>整理结构化 JSON</strong><br />让每个场景都有时长、画面提示词、动作、旁白和字幕。</span></li>
+            <li><span class="step-no">6</span><span><strong>补字幕和角色 bible</strong><br />用 SRT 和角色一致性设定控制节奏与人物外观。</span></li>
+            <li><span class="step-no">7</span><span><strong>组合 HTML 成片工程</strong><br />用本地 HyperFrames 工程承载 15 个场景，减少外部依赖。</span></li>
+            <li><span class="step-no">8</span><span><strong>导出 review 成片</strong><br />先生成 review MP4，再根据效果决定是否出高质量 final。</span></li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <span class="label">可迁移经验</span>
+          <h2>这个案例最值得学的 5 件事</h2>
+          <ul>
+            <li>先写完整小说，再拆视频，故事内核更稳。</li>
+            <li>角色一致性设定要尽早写，不然画面生成容易前后变脸。</li>
+            <li>结构化 JSON 比纯文本更适合进入视频流水线。</li>
+            <li>先出 review，再出 final，可以降低返工成本。</li>
+            <li>本地依赖优先，预览、校验和渲染更可控。</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="label">对外表达</span>
+          <h2>分享时可以这样讲</h2>
+          <p>我用 Codex 完成了一个“小说写作 + 视频制作”的一体化实战项目：先生成完整故事，再拆成视频脚本和分镜，随后补齐结构化数据、字幕和角色设定，最终合成可预览的视频成片。这个案例说明 Codex 不只是能回答问题，而是能把内容创作拆成可执行、可验证、可复用的生产流程。</p>
+        </article>
+      </main>
+
+      <aside class="lesson-side">
+        <article class="card">
+          <span class="label">产物清单</span>
+          <h2>这一集生成了哪些文件</h2>
+          <ul class="artifact-list">
+            <li><code>01-小说正文.md</code>：完整故事文本</li>
+            <li><code>02-视频脚本.md</code>：短视频叙事脚本</li>
+            <li><code>03-html-video分镜文案.md</code>：逐镜头文案</li>
+            <li><code>04-视频结构化数据.json</code>：场景结构化数据</li>
+            <li><code>05-字幕.srt</code>：基础字幕</li>
+            <li><code>06-角色一致性设定.md</code>：人物外观设定</li>
+            <li><code>hf-episode-01/index.html</code>：成片工程</li>
+            <li><code>episode-01-review.mp4</code>：review 成片</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="label">验证证据</span>
+          <h2>不是只停在文字阶段</h2>
+          <div class="blocks">
+            <div class="block"><strong>结构化数据</strong><span>15 个场景，目标时长 104 秒。</span></div>
+            <div class="block"><strong>已导出成片</strong><span>MP4 文件大小约 24.3 MB。</span></div>
+            <div class="block"><strong>视频规格</strong><span>H.264，1920x1080，30fps，时长 114 秒。</span></div>
+          </div>
+        </article>
+
+        <article class="card" id="practice">
+          <span class="label">复用模板</span>
+          <h2>下一次可以直接套这个顺序</h2>
+          <p><strong>题材设定 -> 小说正文 -> 视频脚本 -> 分镜文案 -> JSON 数据 -> 字幕 -> 角色 bible -> HTML 成片 -> MP4 review</strong></p>
+        </article>
+
+        <article class="card">
+          <span class="label">下一步</span>
+          <h2>继续扩展时优先补什么</h2>
+          <ul>
+            <li>第 02 集剧情</li>
+            <li>封面图和标题包装</li>
+            <li>片头、片尾和下集预告</li>
+            <li>BGM、音效和配音方案</li>
+            <li>适合短视频平台的 30 秒剪辑版</li>
+          </ul>
+        </article>
+      </aside>
+    </div>
+
+    <nav class="pager" aria-label="上一课下一课">
+      <a class="btn" href="./lesson-24-git-github-codex.html">上一课：Git、GitHub与Codex协作</a>
+      <a class="btn primary" href="../course.html">回到课程总览</a>
+    </nav>
+    <div class="footer">AI学习路线 · 第一性原则版逐课教程</div>
+  </main>
+</body>
+</html>
