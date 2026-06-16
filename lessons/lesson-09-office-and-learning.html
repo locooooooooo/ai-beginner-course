@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第9课 办公与学习场景</title>
+  <style>
+:root {
+  --bg: #f6efe4;
+  --paper: #fffaf3;
+  --ink: #1f1b16;
+  --muted: #6a6258;
+  --line: #ddd1c1;
+  --accent: #8f3d25;
+  --accent2: #305752;
+  --gold: #c8912f;
+  --max: 1180px;
+  --radius: 22px;
+  --shadow: 0 18px 40px rgba(55, 35, 19, 0.1);
+  --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(48,87,82,0.12), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(143,61,37,0.12), transparent 25%),
+    linear-gradient(180deg, #faf6ef 0%, #efe5d7 100%);
+  line-height: 1.7;
+}
+.wrap { max-width: var(--max); margin: 0 auto; padding: 28px 20px 80px; }
+.hero, .card, .callout { background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.14); border-radius: 28px; box-shadow: var(--shadow); }
+.hero { padding: 34px 34px 28px; margin-bottom: 20px; }
+.eyebrow { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(48,87,82,0.1); color: var(--accent2); font-size: 13px; letter-spacing: .08em; margin-bottom: 12px; }
+h1,h2,h3 { margin: 0; font-family: var(--serif); line-height: 1.2; }
+h1 { font-size: clamp(30px, 4.6vw, 54px); margin-bottom: 10px; }
+h2 { font-size: 24px; margin-bottom: 12px; }
+h3 { font-size: 20px; margin-bottom: 10px; }
+p { margin: 0; }
+.lead { color: var(--muted); max-width: 800px; font-size: 18px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 24px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 16px; border-radius: 999px; text-decoration: none; color: var(--ink); background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.18); }
+.grid { display: grid; gap: 18px; grid-template-columns: 1.08fr 0.92fr; }
+.card { padding: 22px; }
+.card + .card { margin-top: 18px; }
+ul { margin: 0; padding-left: 18px; }
+li { margin-bottom: 8px; }
+.meta { display: grid; gap: 12px; }
+.meta-item, .principle-block { padding: 14px 16px; border-radius: 18px; background: rgba(255,255,255,0.75); border: 1px solid rgba(106,98,88,0.12); }
+.meta-item strong, .principle-block strong { display: block; margin-bottom: 4px; }
+.ppt-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+.ppt-list li { padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,0.78); border: 1px solid rgba(106,98,88,0.12); }
+.chapter-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.chapter-card { padding: 22px; background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.14); border-radius: 28px; box-shadow: var(--shadow); }
+.lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+.lesson-item { padding: 14px 14px 12px; border-radius: 16px; background: rgba(255,255,255,0.76); border: 1px solid rgba(106,98,88,0.12); }
+.lesson-item strong { display: block; margin-bottom: 4px; }
+.lesson-item span { color: var(--muted); font-size: 14px; }
+.callout { padding: 20px 22px; border-left: 6px solid var(--gold); margin-bottom: 18px; }
+.callout p { color: var(--muted); }
+.principles, .truths, .methods, .anti-patterns { display: grid; gap: 10px; }
+.footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
+@media (max-width: 920px) {
+  .grid, .chapter-grid { grid-template-columns: 1fr; }
+  .hero { padding: 26px 20px 22px; }
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+<header class="hero">
+  <div class="eyebrow">第三章：把 AI 用进日常工作 · 第9课</div>
+  <h1>第9课：办公与学习场景</h1>
+  <p class="lead">学会把 AI 用到总结、邮件、笔记、表格等高频办公任务里。</p>
+  <div class="toolbar">
+    <a class="btn" href="../course.html">返回课程总览</a>
+    <a class="btn" href="../ppt-structure.html">查看 PPT 结构总览</a>
+  </div>
+</header>
+<section class="callout">
+  <h2>核心问题</h2>
+  <p>为什么办公场景最适合新手入门？因为它高频、低风险、结果又容易判断。</p>
+</section>
+<div class="grid">
+  <section>
+    <article class="card">
+      <h2>本课重点</h2>
+      <ul><li>AI 可以提高信息处理速度</li><li>办公类任务最适合新手入门</li><li>要固定模板和输出格式</li></ul>
+    </article>
+    <article class="card">
+      <h2>第一性拆解</h2>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先找低风险高频任务，因为新手最需要快速建立正反馈。</span></div><div class="principle-block"><strong>拆解 2</strong><span>办公任务的本质通常是信息整理、结构重组、格式输出。</span></div><div class="principle-block"><strong>拆解 3</strong><span>这些任务非常适合模板化，所以 AI 的效率提升最容易体现出来。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>最小原理</h2>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：办公效率问题很多时候是信息处理问题。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：结构化输出比灵感更重要。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：低风险任务更适合形成早期习惯。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>讲解结构</h2>
+      <ul><li>办公场景有哪些机会</li><li>常见任务模板</li><li>适合新手的 5 个入口</li><li>怎么避免泄露敏感信息</li></ul>
+    </article>
+    <article class="card">
+      <h2>真实案例</h2>
+      <ul><li>会议纪要</li><li>日报周报</li><li>邮件回复</li><li>学习笔记整理</li></ul>
+    </article>
+  </section>
+  <aside>
+    <article class="card">
+      <h2>应用方法</h2>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先从纪要、邮件、日报、笔记这些标准化任务入手。</span></div><div class="principle-block"><strong>方法 2</strong><span>为每类任务做固定输出模板。</span></div><div class="principle-block"><strong>方法 3</strong><span>从一开始就养成敏感信息脱敏意识。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>反常识提醒</h2>
+      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>一上来就拿敏感客户信息试验。</span></div><div class="principle-block"><strong>误区 2</strong><span>没有模板，每次都从零开始问。</span></div><div class="principle-block"><strong>误区 3</strong><span>只追求生成快，不追求结果可直接复用。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>教学信息</h2>
+      <div class="meta">
+        <div class="meta-item"><strong>章节定位</strong><span>从办公、内容、图像、知识检索切入，先形成可见的使用成果。</span></div>
+        <div class="meta-item"><strong>课堂练习</strong><span>设计一个“会议纪要”提示模板，要求包含行动项、负责人和截止时间。</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <h2>PPT 页面结构</h2>
+      <ul class="ppt-list"><li>封面：办公与学习</li><li>高频办公任务</li><li>提示模板</li><li>敏感信息边界</li><li>练习页</li></ul>
+    </article>
+  </aside>
+</div>
+<div class="footer">AI新手入门20节课 · 第一性原则版逐课讲义页</div>
+</div>
+</body>
+</html>

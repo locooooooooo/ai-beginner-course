@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第15课 什么是MCP</title>
+  <style>
+:root {
+  --bg: #f6efe4;
+  --paper: #fffaf3;
+  --ink: #1f1b16;
+  --muted: #6a6258;
+  --line: #ddd1c1;
+  --accent: #8f3d25;
+  --accent2: #305752;
+  --gold: #c8912f;
+  --max: 1180px;
+  --radius: 22px;
+  --shadow: 0 18px 40px rgba(55, 35, 19, 0.1);
+  --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(48,87,82,0.12), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(143,61,37,0.12), transparent 25%),
+    linear-gradient(180deg, #faf6ef 0%, #efe5d7 100%);
+  line-height: 1.7;
+}
+.wrap { max-width: var(--max); margin: 0 auto; padding: 28px 20px 80px; }
+.hero, .card, .callout { background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.14); border-radius: 28px; box-shadow: var(--shadow); }
+.hero { padding: 34px 34px 28px; margin-bottom: 20px; }
+.eyebrow { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(48,87,82,0.1); color: var(--accent2); font-size: 13px; letter-spacing: .08em; margin-bottom: 12px; }
+h1,h2,h3 { margin: 0; font-family: var(--serif); line-height: 1.2; }
+h1 { font-size: clamp(30px, 4.6vw, 54px); margin-bottom: 10px; }
+h2 { font-size: 24px; margin-bottom: 12px; }
+h3 { font-size: 20px; margin-bottom: 10px; }
+p { margin: 0; }
+.lead { color: var(--muted); max-width: 800px; font-size: 18px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 24px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 16px; border-radius: 999px; text-decoration: none; color: var(--ink); background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.18); }
+.grid { display: grid; gap: 18px; grid-template-columns: 1.08fr 0.92fr; }
+.card { padding: 22px; }
+.card + .card { margin-top: 18px; }
+ul { margin: 0; padding-left: 18px; }
+li { margin-bottom: 8px; }
+.meta { display: grid; gap: 12px; }
+.meta-item, .principle-block { padding: 14px 16px; border-radius: 18px; background: rgba(255,255,255,0.75); border: 1px solid rgba(106,98,88,0.12); }
+.meta-item strong, .principle-block strong { display: block; margin-bottom: 4px; }
+.ppt-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+.ppt-list li { padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,0.78); border: 1px solid rgba(106,98,88,0.12); }
+.chapter-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.chapter-card { padding: 22px; background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.14); border-radius: 28px; box-shadow: var(--shadow); }
+.lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+.lesson-item { padding: 14px 14px 12px; border-radius: 16px; background: rgba(255,255,255,0.76); border: 1px solid rgba(106,98,88,0.12); }
+.lesson-item strong { display: block; margin-bottom: 4px; }
+.lesson-item span { color: var(--muted); font-size: 14px; }
+.callout { padding: 20px 22px; border-left: 6px solid var(--gold); margin-bottom: 18px; }
+.callout p { color: var(--muted); }
+.principles, .truths, .methods, .anti-patterns { display: grid; gap: 10px; }
+.footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
+@media (max-width: 920px) {
+  .grid, .chapter-grid { grid-template-columns: 1fr; }
+  .hero { padding: 26px 20px 22px; }
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+<header class="hero">
+  <div class="eyebrow">第四章：从工具使用到工作流 · 第15课</div>
+  <h1>第15课：什么是MCP</h1>
+  <p class="lead">理解 MCP 为什么是 AI 真正连接业务系统的重要一层。</p>
+  <div class="toolbar">
+    <a class="btn" href="../course.html">返回课程总览</a>
+    <a class="btn" href="../ppt-structure.html">查看 PPT 结构总览</a>
+  </div>
+</header>
+<section class="callout">
+  <h2>核心问题</h2>
+  <p>为什么很多 AI 看起来很聪明，但就是碰不到你的真实业务数据和系统动作？</p>
+</section>
+<div class="grid">
+  <section>
+    <article class="card">
+      <h2>本课重点</h2>
+      <ul><li>MCP 是连接外部系统的统一方式</li><li>没有连接，AI 很多时候只能出主意不能做事</li><li>MCP 的价值在于工具发现、资源读取和动作执行</li></ul>
+    </article>
+    <article class="card">
+      <h2>第一性拆解</h2>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先承认一个事实：模型参数里没有你公司的实时数据和系统权限。</span></div><div class="principle-block"><strong>拆解 2</strong><span>连接层的存在，是为了让模型获得可控、可审计的外部能力。</span></div><div class="principle-block"><strong>拆解 3</strong><span>MCP 的价值不是“多一个协议”，而是统一连接方式，降低系统集成复杂度。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>最小原理</h2>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：没有连接层，AI 很多时候只能停留在建议层。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：连接真实系统的同时必须控制权限。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：标准化连接方式比一次性对接更有长期价值。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>讲解结构</h2>
+      <ul><li>为什么需要统一连接层</li><li>MCP 能连什么</li><li>业务系统对接示例</li><li>安全和权限边界</li></ul>
+    </article>
+    <article class="card">
+      <h2>真实案例</h2>
+      <ul><li>连接商品库</li><li>连接 CRM</li><li>连接 CMS</li><li>连接数据库</li></ul>
+    </article>
+  </section>
+  <aside>
+    <article class="card">
+      <h2>应用方法</h2>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先列业务里必须访问的系统。</span></div><div class="principle-block"><strong>方法 2</strong><span>按读取、写入、执行动作三类梳理权限。</span></div><div class="principle-block"><strong>方法 3</strong><span>对高风险动作加审批和日志。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>反常识提醒</h2>
+      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>以为接入一个 API 就等于完成集成。</span></div><div class="principle-block"><strong>误区 2</strong><span>不给权限治理直接放 AI 执行动作。</span></div><div class="principle-block"><strong>误区 3</strong><span>每接一个系统都重复造一套连接逻辑。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>教学信息</h2>
+      <div class="meta">
+        <div class="meta-item"><strong>章节定位</strong><span>从单次问答升级到可重复、可执行、可验证的业务流程。</span></div>
+        <div class="meta-item"><strong>课堂练习</strong><span>为一个电商业务流程列出至少 4 个需要通过 MCP 连接的系统。</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <h2>PPT 页面结构</h2>
+      <ul class="ppt-list"><li>封面：MCP</li><li>MCP 是什么</li><li>可连接系统示例</li><li>为什么它重要</li><li>安全边界</li></ul>
+    </article>
+  </aside>
+</div>
+<div class="footer">AI新手入门20节课 · 第一性原则版逐课讲义页</div>
+</div>
+</body>
+</html>

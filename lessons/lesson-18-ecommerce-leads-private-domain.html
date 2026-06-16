@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第18课 电商获客与私域</title>
+  <style>
+:root {
+  --bg: #f6efe4;
+  --paper: #fffaf3;
+  --ink: #1f1b16;
+  --muted: #6a6258;
+  --line: #ddd1c1;
+  --accent: #8f3d25;
+  --accent2: #305752;
+  --gold: #c8912f;
+  --max: 1180px;
+  --radius: 22px;
+  --shadow: 0 18px 40px rgba(55, 35, 19, 0.1);
+  --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(48,87,82,0.12), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(143,61,37,0.12), transparent 25%),
+    linear-gradient(180deg, #faf6ef 0%, #efe5d7 100%);
+  line-height: 1.7;
+}
+.wrap { max-width: var(--max); margin: 0 auto; padding: 28px 20px 80px; }
+.hero, .card, .callout { background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.14); border-radius: 28px; box-shadow: var(--shadow); }
+.hero { padding: 34px 34px 28px; margin-bottom: 20px; }
+.eyebrow { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(48,87,82,0.1); color: var(--accent2); font-size: 13px; letter-spacing: .08em; margin-bottom: 12px; }
+h1,h2,h3 { margin: 0; font-family: var(--serif); line-height: 1.2; }
+h1 { font-size: clamp(30px, 4.6vw, 54px); margin-bottom: 10px; }
+h2 { font-size: 24px; margin-bottom: 12px; }
+h3 { font-size: 20px; margin-bottom: 10px; }
+p { margin: 0; }
+.lead { color: var(--muted); max-width: 800px; font-size: 18px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 24px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 16px; border-radius: 999px; text-decoration: none; color: var(--ink); background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.18); }
+.grid { display: grid; gap: 18px; grid-template-columns: 1.08fr 0.92fr; }
+.card { padding: 22px; }
+.card + .card { margin-top: 18px; }
+ul { margin: 0; padding-left: 18px; }
+li { margin-bottom: 8px; }
+.meta { display: grid; gap: 12px; }
+.meta-item, .principle-block { padding: 14px 16px; border-radius: 18px; background: rgba(255,255,255,0.75); border: 1px solid rgba(106,98,88,0.12); }
+.meta-item strong, .principle-block strong { display: block; margin-bottom: 4px; }
+.ppt-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+.ppt-list li { padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,0.78); border: 1px solid rgba(106,98,88,0.12); }
+.chapter-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.chapter-card { padding: 22px; background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.14); border-radius: 28px; box-shadow: var(--shadow); }
+.lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+.lesson-item { padding: 14px 14px 12px; border-radius: 16px; background: rgba(255,255,255,0.76); border: 1px solid rgba(106,98,88,0.12); }
+.lesson-item strong { display: block; margin-bottom: 4px; }
+.lesson-item span { color: var(--muted); font-size: 14px; }
+.callout { padding: 20px 22px; border-left: 6px solid var(--gold); margin-bottom: 18px; }
+.callout p { color: var(--muted); }
+.principles, .truths, .methods, .anti-patterns { display: grid; gap: 10px; }
+.footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
+@media (max-width: 920px) {
+  .grid, .chapter-grid { grid-template-columns: 1fr; }
+  .hero { padding: 26px 20px 22px; }
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+<header class="hero">
+  <div class="eyebrow">第五章：电商场景落地 · 第18课</div>
+  <h1>第18课：电商获客与私域</h1>
+  <p class="lead">理解 AI 如何帮助评论私信承接、表单入库、欢迎 SOP 和标签分层。</p>
+  <div class="toolbar">
+    <a class="btn" href="../course.html">返回课程总览</a>
+    <a class="btn" href="../ppt-structure.html">查看 PPT 结构总览</a>
+  </div>
+</header>
+<section class="callout">
+  <h2>核心问题</h2>
+  <p>为什么很多获客动作做了不少，最后线索却沉不下来？</p>
+</section>
+<div class="grid">
+  <section>
+    <article class="card">
+      <h2>本课重点</h2>
+      <ul><li>AI 能帮你把公域互动变成可跟进线索</li><li>获客不止是回复用户，还包括打标签和进入下一步流程</li><li>私域的关键是持续经营，不是一次拉群</li></ul>
+    </article>
+    <article class="card">
+      <h2>第一性拆解</h2>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把获客拆成四步：触达、承接、分层、持续经营。</span></div><div class="principle-block"><strong>拆解 2</strong><span>很多团队失败不是因为流量不够，而是因为承接和后续动作断层。</span></div><div class="principle-block"><strong>拆解 3</strong><span>AI 在这里最重要的作用是把互动变成结构化线索，并推动进入下一步。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>最小原理</h2>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：获客不是一次回复，而是链路管理。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：私域价值来自反复触达和标签经营。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：没有授权和边界控制，自动化会反噬品牌。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>讲解结构</h2>
+      <ul><li>公域到私域的链路</li><li>评论私信自动承接</li><li>欢迎 SOP 与分层</li><li>合规和用户授权</li></ul>
+    </article>
+    <article class="card">
+      <h2>真实案例</h2>
+      <ul><li>评论触发私信</li><li>表单线索评分</li><li>入群欢迎流程</li></ul>
+    </article>
+  </section>
+  <aside>
+    <article class="card">
+      <h2>应用方法</h2>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先定义从公域到私域的标准路径。</span></div><div class="principle-block"><strong>方法 2</strong><span>把欢迎 SOP、标签规则、导购动作标准化。</span></div><div class="principle-block"><strong>方法 3</strong><span>确保每个自动动作都能被追踪和复盘。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>反常识提醒</h2>
+      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>把私域等同于加好友或拉群。</span></div><div class="principle-block"><strong>误区 2</strong><span>只做自动回复，不做分层和后续经营。</span></div><div class="principle-block"><strong>误区 3</strong><span>忽略频率和授权边界，导致骚扰用户。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>教学信息</h2>
+      <div class="meta">
+        <div class="meta-item"><strong>章节定位</strong><span>把模型、Agent、MCP、Skill 组合起来，形成电商 AI 系统视角。</span></div>
+        <div class="meta-item"><strong>课堂练习</strong><span>设计一个“评论区领券 -> 私信承接 -> 入库打标签 -> 欢迎 SOP”的流程。</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <h2>PPT 页面结构</h2>
+      <ul class="ppt-list"><li>封面：获客与私域</li><li>公域到私域流程</li><li>自动承接</li><li>标签与分层</li><li>案例页</li></ul>
+    </article>
+  </aside>
+</div>
+<div class="footer">AI新手入门20节课 · 第一性原则版逐课讲义页</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第17课 电商内容生产</title>
+  <style>
+:root {
+  --bg: #f6efe4;
+  --paper: #fffaf3;
+  --ink: #1f1b16;
+  --muted: #6a6258;
+  --line: #ddd1c1;
+  --accent: #8f3d25;
+  --accent2: #305752;
+  --gold: #c8912f;
+  --max: 1180px;
+  --radius: 22px;
+  --shadow: 0 18px 40px rgba(55, 35, 19, 0.1);
+  --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(48,87,82,0.12), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(143,61,37,0.12), transparent 25%),
+    linear-gradient(180deg, #faf6ef 0%, #efe5d7 100%);
+  line-height: 1.7;
+}
+.wrap { max-width: var(--max); margin: 0 auto; padding: 28px 20px 80px; }
+.hero, .card, .callout { background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.14); border-radius: 28px; box-shadow: var(--shadow); }
+.hero { padding: 34px 34px 28px; margin-bottom: 20px; }
+.eyebrow { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(48,87,82,0.1); color: var(--accent2); font-size: 13px; letter-spacing: .08em; margin-bottom: 12px; }
+h1,h2,h3 { margin: 0; font-family: var(--serif); line-height: 1.2; }
+h1 { font-size: clamp(30px, 4.6vw, 54px); margin-bottom: 10px; }
+h2 { font-size: 24px; margin-bottom: 12px; }
+h3 { font-size: 20px; margin-bottom: 10px; }
+p { margin: 0; }
+.lead { color: var(--muted); max-width: 800px; font-size: 18px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 24px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 16px; border-radius: 999px; text-decoration: none; color: var(--ink); background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.18); }
+.grid { display: grid; gap: 18px; grid-template-columns: 1.08fr 0.92fr; }
+.card { padding: 22px; }
+.card + .card { margin-top: 18px; }
+ul { margin: 0; padding-left: 18px; }
+li { margin-bottom: 8px; }
+.meta { display: grid; gap: 12px; }
+.meta-item, .principle-block { padding: 14px 16px; border-radius: 18px; background: rgba(255,255,255,0.75); border: 1px solid rgba(106,98,88,0.12); }
+.meta-item strong, .principle-block strong { display: block; margin-bottom: 4px; }
+.ppt-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+.ppt-list li { padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,0.78); border: 1px solid rgba(106,98,88,0.12); }
+.chapter-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.chapter-card { padding: 22px; background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.14); border-radius: 28px; box-shadow: var(--shadow); }
+.lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+.lesson-item { padding: 14px 14px 12px; border-radius: 16px; background: rgba(255,255,255,0.76); border: 1px solid rgba(106,98,88,0.12); }
+.lesson-item strong { display: block; margin-bottom: 4px; }
+.lesson-item span { color: var(--muted); font-size: 14px; }
+.callout { padding: 20px 22px; border-left: 6px solid var(--gold); margin-bottom: 18px; }
+.callout p { color: var(--muted); }
+.principles, .truths, .methods, .anti-patterns { display: grid; gap: 10px; }
+.footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
+@media (max-width: 920px) {
+  .grid, .chapter-grid { grid-template-columns: 1fr; }
+  .hero { padding: 26px 20px 22px; }
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+<header class="hero">
+  <div class="eyebrow">第五章：电商场景落地 · 第17课</div>
+  <h1>第17课：电商内容生产</h1>
+  <p class="lead">理解 AI 在商品文案、SEO文章、社媒内容和海报上的落地方式。</p>
+  <div class="toolbar">
+    <a class="btn" href="../course.html">返回课程总览</a>
+    <a class="btn" href="../ppt-structure.html">查看 PPT 结构总览</a>
+  </div>
+</header>
+<section class="callout">
+  <h2>核心问题</h2>
+  <p>为什么电商最容易先从内容生产起步，而不是先做高风险自动化？</p>
+</section>
+<div class="grid">
+  <section>
+    <article class="card">
+      <h2>本课重点</h2>
+      <ul><li>内容生产是电商最容易起步的 AI 场景</li><li>要同时看效率、品牌一致性和合规</li><li>真正落地要形成模板、审批和版本机制</li></ul>
+    </article>
+    <article class="card">
+      <h2>第一性拆解</h2>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先找低风险高频高产出的业务点，内容生产正好符合这三个条件。</span></div><div class="principle-block"><strong>拆解 2</strong><span>内容生产的核心不是“写得像不像人”，而是“能不能稳定产出可发布素材”。</span></div><div class="principle-block"><strong>拆解 3</strong><span>所以落地关键是模板化、品牌控制和审核流程，而不是一次性惊艳文案。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>最小原理</h2>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：内容是电商流量和转化的入口。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：内容生产里大量环节是可标准化的。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：品牌一致性和合规决定内容是否能真正上线。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>讲解结构</h2>
+      <ul><li>内容生产链路</li><li>文案与图片的配合</li><li>渠道差异</li><li>品牌与合规控制</li></ul>
+    </article>
+    <article class="card">
+      <h2>真实案例</h2>
+      <ul><li>商品标题</li><li>详情页文案</li><li>SEO文章</li><li>社媒海报</li></ul>
+    </article>
+  </section>
+  <aside>
+    <article class="card">
+      <h2>应用方法</h2>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先做商品标题、详情页、海报、社媒贴文这些标准化内容。</span></div><div class="principle-block"><strong>方法 2</strong><span>为每个渠道定义模板和审核清单。</span></div><div class="principle-block"><strong>方法 3</strong><span>把版本迭代纳入流程，而不是一次生成后直接发。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>反常识提醒</h2>
+      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>只追求生成速度，不看是否能上线。</span></div><div class="principle-block"><strong>误区 2</strong><span>不同渠道只改字数不改表达方式。</span></div><div class="principle-block"><strong>误区 3</strong><span>忽略品牌语气和平台规范。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>教学信息</h2>
+      <div class="meta">
+        <div class="meta-item"><strong>章节定位</strong><span>把模型、Agent、MCP、Skill 组合起来，形成电商 AI 系统视角。</span></div>
+        <div class="meta-item"><strong>课堂练习</strong><span>围绕一个商品写出“详情页标题 + 小红书标题 + 活动海报主文案”三种不同版本。</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <h2>PPT 页面结构</h2>
+      <ul class="ppt-list"><li>封面：电商内容生产</li><li>内容链路</li><li>渠道差异</li><li>品牌合规</li><li>案例页</li></ul>
+    </article>
+  </aside>
+</div>
+<div class="footer">AI新手入门20节课 · 第一性原则版逐课讲义页</div>
+</div>
+</body>
+</html>

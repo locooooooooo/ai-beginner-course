@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第13课 什么是工作流</title>
+  <style>
+:root {
+  --bg: #f6efe4;
+  --paper: #fffaf3;
+  --ink: #1f1b16;
+  --muted: #6a6258;
+  --line: #ddd1c1;
+  --accent: #8f3d25;
+  --accent2: #305752;
+  --gold: #c8912f;
+  --max: 1180px;
+  --radius: 22px;
+  --shadow: 0 18px 40px rgba(55, 35, 19, 0.1);
+  --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(48,87,82,0.12), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(143,61,37,0.12), transparent 25%),
+    linear-gradient(180deg, #faf6ef 0%, #efe5d7 100%);
+  line-height: 1.7;
+}
+.wrap { max-width: var(--max); margin: 0 auto; padding: 28px 20px 80px; }
+.hero, .card, .callout { background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.14); border-radius: 28px; box-shadow: var(--shadow); }
+.hero { padding: 34px 34px 28px; margin-bottom: 20px; }
+.eyebrow { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(48,87,82,0.1); color: var(--accent2); font-size: 13px; letter-spacing: .08em; margin-bottom: 12px; }
+h1,h2,h3 { margin: 0; font-family: var(--serif); line-height: 1.2; }
+h1 { font-size: clamp(30px, 4.6vw, 54px); margin-bottom: 10px; }
+h2 { font-size: 24px; margin-bottom: 12px; }
+h3 { font-size: 20px; margin-bottom: 10px; }
+p { margin: 0; }
+.lead { color: var(--muted); max-width: 800px; font-size: 18px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 24px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 16px; border-radius: 999px; text-decoration: none; color: var(--ink); background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.18); }
+.grid { display: grid; gap: 18px; grid-template-columns: 1.08fr 0.92fr; }
+.card { padding: 22px; }
+.card + .card { margin-top: 18px; }
+ul { margin: 0; padding-left: 18px; }
+li { margin-bottom: 8px; }
+.meta { display: grid; gap: 12px; }
+.meta-item, .principle-block { padding: 14px 16px; border-radius: 18px; background: rgba(255,255,255,0.75); border: 1px solid rgba(106,98,88,0.12); }
+.meta-item strong, .principle-block strong { display: block; margin-bottom: 4px; }
+.ppt-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+.ppt-list li { padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,0.78); border: 1px solid rgba(106,98,88,0.12); }
+.chapter-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.chapter-card { padding: 22px; background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.14); border-radius: 28px; box-shadow: var(--shadow); }
+.lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+.lesson-item { padding: 14px 14px 12px; border-radius: 16px; background: rgba(255,255,255,0.76); border: 1px solid rgba(106,98,88,0.12); }
+.lesson-item strong { display: block; margin-bottom: 4px; }
+.lesson-item span { color: var(--muted); font-size: 14px; }
+.callout { padding: 20px 22px; border-left: 6px solid var(--gold); margin-bottom: 18px; }
+.callout p { color: var(--muted); }
+.principles, .truths, .methods, .anti-patterns { display: grid; gap: 10px; }
+.footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
+@media (max-width: 920px) {
+  .grid, .chapter-grid { grid-template-columns: 1fr; }
+  .hero { padding: 26px 20px 22px; }
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+<header class="hero">
+  <div class="eyebrow">第四章：从工具使用到工作流 · 第13课</div>
+  <h1>第13课：什么是工作流</h1>
+  <p class="lead">理解 AI 工作流不是问一句答一句，而是一串可重复步骤。</p>
+  <div class="toolbar">
+    <a class="btn" href="../course.html">返回课程总览</a>
+    <a class="btn" href="../ppt-structure.html">查看 PPT 结构总览</a>
+  </div>
+</header>
+<section class="callout">
+  <h2>核心问题</h2>
+  <p>为什么很多 AI 演示很好看，但一进业务就落不下来？</p>
+</section>
+<div class="grid">
+  <section>
+    <article class="card">
+      <h2>本课重点</h2>
+      <ul><li>工作流强调顺序、输入、输出、条件和反馈</li><li>一次性成功不等于可落地</li><li>能复盘的工作流才有业务价值</li></ul>
+    </article>
+    <article class="card">
+      <h2>第一性拆解</h2>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把“偶然成功一次”和“稳定跑通一百次”分开看。</span></div><div class="principle-block"><strong>拆解 2</strong><span>业务里真正有价值的是可重复、可观测、可优化的链路。</span></div><div class="principle-block"><strong>拆解 3</strong><span>所以工作流设计首先是流程问题，其次才是模型问题。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>最小原理</h2>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：工作流是把任务变成稳定流程。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：每一步都要有输入、输出和判断条件。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：没有复盘闭环，就没有持续优化。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>讲解结构</h2>
+      <ul><li>从问答到流程的差异</li><li>工作流的组成</li><li>什么样的任务值得做成工作流</li><li>如何评估 ROI</li></ul>
+    </article>
+    <article class="card">
+      <h2>真实案例</h2>
+      <ul><li>自动发文章</li><li>自动生成海报</li><li>客服工单分流</li></ul>
+    </article>
+  </section>
+  <aside>
+    <article class="card">
+      <h2>应用方法</h2>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先把任务画成流程图。</span></div><div class="principle-block"><strong>方法 2</strong><span>识别哪一步适合模型，哪一步需要人审，哪一步需要系统连接。</span></div><div class="principle-block"><strong>方法 3</strong><span>给每一步定义成功标准。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>反常识提醒</h2>
+      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>把流程设计成一条黑箱。</span></div><div class="principle-block"><strong>误区 2</strong><span>只关注生成内容，不关注输入输出链路。</span></div><div class="principle-block"><strong>误区 3</strong><span>没有日志、没有失败处理、没有回滚。</span></div></div>
+    </article>
+    <article class="card">
+      <h2>教学信息</h2>
+      <div class="meta">
+        <div class="meta-item"><strong>章节定位</strong><span>从单次问答升级到可重复、可执行、可验证的业务流程。</span></div>
+        <div class="meta-item"><strong>课堂练习</strong><span>把一个你熟悉的工作拆成不少于 5 步的流程，并标出输入与输出。</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <h2>PPT 页面结构</h2>
+      <ul class="ppt-list"><li>封面：工作流</li><li>问答与流程差异</li><li>流程组成</li><li>案例拆解</li><li>练习页</li></ul>
+    </article>
+  </aside>
+</div>
+<div class="footer">AI新手入门20节课 · 第一性原则版逐课讲义页</div>
+</div>
+</body>
+</html>
