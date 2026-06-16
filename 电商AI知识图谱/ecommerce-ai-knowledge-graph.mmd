@@ -1,0 +1,82 @@
+graph LR
+  KG(("电商AI知识图谱"))
+
+  LLM["大模型：理解、生成、推理"]
+  Agent["Agent：规划、执行、反馈"]
+  Skill["Skill：可复用SOP"]
+  MCP["MCP：连接数据和工具"]
+  Human["人工审批：安全阀"]
+  Log["日志与复盘：可观察"]
+
+  Product["商品数据"]
+  Order["订单数据"]
+  Customer["客户数据"]
+  Content["内容资产"]
+  Channel["渠道"]
+  PrivateDomain["私域池"]
+  Metrics["经营指标"]
+
+  ArticleFlow["自动发布文章"]
+  ImageFlow["自动生成图片"]
+  LeadFlow["自动化获客"]
+  PrivateFlow["公域转私域"]
+  ServiceFlow["AI客服与导购"]
+  RepurchaseFlow["复购与会员运营"]
+  AnalyticsFlow["经营分析与复盘"]
+
+  Shopify["Shopify Magic / Sidekick"]
+  Klaviyo["Klaviyo K:AI"]
+  Gorgias["Gorgias AI Agent"]
+  Manychat["Manychat"]
+  Omnisend["Omnisend"]
+  Zapier["Zapier AI"]
+  Canva["Canva AI"]
+  AdCreative["AdCreative.ai"]
+  Buffer["Buffer AI Assistant"]
+  Youzan["有赞 AI 产品"]
+  Dify["Dify / n8n / Make"]
+
+  KG --> LLM
+  KG --> Agent
+  KG --> Product
+  KG --> ArticleFlow
+  KG --> Shopify
+
+  LLM --> Agent
+  Skill --> Agent
+  MCP --> Agent
+  Human --> Agent
+  Agent --> Log
+
+  Product --> ArticleFlow
+  Product --> ImageFlow
+  Product --> ServiceFlow
+  Order --> ServiceFlow
+  Order --> RepurchaseFlow
+  Customer --> LeadFlow
+  Customer --> PrivateFlow
+  Customer --> RepurchaseFlow
+  Content --> ArticleFlow
+  Content --> ImageFlow
+  Channel --> LeadFlow
+  Channel --> PrivateFlow
+  PrivateDomain --> RepurchaseFlow
+  Metrics --> AnalyticsFlow
+
+  ArticleFlow --> Buffer
+  ArticleFlow --> Shopify
+  ImageFlow --> Canva
+  ImageFlow --> AdCreative
+  LeadFlow --> Manychat
+  LeadFlow --> Zapier
+  PrivateFlow --> Youzan
+  PrivateFlow --> Klaviyo
+  ServiceFlow --> Gorgias
+  ServiceFlow --> Klaviyo
+  RepurchaseFlow --> Klaviyo
+  RepurchaseFlow --> Omnisend
+  AnalyticsFlow --> Shopify
+  AnalyticsFlow --> Youzan
+  Dify --> ArticleFlow
+  Dify --> ServiceFlow
+  Dify --> AnalyticsFlow

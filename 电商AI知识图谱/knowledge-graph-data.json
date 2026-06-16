@@ -1,0 +1,53 @@
+{
+  "title": "电商AI工作流与Agent知识图谱",
+  "checked_at": "2026-06-15",
+  "core_concepts": [
+    {
+      "name": "大模型",
+      "meaning": "负责理解、生成、推理和判断"
+    },
+    {
+      "name": "Agent",
+      "meaning": "把模型、工具、记忆、权限和反馈连接起来完成任务"
+    },
+    {
+      "name": "Skill",
+      "meaning": "可复用的任务方法、SOP、模板、脚本和检查清单"
+    },
+    {
+      "name": "MCP",
+      "meaning": "让AI连接外部数据、工具和工作流的标准接口"
+    }
+  ],
+  "ecommerce_workflows": [
+    "自动发布文章",
+    "自动生成图片",
+    "自动化获客",
+    "公域转私域",
+    "AI客服与导购",
+    "复购与会员运营",
+    "经营分析与复盘"
+  ],
+  "market_examples": [
+    "Shopify Magic",
+    "Shopify Sidekick",
+    "Klaviyo K:AI",
+    "Gorgias AI Agent",
+    "Manychat",
+    "Omnisend",
+    "Zapier AI",
+    "Canva AI",
+    "AdCreative.ai",
+    "Buffer AI Assistant",
+    "有赞 AI 产品",
+    "Dify"
+  ],
+  "safety_rules": [
+    "最小权限",
+    "人工审批",
+    "日志可追踪",
+    "结果可验证",
+    "关键动作可回滚",
+    "客户数据最小化"
+  ]
+}
