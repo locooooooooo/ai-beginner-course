@@ -159,6 +159,141 @@ li { margin-bottom: 8px; }
   color: var(--muted);
   font-size: 0.94rem;
 }
+.newbie-focus {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.focus-main, .focus-check {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.focus-main {
+  padding: 20px;
+  color: #ffffff;
+  background: var(--primary);
+}
+.focus-main .label {
+  color: rgba(255, 255, 255, 0.86);
+}
+.focus-main h2 {
+  margin-bottom: 8px;
+}
+.focus-main p {
+  max-width: 720px;
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.7;
+}
+.focus-check {
+  display: grid;
+  gap: 8px;
+  align-content: center;
+  padding: 18px;
+  background: #fff8f6;
+  border-color: rgba(211, 84, 63, 0.24);
+}
+.focus-check strong {
+  color: var(--coral);
+}
+.focus-check span {
+  color: var(--ink);
+  font-weight: 700;
+}
+.visual-card {
+  overflow: hidden;
+}
+.lesson-visual {
+  margin: 12px 0 14px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.lesson-visual img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  display: block;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.lesson-visual figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.visual-chain {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.visual-node {
+  position: relative;
+  min-height: 176px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.visual-node::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -14px;
+  width: 18px;
+  height: 2px;
+  background: rgba(15, 118, 110, 0.38);
+}
+.visual-node:last-child::after {
+  display: none;
+}
+.visual-node span {
+  display: block;
+  color: var(--primary);
+  font-size: 0.84rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.visual-node strong {
+  display: block;
+  font-size: 1.18rem;
+  margin-bottom: 6px;
+}
+.visual-node p {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.visual-warning {
+  margin-top: 12px;
+  padding: 12px 14px;
+  color: #6f2c20;
+  background: #fff8f6;
+  border: 1px solid rgba(211, 84, 63, 0.22);
+  border-radius: var(--radius);
+}
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.scenario-card {
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.scenario-card strong {
+  display: block;
+  margin-bottom: 8px;
+}
+.scenario-card ul {
+  padding-left: 18px;
+}
 .ppt-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
 .ppt-list li { padding: 12px 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); }
 .chapter-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -191,11 +326,100 @@ li { margin-bottom: 8px; }
 .footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
 .section-title { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin: 28px 0 14px; }
 .section-title p { color: var(--muted); font-size: 0.92rem; }
-.path-grid, .track-grid, .chapters, .notes-wrap, .mindmap-grid { display: grid; gap: 16px; }
+.path-grid, .track-grid, .chapters, .notes-wrap, .mindmap-grid, .resource-panel { display: grid; gap: 16px; }
 .path-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .track-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 18px; }
 .chapters, .mindmap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .notes-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
+.notes {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.94));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.notes h3 { margin: 0; }
+.notes p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.notes ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.notes li {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.74);
+  border: 1px solid rgba(15, 118, 110, 0.10);
+}
+.notes li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin-top: 7px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), #36b5aa);
+  box-shadow: 0 0 0 5px rgba(15, 118, 110, 0.08);
+}
+.resource-panel {
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  align-items: start;
+}
+.resource-copy {
+  display: grid;
+  gap: 14px;
+}
+.resource-copy p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 760px;
+}
+.resource-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.resource-actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+.resource-card {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,250,252,0.94));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.resource-mini-list {
+  display: grid;
+  gap: 10px;
+}
+.resource-mini-item {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.76);
+  border: 1px solid rgba(15, 118, 110, 0.10);
+  border-radius: 16px;
+}
+.resource-mini-item strong { font-size: 0.95rem; }
+.resource-mini-item span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 .starter-panel { padding: 18px; }
 .starter-panel ol { margin: 0; padding-left: 20px; color: var(--muted); }
 .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
@@ -317,10 +541,13 @@ li { margin-bottom: 8px; }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
   .placeholder-track { grid-template-columns: 1fr; }
+  .newbie-focus, .scenario-grid { grid-template-columns: 1fr; }
+  .visual-chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .visual-node::after { display: none; }
 }
 @media (max-width: 640px) {
   .wrap { padding-inline: 14px; padding-bottom: 56px; }
@@ -336,6 +563,9 @@ li { margin-bottom: 8px; }
   .track-card { min-height: 0; }
   .placeholder-track { padding: 18px; }
   .showcase-point { grid-template-columns: 1fr; }
+  .resource-actions { grid-template-columns: 1fr; }
+  .visual-chain { grid-template-columns: 1fr; }
+  .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
   .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
@@ -370,7 +600,7 @@ li { margin-bottom: 8px; }
   <aside class="progress-panel" aria-label="学习进度">
     <strong>当前进度</strong>
     <div class="progress-meta">
-      <span>3 / 24</span>
+      <span>3 / 25</span>
       <span>12%</span>
     </div>
     <div class="progress-bar"><span style="width:12%"></span></div>
@@ -388,6 +618,8 @@ li { margin-bottom: 8px; }
 </section>
 <div class="grid">
   <main>
+
+
     <section class="learner-brief">
       <span class="label">先怎么学</span>
       <h2>先用 4 步把这课跑起来</h2>
@@ -451,6 +683,7 @@ li { margin-bottom: 8px; }
           <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
         </div></div>
     </article>
+
   </main>
   <aside class="lesson-side">
     <article class="card">

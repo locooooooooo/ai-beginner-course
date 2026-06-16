@@ -386,9 +386,13 @@ li { margin-bottom: 8px; }
   max-width: 760px;
 }
 .resource-actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+}
+.resource-actions .btn {
+  width: 100%;
+  justify-content: center;
 }
 .resource-card {
   display: grid;
@@ -559,7 +563,7 @@ li { margin-bottom: 8px; }
   .track-card { min-height: 0; }
   .placeholder-track { padding: 18px; }
   .showcase-point { grid-template-columns: 1fr; }
-  .resource-actions { display: grid; }
+  .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
@@ -596,7 +600,7 @@ li { margin-bottom: 8px; }
   <aside class="progress-panel" aria-label="学习进度">
     <strong>当前进度</strong>
     <div class="progress-meta">
-      <span>1 / 24</span>
+      <span>1 / 25</span>
       <span>4%</span>
     </div>
     <div class="progress-bar"><span style="width:4%"></span></div>

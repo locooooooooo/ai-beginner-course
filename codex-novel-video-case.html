@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第5课 怎么提一个高质量问题</title>
+  <title>实战演示：用 Codex 写小说并制作视频</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -578,148 +578,95 @@ li { margin-bottom: 8px; }
 </style>
 </head>
 <body>
-  <main class="wrap"><nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <main class="wrap"><nav class="topbar" aria-label="站点导航">
+  <a class="brand" href="./course.html">AI入门课</a>
   <div class="navlinks">
-    <a href="../course.html#beginner">新手入门</a>
-    <a href="../course.html#advanced">老鸟进阶</a>
-    <a href="../course.html#showcase">实战演示</a>
-    <a href="../mindmap-hub.html">资源</a>
+    <a href="./course.html#beginner">新手入门</a>
+    <a href="./course.html#advanced">老鸟进阶</a>
+    <a href="./course.html#showcase">实战演示</a>
+    <a href="./mindmap-hub.html">资源</a>
   </div>
 </nav>
-<header class="hero">
+<header class="hero course-hero">
   <div>
-    <div class="eyebrow">第二章：先学会用再学原理 · 第5课</div>
-    <h1>第5课：怎么提一个高质量问题</h1>
-    <p class="lead">学会让 AI 更快理解你，减少空泛回答。</p>
+    <div class="eyebrow">实战演示 02 · Codex 内容生产链</div>
+    <h1>用 Codex 写小说，并制作成视频</h1>
+    <p class="lead">以《重生之我在同福客栈》第 01 集为例，把一个原创穿越故事推进到小说正文、视频脚本、分镜、结构化数据、字幕、角色设定和 MP4 review 成片。</p>
     <div class="toolbar">
-      <a class="btn primary" href="#start">开始本课</a>
-      <a class="btn" href="#practice">做完练习</a>
+      <a class="btn primary" href="#workflow">查看工作流</a>
+      <a class="btn" href="#practice">复用模板</a>
     </div>
   </div>
-  <aside class="progress-panel" aria-label="学习进度">
-    <strong>当前进度</strong>
-    <div class="progress-meta">
-      <span>5 / 25</span>
-      <span>20%</span>
+  <aside class="starter-panel" aria-label="案例结果">
+    <strong>本次交付结果</strong>
+    <div class="stat-grid">
+      <div class="stat"><strong>15</strong><span>个场景</span></div>
+      <div class="stat"><strong>114s</strong><span>review 成片</span></div>
+      <div class="stat"><strong>1080p</strong><span>30fps</span></div>
     </div>
-    <div class="progress-bar"><span style="width:20%"></span></div>
-    <ol class="mini-steps">
-      <li>先读核心问题</li>
-      <li>抓住 3 个最小原理</li>
-      <li>完成一个可交付练习</li>
-    </ol>
   </aside>
 </header>
+
 <section class="callout" id="start">
-  <span class="label">为什么要学</span>
-  <h2>核心问题</h2>
-  <p>为什么同一个模型，有的人用得很好，有的人得到的全是废话？</p>
+  <span class="label">一句话案例</span>
+  <h2>Codex 不只是写文案，而是把内容推进到可交付</h2>
+  <p>这个项目从一个故事想法开始，最后形成一套可以继续生产第 02 集的内容工程。核心价值不是某一段文字写得好，而是把“小说”和“视频”中间的所有转换步骤都显式化、文件化、可复用。</p>
 </section>
-<div class="grid">
-  <main>
 
+<section>
+  <div class="section-title">
+    <h2>项目定位</h2>
+    <p>先把题材、冲突和结尾钩子固定下来，后面的文件才不会跑散。</p>
+  </div>
+  <div class="case-grid">
+    <article class="case-card"><strong>题材</strong><p>古装轻喜剧、穿越、客栈群像、微悬疑。</p></article>
+    <article class="case-card"><strong>剧情核心</strong><p>现代短视频编导林舟穿进同福客栈，靠“客栈生存簿”救场并留下。</p></article>
+    <article class="case-card"><strong>结尾钩子</strong><p>半页账纸上出现“葵花派”，为第 02 集埋下悬疑线。</p></article>
+  </div>
+</section>
 
-    <section class="learner-brief">
-      <span class="label">先怎么学</span>
-      <h2>先用 4 步把这课跑起来</h2>
-      <p class="small-note">这不是标题清单，是给新手的跟做路线。你不需要先记住所有名词，先把任务做完再回头理解术语。</p>
-      <div class="flow">
-        <div class="flow-step">
-          <strong>1. 先说人话</strong>
-          <span>用自己的话回答：这节课到底解决什么困惑？可以先照着核心问题复述一遍：为什么同一个模型，有的人用得很好，有的人得到的全是废话？</span>
-        </div>
-        <div class="flow-step">
-          <strong>2. 只抓三句</strong>
-          <span>先记住前 3 个重点，不急着背完整定义：高质量提问通常包含目标、上下文、约束、验收标准；问题越具体，结果越稳定；先说你要什么，再说不要什么。</span>
-        </div>
-        <div class="flow-step">
-          <strong>3. 套进场景</strong>
-          <span>从案例里挑一个最熟的场景，例如“修 Bug”，写出输入、AI 做什么、人工怎么检查。</span>
-        </div>
-        <div class="flow-step">
-          <strong>4. 留下产物</strong>
-          <span>完成本课产物：把一个你常见的模糊问题改写成高质量问题，至少补足目标、上下文、约束、验收标准。</span>
-        </div></div>
-    </section>
-    <article class="card">
-      <span class="label">先记住</span>
-      <h2>本课只抓 3 件事</h2>
-      <ul><li>高质量提问通常包含目标、上下文、约束、验收标准</li><li>问题越具体，结果越稳定</li><li>先说你要什么，再说不要什么</li></ul>
-    </article>
-    <article class="card">
-      <span class="label">想明白</span>
-      <h2>第一性拆解</h2>
-      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>模型输出依赖输入信息密度，所以先提高输入质量比反复抱怨结果更有效。</span></div><div class="principle-block"><strong>拆解 2</strong><span>问题质量本质上取决于目标是否明确、上下文是否完整、边界是否清晰。</span></div><div class="principle-block"><strong>拆解 3</strong><span>越少让模型猜，越容易得到可用答案。</span></div></div>
-    </article>
-    <article class="card">
-      <span class="label">可迁移</span>
-      <h2>最小原理</h2>
-      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：模糊输入必然带来模糊输出。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：模型不是读心术，它只能根据提供的信息推断。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：验收标准决定结果是否真正能落地。</span></div></div>
-    </article>
-    <article class="card">
-      <span class="label">怎么学</span>
-      <h2>读完后怎么把它用出来</h2>
-      <ul><li>为什么 AI 会答非所问</li><li>四件套提问法</li><li>从差问题到好问题</li><li>如何给上下文</li></ul>
-    </article>
-    <article class="card">
-      <span class="label">怎么读案例</span>
-      <h2>先看这 2 类真实场景</h2>
-      <div class="case-read-grid">
-        <div class="case-read-card">
-          <strong>修 Bug</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>写电商文案</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>做一页汇报</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div></div>
-    </article>
+<section id="workflow">
+  <div class="section-title">
+    <h2>Codex 实际做了这 8 步</h2>
+    <p>这条链路的重点是把内容创作变成可复用工程。</p>
+  </div>
+  <div class="case-grid two">
+    <article class="case-card case-step"><span class="step-no">1</span><div><strong>确定题材和钩子</strong><p>先明确穿越、客栈群像、轻喜剧和微悬疑，不让内容跑散。</p></div></article>
+    <article class="case-card case-step"><span class="step-no">2</span><div><strong>生成小说正文</strong><p>先写完整故事，保证人物关系、冲突和结尾统一。</p></div></article>
+    <article class="case-card case-step"><span class="step-no">3</span><div><strong>压缩视频脚本</strong><p>把正文改成适合旁白、口播和短视频节奏的脚本。</p></div></article>
+    <article class="case-card case-step"><span class="step-no">4</span><div><strong>拆镜头分镜</strong><p>按画面、动作、对白和情绪拆成可生成的视频镜头。</p></div></article>
+    <article class="case-card case-step"><span class="step-no">5</span><div><strong>整理结构化 JSON</strong><p>让每个场景都有时长、画面提示词、动作、旁白和字幕。</p></div></article>
+    <article class="case-card case-step"><span class="step-no">6</span><div><strong>补字幕和角色 bible</strong><p>用 SRT 和角色一致性设定控制节奏与人物外观。</p></div></article>
+    <article class="case-card case-step"><span class="step-no">7</span><div><strong>组合 HTML 成片工程</strong><p>用本地 HyperFrames 工程承载 15 个场景，减少外部依赖。</p></div></article>
+    <article class="case-card case-step"><span class="step-no">8</span><div><strong>导出 review 成片</strong><p>先生成 review MP4，再根据效果决定是否出高质量 final。</p></div></article>
+  </div>
+</section>
 
-  </main>
-  <aside class="lesson-side">
-    <article class="card">
-      <span class="label">马上用</span>
-      <h2>应用方法</h2>
-      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>任何提问先补四件套：目标、上下文、约束、验收。</span></div><div class="principle-block"><strong>方法 2</strong><span>遇到复杂问题时，先交代背景，再说最终要交付什么。</span></div><div class="principle-block"><strong>方法 3</strong><span>如果结果还是偏，就先补上下文，而不是只重问一遍。</span></div></div>
-    </article>
-    <article class="card">
-      <span class="label">避坑</span>
-      <h2>反常识提醒</h2>
-      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>一句“帮我做一下这个”就想拿到可用结果。</span></div><div class="principle-block"><strong>误区 2</strong><span>只给目标，不给限制条件。</span></div><div class="principle-block"><strong>误区 3</strong><span>没有验收标准，结果拿到手也不知道能不能用。</span></div></div>
-    </article>
-    <article class="card" id="practice">
-      <span class="label">完成标准</span>
-      <h2>做完这件事才算学会</h2>
-      <div class="meta">
-        <div class="meta-item"><strong>本课产物</strong><span>把一个你常见的模糊问题改写成高质量问题，至少补足目标、上下文、约束、验收标准。</span></div>
-        <div class="meta-item"><strong>验收方式</strong><span>能用自己的话解释本课概念，并把它套到一个真实工作或生活场景里。</span></div>
-      </div>
-    </article>
-    <article class="card">
-      <span class="label">可以直接复制</span>
-      <h2>给 AI 的跟做提示</h2>
-      <pre class="copy-prompt"><code>我正在学习「怎么提一个高质量问题」，请用新手能听懂的话教我。
-先用 120 字以内解释它，不要堆术语。
-再结合这两个场景举例：修 Bug；写电商文案。
-然后问我 3 个检查理解的问题。
-最后帮我完成这个练习：把一个你常见的模糊问题改写成高质量问题，至少补足目标、上下文、约束、验收标准。</code></pre>
-    </article>
-    <article class="card">
-      <span class="label">自检</span>
-      <h2>学完请确认这 4 件事</h2>
-      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「怎么提一个高质量问题」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：把一个你常见的模糊问题改写成高质量问题，至少补足目标、上下文、约束、验收标准。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
-    </article>
-  </aside>
-</div>
-<nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-04-ai-boundaries.html">上一课：AI能做什么不能做什么</a>
-  <a class="btn primary" href="./lesson-06-prompt-basics.html">下一课：提示词基础</a>
-</nav>
-<div class="footer">AI学习路线 · 第一性原则版逐课教程</div></main>
+<section>
+  <div class="section-title">
+    <h2>可迁移经验</h2>
+    <p>真正值得复用的是链路，不是某一段文案。</p>
+  </div>
+  <div class="chapters">
+    <article class="chapter-card"><h3>先有完整故事</h3><p>先写小说正文，再拆视频，故事内核更稳。</p></article>
+    <article class="chapter-card"><h3>先定角色一致性</h3><p>角色外观和性格设定要尽早写，不然画面生成容易前后变化。</p></article>
+    <article class="chapter-card"><h3>用结构化数据交接</h3><p>JSON 比纯文本更适合进入视频流水线，也更容易被检查和复用。</p></article>
+    <article class="chapter-card"><h3>先 review 再 final</h3><p>先导出低成本 review 成片，再决定是否投入高质量制作。</p></article>
+  </div>
+</section>
+
+<section id="practice" class="callout">
+  <span class="label">复用模板</span>
+  <h2>下一次可以直接套这个顺序</h2>
+  <p>题材设定 -> 小说正文 -> 视频脚本 -> 分镜文案 -> JSON 数据 -> 字幕 -> 角色 bible -> HTML 成片 -> MP4 review。</p>
+  <div class="toolbar">
+    <a class="btn primary" href="./course.html#showcase">回到实战演示</a>
+    <a class="btn" href="./lessons/lesson-25-dify-codex-workflow.html">学习第 25 课 Dify 编排</a>
+  </div>
+</section>
+
+<div class="footer">
+  实战演示 · 小说视频内容生产链 · 公开版只展示流程，不包含私有素材路径
+</div></main>
 </body>
 </html>

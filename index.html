@@ -159,6 +159,141 @@ li { margin-bottom: 8px; }
   color: var(--muted);
   font-size: 0.94rem;
 }
+.newbie-focus {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.focus-main, .focus-check {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.focus-main {
+  padding: 20px;
+  color: #ffffff;
+  background: var(--primary);
+}
+.focus-main .label {
+  color: rgba(255, 255, 255, 0.86);
+}
+.focus-main h2 {
+  margin-bottom: 8px;
+}
+.focus-main p {
+  max-width: 720px;
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.7;
+}
+.focus-check {
+  display: grid;
+  gap: 8px;
+  align-content: center;
+  padding: 18px;
+  background: #fff8f6;
+  border-color: rgba(211, 84, 63, 0.24);
+}
+.focus-check strong {
+  color: var(--coral);
+}
+.focus-check span {
+  color: var(--ink);
+  font-weight: 700;
+}
+.visual-card {
+  overflow: hidden;
+}
+.lesson-visual {
+  margin: 12px 0 14px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.lesson-visual img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  display: block;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.lesson-visual figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.visual-chain {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.visual-node {
+  position: relative;
+  min-height: 176px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.visual-node::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -14px;
+  width: 18px;
+  height: 2px;
+  background: rgba(15, 118, 110, 0.38);
+}
+.visual-node:last-child::after {
+  display: none;
+}
+.visual-node span {
+  display: block;
+  color: var(--primary);
+  font-size: 0.84rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.visual-node strong {
+  display: block;
+  font-size: 1.18rem;
+  margin-bottom: 6px;
+}
+.visual-node p {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.visual-warning {
+  margin-top: 12px;
+  padding: 12px 14px;
+  color: #6f2c20;
+  background: #fff8f6;
+  border: 1px solid rgba(211, 84, 63, 0.22);
+  border-radius: var(--radius);
+}
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.scenario-card {
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.scenario-card strong {
+  display: block;
+  margin-bottom: 8px;
+}
+.scenario-card ul {
+  padding-left: 18px;
+}
 .ppt-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
 .ppt-list li { padding: 12px 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); }
 .chapter-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -191,11 +326,100 @@ li { margin-bottom: 8px; }
 .footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
 .section-title { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin: 28px 0 14px; }
 .section-title p { color: var(--muted); font-size: 0.92rem; }
-.path-grid, .track-grid, .chapters, .notes-wrap, .mindmap-grid { display: grid; gap: 16px; }
+.path-grid, .track-grid, .chapters, .notes-wrap, .mindmap-grid, .resource-panel { display: grid; gap: 16px; }
 .path-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .track-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 18px; }
 .chapters, .mindmap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .notes-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
+.notes {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.94));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.notes h3 { margin: 0; }
+.notes p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.notes ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.notes li {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.74);
+  border: 1px solid rgba(15, 118, 110, 0.10);
+}
+.notes li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin-top: 7px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), #36b5aa);
+  box-shadow: 0 0 0 5px rgba(15, 118, 110, 0.08);
+}
+.resource-panel {
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  align-items: start;
+}
+.resource-copy {
+  display: grid;
+  gap: 14px;
+}
+.resource-copy p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 760px;
+}
+.resource-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.resource-actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+.resource-card {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,250,252,0.94));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.resource-mini-list {
+  display: grid;
+  gap: 10px;
+}
+.resource-mini-item {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.76);
+  border: 1px solid rgba(15, 118, 110, 0.10);
+  border-radius: 16px;
+}
+.resource-mini-item strong { font-size: 0.95rem; }
+.resource-mini-item span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 .starter-panel { padding: 18px; }
 .starter-panel ol { margin: 0; padding-left: 20px; color: var(--muted); }
 .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
@@ -317,10 +541,13 @@ li { margin-bottom: 8px; }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
   .placeholder-track { grid-template-columns: 1fr; }
+  .newbie-focus, .scenario-grid { grid-template-columns: 1fr; }
+  .visual-chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .visual-node::after { display: none; }
 }
 @media (max-width: 640px) {
   .wrap { padding-inline: 14px; padding-bottom: 56px; }
@@ -336,6 +563,9 @@ li { margin-bottom: 8px; }
   .track-card { min-height: 0; }
   .placeholder-track { padding: 18px; }
   .showcase-point { grid-template-columns: 1fr; }
+  .resource-actions { grid-template-columns: 1fr; }
+  .visual-chain { grid-template-columns: 1fr; }
+  .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
   .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
@@ -374,12 +604,12 @@ li { margin-bottom: 8px; }
         <div class="track-meta">20 节跟做课</div>
       </a>
       <a class="track-card primary-track" href="#advanced">
-        <div><strong>老鸟进阶</strong><span>已经会基础后，再学 Codex、Loop、网页制作和 GitHub 发布。</span></div>
-        <div class="track-meta">4 节 Codex 课</div>
+        <div><strong>老鸟进阶</strong><span>已经会基础后，再学 Codex、Loop、网页制作、GitHub 发布和 Dify 编排。</span></div>
+        <div class="track-meta">5 节 Codex 课</div>
       </a>
       <a class="track-card" href="#showcase">
         <div><strong>实战演示</strong><span>看真实任务怎么从想法推进到文件、页面、视频和发布结果。</span></div>
-        <div class="track-meta">2 条任务线</div>
+        <div class="track-meta">3 条任务线</div>
       </a>
     </div>
   </div>
@@ -392,8 +622,8 @@ li { margin-bottom: 8px; }
     </ol>
     <div class="stat-grid">
       <div class="stat"><strong>3</strong><span>大类</span></div>
-      <div class="stat"><strong>24</strong><span>节已上线</span></div>
-      <div class="stat"><strong>2</strong><span>个实战案例</span></div>
+      <div class="stat"><strong>25</strong><span>节已上线</span></div>
+      <div class="stat"><strong>3</strong><span>个实战案例</span></div>
     </div>
   </aside>
 </header>
@@ -520,13 +750,23 @@ li { margin-bottom: 8px; }
     <span>写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span>
   </div>
   <div class="toolbar"><a class="btn primary" href="./lessons/lesson-24-git-github-codex.html">进入课程</a></div>
+</article>
+<article class="chapter-card">
+  <span class="label">第 25 课</span>
+  <h3>你真的会用Dify吗？</h3>
+  <p>理解 Dify 不是简单拖节点，而是把入口、分流、可信执行、验收和脱敏发布串成可复用工作流。</p>
+  <div class="chapter-outcome">
+    <strong>这节课的任务</strong>
+    <span>把一个 Dify + Codex 工作流画成 5 层结构：入口、编排、可信执行、验收、发布，并写出 6 条脱敏规则。</span>
+  </div>
+  <div class="toolbar"><a class="btn primary" href="./lessons/lesson-25-dify-codex-workflow.html">进入课程</a></div>
 </article></div>
   </article>
   <article class="track-block placeholder-track" id="showcase">
     <div class="showcase-copy">
       <span class="label">实战案例</span>
       <h2>实战演示</h2>
-      <p>这不是展示给老师看的答案页，而是两条可以跟着走的真实任务线：一个看工具迭代，一个看内容生产。</p>
+      <p>这不是展示给老师看的答案页，而是三条可以跟着走的真实任务线：一个看工具迭代，一个看内容生产，一个看 Dify 如何把 Codex 串进可复用工作流。</p>
       <div class="showcase-points">
         <div class="showcase-point">
           <strong>案例 01</strong>
@@ -536,14 +776,19 @@ li { margin-bottom: 8px; }
           <strong>案例 02</strong>
           <span>内容生产链：看小说脚本如何被拆成分镜、视频和成片交付。</span>
         </div>
+        <div class="showcase-point">
+          <strong>案例 03</strong>
+          <span>Dify 编排：看入口、分流、可信执行、Codex、验收和脱敏发布如何串成工作流。</span>
+        </div>
       </div>
     </div>
     <div class="showcase-card">
       <span class="label">打开案例</span>
-      <p>先看工具迭代，再看内容生产，顺序更容易建立“从需求到交付”的感觉。</p>
+      <p>先看工具迭代，再看内容生产，最后看 Dify 编排，顺序更容易建立“从需求到交付”的感觉。</p>
       <div class="showcase-actions">
         <a class="btn primary" href="./worldcup-strategy-case.html">进入策略看板案例</a>
-        <a class="btn" href="./lessons/lesson-25-codex-novel-video-case.html">进入小说视频案例</a>
+        <a class="btn" href="./codex-novel-video-case.html">进入小说视频案例</a>
+        <a class="btn" href="./lessons/lesson-25-dify-codex-workflow.html">进入 Dify + Codex 案例</a>
       </div>
     </div>
   </article>
@@ -553,6 +798,7 @@ li { margin-bottom: 8px; }
   <article class="notes">
     <span class="label">学习方法</span>
     <h3>新手怎么学</h3>
+    <p>不是先把所有概念背完，而是每课做出一个小结果，边做边建立理解。</p>
     <ul>
       <li>每节课先回答核心问题，再看概念定义。</li>
       <li>每次只抓 3 个重点，不要求一次记住所有名词。</li>
@@ -563,6 +809,7 @@ li { margin-bottom: 8px; }
   <article class="notes">
     <span class="label">课程产物</span>
     <h3>学完能得到什么</h3>
+    <p>学完不是“看过 25 节课”，而是手里会有一套能继续复用的方法框架。</p>
     <ul>
       <li>一张 AI 能力地图：知道模型、工具、Agent 各自做什么。</li>
       <li>一套提问模板：目标、上下文、约束、验收标准。</li>
@@ -577,11 +824,33 @@ li { margin-bottom: 8px; }
     <h2>配套资源</h2>
     <p>这里放学习时会用到的脑图和进阶入口，备课用的 PPT 结构不放在学生主线里。</p>
   </div>
-  <div class="toolbar">
-    <a class="btn" href="./mindmap-hub.html">打开脑图资源库</a>
-    <a class="btn" href="./codex.html">进入老鸟进阶</a>
-    <a class="btn" href="#showcase">进入实战演示</a>
-    <a class="btn" href="./ai-beginner-20-lessons-course.png">打开课程总脑图</a>
+  <div class="resource-panel">
+    <div class="resource-copy">
+      <p>你学课时主要会反复打开三类东西：脑图、进阶入口、实战案例。它们放在这里，避免把学生主线打断成一堆文件列表。</p>
+      <div class="resource-actions">
+        <a class="btn" href="./mindmap-hub.html">打开脑图资源库</a>
+        <a class="btn" href="./codex.html">进入老鸟进阶</a>
+        <a class="btn" href="#showcase">进入实战演示</a>
+        <a class="btn" href="./ai-beginner-20-lessons-course.png">打开课程总脑图</a>
+      </div>
+    </div>
+    <aside class="resource-card">
+      <span class="label">资源说明</span>
+      <div class="resource-mini-list">
+        <div class="resource-mini-item">
+          <strong>脑图资源库</strong>
+          <span>集中看总脑图、分章脑图、讲法脑图和练习脑图。</span>
+        </div>
+        <div class="resource-mini-item">
+          <strong>老鸟进阶</strong>
+          <span>基础课学稳后，再进入 Codex、Loop、GitHub 和网页制作。</span>
+        </div>
+        <div class="resource-mini-item">
+          <strong>实战演示</strong>
+          <span>直接看真实任务怎么被推进成文件、页面、视频和发布结果。</span>
+        </div>
+      </div>
+    </aside>
   </div>
 </section>
 
