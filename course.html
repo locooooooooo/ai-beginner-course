@@ -6,281 +6,221 @@
   <title>AI新手入门20节课</title>
   <style>
 :root {
-  --bg: #f5f0e8;
-  --paper: #fffaf2;
-  --ink: #1b1a17;
-  --muted: #675f55;
-  --line: #d8cdbd;
-  --accent: #a44c2b;
-  --accent-2: #315b57;
-  --accent-3: #d4a341;
-  --shadow: 0 18px 40px rgba(63, 42, 26, 0.12);
-  --radius: 22px;
-  --max: 1240px;
+  --canvas: #f6f7fb;
+  --surface: #ffffff;
+  --surface-soft: #f2f7f6;
+  --ink: #171a21;
+  --muted: #5f6876;
+  --line: #dfe5ee;
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --coral: #d3543f;
+  --amber: #b7791f;
+  --blue: #2563eb;
+  --max: 1120px;
+  --radius: 8px;
+  --shadow: 0 14px 30px rgba(23, 26, 33, 0.08);
   --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
   --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: var(--sans);
   color: var(--ink);
-  background:
-    radial-gradient(circle at top left, rgba(212,163,65,0.18), transparent 24%),
-    radial-gradient(circle at right 20%, rgba(49,91,87,0.16), transparent 20%),
-    linear-gradient(180deg, #f8f4ec 0%, #efe5d7 100%);
-  line-height: 1.65;
+  background: linear-gradient(180deg, #f6f7fb 0%, #ffffff 46%, #eef7f5 100%);
+  line-height: 1.7;
 }
-.wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 28px 20px 80px;
-}
-.hero {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(255,250,242,0.96), rgba(251,240,221,0.92));
-  border: 1px solid rgba(164,76,43,0.12);
-  border-radius: 30px;
-  box-shadow: var(--shadow);
-  padding: 42px 42px 34px;
-  margin-bottom: 26px;
-}
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(4px);
-  opacity: 0.58;
-}
-.hero::before {
-  width: 340px;
-  height: 340px;
-  background: radial-gradient(circle, rgba(212,163,65,0.22), transparent 65%);
-  top: -110px;
-  right: -80px;
-}
-.hero::after {
-  width: 260px;
-  height: 260px;
-  background: radial-gradient(circle, rgba(49,91,87,0.18), transparent 68%);
-  bottom: -100px;
-  left: -60px;
-}
-.eyebrow {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(49,91,87,0.1);
-  color: var(--accent-2);
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  margin-bottom: 14px;
-}
-h1, h2, h3 {
-  margin: 0;
-  font-family: var(--serif);
-  font-weight: 700;
-  line-height: 1.2;
-}
-h1 {
-  font-size: clamp(34px, 5vw, 62px);
-  margin-bottom: 12px;
-  max-width: 780px;
-}
-.lead {
-  max-width: 760px;
-  color: var(--muted);
-  font-size: 18px;
-  margin: 0 0 24px;
-}
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 0.9fr;
-  gap: 18px;
-  position: relative;
-  z-index: 1;
-}
-.summary-card,
-.mindmap-card,
-.chapter-card,
-.notes {
-  background: rgba(255,250,242,0.86);
-  border: 1px solid rgba(103,95,85,0.14);
-  border-radius: var(--radius);
-  box-shadow: 0 14px 28px rgba(45, 33, 20, 0.08);
-}
-.summary-card,
-.mindmap-card,
-.chapter-card,
-.notes {
-  padding: 22px;
-}
-.summary-card ul,
-.lesson-list,
-.notes ul {
-  margin: 0;
-  padding-left: 18px;
-}
-.summary-card li,
-.notes li {
-  margin-bottom: 8px;
-}
-.mindmap-card img,
-.gallery-image {
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-  border: 1px solid rgba(103,95,85,0.12);
-  background: #fff;
-}
-.toolbar {
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid rgba(37, 99, 235, 0.35); outline-offset: 3px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 18px 76px; }
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin-inline: -18px;
+  padding: 10px 18px;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   gap: 12px;
-  margin: 20px 0 30px;
+  background: rgba(246, 247, 251, 0.94);
+  border-bottom: 1px solid rgba(223, 229, 238, 0.9);
+  backdrop-filter: blur(14px);
 }
+.brand { font-weight: 800; text-decoration: none; white-space: nowrap; }
+.navlinks { display: flex; align-items: center; justify-content: flex-end; gap: 8px; overflow-x: auto; }
+.navlinks a { flex: 0 0 auto; color: var(--muted); font-size: 0.9rem; text-decoration: none; padding: 7px 8px; border-radius: var(--radius); }
+.navlinks a:hover { color: var(--primary); background: rgba(15, 118, 110, 0.08); }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 20px; align-items: end; padding: 34px 0 18px; }
+.eyebrow { display: inline-flex; color: var(--primary); font-size: 0.86rem; font-weight: 800; letter-spacing: 0; margin-bottom: 10px; }
+h1,h2,h3 { margin: 0; font-family: var(--serif); line-height: 1.22; }
+h1 { font-size: 2.35rem; margin-bottom: 10px; max-width: 780px; }
+h2 { font-size: 1.45rem; margin-bottom: 12px; }
+h3 { font-size: 1.12rem; margin-bottom: 8px; }
+p { margin: 0; }
+.lead { color: var(--muted); max-width: 760px; font-size: 1.05rem; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; }
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 18px;
-  border-radius: 999px;
+  min-height: 42px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
   text-decoration: none;
   color: var(--ink);
-  background: rgba(255,250,242,0.86);
-  border: 1px solid rgba(103,95,85,0.18);
-  box-shadow: 0 10px 18px rgba(45, 33, 20, 0.06);
-  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-weight: 700;
 }
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 24px rgba(45, 33, 20, 0.1);
-  background: #fffef9;
+.btn.primary { color: #ffffff; background: var(--primary); border-color: var(--primary); }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(23, 26, 33, 0.08); }
+.progress-panel, .card, .callout, .chapter-card, .notes, .starter-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
-.section-title {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  margin: 26px 0 14px;
+.progress-panel { padding: 18px; }
+.progress-panel strong { display: block; margin-bottom: 10px; }
+.progress-meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+.progress-bar { height: 8px; overflow: hidden; border-radius: var(--radius); background: #e9eef5; }
+.progress-bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--primary), var(--blue)); }
+.mini-steps { display: grid; gap: 8px; margin: 14px 0 0; padding-left: 20px; color: var(--muted); }
+.grid { display: grid; gap: 18px; grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr); align-items: start; }
+.card { padding: 20px; }
+.card + .card { margin-top: 18px; }
+ul { margin: 0; padding-left: 18px; }
+li { margin-bottom: 8px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid { display: grid; gap: 10px; }
+.meta-item, .principle-block {
+  padding: 14px;
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  border: 1px solid rgba(15, 118, 110, 0.12);
 }
-.section-title p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
+.meta-item strong, .principle-block strong { display: block; margin-bottom: 4px; }
+.ppt-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+.ppt-list li { padding: 12px 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); }
+.chapter-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.chapter-card { padding: 20px; }
+.lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
+.lesson-item { margin: 0; }
+.lesson-item a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
+.lesson-item a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
+.lesson-no { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius); color: #ffffff; background: var(--primary); font-weight: 800; }
+.lesson-item strong { display: block; margin-bottom: 4px; }
+.lesson-item span { color: var(--muted); font-size: 14px; }
+.callout { padding: 18px; border-left: 4px solid var(--coral); margin-bottom: 18px; }
+.callout p { color: var(--muted); }
+.label { display: inline-block; color: var(--coral); font-weight: 800; font-size: 0.88rem; margin-bottom: 6px; }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; }
+.pager .btn { flex: 1 1 0; }
+.pager .btn:last-child { margin-left: auto; }
+.lesson-side { position: sticky; top: 78px; }
+.footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
+.section-title { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin: 28px 0 14px; }
+.section-title p { color: var(--muted); font-size: 0.92rem; }
+.path-grid, .chapters, .notes-wrap, .mindmap-grid { display: grid; gap: 16px; }
+.path-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.chapters, .mindmap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.notes-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
+.starter-panel { padding: 18px; }
+.starter-panel ol { margin: 0; padding-left: 20px; color: var(--muted); }
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+.stat { padding: 12px; border-radius: var(--radius); background: var(--surface-soft); border: 1px solid rgba(15, 118, 110, 0.12); }
+.stat strong { display: block; font-size: 1.25rem; }
+.path-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+.path-card strong { display: block; margin-bottom: 6px; }
+.path-card span { color: var(--muted); font-size: 0.94rem; }
+.gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
+.course-hero { padding-top: 40px; }
+@media (max-width: 920px) {
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid { grid-template-columns: 1fr; }
+  .path-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lesson-side { position: static; }
 }
-.chapters {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+@media (max-width: 640px) {
+  .wrap { padding-inline: 14px; padding-bottom: 56px; }
+  .topbar { margin-inline: -14px; padding-inline: 14px; align-items: flex-start; }
+  .brand { padding-top: 7px; }
+  .navlinks { max-width: 68vw; }
+  .hero { padding-top: 24px; }
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.25rem; }
+  .lead { font-size: 1rem; }
+  .toolbar .btn, .pager .btn { width: 100%; }
+  .path-grid, .stat-grid { grid-template-columns: 1fr; }
+  .section-title { display: block; }
+  .section-title p { margin-top: 4px; }
+  .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
+  .lesson-no { width: 38px; height: 38px; }
 }
-.chapter-card {
-  position: relative;
-  overflow: hidden;
-}
-.chapter-card::after {
-  content: "";
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(212,163,65,0.12), transparent 70%);
-  top: -45px;
-  right: -45px;
-}
-.lesson-list {
-  display: grid;
-  gap: 10px;
-  padding-left: 0;
-  list-style: none;
-  position: relative;
-  z-index: 1;
-}
-.lesson-item {
-  background: rgba(255,255,255,0.76);
-  border: 1px solid rgba(103,95,85,0.12);
-  border-radius: 16px;
-  padding: 14px 14px 12px;
-}
-.lesson-item strong {
-  display: block;
-  font-size: 15px;
-  margin-bottom: 4px;
-}
-.lesson-item span {
-  color: var(--muted);
-  font-size: 14px;
-}
-.notes-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
-.notes h3 {
-  font-size: 24px;
-  margin-bottom: 12px;
-}
-.footer {
-  margin-top: 26px;
-  color: var(--muted);
-  font-size: 14px;
-  text-align: center;
-}
-@media (max-width: 980px) {
-  .hero-grid,
-  .chapters,
-  .notes-wrap {
-    grid-template-columns: 1fr;
-  }
-  .hero {
-    padding: 30px 22px 24px;
-  }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
 }
 </style>
 </head>
 <body>
-  <div class="wrap">
+  <main class="wrap">
     
-<header class="hero">
-  <div class="eyebrow">课程规划 · AI新手入门 · 20节课</div>
-  <h1>AI 新手入门 20 节课</h1>
-  <p class="lead">
-    这是一套给零基础或弱基础学习者准备的 AI 入门课程。从概念、提示词、工作流、Agent、MCP、Skill，一路走到电商场景落地。
-    现在课程进一步按第一性原则补强：每课不只讲结论，还会回答底层为什么、最小原理是什么、应用时最容易犯什么错。
-  </p>
-  <div class="hero-grid">
-    <section class="summary-card">
-      <h2>课程目标</h2>
-      <ul>
-        <li>理解 AI、大模型、LLM、Agent、MCP、Skill 的关系。</li>
-        <li>用第一性原则理解每个概念，而不是死记定义。</li>
-        <li>学会基础提问、提示词设计、结果验证和纠错。</li>
-        <li>把 AI 用到内容生产、办公、图片、视频和知识检索中。</li>
-        <li>建立工作流思维，而不是停留在一次性问答。</li>
-        <li>看懂电商 AI 落地：内容、获客、私域、客服、复购、分析。</li>
-      </ul>
-    </section>
-    <section class="mindmap-card">
-      <h2>课程总脑图</h2>
-      <img src="./ai-beginner-20-lessons-course.png" alt="AI新手入门20节课脑图" />
-    </section>
+<nav class="topbar" aria-label="站点导航">
+  <a class="brand" href="./course.html">AI新手20课</a>
+  <div class="navlinks">
+    <a href="#path">学习路径</a>
+    <a href="#lessons">课程目录</a>
+    <a href="./codex.html">Codex</a>
+    <a href="./mindmap-hub.html">资源</a>
   </div>
+</nav>
+<header class="hero course-hero">
+  <div>
+    <div class="eyebrow">零基础 · 第一性原则 · 手机友好</div>
+    <h1>AI 新手入门 20 节课</h1>
+    <p class="lead">
+      不先背名词，先学会判断：AI 在解决什么任务、输入输出是什么、结果能不能直接用、怎样把一次问答变成可复用流程。
+    </p>
+    <div class="toolbar">
+      <a class="btn primary" href="./lessons/lesson-01-ai-overview.html">从第 1 课开始</a>
+      <a class="btn" href="#path">看学习路径</a>
+    </div>
+  </div>
+  <aside class="starter-panel">
+    <strong>7 天新手路线</strong>
+    <ol>
+      <li>第 1 天：弄清 AI 和大模型边界。</li>
+      <li>第 2 天：练会提问和提示词。</li>
+      <li>第 3 天：学会验证 AI 输出。</li>
+      <li>第 4-5 天：做办公、内容、图片、知识库练习。</li>
+      <li>第 6-7 天：理解工作流、Agent、MCP、Skill 和电商落地。</li>
+    </ol>
+    <div class="stat-grid">
+      <div class="stat"><strong>20</strong><span>节短课</span></div>
+      <div class="stat"><strong>5</strong><span>章路径</span></div>
+      <div class="stat"><strong>1</strong><span>套落地地图</span></div>
+    </div>
+  </aside>
 </header>
 
-<div class="toolbar">
-  <a class="btn" href="./ai-beginner-20-lessons-course.png">打开脑图 PNG</a>
-  <a class="btn" href="./ai-beginner-20-lessons-course.mmd">打开脑图源码 .mmd</a>
-  <a class="btn" href="./mindmap-hub.html">查看脑图总览</a>
-  <a class="btn" href="./ppt-structure.html">查看 PPT 页面结构</a>
-  <a class="btn" href="./llm-and-ai-difference-mindmap.png">查看模型分类脑图</a>
-  <a class="btn" href="./电商AI知识图谱/ecommerce-ai-knowledge-graph.png">查看电商知识图谱</a>
-</div>
+<section id="path">
+  <div class="section-title">
+    <h2>先按这 5 步学</h2>
+    <p>把复杂名词拆成新手能执行的顺序。</p>
+  </div>
+  <div class="path-grid">
+    <article class="path-card"><strong>1. 建认知</strong><span>先分清 AI、模型、产品、工具，不被品牌名带偏。</span></article>
+    <article class="path-card"><strong>2. 会提问</strong><span>用目标、上下文、约束、验收标准换稳定输出。</span></article>
+    <article class="path-card"><strong>3. 做验证</strong><span>判断哪些结果能直接用，哪些必须查证和人审。</span></article>
+    <article class="path-card"><strong>4. 进工作流</strong><span>从问一句答一句，升级为可重复的业务步骤。</span></article>
+    <article class="path-card"><strong>5. 看落地</strong><span>用电商内容、获客、客服、复购理解完整系统。</span></article>
+  </div>
+</section>
 
 
-<section>
+<section id="lessons">
   <div class="section-title">
     <h2>五章结构，20 节课</h2>
     <p>每章 4 课，先认知，后应用，再落地。</p>
@@ -290,303 +230,76 @@ h1 {
 <article class="chapter-card">
   <div class="eyebrow">CHAPTER-1</div>
   <h3>第一章：先建立正确认知</h3>
-  <p style="color:var(--muted);margin:8px 0 14px;">先把概念边界理清，避免一上来被术语和产品名带偏。</p>
-  <ul class="lesson-list"><li class="lesson-item"><strong><a href="./lessons/lesson-01-ai-overview.html" style="color:inherit;text-decoration:none;">第1课：AI是什么</a></strong><span>理解 AI 不是单一软件，而是一整类让机器完成智能任务的方法与系统。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-02-llm-agent-mcp-skill.html" style="color:inherit;text-decoration:none;">第2课：大模型、LLM、Agent、MCP、Skill</a></strong><span>建立课程里最核心的一张概念地图，知道每个词分别解决什么问题。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-03-model-families.html" style="color:inherit;text-decoration:none;">第3课：主流模型家族</a></strong><span>理解不同模型家族的定位差异，避免把所有模型看成一回事。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-04-ai-boundaries.html" style="color:inherit;text-decoration:none;">第4课：AI能做什么不能做什么</a></strong><span>建立边界意识，知道 AI 强在哪里，也知道它会错在哪里。</span></li></ul>
+  <p>先把概念边界理清，避免一上来被术语和产品名带偏。</p>
+  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-01-ai-overview.html"><span class="lesson-no">1</span><span><strong>第1课：AI是什么</strong><span>理解 AI 不是单一软件，而是一整类让机器完成智能任务的方法与系统。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-02-llm-agent-mcp-skill.html"><span class="lesson-no">2</span><span><strong>第2课：大模型、LLM、Agent、MCP、Skill</strong><span>建立课程里最核心的一张概念地图，知道每个词分别解决什么问题。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-03-model-families.html"><span class="lesson-no">3</span><span><strong>第3课：主流模型家族</strong><span>理解不同模型家族的定位差异，避免把所有模型看成一回事。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-04-ai-boundaries.html"><span class="lesson-no">4</span><span><strong>第4课：AI能做什么不能做什么</strong><span>建立边界意识，知道 AI 强在哪里，也知道它会错在哪里。</span></span></a></li></ul>
 </article>
 <article class="chapter-card">
   <div class="eyebrow">CHAPTER-2</div>
   <h3>第二章：先学会用再学原理</h3>
-  <p style="color:var(--muted);margin:8px 0 14px;">围绕提问、提示词和验证，建立新手最先需要的使用能力。</p>
-  <ul class="lesson-list"><li class="lesson-item"><strong><a href="./lessons/lesson-05-ask-better-questions.html" style="color:inherit;text-decoration:none;">第5课：怎么提一个高质量问题</a></strong><span>学会让 AI 更快理解你，减少空泛回答。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-06-prompt-basics.html" style="color:inherit;text-decoration:none;">第6课：提示词基础</a></strong><span>理解提示词的基本构造，能写出稳定的基础提示。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-07-prompt-advanced.html" style="color:inherit;text-decoration:none;">第7课：提示词进阶</a></strong><span>掌握拆任务、分步骤和多轮追问，让复杂任务更稳。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-08-verify-results.html" style="color:inherit;text-decoration:none;">第8课：结果验证与纠错</a></strong><span>建立 AI 输出之后的检查流程，避免把错内容直接拿去用。</span></li></ul>
+  <p>围绕提问、提示词和验证，建立新手最先需要的使用能力。</p>
+  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-05-ask-better-questions.html"><span class="lesson-no">5</span><span><strong>第5课：怎么提一个高质量问题</strong><span>学会让 AI 更快理解你，减少空泛回答。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-06-prompt-basics.html"><span class="lesson-no">6</span><span><strong>第6课：提示词基础</strong><span>理解提示词的基本构造，能写出稳定的基础提示。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-07-prompt-advanced.html"><span class="lesson-no">7</span><span><strong>第7课：提示词进阶</strong><span>掌握拆任务、分步骤和多轮追问，让复杂任务更稳。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-08-verify-results.html"><span class="lesson-no">8</span><span><strong>第8课：结果验证与纠错</strong><span>建立 AI 输出之后的检查流程，避免把错内容直接拿去用。</span></span></a></li></ul>
 </article>
 <article class="chapter-card">
   <div class="eyebrow">CHAPTER-3</div>
   <h3>第三章：把 AI 用进日常工作</h3>
-  <p style="color:var(--muted);margin:8px 0 14px;">从办公、内容、图像、知识检索切入，先形成可见的使用成果。</p>
-  <ul class="lesson-list"><li class="lesson-item"><strong><a href="./lessons/lesson-09-office-and-learning.html" style="color:inherit;text-decoration:none;">第9课：办公与学习场景</a></strong><span>学会把 AI 用到总结、邮件、笔记、表格等高频办公任务里。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-10-content-creation.html" style="color:inherit;text-decoration:none;">第10课：内容创作场景</a></strong><span>学会用 AI 辅助文章、脚本、商品文案和社媒内容生产。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-11-image-and-video.html" style="color:inherit;text-decoration:none;">第11课：图片与视频生成</a></strong><span>理解图像模型和视频模型能做什么，以及怎样在业务里正确使用。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-12-rag-and-qa.html" style="color:inherit;text-decoration:none;">第12课：搜索、知识库与问答</a></strong><span>理解为什么有些问题必须接知识库，而不能只靠模型本身。</span></li></ul>
+  <p>从办公、内容、图像、知识检索切入，先形成可见的使用成果。</p>
+  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-09-office-and-learning.html"><span class="lesson-no">9</span><span><strong>第9课：办公与学习场景</strong><span>学会把 AI 用到总结、邮件、笔记、表格等高频办公任务里。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-10-content-creation.html"><span class="lesson-no">10</span><span><strong>第10课：内容创作场景</strong><span>学会用 AI 辅助文章、脚本、商品文案和社媒内容生产。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-11-image-and-video.html"><span class="lesson-no">11</span><span><strong>第11课：图片与视频生成</strong><span>理解图像模型和视频模型能做什么，以及怎样在业务里正确使用。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-12-rag-and-qa.html"><span class="lesson-no">12</span><span><strong>第12课：搜索、知识库与问答</strong><span>理解为什么有些问题必须接知识库，而不能只靠模型本身。</span></span></a></li></ul>
 </article>
 <article class="chapter-card">
   <div class="eyebrow">CHAPTER-4</div>
   <h3>第四章：从工具使用到工作流</h3>
-  <p style="color:var(--muted);margin:8px 0 14px;">从单次问答升级到可重复、可执行、可验证的业务流程。</p>
-  <ul class="lesson-list"><li class="lesson-item"><strong><a href="./lessons/lesson-13-workflow.html" style="color:inherit;text-decoration:none;">第13课：什么是工作流</a></strong><span>理解 AI 工作流不是问一句答一句，而是一串可重复步骤。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-14-agent.html" style="color:inherit;text-decoration:none;">第14课：什么是Agent</a></strong><span>理解 Agent 为什么比普通聊天模型更接近“会做事的人”。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-15-mcp.html" style="color:inherit;text-decoration:none;">第15课：什么是MCP</a></strong><span>理解 MCP 为什么是 AI 真正连接业务系统的重要一层。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-16-skill.html" style="color:inherit;text-decoration:none;">第16课：什么是Skill</a></strong><span>理解 Skill 不是普通提示词，而是任务方法的可复用资产。</span></li></ul>
+  <p>从单次问答升级到可重复、可执行、可验证的业务流程。</p>
+  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-13-workflow.html"><span class="lesson-no">13</span><span><strong>第13课：什么是工作流</strong><span>理解 AI 工作流不是问一句答一句，而是一串可重复步骤。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-14-agent.html"><span class="lesson-no">14</span><span><strong>第14课：什么是Agent</strong><span>理解 Agent 为什么比普通聊天模型更接近“会做事的人”。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-15-mcp.html"><span class="lesson-no">15</span><span><strong>第15课：什么是MCP</strong><span>理解 MCP 为什么是 AI 真正连接业务系统的重要一层。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-16-skill.html"><span class="lesson-no">16</span><span><strong>第16课：什么是Skill</strong><span>理解 Skill 不是普通提示词，而是任务方法的可复用资产。</span></span></a></li></ul>
 </article>
 <article class="chapter-card">
   <div class="eyebrow">CHAPTER-5</div>
   <h3>第五章：电商场景落地</h3>
-  <p style="color:var(--muted);margin:8px 0 14px;">把模型、Agent、MCP、Skill 组合起来，形成电商 AI 系统视角。</p>
-  <ul class="lesson-list"><li class="lesson-item"><strong><a href="./lessons/lesson-17-ecommerce-content.html" style="color:inherit;text-decoration:none;">第17课：电商内容生产</a></strong><span>理解 AI 在商品文案、SEO文章、社媒内容和海报上的落地方式。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-18-ecommerce-leads-private-domain.html" style="color:inherit;text-decoration:none;">第18课：电商获客与私域</a></strong><span>理解 AI 如何帮助评论私信承接、表单入库、欢迎 SOP 和标签分层。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-19-ecommerce-service-retention.html" style="color:inherit;text-decoration:none;">第19课：电商客服与复购</a></strong><span>理解 AI 在售前、售后、会员运营和复购中的应用方式。</span></li><li class="lesson-item"><strong><a href="./lessons/lesson-20-ecommerce-system-view.html" style="color:inherit;text-decoration:none;">第20课：电商AI系统全景</a></strong><span>把前面 19 节课串起来，形成一张完整的电商 AI 落地地图。</span></li></ul>
+  <p>把模型、Agent、MCP、Skill 组合起来，形成电商 AI 系统视角。</p>
+  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-17-ecommerce-content.html"><span class="lesson-no">17</span><span><strong>第17课：电商内容生产</strong><span>理解 AI 在商品文案、SEO文章、社媒内容和海报上的落地方式。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-18-ecommerce-leads-private-domain.html"><span class="lesson-no">18</span><span><strong>第18课：电商获客与私域</strong><span>理解 AI 如何帮助评论私信承接、表单入库、欢迎 SOP 和标签分层。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-19-ecommerce-service-retention.html"><span class="lesson-no">19</span><span><strong>第19课：电商客服与复购</strong><span>理解 AI 在售前、售后、会员运营和复购中的应用方式。</span></span></a></li><li class="lesson-item"><a href="./lessons/lesson-20-ecommerce-system-view.html"><span class="lesson-no">20</span><span><strong>第20课：电商AI系统全景</strong><span>把前面 19 节课串起来，形成一张完整的电商 AI 落地地图。</span></span></a></li></ul>
 </article>
   </div>
 </section>
 
 <section class="notes-wrap">
   <article class="notes">
-    <h3>建议教学方式</h3>
+    <span class="label">学习方法</span>
+    <h3>新手怎么学</h3>
     <ul>
-      <li>每节课用一个明确问题开场，避免空讲概念。</li>
-      <li>每章安排一到两个练习，要求学生输出实际结果。</li>
-      <li>每次讲工具前先讲边界，先会判断，再会使用。</li>
-      <li>课程中持续强调“验证、审批、日志、回滚”四个底线。</li>
+      <li>每节课先回答核心问题，再看概念定义。</li>
+      <li>每次只抓 3 个重点，不要求一次记住所有名词。</li>
+      <li>每课必须做一个小产物，别只停留在“看懂了”。</li>
+      <li>涉及钱、售后、法律、健康的输出，必须先验证。</li>
     </ul>
   </article>
   <article class="notes">
-    <h3>最终交付建议</h3>
+    <span class="label">课程产物</span>
+    <h3>学完能得到什么</h3>
     <ul>
-      <li>总脑图：适合做课程总览页和开场导图。</li>
-      <li>分章脑图：每章再拆一张，方便展开讲解。</li>
-      <li>练习脑图：每章再配一张，方便带练和留作业。</li>
-      <li>HTML 页面：适合离线浏览、培训预览和后续补内容。</li>
-      <li>后续可继续扩成 PPT、大纲稿、练习册和案例库。</li>
-      <li>每课已升级为“核心问题 -> 第一性拆解 -> 最小原理 -> 方法 -> 误区”的统一讲义结构。</li>
+      <li>一张 AI 能力地图：知道模型、工具、Agent 各自做什么。</li>
+      <li>一套提问模板：目标、上下文、约束、验收标准。</li>
+      <li>一套验证习惯：先分风险，再决定能否直接使用。</li>
+      <li>一条落地路线：从单次问答走向工作流和业务系统。</li>
     </ul>
   </article>
 </section>
 
 <section>
   <div class="section-title">
-    <h2>脑图交付目录</h2>
-    <p>PNG 是主交付，MMD 是可编辑源码。</p>
+    <h2>配套资源</h2>
+    <p>脑图和 PPT 结构放在资源页，学习时不用先被文件列表打断。</p>
   </div>
-  <div class="chapters">
-    
-<article class="chapter-card">
-  <div class="eyebrow">总览</div>
-  <h3>AI新手入门20节课</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">课程总脑图，适合先看全局。</p>
-  <img src="./ai-beginner-20-lessons-course.png" alt="AI新手入门20节课" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./ai-beginner-20-lessons-course.png">PNG</a>
-    <a class="btn" href="./ai-beginner-20-lessons-course.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">补强</div>
-  <h3>第一性原则版</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">把课程升级成第一性拆解结构。</p>
-  <img src="./first-principles-course-mindmap.png" alt="第一性原则版" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./first-principles-course-mindmap.png">PNG</a>
-    <a class="btn" href="./first-principles-course-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">认知</div>
-  <h3>大模型与AI的区别</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">讲清 GPT、DeepSeek、图像模型、视频模型的边界与选型逻辑。</p>
-  <img src="./llm-and-ai-difference-mindmap.png" alt="大模型与AI的区别" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./llm-and-ai-difference-mindmap.png">PNG</a>
-    <a class="btn" href="./llm-and-ai-difference-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">入口</div>
-  <h3>Codex入口理解AI</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">从 Codex 入口看大模型与 Agent。</p>
-  <img src="./codex-ai-model-mindmap.png" alt="Codex入口理解AI" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./codex-ai-model-mindmap.png">PNG</a>
-    <a class="btn" href="./codex-ai-model-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">系统</div>
-  <h3>大模型与Agent</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">Agent、OpenClaw、Hermes、Codex 的关系图。</p>
-  <img src="./大模型与Agent/ai-model-agent-mindmap.png" alt="大模型与Agent" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./大模型与Agent/ai-model-agent-mindmap.png">PNG</a>
-    <a class="btn" href="./大模型与Agent/ai-model-agent-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">电商</div>
-  <h3>电商AI知识图谱</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">内容、获客、私域、客服、复购、复盘。</p>
-  <img src="./电商AI知识图谱/ecommerce-ai-knowledge-graph.png" alt="电商AI知识图谱" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./电商AI知识图谱/ecommerce-ai-knowledge-graph.png">PNG</a>
-    <a class="btn" href="./电商AI知识图谱/ecommerce-ai-knowledge-graph.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">电商</div>
-  <h3>Skill真实用例</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">把 Skill 讲清楚，并落到真实案例。</p>
-  <img src="./电商AI知识图谱/skill-explained-mindmap.png" alt="Skill真实用例" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./电商AI知识图谱/skill-explained-mindmap.png">PNG</a>
-    <a class="btn" href="./电商AI知识图谱/skill-explained-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">PPT</div>
-  <h3>PPT页面结构</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">每一课对应的讲义页结构。</p>
-  <img src="./ppt-structure-mindmap.png" alt="PPT页面结构" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./ppt-structure-mindmap.png">PNG</a>
-    <a class="btn" href="./ppt-structure-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">分章</div>
-  <h3>第一章脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">先把 AI、LLM、Agent、模型家族这些基础概念拆清楚。</p>
-  <img src="./chapter-01-cognition-mindmap.png" alt="第一章脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-01-cognition-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-01-cognition-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">分章</div>
-  <h3>第二章脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">先学会提问、写提示词、做验证，建立可用输出习惯。</p>
-  <img src="./chapter-02-prompting-mindmap.png" alt="第二章脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-02-prompting-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-02-prompting-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">分章</div>
-  <h3>第三章脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">把 AI 放进办公、内容、图片、知识库这些日常工作。</p>
-  <img src="./chapter-03-work-mindmap.png" alt="第三章脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-03-work-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-03-work-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">分章</div>
-  <h3>第四章脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">从单次问答升级到工作流、Agent、MCP、Skill。</p>
-  <img src="./chapter-04-workflow-mindmap.png" alt="第四章脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-04-workflow-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-04-workflow-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">分章</div>
-  <h3>第五章脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">把内容、获客、私域、客服、复购串成电商 AI 系统。</p>
-  <img src="./chapter-05-ecommerce-mindmap.png" alt="第五章脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-05-ecommerce-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-05-ecommerce-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">讲法</div>
-  <h3>第一章讲法脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">怎么讲清 AI、LLM、Agent、模型家族。</p>
-  <img src="./chapter-01-teaching-mindmap.png" alt="第一章讲法脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-01-teaching-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-01-teaching-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">讲法</div>
-  <h3>第二章讲法脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">怎么带新手练提问、提示词和验证。</p>
-  <img src="./chapter-02-teaching-mindmap.png" alt="第二章讲法脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-02-teaching-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-02-teaching-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">讲法</div>
-  <h3>第三章讲法脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">怎么把 AI 用进办公、内容、图像、知识库。</p>
-  <img src="./chapter-03-teaching-mindmap.png" alt="第三章讲法脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-03-teaching-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-03-teaching-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">讲法</div>
-  <h3>第四章讲法脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">怎么讲工作流、Agent、MCP、Skill 的顺序。</p>
-  <img src="./chapter-04-teaching-mindmap.png" alt="第四章讲法脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-04-teaching-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-04-teaching-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">讲法</div>
-  <h3>第五章讲法脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">怎么讲电商内容、获客、私域、客服和复购。</p>
-  <img src="./chapter-05-teaching-mindmap.png" alt="第五章讲法脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-05-teaching-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-05-teaching-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">练习</div>
-  <h3>第一章练习脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">把 AI、LLM、Agent、模型家族先练会区分。</p>
-  <img src="./chapter-01-practice-mindmap.png" alt="第一章练习脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-01-practice-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-01-practice-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">练习</div>
-  <h3>第二章练习脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">把提问、提示词和验证先练到能用。</p>
-  <img src="./chapter-02-practice-mindmap.png" alt="第二章练习脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-02-practice-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-02-practice-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">练习</div>
-  <h3>第三章练习脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">把办公、内容、图片、知识库练成日常动作。</p>
-  <img src="./chapter-03-practice-mindmap.png" alt="第三章练习脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-03-practice-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-03-practice-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">练习</div>
-  <h3>第四章练习脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">把工作流、Agent、MCP、Skill 练成流程。</p>
-  <img src="./chapter-04-practice-mindmap.png" alt="第四章练习脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-04-practice-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-04-practice-mindmap.mmd">MMD</a>
-  </div>
-</article>
-<article class="chapter-card">
-  <div class="eyebrow">练习</div>
-  <h3>第五章练习脑图</h3>
-  <p style="color:var(--muted);margin:8px 0 12px;">把电商内容、获客、私域、客服、复购练成系统。</p>
-  <img src="./chapter-05-practice-mindmap.png" alt="第五章练习脑图" style="width:100%;display:block;border-radius:16px;border:1px solid rgba(103,95,85,0.12);background:#fff;margin-bottom:12px;" />
-  <div class="toolbar" style="margin:0;">
-    <a class="btn" href="./chapter-05-practice-mindmap.png">PNG</a>
-    <a class="btn" href="./chapter-05-practice-mindmap.mmd">MMD</a>
-  </div>
-</article>
+  <div class="toolbar">
+    <a class="btn" href="./mindmap-hub.html">打开脑图资源库</a>
+    <a class="btn" href="./codex.html">学习 Codex 能做什么</a>
+    <a class="btn" href="./ppt-structure.html">查看 PPT 页面结构</a>
+    <a class="btn" href="./ai-beginner-20-lessons-course.png">打开课程总脑图</a>
   </div>
 </section>
 
 <div class="footer">
-  生成时间：2026-06-16 · 课程定位：AI 新手入门 · 形式：脑图 + HTML 单页
+  生成时间：2026-06-16 · 课程定位：AI 新手入门 · 形式：移动端友好的教程站点
 </div>
 
-  </div>
+  </main>
 </body>
 </html>

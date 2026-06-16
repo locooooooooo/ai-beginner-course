@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第20课 电商AI系统全景</title>
+  <title>Codex 能做什么</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -166,103 +166,143 @@ li { margin-bottom: 8px; }
 </head>
 <body>
   <main class="wrap">
-<nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI新手20课</a>
+    
+<nav class="topbar" aria-label="站点导航">
+  <a class="brand" href="./course.html">AI新手20课</a>
   <div class="navlinks">
-    <a href="../course.html#path">学习路径</a>
-    <a href="../course.html#lessons">课程目录</a>
-    <a href="../codex.html">Codex</a>
-    <a href="../mindmap-hub.html">资源</a>
+    <a href="./course.html#path">学习路径</a>
+    <a href="./course.html#lessons">课程目录</a>
+    <a href="./codex.html">Codex</a>
+    <a href="./mindmap-hub.html">资源</a>
   </div>
 </nav>
-<header class="hero">
+<header class="hero course-hero">
   <div>
-    <div class="eyebrow">第五章：电商场景落地 · 第20课</div>
-    <h1>第20课：电商AI系统全景</h1>
-    <p class="lead">把前面 19 节课串起来，形成一张完整的电商 AI 落地地图。</p>
+    <div class="eyebrow">Codex 专题 · 从会聊天到会交付</div>
+    <h1>Codex 能做什么</h1>
+    <p class="lead">
+      Codex 可以理解为帮你做软件工作的 AI 助手。它不只是回答问题，还能在代码仓库里读文件、改代码、运行命令、检查结果，并把工作拆给多个会话并行推进。
+    </p>
     <div class="toolbar">
-      <a class="btn primary" href="#start">开始本课</a>
-      <a class="btn" href="#practice">做完练习</a>
+      <a class="btn primary" href="#what">先看它是什么</a>
+      <a class="btn" href="#tasks">看能做什么</a>
     </div>
   </div>
-  <aside class="progress-panel" aria-label="学习进度">
-    <strong>当前进度</strong>
-    <div class="progress-meta">
-      <span>20 / 20</span>
-      <span>100%</span>
-    </div>
-    <div class="progress-bar"><span style="width:100%"></span></div>
-    <ol class="mini-steps">
-      <li>先读核心问题</li>
-      <li>抓住 3 个最小原理</li>
-      <li>完成一个可交付练习</li>
+  <aside class="starter-panel">
+    <strong>一句话理解</strong>
+    <ol>
+      <li>ChatGPT 更像“问答和思考助手”。</li>
+      <li>Codex 更像“能进入项目现场的执行助手”。</li>
+      <li>你给目标、上下文和验收标准，它负责读、改、跑、验收。</li>
     </ol>
   </aside>
 </header>
-<section class="callout" id="start">
-  <span class="label">为什么要学</span>
-  <h2>核心问题</h2>
-  <p>为什么很多团队买了很多 AI 工具，最后还是没有形成系统能力？</p>
+
+<section id="what">
+  <div class="section-title">
+    <h2>用第一性原则看 Codex</h2>
+    <p>先拆底层工作流，再看产品名。</p>
+  </div>
+  <div class="path-grid">
+    <article class="path-card"><strong>1. 任务</strong><span>你要完成什么：修 Bug、做网页、写教程、跑测试、整理报告。</span></article>
+    <article class="path-card"><strong>2. 上下文</strong><span>Codex 需要看到项目文件、运行环境、已有规范和你的具体要求。</span></article>
+    <article class="path-card"><strong>3. 工具</strong><span>它可以调用命令行、浏览器、文件编辑、多会话、插件和技能。</span></article>
+    <article class="path-card"><strong>4. 产物</strong><span>最终不是一句回答，而是改好的文件、可打开的网站、检查结果或可复用流程。</span></article>
+    <article class="path-card"><strong>5. 验收</strong><span>必须用运行结果、截图、链接检查、测试或人工标准证明完成。</span></article>
+  </div>
 </section>
-<div class="grid">
-  <main>
-    <article class="card">
-      <span class="label">先记住</span>
-      <h2>本课只抓 3 件事</h2>
-      <ul><li>落地不是单点工具，而是模型、Agent、MCP、Skill、审批和日志的组合</li><li>先从低风险高频场景起步，再逐步扩大</li><li>系统化能力来自流程设计和持续迭代</li></ul>
+
+<section id="tasks">
+  <div class="section-title">
+    <h2>Codex 常见能力</h2>
+    <p>新手先记住这些实际用途。</p>
+  </div>
+  <div class="chapters">
+    <article class="chapter-card">
+      <span class="label">代码与项目</span>
+      <h3>读懂项目并改代码</h3>
+      <p>让 Codex 先看项目结构，再按你的目标修改文件。例如修复样式、补功能、改脚本、整理目录、生成静态页面。</p>
     </article>
-    <article class="card">
-      <span class="label">想明白</span>
-      <h2>第一性拆解</h2>
-      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先承认一个事实：业务能力不是工具清单，而是协同系统。</span></div><div class="principle-block"><strong>拆解 2</strong><span>模型、Agent、MCP、Skill、审批、日志分别解决不同层的问题。</span></div><div class="principle-block"><strong>拆解 3</strong><span>系统能力来自分层设计、优先级判断和持续迭代，而不是一次性买全家桶。</span></div></div>
+    <article class="chapter-card">
+      <span class="label">运行与验证</span>
+      <h3>跑命令、查错误、做验收</h3>
+      <p>它可以运行生成脚本、测试命令、本地服务和浏览器检查，把“改了”推进到“确实能用”。</p>
     </article>
-    <article class="card">
-      <span class="label">可迁移</span>
-      <h2>最小原理</h2>
-      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：系统能力来自结构，不来自工具堆叠。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：低风险高频场景是最优起点。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：治理机制决定 AI 能力能否长期稳定运行。</span></div></div>
+    <article class="chapter-card">
+      <span class="label">网页与内容</span>
+      <h3>把资料做成可阅读产品</h3>
+      <p>适合把 Markdown、脑图、课程大纲、报告，整理成手机可读的 HTML 教程、资源页或发布目录。</p>
     </article>
-    <article class="card">
-      <span class="label">怎么讲</span>
-      <h2>讲解结构</h2>
-      <ul><li>系统全景图</li><li>落地顺序建议</li><li>安全底线</li><li>团队协作方式</li></ul>
+    <article class="chapter-card">
+      <span class="label">多会话协作</span>
+      <h3>并行探索、执行、验收</h3>
+      <p>复杂任务可以让不同会话分别做内容审查、UI 验收、实现建议，主会话负责收口和最终判断。</p>
     </article>
-    <article class="card">
-      <span class="label">看案例</span>
-      <h2>真实案例</h2>
-      <ul><li>内容生产 Agent</li><li>客服 Agent</li><li>私域运营 Agent</li><li>经营复盘 Agent</li></ul>
+    <article class="chapter-card">
+      <span class="label">自动化</span>
+      <h3>持续检查和定时跟进</h3>
+      <p>适合定期 review、提醒、监控变化、持续检查项目状态，但要明确频率、目标和输出形式。</p>
     </article>
-  </main>
-  <aside class="lesson-side">
-    <article class="card">
-      <span class="label">马上用</span>
-      <h2>应用方法</h2>
-      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先从内容生产、知识问答、标准客服这些低风险场景起步。</span></div><div class="principle-block"><strong>方法 2</strong><span>再逐步扩展到获客、私域、复购和经营分析。</span></div><div class="principle-block"><strong>方法 3</strong><span>所有阶段都保留审批、日志、回滚和复盘。</span></div></div>
+    <article class="chapter-card">
+      <span class="label">知识沉淀</span>
+      <h3>用 Skill 固化做事方法</h3>
+      <p>如果某类任务会反复做，可以把步骤、检查表、参考资料沉淀成 Skill，让以后执行更稳定。</p>
     </article>
-    <article class="card">
-      <span class="label">避坑</span>
-      <h2>反常识提醒</h2>
-      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>一次性铺开所有自动化。</span></div><div class="principle-block"><strong>误区 2</strong><span>只看工具数量，不看系统协作。</span></div><div class="principle-block"><strong>误区 3</strong><span>没有长期运维和治理设计。</span></div></div>
+  </div>
+</section>
+
+<section class="notes-wrap">
+  <article class="notes">
+    <span class="label">新手怎么提需求</span>
+    <h3>给 Codex 的好任务长什么样</h3>
+    <ul>
+      <li>说清目标：我要最终得到什么。</li>
+      <li>说清范围：改哪个目录，哪些文件别碰。</li>
+      <li>说清标准：怎么证明完成，比如截图、测试、链接检查。</li>
+      <li>允许它先读代码，再决定怎么改。</li>
+    </ul>
+  </article>
+  <article class="notes">
+    <span class="label">边界意识</span>
+    <h3>Codex 不应该替你决定什么</h3>
+    <ul>
+      <li>不要让它无授权删除、重置或覆盖重要文件。</li>
+      <li>涉及账号、付款、隐私、线上发布，要先明确授权。</li>
+      <li>结果必须验收，不能只因为回答很自信就直接信。</li>
+      <li>产品方向、商业取舍、最终发布责任仍然由人决定。</li>
+    </ul>
+  </article>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>3 个上手练习</h2>
+    <p>从小任务开始，建立“目标 -> 执行 -> 验收”的习惯。</p>
+  </div>
+  <div class="chapters">
+    <article class="chapter-card">
+      <h3>练习 1：让 Codex 读一个项目</h3>
+      <p>要求它输出入口文件、生成方式、主要页面、可能的风险，不改文件。</p>
     </article>
-    <article class="card" id="practice">
-      <span class="label">完成标准</span>
-      <h2>做完这件事才算学会</h2>
-      <div class="meta">
-        <div class="meta-item"><strong>本课产物</strong><span>为一家电商团队设计一套“先做什么、后做什么”的 AI 落地路线图。</span></div>
-        <div class="meta-item"><strong>验收方式</strong><span>能用自己的话解释本课概念，并把它套到一个真实工作或生活场景里。</span></div>
-      </div>
+    <article class="chapter-card">
+      <h3>练习 2：让 Codex 改一个页面</h3>
+      <p>给出目标用户和验收标准，让它改完后运行本地预览并截图检查。</p>
     </article>
-    <article class="card">
-      <span class="label">课件</span>
-      <h2>PPT 页面结构</h2>
-      <ul class="ppt-list"><li>封面：电商AI系统全景</li><li>全景架构图</li><li>落地优先级</li><li>安全治理</li><li>课程总结页</li></ul>
+    <article class="chapter-card">
+      <h3>练习 3：让 Codex 沉淀一个流程</h3>
+      <p>把一次成功任务总结成检查清单，之后同类任务按清单执行。</p>
     </article>
-  </aside>
+    <article class="chapter-card">
+      <h3>练习 4：让多会话做验收</h3>
+      <p>一个会话改内容，一个会话看移动端，一个会话查断链，最后主会话汇总。</p>
+    </article>
+  </div>
+</section>
+
+<div class="footer">
+  Codex 教学 · 目标是让新手理解“它能交付什么”，而不是只会背产品介绍。
 </div>
-<nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-19-ecommerce-service-retention.html">上一课：电商客服与复购</a>
-  <a class="btn primary" href="../course.html">回到课程总览</a>
-</nav>
-<div class="footer">AI新手入门20节课 · 第一性原则版逐课教程</div>
-</main>
+
+  </main>
 </body>
 </html>

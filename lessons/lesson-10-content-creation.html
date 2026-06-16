@@ -6,130 +6,263 @@
   <title>第10课 内容创作场景</title>
   <style>
 :root {
-  --bg: #f6efe4;
-  --paper: #fffaf3;
-  --ink: #1f1b16;
-  --muted: #6a6258;
-  --line: #ddd1c1;
-  --accent: #8f3d25;
-  --accent2: #305752;
-  --gold: #c8912f;
-  --max: 1180px;
-  --radius: 22px;
-  --shadow: 0 18px 40px rgba(55, 35, 19, 0.1);
+  --canvas: #f6f7fb;
+  --surface: #ffffff;
+  --surface-soft: #f2f7f6;
+  --ink: #171a21;
+  --muted: #5f6876;
+  --line: #dfe5ee;
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --coral: #d3543f;
+  --amber: #b7791f;
+  --blue: #2563eb;
+  --max: 1120px;
+  --radius: 8px;
+  --shadow: 0 14px 30px rgba(23, 26, 33, 0.08);
   --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
   --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: var(--sans);
   color: var(--ink);
-  background:
-    radial-gradient(circle at top left, rgba(48,87,82,0.12), transparent 24%),
-    radial-gradient(circle at bottom right, rgba(143,61,37,0.12), transparent 25%),
-    linear-gradient(180deg, #faf6ef 0%, #efe5d7 100%);
+  background: linear-gradient(180deg, #f6f7fb 0%, #ffffff 46%, #eef7f5 100%);
   line-height: 1.7;
 }
-.wrap { max-width: var(--max); margin: 0 auto; padding: 28px 20px 80px; }
-.hero, .card, .callout { background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.14); border-radius: 28px; box-shadow: var(--shadow); }
-.hero { padding: 34px 34px 28px; margin-bottom: 20px; }
-.eyebrow { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(48,87,82,0.1); color: var(--accent2); font-size: 13px; letter-spacing: .08em; margin-bottom: 12px; }
-h1,h2,h3 { margin: 0; font-family: var(--serif); line-height: 1.2; }
-h1 { font-size: clamp(30px, 4.6vw, 54px); margin-bottom: 10px; }
-h2 { font-size: 24px; margin-bottom: 12px; }
-h3 { font-size: 20px; margin-bottom: 10px; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid rgba(37, 99, 235, 0.35); outline-offset: 3px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 18px 76px; }
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin-inline: -18px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(246, 247, 251, 0.94);
+  border-bottom: 1px solid rgba(223, 229, 238, 0.9);
+  backdrop-filter: blur(14px);
+}
+.brand { font-weight: 800; text-decoration: none; white-space: nowrap; }
+.navlinks { display: flex; align-items: center; justify-content: flex-end; gap: 8px; overflow-x: auto; }
+.navlinks a { flex: 0 0 auto; color: var(--muted); font-size: 0.9rem; text-decoration: none; padding: 7px 8px; border-radius: var(--radius); }
+.navlinks a:hover { color: var(--primary); background: rgba(15, 118, 110, 0.08); }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 20px; align-items: end; padding: 34px 0 18px; }
+.eyebrow { display: inline-flex; color: var(--primary); font-size: 0.86rem; font-weight: 800; letter-spacing: 0; margin-bottom: 10px; }
+h1,h2,h3 { margin: 0; font-family: var(--serif); line-height: 1.22; }
+h1 { font-size: 2.35rem; margin-bottom: 10px; max-width: 780px; }
+h2 { font-size: 1.45rem; margin-bottom: 12px; }
+h3 { font-size: 1.12rem; margin-bottom: 8px; }
 p { margin: 0; }
-.lead { color: var(--muted); max-width: 800px; font-size: 18px; }
-.toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 24px; }
-.btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 16px; border-radius: 999px; text-decoration: none; color: var(--ink); background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.18); }
-.grid { display: grid; gap: 18px; grid-template-columns: 1.08fr 0.92fr; }
-.card { padding: 22px; }
+.lead { color: var(--muted); max-width: 760px; font-size: 1.05rem; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-weight: 700;
+}
+.btn.primary { color: #ffffff; background: var(--primary); border-color: var(--primary); }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(23, 26, 33, 0.08); }
+.progress-panel, .card, .callout, .chapter-card, .notes, .starter-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.progress-panel { padding: 18px; }
+.progress-panel strong { display: block; margin-bottom: 10px; }
+.progress-meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+.progress-bar { height: 8px; overflow: hidden; border-radius: var(--radius); background: #e9eef5; }
+.progress-bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--primary), var(--blue)); }
+.mini-steps { display: grid; gap: 8px; margin: 14px 0 0; padding-left: 20px; color: var(--muted); }
+.grid { display: grid; gap: 18px; grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr); align-items: start; }
+.card { padding: 20px; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta { display: grid; gap: 12px; }
-.meta-item, .principle-block { padding: 14px 16px; border-radius: 18px; background: rgba(255,255,255,0.75); border: 1px solid rgba(106,98,88,0.12); }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid { display: grid; gap: 10px; }
+.meta-item, .principle-block {
+  padding: 14px;
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  border: 1px solid rgba(15, 118, 110, 0.12);
+}
 .meta-item strong, .principle-block strong { display: block; margin-bottom: 4px; }
 .ppt-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
-.ppt-list li { padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,0.78); border: 1px solid rgba(106,98,88,0.12); }
+.ppt-list li { padding: 12px 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); }
 .chapter-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.chapter-card { padding: 22px; background: rgba(255,250,243,0.92); border: 1px solid rgba(106,98,88,0.14); border-radius: 28px; box-shadow: var(--shadow); }
+.chapter-card { padding: 20px; }
 .lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
-.lesson-item { padding: 14px 14px 12px; border-radius: 16px; background: rgba(255,255,255,0.76); border: 1px solid rgba(106,98,88,0.12); }
+.lesson-item { margin: 0; }
+.lesson-item a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
+.lesson-item a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
+.lesson-no { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius); color: #ffffff; background: var(--primary); font-weight: 800; }
 .lesson-item strong { display: block; margin-bottom: 4px; }
 .lesson-item span { color: var(--muted); font-size: 14px; }
-.callout { padding: 20px 22px; border-left: 6px solid var(--gold); margin-bottom: 18px; }
+.callout { padding: 18px; border-left: 4px solid var(--coral); margin-bottom: 18px; }
 .callout p { color: var(--muted); }
-.principles, .truths, .methods, .anti-patterns { display: grid; gap: 10px; }
+.label { display: inline-block; color: var(--coral); font-weight: 800; font-size: 0.88rem; margin-bottom: 6px; }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; }
+.pager .btn { flex: 1 1 0; }
+.pager .btn:last-child { margin-left: auto; }
+.lesson-side { position: sticky; top: 78px; }
 .footer { margin-top: 24px; text-align: center; color: var(--muted); font-size: 14px; }
+.section-title { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin: 28px 0 14px; }
+.section-title p { color: var(--muted); font-size: 0.92rem; }
+.path-grid, .chapters, .notes-wrap, .mindmap-grid { display: grid; gap: 16px; }
+.path-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.chapters, .mindmap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.notes-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
+.starter-panel { padding: 18px; }
+.starter-panel ol { margin: 0; padding-left: 20px; color: var(--muted); }
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+.stat { padding: 12px; border-radius: var(--radius); background: var(--surface-soft); border: 1px solid rgba(15, 118, 110, 0.12); }
+.stat strong { display: block; font-size: 1.25rem; }
+.path-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+.path-card strong { display: block; margin-bottom: 6px; }
+.path-card span { color: var(--muted); font-size: 0.94rem; }
+.gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
+.course-hero { padding-top: 40px; }
 @media (max-width: 920px) {
-  .grid, .chapter-grid { grid-template-columns: 1fr; }
-  .hero { padding: 26px 20px 22px; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid { grid-template-columns: 1fr; }
+  .path-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lesson-side { position: static; }
+}
+@media (max-width: 640px) {
+  .wrap { padding-inline: 14px; padding-bottom: 56px; }
+  .topbar { margin-inline: -14px; padding-inline: 14px; align-items: flex-start; }
+  .brand { padding-top: 7px; }
+  .navlinks { max-width: 68vw; }
+  .hero { padding-top: 24px; }
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.25rem; }
+  .lead { font-size: 1rem; }
+  .toolbar .btn, .pager .btn { width: 100%; }
+  .path-grid, .stat-grid { grid-template-columns: 1fr; }
+  .section-title { display: block; }
+  .section-title p { margin-top: 4px; }
+  .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
+  .lesson-no { width: 38px; height: 38px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
 }
 </style>
 </head>
 <body>
-  <div class="wrap">
-<header class="hero">
-  <div class="eyebrow">第三章：把 AI 用进日常工作 · 第10课</div>
-  <h1>第10课：内容创作场景</h1>
-  <p class="lead">学会用 AI 辅助文章、脚本、商品文案和社媒内容生产。</p>
-  <div class="toolbar">
-    <a class="btn" href="../course.html">返回课程总览</a>
-    <a class="btn" href="../ppt-structure.html">查看 PPT 结构总览</a>
+  <main class="wrap">
+<nav class="topbar" aria-label="课程导航">
+  <a class="brand" href="../course.html">AI新手20课</a>
+  <div class="navlinks">
+    <a href="../course.html#path">学习路径</a>
+    <a href="../course.html#lessons">课程目录</a>
+    <a href="../codex.html">Codex</a>
+    <a href="../mindmap-hub.html">资源</a>
   </div>
+</nav>
+<header class="hero">
+  <div>
+    <div class="eyebrow">第三章：把 AI 用进日常工作 · 第10课</div>
+    <h1>第10课：内容创作场景</h1>
+    <p class="lead">学会用 AI 辅助文章、脚本、商品文案和社媒内容生产。</p>
+    <div class="toolbar">
+      <a class="btn primary" href="#start">开始本课</a>
+      <a class="btn" href="#practice">做完练习</a>
+    </div>
+  </div>
+  <aside class="progress-panel" aria-label="学习进度">
+    <strong>当前进度</strong>
+    <div class="progress-meta">
+      <span>10 / 20</span>
+      <span>50%</span>
+    </div>
+    <div class="progress-bar"><span style="width:50%"></span></div>
+    <ol class="mini-steps">
+      <li>先读核心问题</li>
+      <li>抓住 3 个最小原理</li>
+      <li>完成一个可交付练习</li>
+    </ol>
+  </aside>
 </header>
-<section class="callout">
+<section class="callout" id="start">
+  <span class="label">为什么要学</span>
   <h2>核心问题</h2>
   <p>内容创作为什么是 AI 最能立刻出效果的场景之一？</p>
 </section>
 <div class="grid">
-  <section>
+  <main>
     <article class="card">
-      <h2>本课重点</h2>
+      <span class="label">先记住</span>
+      <h2>本课只抓 3 件事</h2>
       <ul><li>AI 擅长草稿和变体生成</li><li>真正有价值的是结构化生产流程</li><li>创作类结果尤其要保持品牌风格</li></ul>
     </article>
     <article class="card">
+      <span class="label">想明白</span>
       <h2>第一性拆解</h2>
       <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先从内容生产本质拆：选题、结构、表达、分发不是同一个问题。</span></div><div class="principle-block"><strong>拆解 2</strong><span>AI 强在草稿和变体，弱在长期品牌一致性和事实责任。</span></div><div class="principle-block"><strong>拆解 3</strong><span>所以落地重点不是“让 AI 全写”，而是“让 AI 先把标准化部分做掉”。</span></div></div>
     </article>
     <article class="card">
+      <span class="label">可迁移</span>
       <h2>最小原理</h2>
       <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：内容生产是一条链，不是单一写作动作。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：品牌一致性比一次惊艳更重要。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：内容越接近转化场景，越要控制真实性和风格。</span></div></div>
     </article>
     <article class="card">
+      <span class="label">怎么讲</span>
       <h2>讲解结构</h2>
       <ul><li>内容创作的典型链路</li><li>文章、短视频、商品文案的差异</li><li>品牌语气与受众匹配</li><li>内容复用方法</li></ul>
     </article>
     <article class="card">
+      <span class="label">看案例</span>
       <h2>真实案例</h2>
       <ul><li>公众号文章</li><li>小红书文案</li><li>商品详情页</li><li>短视频脚本</li></ul>
     </article>
-  </section>
-  <aside>
+  </main>
+  <aside class="lesson-side">
     <article class="card">
+      <span class="label">马上用</span>
       <h2>应用方法</h2>
       <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先定义渠道、受众、目标动作，再让 AI 写。</span></div><div class="principle-block"><strong>方法 2</strong><span>把常见内容结构做成模板。</span></div><div class="principle-block"><strong>方法 3</strong><span>保留人工负责选题判断、品牌把关和最终审核。</span></div></div>
     </article>
     <article class="card">
+      <span class="label">避坑</span>
       <h2>反常识提醒</h2>
       <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>把 AI 当成完全替代创作者。</span></div><div class="principle-block"><strong>误区 2</strong><span>不同平台用同一套文案硬发。</span></div><div class="principle-block"><strong>误区 3</strong><span>为了快而忽略品牌语气和事实准确性。</span></div></div>
     </article>
-    <article class="card">
-      <h2>教学信息</h2>
+    <article class="card" id="practice">
+      <span class="label">完成标准</span>
+      <h2>做完这件事才算学会</h2>
       <div class="meta">
-        <div class="meta-item"><strong>章节定位</strong><span>从办公、内容、图像、知识检索切入，先形成可见的使用成果。</span></div>
-        <div class="meta-item"><strong>课堂练习</strong><span>为一个新品写出三种不同渠道的文案：电商详情页、小红书、朋友圈。</span></div>
+        <div class="meta-item"><strong>本课产物</strong><span>为一个新品写出三种不同渠道的文案：电商详情页、小红书、朋友圈。</span></div>
+        <div class="meta-item"><strong>验收方式</strong><span>能用自己的话解释本课概念，并把它套到一个真实工作或生活场景里。</span></div>
       </div>
     </article>
     <article class="card">
+      <span class="label">课件</span>
       <h2>PPT 页面结构</h2>
       <ul class="ppt-list"><li>封面：内容创作</li><li>内容生产链路</li><li>渠道差异</li><li>品牌语气</li><li>多版本案例</li></ul>
     </article>
   </aside>
 </div>
-<div class="footer">AI新手入门20节课 · 第一性原则版逐课讲义页</div>
-</div>
+<nav class="pager" aria-label="上一课下一课">
+  <a class="btn" href="./lesson-09-office-and-learning.html">上一课：办公与学习场景</a>
+  <a class="btn primary" href="./lesson-11-image-and-video.html">下一课：图片与视频生成</a>
+</nav>
+<div class="footer">AI新手入门20节课 · 第一性原则版逐课教程</div>
+</main>
 </body>
 </html>
