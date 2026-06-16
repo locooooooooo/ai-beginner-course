@@ -94,7 +94,7 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid { display: grid; gap: 10px; }
 .meta-item, .principle-block {
   padding: 14px;
   border-radius: var(--radius);
@@ -102,10 +102,78 @@ li { margin-bottom: 8px; }
   border: 1px solid rgba(15, 118, 110, 0.12);
 }
 .meta-item strong, .principle-block strong { display: block; margin-bottom: 4px; }
+.learner-brief {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  margin-bottom: 18px;
+  background: #fff8f6;
+  border: 1px solid rgba(211, 84, 63, 0.24);
+  border-left: 4px solid var(--coral);
+  border-radius: var(--radius);
+}
+.learner-brief p { color: var(--muted); }
+.flow-step, .case-read-card, .check-item {
+  padding: 14px;
+  border-radius: var(--radius);
+  background: #f8fafc;
+  border: 1px solid var(--line);
+}
+.flow-step strong, .case-read-card strong {
+  display: block;
+  margin-bottom: 4px;
+}
+.flow-step span, .case-read-card span, .check-item span {
+  color: var(--muted);
+}
+.copy-prompt {
+  margin: 0;
+  padding: 14px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  color: #18312f;
+  background: #eef7f5;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+  font-family: "Consolas", "SFMono-Regular", monospace;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.check-item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+.check-item strong {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: var(--primary);
+  border-radius: var(--radius);
+}
+.small-note {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
 .ppt-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
 .ppt-list li { padding: 12px 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); }
 .chapter-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .chapter-card { padding: 20px; }
+.chapter-outcome {
+  display: grid;
+  gap: 4px;
+  margin: 12px 0;
+  padding: 12px;
+  color: var(--muted);
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.chapter-outcome strong { color: var(--ink); }
 .lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
 .lesson-item { margin: 0; }
 .lesson-item a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
@@ -182,14 +250,69 @@ li { margin-bottom: 8px; }
 .track-card.primary-track span, .track-card.primary-track .track-meta { color: rgba(255, 255, 255, 0.88); }
 .track-block { margin-top: 22px; }
 .placeholder-track {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.75fr);
+  align-items: stretch;
+  gap: 22px;
+  padding: 24px;
   background: var(--surface);
   border: 1px dashed rgba(15, 118, 110, 0.45);
   border-radius: var(--radius);
+}
+.showcase-copy {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+.showcase-copy p {
+  max-width: 760px;
+  margin: 0;
+}
+.showcase-points {
+  display: grid;
+  gap: 10px;
+}
+.showcase-point {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.showcase-point strong {
+  color: var(--primary);
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+}
+.showcase-point span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.showcase-actions {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+.showcase-actions .btn {
+  justify-content: flex-start;
+  min-height: 52px;
+}
+.showcase-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 4px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+}
+.showcase-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
 }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
@@ -197,6 +320,7 @@ li { margin-bottom: 8px; }
   .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
+  .placeholder-track { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .wrap { padding-inline: 14px; padding-bottom: 56px; }
@@ -210,7 +334,8 @@ li { margin-bottom: 8px; }
   .toolbar .btn, .pager .btn { width: 100%; }
   .path-grid, .track-grid, .stat-grid { grid-template-columns: 1fr; }
   .track-card { min-height: 0; }
-  .placeholder-track { display: block; }
+  .placeholder-track { padding: 18px; }
+  .showcase-point { grid-template-columns: 1fr; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
   .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
@@ -226,19 +351,18 @@ li { margin-bottom: 8px; }
   <main class="wrap"><header class="hero">
   <div class="eyebrow">PPT 结构总览</div>
   <h1>AI 学习路线 · PPT 页面结构</h1>
-  <p class="lead">这一页按“新手入门、老鸟进阶、实战演示”的结构整理已上线课程，方便直接扩成讲师课件。</p>
+  <p class="lead">这一页保留给讲师备课使用。学生主线请回到课程总览，从第 1 课开始按任务跟做。</p>
   <div class="toolbar">
-    <a class="btn" href="./course.html">返回课程总览</a>
+    <a class="btn primary" href="./course.html">返回学生教程</a>
     <a class="btn" href="./ai-beginner-20-lessons-course.png">查看课程总脑图</a>
   </div>
 </header>
 <section class="card">
-  <h2>第一性原则补强方向</h2>
+  <h2>讲师使用说明</h2>
   <ul>
-    <li>每课新增“核心问题”，先回答为什么学这一课。</li>
-    <li>每课新增“第一性拆解”，把现象拆到底层逻辑。</li>
-    <li>每课新增“最小原理”和“反常识提醒”，避免只背结论。</li>
-    <li>每课仍保留案例、练习和 PPT 结构，保证课程可讲可练。</li>
+    <li>主教程已经改成学生跟做路线，不建议把这一页作为学生入口。</li>
+    <li>讲师备课时，可以按每课的核心问题、案例和练习扩展成幻灯片。</li>
+    <li>课堂讲完后仍要回到单课页面，让学生完成产物和自检。</li>
   </ul>
 </section>
 <section class="card"><h2>第1课：AI是什么</h2><p style="color:var(--muted);margin-bottom:12px;">第一章：先建立正确认知</p><ul><li>封面：AI 是什么</li><li>为什么这门课先讲 AI 概念</li><li>AI 的范围图</li><li>生活中的 AI 案例</li><li>误区纠偏</li><li>课堂练习页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：如果不先回答“AI 到底是什么”，后面所有工具名、模型名和产品名都会被误当成 AI 本身。</p></section><section class="card"><h2>第2课：大模型、LLM、Agent、MCP、Skill</h2><p style="color:var(--muted);margin-bottom:12px;">第一章：先建立正确认知</p><ul><li>封面：LLM、Agent、MCP、Skill</li><li>一张关系总图</li><li>LLM 做什么</li><li>Agent 做什么</li><li>MCP 做什么</li><li>Skill 做什么</li><li>组合案例</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么很多人学了一堆名词，最后还是不会落地？因为不知道这些概念各自负责哪一段。</p></section><section class="card"><h2>第3课：主流模型家族</h2><p style="color:var(--muted);margin-bottom:12px;">第一章：先建立正确认知</p><ul><li>封面：主流模型家族</li><li>模型分类图</li><li>GPT 与 DeepSeek</li><li>Claude 与 Gemini</li><li>图像模型与视频模型</li><li>新手选型建议</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么同样是“AI 模型”，有人用来写代码，有人用来做图，有人用来做视频？</p></section><section class="card"><h2>第4课：AI能做什么不能做什么</h2><p style="color:var(--muted);margin-bottom:12px;">第一章：先建立正确认知</p><ul><li>封面：AI 的边界</li><li>AI 擅长什么</li><li>AI 常见错误</li><li>高风险输出清单</li><li>验证方法</li><li>课堂讨论页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么看起来很聪明的 AI，仍然会一本正经地说错？</p></section><section class="card"><h2>第5课：怎么提一个高质量问题</h2><p style="color:var(--muted);margin-bottom:12px;">第二章：先学会用再学原理</p><ul><li>封面：高质量提问</li><li>为什么 AI 会答偏</li><li>四件套方法</li><li>前后对比案例</li><li>课堂练习</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么同一个模型，有的人用得很好，有的人得到的全是废话？</p></section><section class="card"><h2>第6课：提示词基础</h2><p style="color:var(--muted);margin-bottom:12px;">第二章：先学会用再学原理</p><ul><li>封面：提示词基础</li><li>提示词四要素</li><li>输出格式设计</li><li>案例拆解</li><li>练习页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：提示词为什么不是“高级咒语”，而是结构化任务说明？</p></section><section class="card"><h2>第7课：提示词进阶</h2><p style="color:var(--muted);margin-bottom:12px;">第二章：先学会用再学原理</p><ul><li>封面：提示词进阶</li><li>复杂任务拆解</li><li>多轮追问示例</li><li>澄清信息模板</li><li>练习页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么复杂任务最容易失败？因为你把本该分阶段完成的工作一次性压给了模型。</p></section><section class="card"><h2>第8课：结果验证与纠错</h2><p style="color:var(--muted);margin-bottom:12px;">第二章：先学会用再学原理</p><ul><li>封面：结果验证</li><li>为什么要验证</li><li>四层检查法</li><li>AI 自检方法</li><li>练习页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么会出现“看起来很像对的，但其实完全不能用”的 AI 结果？</p></section><section class="card"><h2>第9课：办公与学习场景</h2><p style="color:var(--muted);margin-bottom:12px;">第三章：把 AI 用进日常工作</p><ul><li>封面：办公与学习</li><li>高频办公任务</li><li>提示模板</li><li>敏感信息边界</li><li>练习页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么办公场景最适合新手入门？因为它高频、低风险、结果又容易判断。</p></section><section class="card"><h2>第10课：内容创作场景</h2><p style="color:var(--muted);margin-bottom:12px;">第三章：把 AI 用进日常工作</p><ul><li>封面：内容创作</li><li>内容生产链路</li><li>渠道差异</li><li>品牌语气</li><li>多版本案例</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：内容创作为什么是 AI 最能立刻出效果的场景之一？</p></section><section class="card"><h2>第11课：图片与视频生成</h2><p style="color:var(--muted);margin-bottom:12px;">第三章：把 AI 用进日常工作</p><ul><li>封面：图片与视频</li><li>图像模型做什么</li><li>视频模型做什么</li><li>电商案例</li><li>风险与边界</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么图像和视频生成看起来更直观，却更容易在业务里踩坑？</p></section><section class="card"><h2>第12课：搜索、知识库与问答</h2><p style="color:var(--muted);margin-bottom:12px;">第三章：把 AI 用进日常工作</p><ul><li>封面：知识库与问答</li><li>为什么只靠模型不够</li><li>RAG 基本逻辑</li><li>FAQ 场景</li><li>练习页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么模型很强，却回答不好企业内部事实和最新规则？</p></section><section class="card"><h2>第13课：什么是工作流</h2><p style="color:var(--muted);margin-bottom:12px;">第四章：从工具使用到工作流</p><ul><li>封面：工作流</li><li>问答与流程差异</li><li>流程组成</li><li>案例拆解</li><li>练习页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么很多 AI 演示很好看，但一进业务就落不下来？</p></section><section class="card"><h2>第14课：什么是Agent</h2><p style="color:var(--muted);margin-bottom:12px;">第四章：从工具使用到工作流</p><ul><li>封面：Agent</li><li>为什么需要 Agent</li><li>Agent 六部件</li><li>业务案例</li><li>治理边界</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么只靠聊天模型，很多任务永远停留在“给建议”，而 Agent 能走向“交结果”？</p></section><section class="card"><h2>第15课：什么是MCP</h2><p style="color:var(--muted);margin-bottom:12px;">第四章：从工具使用到工作流</p><ul><li>封面：MCP</li><li>MCP 是什么</li><li>可连接系统示例</li><li>为什么它重要</li><li>安全边界</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么很多 AI 看起来很聪明，但就是碰不到你的真实业务数据和系统动作？</p></section><section class="card"><h2>第16课：什么是Skill</h2><p style="color:var(--muted);margin-bottom:12px;">第四章：从工具使用到工作流</p><ul><li>封面：Skill</li><li>Skill 与提示词的区别</li><li>Skill 的结构</li><li>真实用例</li><li>电商 Skill 设计</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么团队明明已经会做某件事，换个人或换个 AI 还是会做得不稳定？</p></section><section class="card"><h2>第17课：电商内容生产</h2><p style="color:var(--muted);margin-bottom:12px;">第五章：电商场景落地</p><ul><li>封面：电商内容生产</li><li>内容链路</li><li>渠道差异</li><li>品牌合规</li><li>案例页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么电商最容易先从内容生产起步，而不是先做高风险自动化？</p></section><section class="card"><h2>第18课：电商获客与私域</h2><p style="color:var(--muted);margin-bottom:12px;">第五章：电商场景落地</p><ul><li>封面：获客与私域</li><li>公域到私域流程</li><li>自动承接</li><li>标签与分层</li><li>案例页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么很多获客动作做了不少，最后线索却沉不下来？</p></section><section class="card"><h2>第19课：电商客服与复购</h2><p style="color:var(--muted);margin-bottom:12px;">第五章：电商场景落地</p><ul><li>封面：客服与复购</li><li>客服自动化</li><li>售后边界</li><li>会员与复购</li><li>风险控制</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么客服和复购是高价值场景，但又不能像内容生产那样随便放开自动化？</p></section><section class="card"><h2>第20课：电商AI系统全景</h2><p style="color:var(--muted);margin-bottom:12px;">第五章：电商场景落地</p><ul><li>封面：电商AI系统全景</li><li>全景架构图</li><li>落地优先级</li><li>安全治理</li><li>课程总结页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么很多团队买了很多 AI 工具，最后还是没有形成系统能力？</p></section><section class="card"><h2>第21课：Codex能做什么</h2><p style="color:var(--muted);margin-bottom:12px;">老鸟进阶：Codex 扩展学习</p><ul><li>封面：Codex 能做什么</li><li>Codex 和聊天 AI 的区别</li><li>Codex 工作五要素</li><li>典型任务清单</li><li>边界和安全提醒</li><li>课堂练习页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么同样是 AI，对话模型只能给建议，而 Codex 能把一个网页或代码任务推进到可交付？</p></section><section class="card"><h2>第22课：Loop Engineering是什么</h2><p style="color:var(--muted);margin-bottom:12px;">老鸟进阶：Codex 扩展学习</p><ul><li>封面：Loop Engineering</li><li>一次性提示的风险</li><li>循环式交付模型</li><li>Codex 多会话分工</li><li>验收证据示例</li><li>课堂练习页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么复杂任务不能只靠一次提示词完成，而要让 Codex 一轮一轮推进？</p></section><section class="card"><h2>第23课：如何用Codex制作好看的网页</h2><p style="color:var(--muted);margin-bottom:12px;">老鸟进阶：Codex 扩展学习</p><ul><li>封面：用 Codex 做好看的网页</li><li>好看网页的第一性原则</li><li>需求四件套</li><li>移动端检查清单</li><li>浏览器验收方法</li><li>课堂练习页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么让 AI 做网页时，很多结果看起来像模板堆砌，而不是一个真正好用的页面？</p></section><section class="card"><h2>第24课：Git、GitHub与Codex协作</h2><p style="color:var(--muted);margin-bottom:12px;">老鸟进阶：Codex 扩展学习</p><ul><li>封面：Git、GitHub 与 Codex</li><li>本地和线上的区别</li><li>Git 四个动作</li><li>GitHub Pages 发布链路</li><li>Codex 如何帮你操作和验收</li><li>课堂练习页</li></ul><p style="color:var(--muted);margin-top:12px;">核心问题：为什么本地已经改好了，线上网站却没有变化？因为还缺少提交、推送、发布和缓存验证这条链路。</p></section><div class="footer">AI学习路线 · 第一性原则版 PPT 页面结构总览</div></main>

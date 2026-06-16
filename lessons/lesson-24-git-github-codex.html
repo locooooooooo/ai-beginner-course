@@ -94,7 +94,7 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid { display: grid; gap: 10px; }
 .meta-item, .principle-block {
   padding: 14px;
   border-radius: var(--radius);
@@ -102,10 +102,78 @@ li { margin-bottom: 8px; }
   border: 1px solid rgba(15, 118, 110, 0.12);
 }
 .meta-item strong, .principle-block strong { display: block; margin-bottom: 4px; }
+.learner-brief {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  margin-bottom: 18px;
+  background: #fff8f6;
+  border: 1px solid rgba(211, 84, 63, 0.24);
+  border-left: 4px solid var(--coral);
+  border-radius: var(--radius);
+}
+.learner-brief p { color: var(--muted); }
+.flow-step, .case-read-card, .check-item {
+  padding: 14px;
+  border-radius: var(--radius);
+  background: #f8fafc;
+  border: 1px solid var(--line);
+}
+.flow-step strong, .case-read-card strong {
+  display: block;
+  margin-bottom: 4px;
+}
+.flow-step span, .case-read-card span, .check-item span {
+  color: var(--muted);
+}
+.copy-prompt {
+  margin: 0;
+  padding: 14px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  color: #18312f;
+  background: #eef7f5;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+  font-family: "Consolas", "SFMono-Regular", monospace;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.check-item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+.check-item strong {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: var(--primary);
+  border-radius: var(--radius);
+}
+.small-note {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
 .ppt-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
 .ppt-list li { padding: 12px 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); }
 .chapter-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .chapter-card { padding: 20px; }
+.chapter-outcome {
+  display: grid;
+  gap: 4px;
+  margin: 12px 0;
+  padding: 12px;
+  color: var(--muted);
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.chapter-outcome strong { color: var(--ink); }
 .lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
 .lesson-item { margin: 0; }
 .lesson-item a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
@@ -182,14 +250,69 @@ li { margin-bottom: 8px; }
 .track-card.primary-track span, .track-card.primary-track .track-meta { color: rgba(255, 255, 255, 0.88); }
 .track-block { margin-top: 22px; }
 .placeholder-track {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.75fr);
+  align-items: stretch;
+  gap: 22px;
+  padding: 24px;
   background: var(--surface);
   border: 1px dashed rgba(15, 118, 110, 0.45);
   border-radius: var(--radius);
+}
+.showcase-copy {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+.showcase-copy p {
+  max-width: 760px;
+  margin: 0;
+}
+.showcase-points {
+  display: grid;
+  gap: 10px;
+}
+.showcase-point {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.showcase-point strong {
+  color: var(--primary);
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+}
+.showcase-point span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.showcase-actions {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+.showcase-actions .btn {
+  justify-content: flex-start;
+  min-height: 52px;
+}
+.showcase-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 4px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+}
+.showcase-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
 }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
@@ -197,6 +320,7 @@ li { margin-bottom: 8px; }
   .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
+  .placeholder-track { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .wrap { padding-inline: 14px; padding-bottom: 56px; }
@@ -210,7 +334,8 @@ li { margin-bottom: 8px; }
   .toolbar .btn, .pager .btn { width: 100%; }
   .path-grid, .track-grid, .stat-grid { grid-template-columns: 1fr; }
   .track-card { min-height: 0; }
-  .placeholder-track { display: block; }
+  .placeholder-track { padding: 18px; }
+  .showcase-point { grid-template-columns: 1fr; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
   .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
@@ -263,6 +388,28 @@ li { margin-bottom: 8px; }
 </section>
 <div class="grid">
   <main>
+    <section class="learner-brief">
+      <span class="label">先怎么学</span>
+      <h2>先用 4 步把这课跑起来</h2>
+      <p class="small-note">这不是标题清单，是给新手的跟做路线。你不需要先记住所有名词，先把任务做完再回头理解术语。</p>
+      <div class="flow">
+        <div class="flow-step">
+          <strong>1. 先说人话</strong>
+          <span>用自己的话回答：这节课到底解决什么困惑？可以先照着核心问题复述一遍：为什么本地已经改好了，线上网站却没有变化？因为还缺少提交、推送、发布和缓存验证这条链路。</span>
+        </div>
+        <div class="flow-step">
+          <strong>2. 只抓三句</strong>
+          <span>先记住前 3 个重点，不急着背完整定义：Git 负责记录修改历史，commit 是一次明确的版本快照；GitHub 负责远端托管，push 后线上仓库才会更新；GitHub Pages 还需要等待构建和缓存刷新，必须线上验证。</span>
+        </div>
+        <div class="flow-step">
+          <strong>3. 套进场景</strong>
+          <span>从案例里挑一个最熟的场景，例如“本地新增 codex.html 后，线上没有入口，因为还没 push”，写出输入、AI 做什么、人工怎么检查。</span>
+        </div>
+        <div class="flow-step">
+          <strong>4. 留下产物</strong>
+          <span>完成本课产物：写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span>
+        </div></div>
+    </section>
     <article class="card">
       <span class="label">先记住</span>
       <h2>本课只抓 3 件事</h2>
@@ -279,14 +426,26 @@ li { margin-bottom: 8px; }
       <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：没 commit 的修改只是工作区状态，不是版本历史。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：没 push 的提交只在本地，线上仓库不会变化。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：push 成功也不等于用户马上看到，Pages 构建和缓存需要验证。</span></div></div>
     </article>
     <article class="card">
-      <span class="label">怎么讲</span>
-      <h2>讲解结构</h2>
+      <span class="label">怎么学</span>
+      <h2>读完后怎么把它用出来</h2>
       <ul><li>Git 的基本概念：工作区、暂存区、提交</li><li>GitHub 的基本概念：远端仓库、分支、Pages</li><li>Codex 下的常见流程：status、add、commit、push、线上检查</li><li>如何保护已有改动，避免误删和误覆盖</li></ul>
     </article>
     <article class="card">
-      <span class="label">看案例</span>
-      <h2>真实案例</h2>
-      <ul><li>本地新增 codex.html 后，线上没有入口，因为还没 push</li><li>推送成功后，GitHub Pages 需要等待缓存刷新</li><li>用链接检查确认发布目录没有断链</li></ul>
+      <span class="label">怎么读案例</span>
+      <h2>先看这 2 类真实场景</h2>
+      <div class="case-read-grid">
+        <div class="case-read-card">
+          <strong>本地新增 codex.html 后，线上没有入口，因为还没 push</strong>
+          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
+        </div>
+        <div class="case-read-card">
+          <strong>推送成功后，GitHub Pages 需要等待缓存刷新</strong>
+          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
+        </div>
+        <div class="case-read-card">
+          <strong>用链接检查确认发布目录没有断链</strong>
+          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
+        </div></div>
     </article>
   </main>
   <aside class="lesson-side">
@@ -309,9 +468,18 @@ li { margin-bottom: 8px; }
       </div>
     </article>
     <article class="card">
-      <span class="label">课件</span>
-      <h2>PPT 页面结构</h2>
-      <ul class="ppt-list"><li>封面：Git、GitHub 与 Codex</li><li>本地和线上的区别</li><li>Git 四个动作</li><li>GitHub Pages 发布链路</li><li>Codex 如何帮你操作和验收</li><li>课堂练习页</li></ul>
+      <span class="label">可以直接复制</span>
+      <h2>给 AI 的跟做提示</h2>
+      <pre class="copy-prompt"><code>我正在学习「Git、GitHub与Codex协作」，请用新手能听懂的话教我。
+先用 120 字以内解释它，不要堆术语。
+再结合这两个场景举例：本地新增 codex.html 后，线上没有入口，因为还没 push；推送成功后，GitHub Pages 需要等待缓存刷新。
+然后问我 3 个检查理解的问题。
+最后帮我完成这个练习：写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</code></pre>
+    </article>
+    <article class="card">
+      <span class="label">自检</span>
+      <h2>学完请确认这 4 件事</h2>
+      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「Git、GitHub与Codex协作」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
     </article>
   </aside>
 </div>
