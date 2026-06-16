@@ -136,6 +136,32 @@ li { margin-bottom: 8px; }
 .path-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
 .path-card strong { display: block; margin-bottom: 6px; }
 .path-card span { color: var(--muted); font-size: 0.94rem; }
+.case-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.case-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.case-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+.case-card strong { display: block; margin-bottom: 6px; }
+.case-card p, .case-card span { color: var(--muted); font-size: 0.94rem; }
+.case-step { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 12px; align-items: start; }
+.step-no {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: #fff;
+  font-weight: 800;
+}
+.warning-card {
+  border-color: rgba(211, 84, 63, 0.28);
+  background: #fff8f6;
+}
 .track-card {
   display: flex;
   min-height: 178px;
@@ -168,7 +194,7 @@ li { margin-bottom: 8px; }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
 }
@@ -197,8 +223,7 @@ li { margin-bottom: 8px; }
 </style>
 </head>
 <body>
-  <main class="wrap">
-<nav class="topbar" aria-label="课程导航">
+  <main class="wrap"><nav class="topbar" aria-label="课程导航">
   <a class="brand" href="../course.html">AI入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
@@ -294,7 +319,6 @@ li { margin-bottom: 8px; }
   <a class="btn" href="./lesson-16-skill.html">上一课：什么是Skill</a>
   <a class="btn primary" href="./lesson-18-ecommerce-leads-private-domain.html">下一课：电商获客与私域</a>
 </nav>
-<div class="footer">AI学习路线 · 第一性原则版逐课教程</div>
-</main>
+<div class="footer">AI学习路线 · 第一性原则版逐课教程</div></main>
 </body>
 </html>

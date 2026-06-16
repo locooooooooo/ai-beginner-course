@@ -136,6 +136,32 @@ li { margin-bottom: 8px; }
 .path-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
 .path-card strong { display: block; margin-bottom: 6px; }
 .path-card span { color: var(--muted); font-size: 0.94rem; }
+.case-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.case-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.case-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+.case-card strong { display: block; margin-bottom: 6px; }
+.case-card p, .case-card span { color: var(--muted); font-size: 0.94rem; }
+.case-step { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 12px; align-items: start; }
+.step-no {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: #fff;
+  font-weight: 800;
+}
+.warning-card {
+  border-color: rgba(211, 84, 63, 0.28);
+  background: #fff8f6;
+}
 .track-card {
   display: flex;
   min-height: 178px;
@@ -168,7 +194,7 @@ li { margin-bottom: 8px; }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
 }
@@ -197,9 +223,7 @@ li { margin-bottom: 8px; }
 </style>
 </head>
 <body>
-  <main class="wrap">
-    
-<nav class="topbar" aria-label="站点导航" id="top">
+  <main class="wrap"><nav class="topbar" aria-label="站点导航" id="top">
   <a class="brand" href="./course.html">AI入门课</a>
   <div class="navlinks">
     <a href="#beginner">新手入门</a>
@@ -213,7 +237,7 @@ li { margin-bottom: 8px; }
     <div class="eyebrow">三大类 · 第一性原则 · 手机友好</div>
     <h1>AI 学习路线：新手入门、老鸟进阶、实战演示</h1>
     <p class="lead">
-      先把 AI 基础学明白，再进入 Codex 这类能交付的工作方式；后续实战演示会放你本地用 AI 制作工具的总结。
+      先把 AI 基础学明白，再进入 Codex 这类能交付的工作方式；实战演示会放你本地用 AI 做出的真实案例。
     </p>
     <div class="toolbar">
       <a class="btn primary" href="#advanced">进入老鸟进阶</a>
@@ -229,8 +253,8 @@ li { margin-bottom: 8px; }
         <div class="track-meta">4 节 Codex 课</div>
       </a>
       <a class="track-card" href="#showcase">
-        <div><strong>实战演示</strong><span>后续放你本地用 AI 制作的工具总结，当前只保留入口。</span></div>
-        <div class="track-meta">待补充</div>
+        <div><strong>实战演示</strong><span>从策略看板到小说视频，看 Codex 如何把想法推进成可交付作品。</span></div>
+        <div class="track-meta">2 个案例</div>
       </a>
     </div>
   </div>
@@ -239,12 +263,12 @@ li { margin-bottom: 8px; }
     <ol>
       <li>零基础先走“新手入门”，不要急着背工具名。</li>
       <li>已经会基础 AI，再进入“老鸟进阶”学习 Codex 交付。</li>
-      <li>等本地 AI 工具案例整理好，再放进“实战演示”。</li>
+      <li>进入“实战演示”，看 Codex 如何完成本地工具和内容生产案例。</li>
     </ol>
     <div class="stat-grid">
       <div class="stat"><strong>3</strong><span>大类</span></div>
       <div class="stat"><strong>24</strong><span>节已上线</span></div>
-      <div class="stat"><strong>1</strong><span>个实战入口</span></div>
+      <div class="stat"><strong>2</strong><span>个实战案例</span></div>
     </div>
   </aside>
 </header>
@@ -267,7 +291,7 @@ li { margin-bottom: 8px; }
 <section id="lessons">
   <div class="section-title">
     <h2>三大类课程目录</h2>
-    <p>先把基础能力学稳，再进入 Codex 扩展；实战演示等你后续补充本地 AI 工具案例。</p>
+    <p>先把基础能力学稳，再进入 Codex 扩展；实战演示从本地 AI 工具案例开始，逐步沉淀真实交付过程。</p>
   </div>
   <article class="track-block" id="beginner">
     <div class="section-title">
@@ -339,11 +363,14 @@ li { margin-bottom: 8px; }
   </article>
   <article class="track-block placeholder-track" id="showcase">
     <div>
-      <span class="label">后续补充</span>
+      <span class="label">实战案例</span>
       <h2>实战演示</h2>
-      <p>这里后续用来放你本地用 AI 制作的工具总结。当前先保留入口，不伪造案例、不补不存在的工具清单。</p>
+      <p>已加入两个案例：世界杯策略看板展示本地工具迭代；《重生之我在同福客栈》展示小说写作到视频成片的内容生产链。</p>
     </div>
-    <div class="toolbar"><a class="btn" href="#top">先回到课程入口</a></div>
+    <div class="toolbar">
+      <a class="btn primary" href="./worldcup-strategy-case.html">策略看板案例</a>
+      <a class="btn" href="./lessons/lesson-25-codex-novel-video-case.html">小说视频案例</a>
+    </div>
   </article>
 </section>
 
@@ -378,6 +405,7 @@ li { margin-bottom: 8px; }
   <div class="toolbar">
     <a class="btn" href="./mindmap-hub.html">打开脑图资源库</a>
     <a class="btn" href="./codex.html">进入老鸟进阶</a>
+    <a class="btn" href="#showcase">进入实战演示</a>
     <a class="btn" href="./ppt-structure.html">查看 PPT 页面结构</a>
     <a class="btn" href="./ai-beginner-20-lessons-course.png">打开课程总脑图</a>
   </div>
@@ -385,8 +413,6 @@ li { margin-bottom: 8px; }
 
 <div class="footer">
   生成时间：2026-06-16 · 课程定位：AI 学习路线 · 形式：移动端友好的教程站点
-</div>
-
-  </main>
+</div></main>
 </body>
 </html>

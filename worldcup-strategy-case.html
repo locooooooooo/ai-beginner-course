@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>老鸟进阶：Codex 扩展学习</title>
+  <title>实战演示：用 Codex 迭代世界杯策略看板</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -234,163 +234,216 @@ li { margin-bottom: 8px; }
 </nav>
 <header class="hero course-hero">
   <div>
-    <div class="eyebrow">老鸟进阶 · Codex 扩展学习</div>
-    <h1>老鸟进阶：从会使用 AI 到会用 Codex 交付</h1>
+    <div class="eyebrow">实战演示 01 · Codex 本地工具迭代</div>
+    <h1>用 Codex 迭代世界杯策略看板</h1>
     <p class="lead">
-      这个类目把 Codex、Loop Engineering、网页制作、Git 和 GitHub 放在同一条交付链路里学习。目标不是背产品介绍，而是知道怎么让 Codex 把一个真实任务做到能上线、能验收。
+      这个案例来自本地目录 D:\世界杯。它不是教人下注，而是演示怎样把一个高风险决策问题，拆成数据、规则、看板、复盘和审计五层，让 Codex 一轮一轮把想法变成可检查的本地工具。
     </p>
     <div class="toolbar">
-      <a class="btn primary" href="./lessons/lesson-21-codex-overview.html">开始第 21 课</a>
-      <a class="btn" href="#chapter-lessons">看进阶目录</a>
+      <a class="btn primary" href="#loop">看迭代流程</a>
+      <a class="btn" href="#risk">先看风险边界</a>
     </div>
   </div>
   <aside class="starter-panel">
-    <strong>老鸟进阶学习顺序</strong>
+    <strong>本案例学什么</strong>
     <ol>
-      <li>先理解 Codex 能做什么。</li>
-      <li>再用 Loop Engineering 一轮一轮推进任务。</li>
-      <li>接着学习用 Codex 做手机友好的网页。</li>
-      <li>最后学会 Git、GitHub 和线上发布验证。</li>
+      <li>如何把模糊策略变成文件结构和服务边界。</li>
+      <li>如何让 Codex 写生成脚本、Web 看板和文档库。</li>
+      <li>如何用复盘和审计规则约束模型幻觉与过度自信。</li>
     </ol>
   </aside>
 </header>
 
-<section id="chapter-lessons">
-  <div class="section-title">
-    <h2>老鸟进阶 4 节课</h2>
-    <p>从理解 Codex 到真正发布一个可验收的网页。</p>
-  </div>
-  <div class="chapters">
-    <article class="chapter-card">
-      <span class="label">第 21 课</span>
-      <h3>Codex 能做什么</h3>
-      <p>理解 Codex 如何读文件、改文件、跑命令和做验收。</p>
-      <div class="toolbar"><a class="btn primary" href="./lessons/lesson-21-codex-overview.html">进入课程</a></div>
-    </article>
-    <article class="chapter-card">
-      <span class="label">第 22 课</span>
-      <h3>Loop Engineering 是什么</h3>
-      <p>学习目标、执行、验收、修正的循环式交付方法。</p>
-      <div class="toolbar"><a class="btn primary" href="./lessons/lesson-22-loop-engineering.html">进入课程</a></div>
-    </article>
-    <article class="chapter-card">
-      <span class="label">第 23 课</span>
-      <h3>如何用 Codex 制作好看的网页</h3>
-      <p>把用户、结构、视觉和移动端验收交给 Codex。</p>
-      <div class="toolbar"><a class="btn primary" href="./lessons/lesson-23-codex-web-design.html">进入课程</a></div>
-    </article>
-    <article class="chapter-card">
-      <span class="label">第 24 课</span>
-      <h3>Git、GitHub 与 Codex 协作</h3>
-      <p>理解本地修改、提交、推送、GitHub Pages 和线上验证。</p>
-      <div class="toolbar"><a class="btn primary" href="./lessons/lesson-24-git-github-codex.html">进入课程</a></div>
-    </article>
-  </div>
-</section>
-
-<section id="what">
-  <div class="section-title">
-    <h2>用第一性原则看 Codex</h2>
-    <p>先拆底层工作流，再看产品名。</p>
-  </div>
-  <div class="path-grid">
-    <article class="path-card"><strong>1. 任务</strong><span>你要完成什么：修 Bug、做网页、写教程、跑测试、整理报告。</span></article>
-    <article class="path-card"><strong>2. 上下文</strong><span>Codex 需要看到项目文件、运行环境、已有规范和你的具体要求。</span></article>
-    <article class="path-card"><strong>3. 工具</strong><span>它可以调用命令行、浏览器、文件编辑、多会话、插件和技能。</span></article>
-    <article class="path-card"><strong>4. 产物</strong><span>最终不是一句回答，而是改好的文件、可打开的网站、检查结果或可复用流程。</span></article>
-    <article class="path-card"><strong>5. 验收</strong><span>必须用运行结果、截图、链接检查、测试或人工标准证明完成。</span></article>
-  </div>
-</section>
-
-<section id="tasks">
-  <div class="section-title">
-    <h2>Codex 常见能力</h2>
-    <p>新手先记住这些实际用途。</p>
-  </div>
-  <div class="chapters">
-    <article class="chapter-card">
-      <span class="label">代码与项目</span>
-      <h3>读懂项目并改代码</h3>
-      <p>让 Codex 先看项目结构，再按你的目标修改文件。例如修复样式、补功能、改脚本、整理目录、生成静态页面。</p>
-    </article>
-    <article class="chapter-card">
-      <span class="label">运行与验证</span>
-      <h3>跑命令、查错误、做验收</h3>
-      <p>它可以运行生成脚本、测试命令、本地服务和浏览器检查，把“改了”推进到“确实能用”。</p>
-    </article>
-    <article class="chapter-card">
-      <span class="label">网页与内容</span>
-      <h3>把资料做成可阅读产品</h3>
-      <p>适合把 Markdown、脑图、课程大纲、报告，整理成手机可读的 HTML 教程、资源页或发布目录。</p>
-    </article>
-    <article class="chapter-card">
-      <span class="label">多会话协作</span>
-      <h3>并行探索、执行、验收</h3>
-      <p>复杂任务可以让不同会话分别做内容审查、UI 验收、实现建议，主会话负责收口和最终判断。</p>
-    </article>
-    <article class="chapter-card">
-      <span class="label">自动化</span>
-      <h3>持续检查和定时跟进</h3>
-      <p>适合定期 review、提醒、监控变化、持续检查项目状态，但要明确频率、目标和输出形式。</p>
-    </article>
-    <article class="chapter-card">
-      <span class="label">知识沉淀</span>
-      <h3>用 Skill 固化做事方法</h3>
-      <p>如果某类任务会反复做，可以把步骤、检查表、参考资料沉淀成 Skill，让以后执行更稳定。</p>
-    </article>
-  </div>
-</section>
-
-<section class="notes-wrap">
-  <article class="notes">
-    <span class="label">新手怎么提需求</span>
-    <h3>给 Codex 的好任务长什么样</h3>
-    <ul>
-      <li>说清目标：我要最终得到什么。</li>
-      <li>说清范围：改哪个目录，哪些文件别碰。</li>
-      <li>说清标准：怎么证明完成，比如截图、测试、链接检查。</li>
-      <li>允许它先读代码，再决定怎么改。</li>
-    </ul>
-  </article>
-  <article class="notes">
-    <span class="label">边界意识</span>
-    <h3>Codex 不应该替你决定什么</h3>
-    <ul>
-      <li>不要让它无授权删除、重置或覆盖重要文件。</li>
-      <li>涉及账号、付款、隐私、线上发布，要先明确授权。</li>
-      <li>结果必须验收，不能只因为回答很自信就直接信。</li>
-      <li>产品方向、商业取舍、最终发布责任仍然由人决定。</li>
-    </ul>
-  </article>
+<section id="risk" class="callout warning-card">
+  <span class="label">风险边界</span>
+  <h2>这是一篇工程教程，不是投注建议</h2>
+  <p>
+    原项目涉及赔率、注单、资金和赛果复盘。公开教程只保留工程方法：数据如何分层、规则如何沉淀、看板如何展示、复盘如何反推下一轮规则。具体盘口、金额、下注组合和实时建议不作为教程内容发布。
+  </p>
 </section>
 
 <section>
   <div class="section-title">
-    <h2>4 个上手练习</h2>
-    <p>从小任务开始，建立“目标 -> 执行 -> 验收”的习惯。</p>
+    <h2>项目最终长什么样</h2>
+    <p>Codex 不是只写一段分析，而是把策略工作拆成一个本地可运行系统。</p>
   </div>
-  <div class="chapters">
-    <article class="chapter-card">
-      <h3>练习 1：让 Codex 读一个项目</h3>
-      <p>要求它输出入口文件、生成方式、主要页面、可能的风险，不改文件。</p>
+  <div class="case-grid">
+    <article class="case-card">
+      <strong>数据层</strong>
+      <p>读取实时缓存、人工录入、参考报告、历史账本和策略导出，所有来源都要有时间戳和可信度标签。</p>
     </article>
-    <article class="chapter-card">
-      <h3>练习 2：让 Codex 改一个页面</h3>
-      <p>给出目标用户和验收标准，让它改完后运行本地预览并截图检查。</p>
+    <article class="case-card">
+      <strong>规则层</strong>
+      <p>把“能不能买”“该不该买”“买多少”“怎么展示”拆开，写成可复用规则和 JSON 配置。</p>
     </article>
-    <article class="chapter-card">
-      <h3>练习 3：让 Codex 沉淀一个流程</h3>
-      <p>把一次成功任务总结成检查清单，之后同类任务按清单执行。</p>
+    <article class="case-card">
+      <strong>服务层</strong>
+      <p>用本地 HTTP 服务提供 /api/state、/api/health、/api/refresh 和文档 API，前端只负责渲染。</p>
     </article>
-    <article class="chapter-card">
-      <h3>练习 4：让多会话做验收</h3>
-      <p>一个会话改内容，一个会话看移动端，一个会话查断链，最后主会话汇总。</p>
+    <article class="case-card">
+      <strong>看板层</strong>
+      <p>展示刷新状态、数据来源、策略排序、赔率变化、组合窗口、文档库和复盘结果。</p>
+    </article>
+    <article class="case-card">
+      <strong>复盘层</strong>
+      <p>每日记录结果、命中和失败原因，用反事实回放判断新规则能否减少旧错误。</p>
+    </article>
+    <article class="case-card">
+      <strong>审计层</strong>
+      <p>用脚本检查规则版本、数据源、敏感残留、相关性暴露和误导性措辞，防止越改越危险。</p>
     </article>
   </div>
 </section>
 
+<section id="loop">
+  <div class="section-title">
+    <h2>Loop Engineering：这个项目怎么迭代</h2>
+    <p>每一轮都必须产出文件、运行结果或复盘证据。</p>
+  </div>
+  <div class="case-grid two">
+    <article class="case-card case-step">
+      <span class="step-no">1</span>
+      <div><strong>定义目标</strong><p>先把目标从“给我策略”改成“做一个可刷新、可展示、可复盘的本地策略看板”。</p></div>
+    </article>
+    <article class="case-card case-step">
+      <span class="step-no">2</span>
+      <div><strong>拆目录</strong><p>把项目拆成 data、records、outputs、web、logs 和脚本入口，让每类产物有固定位置。</p></div>
+    </article>
+    <article class="case-card case-step">
+      <span class="step-no">3</span>
+      <div><strong>先跑通最小链路</strong><p>生成策略 JSON、Markdown 和 HTML 预览，再让 Web 页面读取 API 渲染。</p></div>
+    </article>
+    <article class="case-card case-step">
+      <span class="step-no">4</span>
+      <div><strong>引入复盘</strong><p>真实结果出来后，不问“这次为什么没中”这么粗的问题，而是记录哪个规则导致暴露。</p></div>
+    </article>
+    <article class="case-card case-step">
+      <span class="step-no">5</span>
+      <div><strong>升级规则</strong><p>把复盘教训写回 rules，比如普通平不能被让球平替代、串关公共腿不能重复过多。</p></div>
+    </article>
+    <article class="case-card case-step">
+      <span class="step-no">6</span>
+      <div><strong>写审计脚本</strong><p>让 Codex 把规则变成自动检查，避免下一轮又出现同类错误或危险措辞。</p></div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>目录怎么读</h2>
+    <p>看一个 Codex 项目时，先看边界，不要先钻进最长的代码文件。</p>
+  </div>
+  <div class="chapters">
+    <article class="chapter-card">
+      <span class="label">入口文件</span>
+      <h3>README.md</h3>
+      <p>说明服务端、Web、API、启动命令、配置方式和当前展示字段，是理解项目的第一入口。</p>
+    </article>
+    <article class="chapter-card">
+      <span class="label">核心生成</span>
+      <h3>build_worldcup_draw_strategy.py</h3>
+      <p>把赛事、赔率、报告和规则整合成逐场策略行，输出 CSV、Markdown 和 JSON。</p>
+    </article>
+    <article class="chapter-card">
+      <span class="label">服务状态</span>
+      <h3>worldcup_service.py</h3>
+      <p>负责刷新状态、保存快照、计算变化、管理记录和复盘信息，是后端状态核心。</p>
+    </article>
+    <article class="chapter-card">
+      <span class="label">本地 API</span>
+      <h3>worldcup_server.py</h3>
+      <p>提供 /api/state、/api/health、/api/refresh、/api/docs，并托管 web/ 静态页面。</p>
+    </article>
+    <article class="chapter-card">
+      <span class="label">规则沉淀</span>
+      <h3>records/rules/</h3>
+      <p>保存迭代规则、模型口径和 JSON 版本，让下一次 Codex 接手时不会只靠聊天记忆。</p>
+    </article>
+    <article class="chapter-card">
+      <span class="label">复盘证据</span>
+      <h3>records/daily-review/</h3>
+      <p>记录每天的失败、命中、误判和下一轮修正，是这个项目真正变强的来源。</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>从失败里升级规则</h2>
+    <p>这个项目最值得学的不是“预测”，而是失败后如何改系统。</p>
+  </div>
+  <div class="case-grid">
+    <article class="case-card">
+      <strong>失败不是只改结论</strong>
+      <p>6 月 15 日复盘暴露的是公共腿重复、精确比分过窄、追加资金没有分散风险。下一轮要改仓位和相关性规则，而不是只换一场比赛判断。</p>
+    </article>
+    <article class="case-card">
+      <strong>命中也不等于模型成功</strong>
+      <p>6 月 16 日接近保本，但复盘指出模型漏掉了同日普通平集群。命中一张票不能掩盖结构性机会被削弱。</p>
+    </article>
+    <article class="case-card">
+      <strong>反事实回放检验新规则</strong>
+      <p>用新规则回放旧日期，检查是否能减少灾难性亏损。反事实不是证明自己神准，而是验证规则是否真的修了旧漏洞。</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>新手可以复用的 Codex 提示方式</h2>
+    <p>同类高风险工具，不要让 Codex 直接“给答案”，而是让它先搭系统。</p>
+  </div>
+  <div class="notes-wrap">
+    <article class="notes">
+      <span class="label">好提示</span>
+      <h3>让 Codex 做工程闭环</h3>
+      <ul>
+        <li>先读取目录，输出数据层、规则层、服务层和展示层。</li>
+        <li>新增功能前先说明会改哪些文件、怎么验收。</li>
+        <li>每次策略失败后，先写复盘，再把复盘变成规则。</li>
+        <li>把危险措辞、过期数据、相关性暴露做成审计脚本。</li>
+      </ul>
+    </article>
+    <article class="notes warning-card">
+      <span class="label">坏提示</span>
+      <h3>不要把 Codex 当算命工具</h3>
+      <ul>
+        <li>不要问“今天怎么买稳赚”。</li>
+        <li>不要让 AI 用未验证数据直接给资金建议。</li>
+        <li>不要把未加权枚举说成盈利概率。</li>
+        <li>不要因为一次命中就放大仓位。</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>验收清单</h2>
+    <p>做完类似工具，至少要能回答这些问题。</p>
+  </div>
+  <div class="case-grid two">
+    <article class="case-card"><strong>文件验收</strong><p>README 能讲清项目入口；records 能追溯规则；outputs 能复现导出；logs 能排查服务。</p></article>
+    <article class="case-card"><strong>运行验收</strong><p>本地服务能启动，/api/health 返回状态，/api/state 有快照，前端能刷新。</p></article>
+    <article class="case-card"><strong>内容验收</strong><p>所有高风险输出都标注数据来源、更新时间、可信度和适用边界。</p></article>
+    <article class="case-card"><strong>复盘验收</strong><p>每次结果后都有复盘文档，并能说明下一轮具体改了哪条规则。</p></article>
+  </div>
+</section>
+
+<section class="callout">
+  <span class="label">本案例的第一性原则</span>
+  <h2>AI 不应该替你承担风险，它应该帮你暴露风险</h2>
+  <p>
+    对高风险决策工具来说，Codex 的价值不是让结论更像专家，而是把依据、边界、失败、复盘和审计都显性化。能被检查、能被回放、能被修正规则的系统，才比一次漂亮回答更有价值。
+  </p>
+  <div class="toolbar">
+    <a class="btn primary" href="./course.html#showcase">回到实战演示</a>
+    <a class="btn" href="./codex.html">继续学习老鸟进阶</a>
+  </div>
+</section>
+
 <div class="footer">
-  Codex 教学 · 目标是让新手理解“它能交付什么”，而不是只会背产品介绍。
+  实战演示 · 世界杯策略看板案例 · 公开版已脱敏：不提供具体下注建议
 </div></main>
 </body>
 </html>
