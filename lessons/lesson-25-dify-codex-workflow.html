@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第25课 你真的会用Dify吗？</title>
+  <title>第5课 你真的会用Dify吗？</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -1514,8 +1514,8 @@ li { margin-bottom: 8px; }
 </nav>
 <header class="hero">
   <div>
-    <div class="eyebrow">老鸟进阶：Codex 扩展学习 · 第25课</div>
-    <h1>第25课：你真的会用Dify吗？</h1>
+    <div class="eyebrow">老鸟进阶：Codex 扩展学习 · 第5课</div>
+    <h1>第5课：你真的会用Dify吗？</h1>
     <p class="lead">学会用 Codex 搭建 Dify 平台、完成 Docker 部署，并把 Wiki 发布、Bug 汇总和自动 Code Review 做成自动化流程。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start">开始本课</a>
@@ -1577,19 +1577,19 @@ li { margin-bottom: 8px; }
       <div class="flow">
         <div class="flow-step">
           <strong>1. Dify 能做什么</strong>
-          <span>先把本课对象画成链路：Dify 能做什么。标出输入、处理、输出和反馈。</span>
+          <span>先找本课要修的失败模式：为什么 Dify 不只是一个聊天应用搭建器，而是可以和 Codex 一起组成自动化工作流入口？ 把它写成一个你遇到过的差问题。</span>
         </div>
         <div class="flow-step">
           <strong>2. 用 Codex 部署 Dify 的步骤</strong>
-          <span>再把关键点拆成系统部件：Dify 适合把模型、知识库、工具调用和流程编排做成可复用应用。不要把所有责任都塞给模型。</span>
+          <span>用本课关键点改写输入：Dify 适合把模型、知识库、工具调用和流程编排做成可复用应用。重点补目标、上下文、约束和验收。</span>
         </div>
         <div class="flow-step">
           <strong>3. 三条自动化流程 Wiki/Bug/Review</strong>
-          <span>套进“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”这个任务，明确哪一步由 AI 做，哪一步由工具或人完成。</span>
+          <span>拿“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”做一次前后对照：旧问法会得到什么，新问法改善了哪里。</span>
         </div>
         <div class="flow-step">
           <strong>4. 权限/日志和运维边界</strong>
-          <span>最后补验收、权限和失败处理：先用 Docker 跑起 Dify，并记录环境变量和访问地址。 本课产物：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span>
+          <span>最后把可复用部分写成模板：先用 Docker 跑起 Dify，并记录环境变量和访问地址。 本课产物：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span>
         </div></div>
     </section>
     <article class="card">
@@ -1623,10 +1623,10 @@ li { margin-bottom: 8px; }
     <strong>Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果</strong>
   </div>
   <div class="case-practice-grid">
-    <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
-    <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
-    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
-    <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
+    <div><b>输入</b><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
+    <div><b>AI 动作</b><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
+    <div><b>人工检查</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+    <div><b>交付物</b><span>沉淀一条可复用提示词模板。</span></div>
   </div>
   <p>套用本课方法：先用 Docker 跑起 Dify，并记录环境变量和访问地址。</p>
 </article>
@@ -1636,10 +1636,10 @@ li { margin-bottom: 8px; }
     <strong>Bug 飞书文档：用户反馈进入 Dify，Codex 归纳、分类并生成修复任务</strong>
   </div>
   <div class="case-practice-grid">
-    <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
-    <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
-    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
-    <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
+    <div><b>输入</b><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
+    <div><b>AI 动作</b><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
+    <div><b>人工检查</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+    <div><b>交付物</b><span>沉淀一条可复用提示词模板。</span></div>
   </div>
   <p>套用本课方法：再设计流程输入、处理、输出和失败处理。</p>
 </article>
@@ -1649,10 +1649,10 @@ li { margin-bottom: 8px; }
     <strong>自动 Code Review：Dify 触发检查，Codex 输出风险点和测试建议</strong>
   </div>
   <div class="case-practice-grid">
-    <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
-    <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
-    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
-    <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
+    <div><b>输入</b><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
+    <div><b>AI 动作</b><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
+    <div><b>人工检查</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+    <div><b>交付物</b><span>沉淀一条可复用提示词模板。</span></div>
   </div>
   <p>套用本课方法：最后让 Codex 写脚本、检查配置并验证每条流程。</p>
 </article></div>
@@ -1810,7 +1810,7 @@ li { margin-bottom: 8px; }
   </aside>
 </div>
 <nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-24-git-github-codex.html">上一课：第24课 Git、GitHub与Codex协作</a>
+  <a class="btn" href="./lesson-24-git-github-codex.html">上一课：第4课 Git、GitHub与Codex协作</a>
   <a class="btn primary" href="../course.html">回到课程总览</a>
 </nav>
 <div class="footer">AI学习路线 · 第一性原则版逐课教程</div></main>
