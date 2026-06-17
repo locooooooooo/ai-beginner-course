@@ -824,6 +824,87 @@ li { margin-bottom: 8px; }
   color: var(--muted);
   font-size: 0.94rem;
 }
+.system-hero {
+  padding-top: 40px;
+}
+.system-panel {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.system-panel ol {
+  margin: 0;
+  padding-left: 20px;
+}
+.system-panel li {
+  color: var(--muted);
+}
+.system-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.system-card,
+.system-template,
+.system-gate {
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.system-card strong,
+.system-template strong,
+.system-gate strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.system-card span,
+.system-template p,
+.system-gate span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.system-ladder {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+.system-ladder article {
+  display: grid;
+  gap: 8px;
+  min-height: 150px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.system-ladder b {
+  color: var(--primary);
+  font-size: 0.88rem;
+}
+.system-ladder span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.system-template-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.system-template ul {
+  margin-top: 10px;
+}
+.system-gate-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -918,7 +999,7 @@ li { margin-bottom: 8px; }
   font-size: 0.94rem;
 }
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid, .case-method-grid { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid, .case-method-grid, .system-grid, .system-ladder, .system-template-grid, .system-gate-grid { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
   .newbie-focus, .scenario-grid { grid-template-columns: 1fr; }
@@ -976,6 +1057,7 @@ li { margin-bottom: 8px; }
     </p>
     <div class="toolbar">
       <a class="btn primary" href="#cases">浏览全部案例</a>
+      <a class="btn" href="./course-system.html">查看课程规范</a>
       <a class="btn" href="./course.html">回到课程首页</a>
     </div>
     <div class="showcase-summary">

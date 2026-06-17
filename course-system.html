@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第24课 Git、GitHub与Codex协作</title>
+  <title>AI新手课课程规范：文字系统与扩课模板</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -1039,341 +1039,123 @@ li { margin-bottom: 8px; }
 </style>
 </head>
 <body>
-  <main class="wrap"><nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <main class="wrap"><nav class="topbar" aria-label="站点导航">
+  <a class="brand" href="./course.html">AI入门课</a>
   <div class="navlinks">
-    <a href="../course.html#beginner">新手入门</a>
-    <a href="../course.html#advanced">老鸟进阶</a>
-    <a href="../case-library.html">案例库</a>
-    <a href="../mindmap-hub.html">资源</a>
+    <a href="./course.html#beginner">新手入门</a>
+    <a href="./course.html#advanced">老鸟进阶</a>
+    <a href="./case-library.html">案例库</a>
+    <a href="./mindmap-hub.html">资源</a>
   </div>
 </nav>
-<header class="hero">
+<header class="hero system-hero">
   <div>
-    <div class="eyebrow">老鸟进阶：Codex 扩展学习 · 第24课</div>
-    <h1>第24课：Git、GitHub与Codex协作</h1>
-    <p class="lead">理解 Git 记录本地修改，GitHub 托管和发布代码，Codex 可以帮助提交、推送和验证线上结果。</p>
+    <div class="eyebrow">课程规范 · 文字风格 · 扩课模板</div>
+    <h1>把 AI 新手课写成可跟做的教学单元</h1>
+    <p class="lead">
+      这页是后续扩课的生产规范。它不讲抽象原则，而是规定每一课、每个案例、每张工作纸应该怎样组织，让新手能读懂、能练、能留下证据。
+    </p>
     <div class="toolbar">
-      <a class="btn primary" href="#start">开始本课</a>
-      <a class="btn" href="#practice">做完练习</a>
-      <a class="btn" href="./lesson-24-git-github-codex-worksheet.html">打开工作纸</a>
+      <a class="btn primary" href="#templates">直接看扩课模板</a>
+      <a class="btn" href="./COURSE_TEXT_SYSTEM.md">查看 Markdown 原文</a>
     </div>
   </div>
-  <aside class="progress-panel" aria-label="学习进度">
-    <strong>当前进度</strong>
-    <div class="progress-meta">
-      <span>24 / 25</span>
-      <span>96%</span>
-    </div>
-    <div class="progress-bar"><span style="width:96%"></span></div>
-    <ol class="mini-steps">
-      <li>先读核心问题</li>
-      <li>抓住 3 个最小原理</li>
-      <li>完成一个可交付练习</li>
+  <aside class="system-panel">
+    <span class="label">扩课前检查</span>
+    <h2>先问 5 个问题</h2>
+    <ol>
+      <li>这节课解决哪个真实困惑？</li>
+      <li>学生最后要交付什么小产物？</li>
+      <li>有没有主讲义和工作纸两个层次？</li>
+      <li>风险边界和人工检查写清楚了吗？</li>
+      <li>结果能不能被下一课继续复用？</li>
     </ol>
   </aside>
 </header>
-<section class="callout" id="start">
-  <span class="label">为什么要学</span>
-  <h2>核心问题</h2>
-  <p>为什么本地已经改好了，线上网站却没有变化？因为还缺少提交、推送、发布和缓存验证这条链路。</p>
+
+<section>
+  <div class="section-title">
+    <h2>文字风格</h2>
+    <p>产品经理负责业务目标，AI 工程师负责结构和验收。每段文字都要落到动作。</p>
+  </div>
+  <div class="system-grid">
+    <article class="system-card"><strong>先讲业务目标</strong><span>不要从术语开始，先说这个概念能帮学生解决什么问题。</span></article>
+    <article class="system-card"><strong>再讲技术结构</strong><span>把输入、处理、输出、检查拆开，让学生知道 AI 在哪一步发挥作用。</span></article>
+    <article class="system-card"><strong>放进真实场景</strong><span>优先使用办公、电商、内容、客服、知识库和工程项目场景。</span></article>
+    <article class="system-card"><strong>留下交付证据</strong><span>每节课都要有能检查的小产物，不能只让学生觉得自己看懂了。</span></article>
+  </div>
 </section>
-<section class="card">
-  <span class="label">学习元信息</span>
-  <h2>开始前先确认这些边界</h2>
-  <div class="lesson-meta-grid"><div class="meta-item">
-  <strong>预计用时</strong>
-  <span>30-45 分钟</span>
-</div><div class="meta-item">
-  <strong>难度</strong>
-  <span>入门</span>
-</div><div class="meta-item">
-  <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；也可以只看页面完成纸面练习</span>
-</div><div class="meta-item">
-  <strong>隐私边界</strong>
-  <span>练习时使用公开或虚构材料，不上传客户隐私、内部资料、账号信息或未公开策略。</span>
-</div><div class="meta-item">
-  <strong>更新时间</strong>
-  <span>2026-06-17</span>
-</div><div class="meta-item">
-  <strong>来源提示</strong>
-  <span>本课强调稳定方法和学习路径；具体工具能力以实际产品为准。</span>
-</div></div>
+
+<section>
+  <div class="section-title">
+    <h2>六段主题框架</h2>
+    <p>课程不是名词百科，而是一条从认知到工程化交付的路线。</p>
+  </div>
+  <div class="system-ladder">
+    <article><b>01 正确认知</b><strong>分清 AI、模型、产品、Agent、MCP、Skill</strong><span>核心产物：AI 能力分类表。</span></article>
+    <article><b>02 基础使用</b><strong>学会提问、提示词、任务拆解和验证</strong><span>核心产物：提问模板和验证清单。</span></article>
+    <article><b>03 日常场景</b><strong>把 AI 放进办公、内容、图片、视频和问答</strong><span>核心产物：日常任务模板。</span></article>
+    <article><b>04 工作流系统</b><strong>从单次问答升级为可重复流程</strong><span>核心产物：带验收的工作流图。</span></article>
+    <article><b>05 电商落地</b><strong>进入内容、获客、私域、客服和复购</strong><span>核心产物：电商 AI 落地路线图。</span></article>
+    <article><b>06 Codex 工程化</b><strong>读取、修改、运行、验证、发布和复盘</strong><span>核心产物：可交给 Codex 的任务说明。</span></article>
+  </div>
 </section>
-<div class="grid">
-  <main>
 
+<section id="templates">
+  <div class="section-title">
+    <h2>扩课模板</h2>
+    <p>后续新课、新案例都按模板生产，避免每次从空白页重新组织。</p>
+  </div>
+  <div class="system-template-grid">
+    <article class="system-template">
+      <strong>主讲义页</strong>
+      <p>负责讲清概念、关系、案例、误区和方法。</p>
+      <ul>
+        <li>核心问题和一句话速读。</li>
+        <li>3 个关键概念和第一性拆解。</li>
+        <li>至少 2 个真实案例。</li>
+        <li>完成标准、参考答案、小测验、评分标准、术语表。</li>
+      </ul>
+    </article>
+    <article class="system-template">
+      <strong>练习工作纸</strong>
+      <p>负责让学生写下自己的输入、过程、检查点和最终产物。</p>
+      <ul>
+        <li>课前定位和概念翻译。</li>
+        <li>场景拆解、跟做任务、风险检查。</li>
+        <li>复盘升级、小测验、对照改进、术语复述。</li>
+        <li>填写区使用 textarea，不做自动保存。</li>
+      </ul>
+    </article>
+    <article class="system-template">
+      <strong>实战案例</strong>
+      <p>负责展示真实任务如何从想法推进到交付。</p>
+      <ul>
+        <li>先写任务背景、输入、限制和成功标准。</li>
+        <li>再写拆解步骤、工具使用、验证证据。</li>
+        <li>最后写风险边界、复盘结论和可复用资产。</li>
+        <li>案例入口必须进入案例库数据表。</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
+<section>
+  <div class="section-title">
+    <h2>验收门槛</h2>
+    <p>一节课算完成，不看页面数量，只看是否有可证明的学习结果。</p>
+  </div>
+  <div class="system-gate-grid">
+    <article class="system-gate"><strong>能复述</strong><span>学生能用自己的话解释这一课。</span></article>
+    <article class="system-gate"><strong>能套场景</strong><span>概念能放进至少一个真实任务里。</span></article>
+    <article class="system-gate"><strong>有小产物</strong><span>页面要求学生完成可检查的输出。</span></article>
+    <article class="system-gate"><strong>有检查标准</strong><span>不是展示内容，而是给出判断方法。</span></article>
+    <article class="system-gate"><strong>能复用</strong><span>后续课程能继续使用这节课的产物。</span></article>
+  </div>
+</section>
 
-<article class="card deep-note-card">
-  <span class="label">深度讲稿</span>
-  <h2>把这一课讲透：先翻译，再演示，再提问</h2>
-  <div class="plain-language">
-    <strong>人话解释</strong>
-    <p>Git 记录本地修改，GitHub 保存远端代码，GitHub Pages 把文件发布成网页。本地改好了不等于线上变了，中间还要检查状态、提交、推送、等待发布，并访问线上地址确认。</p>
-  </div>
-  <div class="deep-script-grid"><div class="deep-script">
-  <strong>先分清本地和线上</strong>
-  <p>本地文件只在自己电脑上，用户看到的是 GitHub Pages 或服务器上的版本。</p>
-</div><div class="deep-script">
-  <strong>Git 是版本记录</strong>
-  <p>status 看改了什么，diff 看具体变化，commit 保存一次版本，push 才同步到 GitHub。</p>
-</div><div class="deep-script">
-  <strong>发布要线上验证</strong>
-  <p>push 成功不代表页面立即更新，Pages 构建和缓存都需要实际访问确认。</p>
-</div></div>
-</article>
-<article class="card">
-  <span class="label">跟做案例</span>
-  <h2>用 Codex 辅助发布课程网站</h2>
-  <ol class="walkthrough-list"><li>运行生成脚本，确认本地产物已更新。</li><li>让 Codex 执行 git status 和 diff --stat，确认提交范围。</li><li>提交并 push 到 GitHub。</li><li>访问 GitHub Pages URL，检查关键页面和更新时间。</li></ol>
-</article>
-<article class="card worked-example">
-  <span class="label">完整示范</span>
-  <h2>从差输入改到可用输入</h2>
-  <div class="example-grid">
-    <div class="example-block bad">
-      <strong>差输入</strong>
-      <p>我本地改好了，为什么网站没变？</p>
-    </div>
-    <div class="example-block good">
-      <strong>好输入</strong>
-      <p>请帮我检查 GitHub Pages 发布链路。先看 git status 和 diff --stat，确认本地修改；再判断是否已 commit 和 push；最后访问线上 course.html 和关键 lesson 页面，确认页面是否更新。不要覆盖未提交的用户改动。</p>
-    </div>
-  </div>
-  <div class="example-block">
-    <strong>输出样例</strong>
-    <p>检查结果可能是：本地文件已生成，但没有 commit；或 commit 已有但没有 push；或 push 成功但 Pages 缓存未刷新，需要等待并用线上 URL 复查。</p>
-  </div>
-  <div class="example-block">
-    <strong>检查点</strong>
-    <ul><li>是否区分本地生成、Git 提交、远端推送、Pages 发布。</li><li>是否保护未提交的本地改动。</li><li>是否用线上 URL 做最终验证。</li></ul>
-  </div>
-</article>
-<article class="card">
-  <span class="label">检查理解</span>
-  <h2>学完后先回答这 3 个问题</h2>
-  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能否说清工作区、commit、push 的区别？</span></div><div class="check-item"><strong>2</strong><span>提交前是否确认没有无关文件？</span></div><div class="check-item"><strong>3</strong><span>推送后是否访问线上页面验证？</span></div></div>
-</article>
-    <section class="learner-brief">
-      <span class="label">先怎么学</span>
-      <h2>按这节课自己的任务跑 4 步</h2>
-      <p class="small-note">每一课的学习路线都不同。先抓本课最关键的问题，再用案例和产物证明自己真的会用。</p>
-      <div class="flow">
-        <div class="flow-step">
-          <strong>1. Git 的基本概念 工作区/暂存区/提交</strong>
-          <span>先处理“Git 的基本概念：工作区、暂存区、提交”。用自己的话回答本课核心问题：为什么本地已经改好了，线上网站却没有变化？因为还缺少提交、推送、发布和缓存验证这条链路。</span>
-        </div>
-        <div class="flow-step">
-          <strong>2. GitHub 的基本概念 远端仓库/分支/Pages</strong>
-          <span>再抓本课判断标准：Git 负责记录修改历史，commit 是一次明确的版本快照。先不要扩展概念，把这句话变成你自己的检查规则。</span>
-        </div>
-        <div class="flow-step">
-          <strong>3. Codex 下的常见流程 status/add/commit/p</strong>
-          <span>放进“本地新增 codex.html 后，线上没有入口，因为还没 push”这个案例里练一遍。按“输入是什么、AI 处理什么、人怎么验收”写下来。</span>
-        </div>
-        <div class="flow-step">
-          <strong>4. 保护已有改动，避免误删和误覆盖</strong>
-          <span>最后按这条方法收尾：让 Codex 先运行 git status，确认哪些文件会被提交。 本课要留下的产物是：写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span>
-        </div></div>
-    </section>
-    <article class="card">
-      <span class="label">先记住</span>
-      <h2>本课只抓 3 件事</h2>
-      <ul><li>Git 负责记录修改历史，commit 是一次明确的版本快照</li><li>GitHub 负责远端托管，push 后线上仓库才会更新</li><li>GitHub Pages 还需要等待构建和缓存刷新，必须线上验证</li></ul>
-    </article>
-    <article class="card">
-      <span class="label">想明白</span>
-      <h2>第一性拆解</h2>
-      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把软件发布拆成两个世界：本地文件变化和线上用户看到的变化。</span></div><div class="principle-block"><strong>拆解 2</strong><span>Git 只负责记录版本，GitHub 负责远端同步，Pages 负责把文件变成网站。</span></div><div class="principle-block"><strong>拆解 3</strong><span>Codex 可以帮你执行链路，但每一步都要看状态和证据，不能跳过验证。</span></div></div>
-    </article>
-    <article class="card">
-      <span class="label">可迁移</span>
-      <h2>最小原理</h2>
-      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：没 commit 的修改只是工作区状态，不是版本历史。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：没 push 的提交只在本地，线上仓库不会变化。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：push 成功也不等于用户马上看到，Pages 构建和缓存需要验证。</span></div></div>
-    </article>
-    <article class="card">
-      <span class="label">怎么学</span>
-      <h2>读完后怎么把它用出来</h2>
-      <ul><li>Git 的基本概念：工作区、暂存区、提交</li><li>GitHub 的基本概念：远端仓库、分支、Pages</li><li>Codex 下的常见流程：status、add、commit、push、线上检查</li><li>如何保护已有改动，避免误删和误覆盖</li></ul>
-    </article>
-    <article class="card">
-      <span class="label">怎么读案例</span>
-      <h2>先看这 2 类真实场景</h2>
-      <div class="case-read-grid">
-        <div class="case-read-card">
-          <strong>本地新增 codex.html 后，线上没有入口，因为还没 push</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>推送成功后，GitHub Pages 需要等待缓存刷新</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>用链接检查确认发布目录没有断链</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div></div>
-    </article>
-
-
-<article class="card">
-  <span class="label">分段讲稿</span>
-  <h2>这一课不是背概念，而是按 4 个小段理解</h2>
-  <div class="teaching-grid"><div class="teaching-segment">
-  <span class="step-no">1</span>
-  <div>
-    <h3>Git 的基本概念：工作区、暂存区、提交</h3>
-    <p><strong>先讲清：</strong>Git 负责记录修改历史，commit 是一次明确的版本快照。</p>
-    <p><strong>再落地：</strong>把它放进“本地新增 codex.html 后，线上没有入口，因为还没 push”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>让 Codex 先运行 git status，确认哪些文件会被提交。</p>
-  </div>
-</div><div class="teaching-segment">
-  <span class="step-no">2</span>
-  <div>
-    <h3>GitHub 的基本概念：远端仓库、分支、Pages</h3>
-    <p><strong>先讲清：</strong>GitHub 负责远端托管，push 后线上仓库才会更新。</p>
-    <p><strong>再落地：</strong>把它放进“推送成功后，GitHub Pages 需要等待缓存刷新”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>提交前看 diff 或 diff --stat，避免把无关文件带进去。</p>
-  </div>
-</div><div class="teaching-segment">
-  <span class="step-no">3</span>
-  <div>
-    <h3>Codex 下的常见流程：status、add、commit、push、线上检查</h3>
-    <p><strong>先讲清：</strong>GitHub Pages 还需要等待构建和缓存刷新，必须线上验证。</p>
-    <p><strong>再落地：</strong>把它放进“用链接检查确认发布目录没有断链”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>推送后访问线上 URL，并用 cache-busting 或强刷新确认页面更新。</p>
-  </div>
-</div><div class="teaching-segment">
-  <span class="step-no">4</span>
-  <div>
-    <h3>如何保护已有改动，避免误删和误覆盖</h3>
-    <p><strong>先讲清：</strong>Git 负责记录修改历史，commit 是一次明确的版本快照。</p>
-    <p><strong>再落地：</strong>把它放进“本地新增 codex.html 后，线上没有入口，因为还没 push”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>让 Codex 先运行 git status，确认哪些文件会被提交。</p>
-  </div>
-</div></div>
-</article>
-<article class="card">
-  <span class="label">课堂演练</span>
-  <h2>把本课做成一个可检查的小成果</h2>
-  <div class="practice-path">
-    <div>
-      <strong>老师先演示</strong>
-      <span>用“本地新增 codex.html 后，线上没有入口，因为还没 push”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
-    </div>
-    <div>
-      <strong>你再跟做</strong>
-      <span>写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span>
-    </div>
-    <div>
-      <strong>最后验收</strong>
-      <span>把答案拿去对照“自检”区，如果无法说清场景、输出和风险，就回到工作纸重新补上下文。</span>
-    </div>
-  </div>
-</article>
-<article class="card">
-  <span class="label">下一步</span>
-  <h2>学完后怎么继续扩展</h2>
-  <p class="small-note">下一课会进入“你真的会用Dify吗？”，你要带着本课产物继续往下用。</p>
-  <div class="toolbar">
-    <a class="btn primary" href="./lesson-24-git-github-codex-worksheet.html">打开本课练习工作纸</a>
-  </div>
-</article>
-
-<article class="card learning-evidence">
-  <span class="label">参考答案</span>
-  <h2>不是标准话术，而是判断自己有没有学会</h2>
-  <ul><li>能用自己的话说明：Git 记录本地修改，GitHub 保存远端代码，GitHub Pages 把文件发布成网页。本地改好了不等于线上变了，中间还要检查状态、提交、推送、等待发布，并访问线上地址确认。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“本地新增 codex.html 后，线上没有入口，因为还没 push”开始。</li><li>最终要留下一个可检查的小产物：写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</li></ul>
-</article>
-<article class="card learning-evidence">
-  <span class="label">小测验</span>
-  <h2>先自己答，再展开参考思路</h2>
-  <div class="quiz-list"><details class="quiz-item">
-  <summary>我能否说清工作区、commit、push 的区别？</summary>
-  <p>Git 负责记录修改历史，commit 是一次明确的版本快照</p>
-</details><details class="quiz-item">
-  <summary>提交前是否确认没有无关文件？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
-</details><details class="quiz-item">
-  <summary>推送后是否访问线上页面验证？</summary>
-  <p>以为本地文件改了，GitHub Pages 就会自动更新。</p>
-</details></div>
-</article>
-<article class="card learning-evidence">
-  <span class="label">评分标准</span>
-  <h2>用 3 档判断本课产物质量</h2>
-  <div class="rubric-grid"><div class="rubric-item">
-  <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
-</div><div class="rubric-item">
-  <strong>优秀</strong>
-  <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
-</div><div class="rubric-item">
-  <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
-</div></div>
-</article>
-<article class="card learning-evidence">
-  <span class="label">术语表</span>
-  <h2>把这一课的词翻译成人话</h2>
-  <div class="glossary-grid"><div class="glossary-item">
-  <strong>Git</strong>
-  <span>记录文件修改历史的版本管理工具。</span>
-</div><div class="glossary-item">
-  <strong>commit</strong>
-  <span>把一组修改保存成一次版本快照。</span>
-</div><div class="glossary-item">
-  <strong>push</strong>
-  <span>把本地提交同步到 GitHub 远端仓库。</span>
-</div><div class="glossary-item">
-  <strong>GitHub Pages</strong>
-  <span>GitHub 提供的静态网页发布服务。</span>
-</div><div class="glossary-item">
-  <strong>diff</strong>
-  <span>显示文件修改前后的差异。</span>
-</div></div>
-</article>
-  </main>
-  <aside class="lesson-side">
-    <article class="card">
-      <span class="label">马上用</span>
-      <h2>应用方法</h2>
-      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>让 Codex 先运行 git status，确认哪些文件会被提交。</span></div><div class="principle-block"><strong>方法 2</strong><span>提交前看 diff 或 diff --stat，避免把无关文件带进去。</span></div><div class="principle-block"><strong>方法 3</strong><span>推送后访问线上 URL，并用 cache-busting 或强刷新确认页面更新。</span></div></div>
-    </article>
-    <article class="card">
-      <span class="label">避坑</span>
-      <h2>反常识提醒</h2>
-      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>以为本地文件改了，GitHub Pages 就会自动更新。</span></div><div class="principle-block"><strong>误区 2</strong><span>不看 git status，直接把一堆无关文件提交。</span></div><div class="principle-block"><strong>误区 3</strong><span>推送后不验线上页面，导致用户还在看旧版本。</span></div></div>
-    </article>
-    <article class="card" id="practice">
-      <span class="label">完成标准</span>
-      <h2>做完这件事才算学会</h2>
-      <div class="meta">
-        <div class="meta-item"><strong>本课产物</strong><span>写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span></div>
-        <div class="meta-item"><strong>验收方式</strong><span>能用自己的话解释本课概念，并把它套到一个真实工作或生活场景里。</span></div>
-      </div>
-    </article>
-    <article class="card">
-      <span class="label">可以直接复制</span>
-      <h2>给 AI 的跟做提示</h2>
-      <pre class="copy-prompt"><code>我正在学习「Git、GitHub与Codex协作」，请用新手能听懂的话教我。
-先用 120 字以内解释它，不要堆术语。
-再结合这两个场景举例：本地新增 codex.html 后，线上没有入口，因为还没 push；推送成功后，GitHub Pages 需要等待缓存刷新。
-然后问我 3 个检查理解的问题。
-最后帮我完成这个练习：写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</code></pre>
-    </article>
-    <article class="card">
-      <span class="label">自检</span>
-      <h2>学完请确认这 4 件事</h2>
-      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「Git、GitHub与Codex协作」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
-    </article>
-  </aside>
-</div>
-<nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-23-codex-web-design.html">上一课：如何用Codex制作好看的网页</a>
-  <a class="btn primary" href="./lesson-25-dify-codex-workflow.html">下一课：你真的会用Dify吗？</a>
-</nav>
-<div class="footer">AI学习路线 · 第一性原则版逐课教程</div></main>
+<div class="footer">
+  课程规范页用于后续扩课、案例沉淀和发布验收 · Markdown 原文仍保留为可编辑资料
+</div></main>
 </body>
 </html>
