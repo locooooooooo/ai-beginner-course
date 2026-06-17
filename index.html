@@ -595,70 +595,169 @@ li { margin-bottom: 8px; }
 .track-card.primary-track { color: #ffffff; background: var(--primary); border-color: var(--primary); }
 .track-card.primary-track span, .track-card.primary-track .track-meta { color: rgba(255, 255, 255, 0.88); }
 .track-block { margin-top: 22px; }
-.placeholder-track {
+.showcase-library {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.75fr);
-  align-items: stretch;
-  gap: 22px;
+  gap: 16px;
   padding: 24px;
-  background: var(--surface);
-  border: 1px dashed rgba(15, 118, 110, 0.45);
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(242,247,246,0.72));
+  border: 1px solid rgba(15, 118, 110, 0.20);
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
-.showcase-copy {
+.showcase-summary {
   display: grid;
-  gap: 14px;
-  align-content: start;
-}
-.showcase-copy p {
-  max-width: 760px;
-  margin: 0;
-}
-.showcase-points {
-  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 10px;
 }
-.showcase-point {
+.showcase-summary > div {
   display: grid;
-  grid-template-columns: 96px minmax(0, 1fr);
-  gap: 12px;
-  align-items: center;
+  gap: 2px;
   padding: 12px 14px;
-  background: rgba(255, 255, 255, 0.72);
+  background: #ffffff;
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--radius);
 }
-.showcase-point strong {
+.showcase-summary strong {
   color: var(--primary);
-  font-size: 0.92rem;
-  letter-spacing: 0.04em;
+  font-size: 1.08rem;
 }
-.showcase-point span {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-.showcase-actions {
-  display: grid;
-  gap: 12px;
-  align-content: start;
-}
-.showcase-actions .btn {
-  justify-content: flex-start;
-  min-height: 52px;
-}
-.showcase-card {
-  display: grid;
-  gap: 14px;
-  padding: 18px;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid var(--line);
-  border-radius: calc(var(--radius) - 4px);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
-}
-.showcase-card p {
-  margin: 0;
+.showcase-summary span {
   color: var(--muted);
   font-size: 0.94rem;
+}
+.showcase-track-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.showcase-track-strip span {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+.showcase-track-strip strong {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.showcase-case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+.showcase-case {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.showcase-case.featured {
+  border-color: rgba(15, 118, 110, 0.38);
+  box-shadow: inset 4px 0 0 var(--primary);
+}
+.case-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.case-index,
+.case-status {
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+.case-index { color: var(--primary); }
+.case-status {
+  padding: 3px 8px;
+  color: #6f2c20;
+  background: #fff8f6;
+  border: 1px solid rgba(211, 84, 63, 0.20);
+  border-radius: 999px;
+}
+.showcase-case h3 {
+  font-family: var(--sans);
+  margin: 0;
+  font-size: 1.06rem;
+}
+.showcase-case p {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.case-meta {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+.case-meta div {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 8px;
+  padding: 8px 10px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-meta dt {
+  color: var(--primary);
+  font-weight: 800;
+}
+.case-meta dd {
+  margin: 0;
+  color: var(--muted);
+}
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+.case-tags span {
+  padding: 4px 8px;
+  color: var(--primary-dark);
+  background: #eef7f5;
+  border: 1px solid rgba(15, 118, 110, 0.14);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.case-link {
+  display: inline-flex;
+  flex: 1 1 132px;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 11px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 800;
+}
+.case-link.primary {
+  color: #ffffff;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+}
+.case-link.secondary {
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid var(--line);
 }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
@@ -757,7 +856,6 @@ li { margin-bottom: 8px; }
   .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
-  .placeholder-track { grid-template-columns: 1fr; }
   .newbie-focus, .scenario-grid { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .visual-node::after { display: none; }
@@ -774,8 +872,9 @@ li { margin-bottom: 8px; }
   .toolbar .btn, .pager .btn { width: 100%; }
   .path-grid, .track-grid, .stat-grid { grid-template-columns: 1fr; }
   .track-card { min-height: 0; }
-  .placeholder-track { padding: 18px; }
-  .showcase-point { grid-template-columns: 1fr; }
+  .showcase-library { padding: 18px; }
+  .showcase-summary, .showcase-case-grid { grid-template-columns: 1fr; }
+  .case-meta div { grid-template-columns: 1fr; }
   .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
@@ -983,36 +1082,82 @@ li { margin-bottom: 8px; }
   <div class="toolbar"><a class="btn primary" href="./lessons/lesson-25-dify-codex-workflow.html">进入主讲义</a><a class="btn" href="./lessons/lesson-25-dify-codex-workflow-worksheet.html">打开工作纸</a></div>
 </article></div>
   </article>
-  <article class="track-block placeholder-track" id="showcase">
-    <div class="showcase-copy">
-      <span class="label">实战案例</span>
-      <h2>实战演示</h2>
-      <p>这不是展示给老师看的答案页，而是三条可以跟着走的真实任务线：一个看工具迭代，一个看内容生产，一个看 Codex 如何搭建 Dify 平台并做自动化流程。</p>
-      <div class="showcase-points">
-        <div class="showcase-point">
-          <strong>案例 01</strong>
-          <span>本地工具迭代：看 Codex 如何持续修改、验证、上线策略看板。</span>
-        </div>
-        <div class="showcase-point">
-          <strong>案例 02</strong>
-          <span>内容生产链：看小说脚本如何被拆成分镜、视频和成片交付。</span>
-        </div>
-        <div class="showcase-point">
-          <strong>案例 03</strong>
-          <span>Dify 自动化：看 Codex 搭平台、Docker 部署、Wiki 发布、Bug 飞书文档和自动 Code Review。</span>
-        </div>
+  <article class="track-block showcase-library" id="showcase">
+    <div class="section-title">
+      <div>
+        <span class="label">实战案例库</span>
+        <h2>多案例学习区</h2>
+      </div>
+      <p>后续案例会持续增加。这里按任务类型、阶段和最终产物组织，方便从“想学什么”直接进入对应真实任务线。</p>
+    </div>
+    <div class="showcase-summary">
+      <div>
+        <strong>3</strong>
+        <span>已整理案例</span>
+      </div>
+      <div>
+        <strong>3</strong>
+        <span>任务类型</span>
+      </div>
+      <div>
+        <strong>交付物</strong>
+        <span>页面、流程、工作纸、验证证据</span>
       </div>
     </div>
-    <div class="showcase-card">
-      <span class="label">打开案例</span>
-      <p>先看工具迭代，再看内容生产，最后看 Dify 自动化，顺序更容易建立“从需求到交付”的感觉。</p>
-      <div class="showcase-actions">
-        <a class="btn primary" href="./worldcup-strategy-case.html">进入策略看板案例</a>
-        <a class="btn" href="./codex-novel-video-case.html">进入小说视频案例</a>
-        <a class="btn" href="./lessons/lesson-25-dify-codex-workflow.html">进入 Dify + Codex 课程</a>
-        <a class="btn" href="./lessons/lesson-25-dify-codex-workflow-worksheet.html">打开 Dify 工作纸</a>
-      </div>
-    </div>
+    <div class="showcase-track-strip" aria-label="案例分类"><span>工具迭代<strong>1</strong></span><span>内容生产<strong>1</strong></span><span>流程自动化<strong>1</strong></span></div>
+    <div class="showcase-case-grid">
+<article class="showcase-case featured">
+  <div class="case-topline">
+    <span class="case-index">案例 01</span>
+    <span class="case-status">已上线</span>
+  </div>
+  <h3>策略看板迭代</h3>
+  <p>看 Codex 如何持续修改、验证、上线一个策略看板，并把高风险内容改成公开安全的工程案例。</p>
+  <dl class="case-meta">
+    <div><dt>类型</dt><dd>工具迭代</dd></div>
+    <div><dt>阶段</dt><dd>从需求到发布</dd></div>
+    <div><dt>产物</dt><dd>公开版策略看板、风险边界说明、发布验证证据</dd></div>
+  </dl>
+  <div class="case-tags"><span>Codex</span><span>Loop</span><span>GitHub Pages</span></div>
+  <div class="case-actions">
+    <a class="case-link primary" href="./worldcup-strategy-case.html">打开案例</a>
+  </div>
+</article>
+<article class="showcase-case">
+  <div class="case-topline">
+    <span class="case-index">案例 02</span>
+    <span class="case-status">已上线</span>
+  </div>
+  <h3>小说视频内容生产链</h3>
+  <p>看小说脚本如何被拆成分镜、视频素材、成片交付和复盘清单，适合理解多步骤内容生产。</p>
+  <dl class="case-meta">
+    <div><dt>类型</dt><dd>内容生产</dd></div>
+    <div><dt>阶段</dt><dd>从脚本到成片</dd></div>
+    <div><dt>产物</dt><dd>脚本拆解、分镜流程、视频交付路径</dd></div>
+  </dl>
+  <div class="case-tags"><span>内容</span><span>视频</span><span>分镜</span></div>
+  <div class="case-actions">
+    <a class="case-link primary" href="./codex-novel-video-case.html">打开案例</a>
+  </div>
+</article>
+<article class="showcase-case">
+  <div class="case-topline">
+    <span class="case-index">案例 03</span>
+    <span class="case-status">课程化</span>
+  </div>
+  <h3>Dify + Codex 自动化</h3>
+  <p>看 Codex 搭平台、Docker 部署、Wiki 发布、Bug 飞书文档和自动 Code Review 如何串成自动化流程。</p>
+  <dl class="case-meta">
+    <div><dt>类型</dt><dd>流程自动化</dd></div>
+    <div><dt>阶段</dt><dd>从部署到工作流</dd></div>
+    <div><dt>产物</dt><dd>Dify 部署步骤、三条自动化流程、工作纸</dd></div>
+  </dl>
+  <div class="case-tags"><span>Dify</span><span>Docker</span><span>Code Review</span></div>
+  <div class="case-actions">
+    <a class="case-link primary" href="./lessons/lesson-25-dify-codex-workflow.html">打开案例</a>
+    <a class="case-link secondary" href="./lessons/lesson-25-dify-codex-workflow-worksheet.html">打开工作纸</a>
+  </div>
+</article></div>
   </article>
 </section>
 
