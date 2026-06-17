@@ -723,6 +723,50 @@ li { margin-bottom: 8px; }
   color: var(--muted);
   font-size: 0.9rem;
 }
+.community-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+  gap: 18px;
+  align-items: center;
+  margin: 28px 0 6px;
+  padding: 22px;
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.10), rgba(37, 99, 235, 0.09));
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.community-copy {
+  display: grid;
+  gap: 8px;
+}
+.community-copy p {
+  max-width: 680px;
+  color: var(--muted);
+}
+.community-qr {
+  margin: 0;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.community-qr img {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center 38%;
+  border-radius: 10px;
+}
+.community-qr figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
 .starter-panel { padding: 18px; }
 .starter-panel ol { margin: 0; padding-left: 20px; color: var(--muted); }
 .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
@@ -1415,7 +1459,7 @@ li { margin-bottom: 8px; }
   font-size: 0.94rem;
 }
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid, .case-method-grid, .case-board, .case-row, .system-grid, .system-ladder, .system-template-grid, .system-gate-grid { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .community-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid, .case-method-grid, .case-board, .case-row, .system-grid, .system-ladder, .system-template-grid, .system-gate-grid { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
   .newbie-focus, .scenario-grid { grid-template-columns: 1fr; }
