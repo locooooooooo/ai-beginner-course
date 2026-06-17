@@ -94,7 +94,7 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .case-practice-list, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
 .lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
@@ -126,6 +126,107 @@ li { margin-bottom: 8px; }
 }
 .flow-step span, .case-read-card span, .check-item span {
   color: var(--muted);
+}
+.case-practice {
+  overflow: hidden;
+}
+.case-practice-list {
+  margin-top: 12px;
+}
+.case-practice-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-card.primary {
+  border-color: rgba(15, 118, 110, 0.32);
+  box-shadow: inset 4px 0 0 var(--primary);
+}
+.case-practice-card.guided {
+  background: #fffdf8;
+  border-color: rgba(183, 121, 31, 0.24);
+}
+.case-practice-card.compare {
+  background: #f8fbff;
+  border-color: rgba(37, 99, 235, 0.18);
+}
+.case-practice-card.compare summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+  cursor: pointer;
+}
+.case-practice-card.compare summary::-webkit-details-marker {
+  display: none;
+}
+.case-compare-content {
+  display: grid;
+  gap: 10px;
+  padding-top: 8px;
+}
+.case-practice-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+}
+.case-practice-head span {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+.case-practice-head strong {
+  font-size: 1rem;
+}
+.case-practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.case-practice-grid div {
+  display: grid;
+  gap: 4px;
+  min-height: 88px;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-grid b {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.case-practice-grid span,
+.case-practice-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.case-practice-steps,
+.case-practice-review {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.case-compare-block {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-compare-block b {
+  color: var(--blue);
+  font-size: 0.84rem;
+}
+.case-compare-block span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 .copy-prompt {
   margin: 0;
@@ -1302,6 +1403,7 @@ li { margin-bottom: 8px; }
   .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
+  .case-practice-grid { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
@@ -1475,27 +1577,92 @@ li { margin-bottom: 8px; }
       <h2>读完后怎么把它用出来</h2>
       <ul><li>内容生产链路</li><li>文案与图片的配合</li><li>渠道差异</li><li>品牌与合规控制</li></ul>
     </article>
-    <article class="card">
-      <span class="label">怎么读案例</span>
-      <h2>先看这 2 类真实场景</h2>
-      <div class="case-read-grid">
-        <div class="case-read-card">
-          <strong>商品标题</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>详情页文案</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>SEO文章</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>社媒海报</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div></div>
-    </article>
+<article class="card case-practice">
+  <span class="label">多案例演练</span>
+  <h2>把同一个概念迁移到 6 个真实场景</h2>
+  <p class="small-note">先用四格拆场景，再看课堂演练和对照案例。练的不是背定义，而是把同一方法迁移到不同任务。</p>
+  <div class="case-practice-list">
+<article class="case-practice-card primary">
+  <div class="case-practice-head">
+    <span>案例 01</span>
+    <strong>商品标题</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>商品、用户、渠道、订单或客服上下文。</span></div>
+    <div><b>AI 动作</b><span>生成内容、承接线索、分层用户、辅助回复或经营复盘。</span></div>
+    <div><b>人工检查</b><span>确认平台规则、价格政策、售后承诺和用户授权没有越界。</span></div>
+    <div><b>交付物</b><span>沉淀一段电商 SOP 或落地路线图。</span></div>
+  </div>
+  <p>套用本课方法：先做商品标题、详情页、海报、社媒贴文这些标准化内容。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 02</span>
+    <strong>详情页文案</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>商品、用户、渠道、订单或客服上下文。</span></div>
+    <div><b>AI 动作</b><span>生成内容、承接线索、分层用户、辅助回复或经营复盘。</span></div>
+    <div><b>人工检查</b><span>确认平台规则、价格政策、售后承诺和用户授权没有越界。</span></div>
+    <div><b>交付物</b><span>沉淀一段电商 SOP 或落地路线图。</span></div>
+  </div>
+  <p>套用本课方法：为每个渠道定义模板和审核清单。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 03</span>
+    <strong>SEO文章</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>商品、用户、渠道、订单或客服上下文。</span></div>
+    <div><b>AI 动作</b><span>生成内容、承接线索、分层用户、辅助回复或经营复盘。</span></div>
+    <div><b>人工检查</b><span>确认平台规则、价格政策、售后承诺和用户授权没有越界。</span></div>
+    <div><b>交付物</b><span>沉淀一段电商 SOP 或落地路线图。</span></div>
+  </div>
+  <p>套用本课方法：把版本迭代纳入流程，而不是一次生成后直接发。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 04</span>
+    <strong>社媒海报</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>商品、用户、渠道、订单或客服上下文。</span></div>
+    <div><b>AI 动作</b><span>生成内容、承接线索、分层用户、辅助回复或经营复盘。</span></div>
+    <div><b>人工检查</b><span>确认平台规则、价格政策、售后承诺和用户授权没有越界。</span></div>
+    <div><b>交付物</b><span>沉淀一段电商 SOP 或落地路线图。</span></div>
+  </div>
+  <p>套用本课方法：先做商品标题、详情页、海报、社媒贴文这些标准化内容。</p>
+</article>
+<article class="case-practice-card guided">
+  <div class="case-practice-head">
+    <span>课堂演练</span>
+    <strong>为一款保温杯做三种电商内容</strong>
+  </div>
+  <ol class="case-practice-steps"><li>整理商品资料：容量、材质、卖点、受众、不能承诺的内容。</li><li>分别指定详情页、小红书、海报三个渠道。</li><li>要求 AI 按渠道输出标题、正文或主文案。</li><li>人工检查规格、夸张词、语气和是否能直接改稿。</li></ol>
+</article>
+<details class="case-practice-card compare">
+  <summary>
+    <span>对照案例</span>
+    <strong>从差输入改到可交付</strong>
+  </summary>
+  <div class="case-compare-content">
+    <div class="case-practice-head">
+      <span>对照案例</span>
+      <strong>从差输入改到可交付</strong>
+    </div>
+    <div class="case-compare-block">
+      <b>可用输入</b>
+      <span>请为一款 500ml 不锈钢保温杯生成三种电商内容。受众是通勤上班族，卖点是轻便、防漏、保温约 8 小时。不要写绝对化承诺，不写价格。输出：详情页标题 3 个、小红书标题 3 个、活动海报主文案 3 条。</span>
+    </div>
+    <div class="case-compare-block">
+      <b>样例结果</b>
+      <span>详情页标题：通勤随身 500ml 防漏保温杯。小红书标题：每天带水出门的人，真的需要一只轻一点的杯子。海报主文案：轻装通勤，热饮随行。</span>
+    </div>
+    <ul class="case-practice-review"><li>是否写清产品、受众、渠道和格式。</li><li>是否避免“永不漏水”“永久保温”等绝对表述。</li><li>是否能进入人工改稿，而不是直接发布。</li></ul>
+  </div>
+</details></div>
+</article>
 
 
 <article class="card">

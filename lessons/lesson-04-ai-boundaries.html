@@ -94,7 +94,7 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .case-practice-list, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
 .lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
@@ -126,6 +126,107 @@ li { margin-bottom: 8px; }
 }
 .flow-step span, .case-read-card span, .check-item span {
   color: var(--muted);
+}
+.case-practice {
+  overflow: hidden;
+}
+.case-practice-list {
+  margin-top: 12px;
+}
+.case-practice-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-card.primary {
+  border-color: rgba(15, 118, 110, 0.32);
+  box-shadow: inset 4px 0 0 var(--primary);
+}
+.case-practice-card.guided {
+  background: #fffdf8;
+  border-color: rgba(183, 121, 31, 0.24);
+}
+.case-practice-card.compare {
+  background: #f8fbff;
+  border-color: rgba(37, 99, 235, 0.18);
+}
+.case-practice-card.compare summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+  cursor: pointer;
+}
+.case-practice-card.compare summary::-webkit-details-marker {
+  display: none;
+}
+.case-compare-content {
+  display: grid;
+  gap: 10px;
+  padding-top: 8px;
+}
+.case-practice-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+}
+.case-practice-head span {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+.case-practice-head strong {
+  font-size: 1rem;
+}
+.case-practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.case-practice-grid div {
+  display: grid;
+  gap: 4px;
+  min-height: 88px;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-grid b {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.case-practice-grid span,
+.case-practice-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.case-practice-steps,
+.case-practice-review {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.case-compare-block {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-compare-block b {
+  color: var(--blue);
+  font-size: 0.84rem;
+}
+.case-compare-block span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 .copy-prompt {
   margin: 0;
@@ -1302,6 +1403,7 @@ li { margin-bottom: 8px; }
   .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
+  .case-practice-grid { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
@@ -1475,23 +1577,79 @@ li { margin-bottom: 8px; }
       <h2>读完后怎么把它用出来</h2>
       <ul><li>AI 的强项</li><li>AI 的常见失败方式</li><li>哪些任务必须人审</li><li>如何建立验证习惯</li></ul>
     </article>
-    <article class="card">
-      <span class="label">怎么读案例</span>
-      <h2>先看这 2 类真实场景</h2>
-      <div class="case-read-grid">
-        <div class="case-read-card">
-          <strong>写一篇文章很快但事实可能错</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>生成客服回复很自然但政策可能错</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>生成图片很快但价格和规格可能错</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div></div>
-    </article>
+<article class="card case-practice">
+  <span class="label">多案例演练</span>
+  <h2>把同一个概念迁移到 5 个真实场景</h2>
+  <p class="small-note">先用四格拆场景，再看课堂演练和对照案例。练的不是背定义，而是把同一方法迁移到不同任务。</p>
+  <div class="case-practice-list">
+<article class="case-practice-card primary">
+  <div class="case-practice-head">
+    <span>案例 01</span>
+    <strong>写一篇文章很快但事实可能错</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
+    <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
+    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
+  </div>
+  <p>套用本课方法：先给输出分风险等级。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 02</span>
+    <strong>生成客服回复很自然但政策可能错</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
+    <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
+    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
+  </div>
+  <p>套用本课方法：低风险结果先用，中风险结果抽检，高风险结果强制审批。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 03</span>
+    <strong>生成图片很快但价格和规格可能错</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
+    <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
+    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
+  </div>
+  <p>套用本课方法：所有关键业务都要有验证路径。</p>
+</article>
+<article class="case-practice-card guided">
+  <div class="case-practice-head">
+    <span>课堂演练</span>
+    <strong>让 AI 生成售后政策回复</strong>
+  </div>
+  <ol class="case-practice-steps"><li>先判断风险：这涉及客户权益和品牌承诺，不能直接发。</li><li>提供依据：给 AI 官方售后政策和适用范围。</li><li>输出草稿：要求标出引用条款。</li><li>人工验收：客服负责人确认后再使用。</li></ol>
+</article>
+<details class="case-practice-card compare">
+  <summary>
+    <span>对照案例</span>
+    <strong>从差输入改到可交付</strong>
+  </summary>
+  <div class="case-compare-content">
+    <div class="case-practice-head">
+      <span>对照案例</span>
+      <strong>从差输入改到可交付</strong>
+    </div>
+    <div class="case-compare-block">
+      <b>可用输入</b>
+      <span>售后回复涉及客户权益，不能直接发。我要先提供官方售后政策，让 AI 只生成草稿，并要求标出依据条款、适用条件和不确定项。最后由客服负责人确认后再发送。</span>
+    </div>
+    <div class="case-compare-block">
+      <b>样例结果</b>
+      <span>风险检查结果：文案里如果出现“必定赔偿”“任何情况都可退”这类政策外承诺，必须删除；如果政策文档没有覆盖该情况，要转人工确认，不能让 AI 自己补规则。</span>
+    </div>
+    <ul class="case-practice-review"><li>是否区分流畅表达和真实依据。</li><li>是否给高风险任务设置人工审批。</li><li>是否能写出验证来源、适用范围和转人工条件。</li></ul>
+  </div>
+</details></div>
+</article>
 
 
 <article class="card">

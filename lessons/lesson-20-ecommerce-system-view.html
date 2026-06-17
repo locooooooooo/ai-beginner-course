@@ -94,7 +94,7 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .case-practice-list, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
 .lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
@@ -126,6 +126,107 @@ li { margin-bottom: 8px; }
 }
 .flow-step span, .case-read-card span, .check-item span {
   color: var(--muted);
+}
+.case-practice {
+  overflow: hidden;
+}
+.case-practice-list {
+  margin-top: 12px;
+}
+.case-practice-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-card.primary {
+  border-color: rgba(15, 118, 110, 0.32);
+  box-shadow: inset 4px 0 0 var(--primary);
+}
+.case-practice-card.guided {
+  background: #fffdf8;
+  border-color: rgba(183, 121, 31, 0.24);
+}
+.case-practice-card.compare {
+  background: #f8fbff;
+  border-color: rgba(37, 99, 235, 0.18);
+}
+.case-practice-card.compare summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+  cursor: pointer;
+}
+.case-practice-card.compare summary::-webkit-details-marker {
+  display: none;
+}
+.case-compare-content {
+  display: grid;
+  gap: 10px;
+  padding-top: 8px;
+}
+.case-practice-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+}
+.case-practice-head span {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+.case-practice-head strong {
+  font-size: 1rem;
+}
+.case-practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.case-practice-grid div {
+  display: grid;
+  gap: 4px;
+  min-height: 88px;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-grid b {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.case-practice-grid span,
+.case-practice-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.case-practice-steps,
+.case-practice-review {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.case-compare-block {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-compare-block b {
+  color: var(--blue);
+  font-size: 0.84rem;
+}
+.case-compare-block span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 .copy-prompt {
   margin: 0;
@@ -1302,6 +1403,7 @@ li { margin-bottom: 8px; }
   .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
+  .case-practice-grid { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
@@ -1475,27 +1577,92 @@ li { margin-bottom: 8px; }
       <h2>读完后怎么把它用出来</h2>
       <ul><li>系统全景图</li><li>落地顺序建议</li><li>安全底线</li><li>团队协作方式</li></ul>
     </article>
-    <article class="card">
-      <span class="label">怎么读案例</span>
-      <h2>先看这 2 类真实场景</h2>
-      <div class="case-read-grid">
-        <div class="case-read-card">
-          <strong>内容生产 Agent</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>客服 Agent</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>私域运营 Agent</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>经营复盘 Agent</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div></div>
-    </article>
+<article class="card case-practice">
+  <span class="label">多案例演练</span>
+  <h2>把同一个概念迁移到 6 个真实场景</h2>
+  <p class="small-note">先用四格拆场景，再看课堂演练和对照案例。练的不是背定义，而是把同一方法迁移到不同任务。</p>
+  <div class="case-practice-list">
+<article class="case-practice-card primary">
+  <div class="case-practice-head">
+    <span>案例 01</span>
+    <strong>内容生产 Agent</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>商品、用户、渠道、订单或客服上下文。</span></div>
+    <div><b>AI 动作</b><span>生成内容、承接线索、分层用户、辅助回复或经营复盘。</span></div>
+    <div><b>人工检查</b><span>确认平台规则、价格政策、售后承诺和用户授权没有越界。</span></div>
+    <div><b>交付物</b><span>沉淀一段电商 SOP 或落地路线图。</span></div>
+  </div>
+  <p>套用本课方法：先从内容生产、知识问答、标准客服这些低风险场景起步。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 02</span>
+    <strong>客服 Agent</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>商品、用户、渠道、订单或客服上下文。</span></div>
+    <div><b>AI 动作</b><span>生成内容、承接线索、分层用户、辅助回复或经营复盘。</span></div>
+    <div><b>人工检查</b><span>确认平台规则、价格政策、售后承诺和用户授权没有越界。</span></div>
+    <div><b>交付物</b><span>沉淀一段电商 SOP 或落地路线图。</span></div>
+  </div>
+  <p>套用本课方法：再逐步扩展到获客、私域、复购和经营分析。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 03</span>
+    <strong>私域运营 Agent</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>商品、用户、渠道、订单或客服上下文。</span></div>
+    <div><b>AI 动作</b><span>生成内容、承接线索、分层用户、辅助回复或经营复盘。</span></div>
+    <div><b>人工检查</b><span>确认平台规则、价格政策、售后承诺和用户授权没有越界。</span></div>
+    <div><b>交付物</b><span>沉淀一段电商 SOP 或落地路线图。</span></div>
+  </div>
+  <p>套用本课方法：所有阶段都保留审批、日志、回滚和复盘。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 04</span>
+    <strong>经营复盘 Agent</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>商品、用户、渠道、订单或客服上下文。</span></div>
+    <div><b>AI 动作</b><span>生成内容、承接线索、分层用户、辅助回复或经营复盘。</span></div>
+    <div><b>人工检查</b><span>确认平台规则、价格政策、售后承诺和用户授权没有越界。</span></div>
+    <div><b>交付物</b><span>沉淀一段电商 SOP 或落地路线图。</span></div>
+  </div>
+  <p>套用本课方法：先从内容生产、知识问答、标准客服这些低风险场景起步。</p>
+</article>
+<article class="case-practice-card guided">
+  <div class="case-practice-head">
+    <span>课堂演练</span>
+    <strong>为小型电商团队画 AI 落地路线图</strong>
+  </div>
+  <ol class="case-practice-steps"><li>列出业务环节：内容、获客、客服、复购、复盘。</li><li>标出每个环节的输入、AI 动作、人工检查和输出。</li><li>按风险和频率排序，选择最先落地的 2 个场景。</li><li>为每个场景补上审批、日志和复盘方式。</li></ol>
+</article>
+<details class="case-practice-card compare">
+  <summary>
+    <span>对照案例</span>
+    <strong>从差输入改到可交付</strong>
+  </summary>
+  <div class="case-compare-content">
+    <div class="case-practice-head">
+      <span>对照案例</span>
+      <strong>从差输入改到可交付</strong>
+    </div>
+    <div class="case-compare-block">
+      <b>可用输入</b>
+      <span>请为一个 5 人电商团队设计 AI 落地路线图。团队做保温杯类目，当前痛点是内容更新慢、客服重复问题多、老客复购弱。请按内容生产、客服辅助、私域复购、经营复盘四阶段输出：目标、输入、AI 动作、人工检查、风险控制、验收指标。</span>
+    </div>
+    <div class="case-compare-block">
+      <b>样例结果</b>
+      <span>第一阶段做内容模板：输入商品资料，AI 生成详情页和小红书初稿，运营检查规格和禁用词。第二阶段做客服 FAQ：AI 基于政策文档回答，退款投诉转人工。后续再做老客标签和复盘报告。</span>
+    </div>
+    <ul class="case-practice-review"><li>是否按业务阶段排序。</li><li>是否写清每阶段输入、输出和验收指标。</li><li>是否避免一开始就做高风险全自动。</li></ul>
+  </div>
+</details></div>
+</article>
 
 
 <article class="card">

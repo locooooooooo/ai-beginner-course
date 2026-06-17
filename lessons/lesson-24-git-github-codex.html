@@ -94,7 +94,7 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .case-practice-list, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
 .lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
@@ -126,6 +126,107 @@ li { margin-bottom: 8px; }
 }
 .flow-step span, .case-read-card span, .check-item span {
   color: var(--muted);
+}
+.case-practice {
+  overflow: hidden;
+}
+.case-practice-list {
+  margin-top: 12px;
+}
+.case-practice-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-card.primary {
+  border-color: rgba(15, 118, 110, 0.32);
+  box-shadow: inset 4px 0 0 var(--primary);
+}
+.case-practice-card.guided {
+  background: #fffdf8;
+  border-color: rgba(183, 121, 31, 0.24);
+}
+.case-practice-card.compare {
+  background: #f8fbff;
+  border-color: rgba(37, 99, 235, 0.18);
+}
+.case-practice-card.compare summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+  cursor: pointer;
+}
+.case-practice-card.compare summary::-webkit-details-marker {
+  display: none;
+}
+.case-compare-content {
+  display: grid;
+  gap: 10px;
+  padding-top: 8px;
+}
+.case-practice-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+}
+.case-practice-head span {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+.case-practice-head strong {
+  font-size: 1rem;
+}
+.case-practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.case-practice-grid div {
+  display: grid;
+  gap: 4px;
+  min-height: 88px;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-grid b {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.case-practice-grid span,
+.case-practice-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.case-practice-steps,
+.case-practice-review {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.case-compare-block {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-compare-block b {
+  color: var(--blue);
+  font-size: 0.84rem;
+}
+.case-compare-block span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 .copy-prompt {
   margin: 0;
@@ -1302,6 +1403,7 @@ li { margin-bottom: 8px; }
   .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
+  .case-practice-grid { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
@@ -1475,23 +1577,79 @@ li { margin-bottom: 8px; }
       <h2>读完后怎么把它用出来</h2>
       <ul><li>Git 的基本概念：工作区、暂存区、提交</li><li>GitHub 的基本概念：远端仓库、分支、Pages</li><li>Codex 下的常见流程：status、add、commit、push、线上检查</li><li>如何保护已有改动，避免误删和误覆盖</li></ul>
     </article>
-    <article class="card">
-      <span class="label">怎么读案例</span>
-      <h2>先看这 2 类真实场景</h2>
-      <div class="case-read-grid">
-        <div class="case-read-card">
-          <strong>本地新增 codex.html 后，线上没有入口，因为还没 push</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>推送成功后，GitHub Pages 需要等待缓存刷新</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>用链接检查确认发布目录没有断链</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div></div>
-    </article>
+<article class="card case-practice">
+  <span class="label">多案例演练</span>
+  <h2>把同一个概念迁移到 5 个真实场景</h2>
+  <p class="small-note">先用四格拆场景，再看课堂演练和对照案例。练的不是背定义，而是把同一方法迁移到不同任务。</p>
+  <div class="case-practice-list">
+<article class="case-practice-card primary">
+  <div class="case-practice-head">
+    <span>案例 01</span>
+    <strong>本地新增 codex.html 后，线上没有入口，因为还没 push</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
+    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
+    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+  </div>
+  <p>套用本课方法：让 Codex 先运行 git status，确认哪些文件会被提交。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 02</span>
+    <strong>推送成功后，GitHub Pages 需要等待缓存刷新</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
+    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
+    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+  </div>
+  <p>套用本课方法：提交前看 diff 或 diff --stat，避免把无关文件带进去。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 03</span>
+    <strong>用链接检查确认发布目录没有断链</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
+    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
+    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+  </div>
+  <p>套用本课方法：推送后访问线上 URL，并用 cache-busting 或强刷新确认页面更新。</p>
+</article>
+<article class="case-practice-card guided">
+  <div class="case-practice-head">
+    <span>课堂演练</span>
+    <strong>用 Codex 辅助发布课程网站</strong>
+  </div>
+  <ol class="case-practice-steps"><li>运行生成脚本，确认本地产物已更新。</li><li>让 Codex 执行 git status 和 diff --stat，确认提交范围。</li><li>提交并 push 到 GitHub。</li><li>访问 GitHub Pages URL，检查关键页面和更新时间。</li></ol>
+</article>
+<details class="case-practice-card compare">
+  <summary>
+    <span>对照案例</span>
+    <strong>从差输入改到可交付</strong>
+  </summary>
+  <div class="case-compare-content">
+    <div class="case-practice-head">
+      <span>对照案例</span>
+      <strong>从差输入改到可交付</strong>
+    </div>
+    <div class="case-compare-block">
+      <b>可用输入</b>
+      <span>请帮我检查 GitHub Pages 发布链路。先看 git status 和 diff --stat，确认本地修改；再判断是否已 commit 和 push；最后访问线上 course.html 和关键 lesson 页面，确认页面是否更新。不要覆盖未提交的用户改动。</span>
+    </div>
+    <div class="case-compare-block">
+      <b>样例结果</b>
+      <span>检查结果可能是：本地文件已生成，但没有 commit；或 commit 已有但没有 push；或 push 成功但 Pages 缓存未刷新，需要等待并用线上 URL 复查。</span>
+    </div>
+    <ul class="case-practice-review"><li>是否区分本地生成、Git 提交、远端推送、Pages 发布。</li><li>是否保护未提交的本地改动。</li><li>是否用线上 URL 做最终验证。</li></ul>
+  </div>
+</details></div>
+</article>
 
 
 <article class="card">

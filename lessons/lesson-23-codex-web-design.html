@@ -94,7 +94,7 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .case-practice-list, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
 .lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
@@ -126,6 +126,107 @@ li { margin-bottom: 8px; }
 }
 .flow-step span, .case-read-card span, .check-item span {
   color: var(--muted);
+}
+.case-practice {
+  overflow: hidden;
+}
+.case-practice-list {
+  margin-top: 12px;
+}
+.case-practice-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-card.primary {
+  border-color: rgba(15, 118, 110, 0.32);
+  box-shadow: inset 4px 0 0 var(--primary);
+}
+.case-practice-card.guided {
+  background: #fffdf8;
+  border-color: rgba(183, 121, 31, 0.24);
+}
+.case-practice-card.compare {
+  background: #f8fbff;
+  border-color: rgba(37, 99, 235, 0.18);
+}
+.case-practice-card.compare summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+  cursor: pointer;
+}
+.case-practice-card.compare summary::-webkit-details-marker {
+  display: none;
+}
+.case-compare-content {
+  display: grid;
+  gap: 10px;
+  padding-top: 8px;
+}
+.case-practice-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+}
+.case-practice-head span {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+.case-practice-head strong {
+  font-size: 1rem;
+}
+.case-practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.case-practice-grid div {
+  display: grid;
+  gap: 4px;
+  min-height: 88px;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-grid b {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.case-practice-grid span,
+.case-practice-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.case-practice-steps,
+.case-practice-review {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.case-compare-block {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-compare-block b {
+  color: var(--blue);
+  font-size: 0.84rem;
+}
+.case-compare-block span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 .copy-prompt {
   margin: 0;
@@ -1302,6 +1403,7 @@ li { margin-bottom: 8px; }
   .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
+  .case-practice-grid { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
@@ -1475,23 +1577,79 @@ li { margin-bottom: 8px; }
       <h2>读完后怎么把它用出来</h2>
       <ul><li>网页好看的本质：清晰、可读、可信、可操作</li><li>给 Codex 的网页需求四件套</li><li>移动端优先的布局要求</li><li>用浏览器截图和链接检查验收网页</li></ul>
     </article>
-    <article class="card">
-      <span class="label">怎么读案例</span>
-      <h2>先看这 2 类真实场景</h2>
-      <div class="case-read-grid">
-        <div class="case-read-card">
-          <strong>把课程首页从资源堆叠改成学习路径</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>把课程卡片改成整张可点击的大触控区域</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>把脑图资源页改成可放大查看的资源库</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div></div>
-    </article>
+<article class="card case-practice">
+  <span class="label">多案例演练</span>
+  <h2>把同一个概念迁移到 5 个真实场景</h2>
+  <p class="small-note">先用四格拆场景，再看课堂演练和对照案例。练的不是背定义，而是把同一方法迁移到不同任务。</p>
+  <div class="case-practice-list">
+<article class="case-practice-card primary">
+  <div class="case-practice-head">
+    <span>案例 01</span>
+    <strong>把课程首页从资源堆叠改成学习路径</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
+    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
+    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+  </div>
+  <p>套用本课方法：先告诉 Codex：目标用户、第一屏要完成什么、核心行动按钮是什么。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 02</span>
+    <strong>把课程卡片改成整张可点击的大触控区域</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
+    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
+    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+  </div>
+  <p>套用本课方法：要求它使用稳定尺寸、清晰焦点、足够触控区域和无横向滚动。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 03</span>
+    <strong>把脑图资源页改成可放大查看的资源库</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
+    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
+    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+  </div>
+  <p>套用本课方法：改完必须用 320、390、768 等宽度截图或指标验收。</p>
+</article>
+<article class="case-practice-card guided">
+  <div class="case-practice-head">
+    <span>课堂演练</span>
+    <strong>让 Codex 制作手机优先课程首页</strong>
+  </div>
+  <ol class="case-practice-steps"><li>说明用户：完全不懂 AI 的新手，用手机学习。</li><li>说明第一屏：看懂课程价值并能进入第 1 课。</li><li>说明结构：学习路径、章节入口、练习工作纸、资源链接。</li><li>说明验收：320px 到 768px 无横向滚动，按钮可点，链接不断。</li></ol>
+</article>
+<details class="case-practice-card compare">
+  <summary>
+    <span>对照案例</span>
+    <strong>从差输入改到可交付</strong>
+  </summary>
+  <div class="case-compare-content">
+    <div class="case-practice-head">
+      <span>对照案例</span>
+      <strong>从差输入改到可交付</strong>
+    </div>
+    <div class="case-compare-block">
+      <b>可用输入</b>
+      <span>请为 AI 新手课程设计手机优先首页。用户是完全不懂 AI 的成年人，第一屏要让他知道从哪里开始。页面包含课程简介、从第 1 课开始按钮、章节学习路径、最近 3 节推荐、资源入口。视觉要求清爽、字号易读、按钮触控区域足够大。验收：390px 宽度无横向滚动，关键按钮可点击，课程链接不断。</span>
+    </div>
+    <div class="case-compare-block">
+      <b>样例结果</b>
+      <span>页面应先展示课程名称、学习入口和章节路径；卡片不应过密；按钮高度适合手指点击；底部资源入口能打开脑图或工作纸。</span>
+    </div>
+    <ul class="case-practice-review"><li>是否面向真实用户，而不是模板展示。</li><li>是否写清内容结构和移动端要求。</li><li>是否有可验证的页面检查项。</li></ul>
+  </div>
+</details></div>
+</article>
 
 
 <article class="card">

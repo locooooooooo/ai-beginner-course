@@ -94,7 +94,7 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .case-practice-list, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
 .lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
@@ -126,6 +126,107 @@ li { margin-bottom: 8px; }
 }
 .flow-step span, .case-read-card span, .check-item span {
   color: var(--muted);
+}
+.case-practice {
+  overflow: hidden;
+}
+.case-practice-list {
+  margin-top: 12px;
+}
+.case-practice-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-card.primary {
+  border-color: rgba(15, 118, 110, 0.32);
+  box-shadow: inset 4px 0 0 var(--primary);
+}
+.case-practice-card.guided {
+  background: #fffdf8;
+  border-color: rgba(183, 121, 31, 0.24);
+}
+.case-practice-card.compare {
+  background: #f8fbff;
+  border-color: rgba(37, 99, 235, 0.18);
+}
+.case-practice-card.compare summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+  cursor: pointer;
+}
+.case-practice-card.compare summary::-webkit-details-marker {
+  display: none;
+}
+.case-compare-content {
+  display: grid;
+  gap: 10px;
+  padding-top: 8px;
+}
+.case-practice-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+}
+.case-practice-head span {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+.case-practice-head strong {
+  font-size: 1rem;
+}
+.case-practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.case-practice-grid div {
+  display: grid;
+  gap: 4px;
+  min-height: 88px;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-grid b {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.case-practice-grid span,
+.case-practice-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.case-practice-steps,
+.case-practice-review {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.case-compare-block {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-compare-block b {
+  color: var(--blue);
+  font-size: 0.84rem;
+}
+.case-compare-block span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 .copy-prompt {
   margin: 0;
@@ -1302,6 +1403,7 @@ li { margin-bottom: 8px; }
   .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
+  .case-practice-grid { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
@@ -1475,23 +1577,79 @@ li { margin-bottom: 8px; }
       <h2>读完后怎么把它用出来</h2>
       <ul><li>从问答到流程的差异</li><li>工作流的组成</li><li>什么样的任务值得做成工作流</li><li>如何评估 ROI</li></ul>
     </article>
-    <article class="card">
-      <span class="label">怎么读案例</span>
-      <h2>先看这 2 类真实场景</h2>
-      <div class="case-read-grid">
-        <div class="case-read-card">
-          <strong>自动发文章</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>自动生成海报</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>客服工单分流</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div></div>
-    </article>
+<article class="card case-practice">
+  <span class="label">多案例演练</span>
+  <h2>把同一个概念迁移到 5 个真实场景</h2>
+  <p class="small-note">先用四格拆场景，再看课堂演练和对照案例。练的不是背定义，而是把同一方法迁移到不同任务。</p>
+  <div class="case-practice-list">
+<article class="case-practice-card primary">
+  <div class="case-practice-head">
+    <span>案例 01</span>
+    <strong>自动发文章</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
+    <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
+    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
+    <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
+  </div>
+  <p>套用本课方法：先把任务画成流程图。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 02</span>
+    <strong>自动生成海报</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
+    <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
+    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
+    <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
+  </div>
+  <p>套用本课方法：识别哪一步适合模型，哪一步需要人审，哪一步需要系统连接。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 03</span>
+    <strong>客服工单分流</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
+    <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
+    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
+    <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
+  </div>
+  <p>套用本课方法：给每一步定义成功标准。</p>
+</article>
+<article class="case-practice-card guided">
+  <div class="case-practice-head">
+    <span>课堂演练</span>
+    <strong>把发布文章做成工作流</strong>
+  </div>
+  <ol class="case-practice-steps"><li>输入：选题、商品资料、品牌规则。</li><li>步骤：生成大纲、写正文、检查事实、生成封面、人工审批。</li><li>输出：待发布文章、封面图、检查报告。</li><li>失败处理：事实缺失则退回补资料，审批不通过则改稿。</li></ol>
+</article>
+<details class="case-practice-card compare">
+  <summary>
+    <span>对照案例</span>
+    <strong>从差输入改到可交付</strong>
+  </summary>
+  <div class="case-compare-content">
+    <div class="case-practice-head">
+      <span>对照案例</span>
+      <strong>从差输入改到可交付</strong>
+    </div>
+    <div class="case-compare-block">
+      <b>可用输入</b>
+      <span>请把“新品文章发布”拆成工作流。要求列出每一步的输入、AI 动作、人工检查、输出、失败处理。场景：电商新品上架前发布一篇公众号文章。</span>
+    </div>
+    <div class="case-compare-block">
+      <b>样例结果</b>
+      <span>步骤示例：商品资料进入大纲生成；品牌规则进入文案检查；人工审批通过后进入发布；审批失败返回改稿。</span>
+    </div>
+    <ul class="case-practice-review"><li>是否覆盖输入、处理、输出。</li><li>是否有人审和失败处理。</li><li>是否能被重复执行。</li></ul>
+  </div>
+</details></div>
+</article>
 
 
 <article class="card">

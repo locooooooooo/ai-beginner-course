@@ -94,7 +94,7 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .case-practice-list, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
 .lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
@@ -126,6 +126,107 @@ li { margin-bottom: 8px; }
 }
 .flow-step span, .case-read-card span, .check-item span {
   color: var(--muted);
+}
+.case-practice {
+  overflow: hidden;
+}
+.case-practice-list {
+  margin-top: 12px;
+}
+.case-practice-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-card.primary {
+  border-color: rgba(15, 118, 110, 0.32);
+  box-shadow: inset 4px 0 0 var(--primary);
+}
+.case-practice-card.guided {
+  background: #fffdf8;
+  border-color: rgba(183, 121, 31, 0.24);
+}
+.case-practice-card.compare {
+  background: #f8fbff;
+  border-color: rgba(37, 99, 235, 0.18);
+}
+.case-practice-card.compare summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+  cursor: pointer;
+}
+.case-practice-card.compare summary::-webkit-details-marker {
+  display: none;
+}
+.case-compare-content {
+  display: grid;
+  gap: 10px;
+  padding-top: 8px;
+}
+.case-practice-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+}
+.case-practice-head span {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+.case-practice-head strong {
+  font-size: 1rem;
+}
+.case-practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.case-practice-grid div {
+  display: grid;
+  gap: 4px;
+  min-height: 88px;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-grid b {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.case-practice-grid span,
+.case-practice-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.case-practice-steps,
+.case-practice-review {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.case-compare-block {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-compare-block b {
+  color: var(--blue);
+  font-size: 0.84rem;
+}
+.case-compare-block span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 .copy-prompt {
   margin: 0;
@@ -1302,6 +1403,7 @@ li { margin-bottom: 8px; }
   .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
+  .case-practice-grid { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
@@ -1475,27 +1577,92 @@ li { margin-bottom: 8px; }
       <h2>读完后怎么把它用出来</h2>
       <ul><li>为什么要先分清这些词</li><li>从大到小的概念关系</li><li>每个概念各自的职责</li><li>它们如何组合成完整工作流</li></ul>
     </article>
-    <article class="card">
-      <span class="label">怎么读案例</span>
-      <h2>先看这 2 类真实场景</h2>
-      <div class="case-read-grid">
-        <div class="case-read-card">
-          <strong>让大模型写文案</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>让 Agent 自动发文章</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>用 MCP 连接商品库</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>用 Skill 固化电商 SOP</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div></div>
-    </article>
+<article class="card case-practice">
+  <span class="label">多案例演练</span>
+  <h2>把同一个概念迁移到 6 个真实场景</h2>
+  <p class="small-note">先用四格拆场景，再看课堂演练和对照案例。练的不是背定义，而是把同一方法迁移到不同任务。</p>
+  <div class="case-practice-list">
+<article class="case-practice-card primary">
+  <div class="case-practice-head">
+    <span>案例 01</span>
+    <strong>让大模型写文案</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
+    <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
+    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
+  </div>
+  <p>套用本课方法：碰到新概念时，先问它解决的是理解、执行、连接还是复用。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 02</span>
+    <strong>让 Agent 自动发文章</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
+    <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
+    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
+  </div>
+  <p>套用本课方法：做系统设计时，按四层分工思考，而不是一股脑扔给模型。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 03</span>
+    <strong>用 MCP 连接商品库</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
+    <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
+    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
+  </div>
+  <p>套用本课方法：画系统图时，把这四层拆开写清楚。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 04</span>
+    <strong>用 Skill 固化电商 SOP</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
+    <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
+    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
+  </div>
+  <p>套用本课方法：碰到新概念时，先问它解决的是理解、执行、连接还是复用。</p>
+</article>
+<article class="case-practice-card guided">
+  <div class="case-practice-head">
+    <span>课堂演练</span>
+    <strong>自动生成并发布一篇新品文章</strong>
+  </div>
+  <ol class="case-practice-steps"><li>LLM：根据商品资料生成文章初稿。</li><li>Agent：按发布目标拆任务，决定先查资料、再写稿、再检查。</li><li>MCP：连接商品库、CMS、图片素材库。</li><li>Skill：复用团队的标题规则、品牌语气和发布验收清单。</li></ol>
+</article>
+<details class="case-practice-card compare">
+  <summary>
+    <span>对照案例</span>
+    <strong>从差输入改到可交付</strong>
+  </summary>
+  <div class="case-compare-content">
+    <div class="case-practice-head">
+      <span>对照案例</span>
+      <strong>从差输入改到可交付</strong>
+    </div>
+    <div class="case-compare-block">
+      <b>可用输入</b>
+      <span>LLM 负责理解和生成，Agent 负责围绕目标连续执行，MCP 负责连接外部系统和数据，Skill 负责把一类任务的做法沉淀成可复用资产。它们是同一条工作链路里的不同分工。</span>
+    </div>
+    <div class="case-compare-block">
+      <b>样例结果</b>
+      <span>业务例子：自动发布新品文章。LLM 写初稿，Agent 拆解查资料、写稿、检查、发布草稿的步骤，MCP 连接商品库和 CMS，Skill 固化标题规则、品牌语气和发布前检查清单。</span>
+    </div>
+    <ul class="case-practice-review"><li>是否用分工解释名词，而不是堆定义。</li><li>是否能把四个概念放进同一个真实流程。</li><li>是否说明缺少某一层会出现什么问题。</li></ul>
+  </div>
+</details></div>
+</article>
 
 
 <article class="card">

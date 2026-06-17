@@ -94,7 +94,7 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .case-practice-list, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
 .lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
@@ -126,6 +126,107 @@ li { margin-bottom: 8px; }
 }
 .flow-step span, .case-read-card span, .check-item span {
   color: var(--muted);
+}
+.case-practice {
+  overflow: hidden;
+}
+.case-practice-list {
+  margin-top: 12px;
+}
+.case-practice-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-card.primary {
+  border-color: rgba(15, 118, 110, 0.32);
+  box-shadow: inset 4px 0 0 var(--primary);
+}
+.case-practice-card.guided {
+  background: #fffdf8;
+  border-color: rgba(183, 121, 31, 0.24);
+}
+.case-practice-card.compare {
+  background: #f8fbff;
+  border-color: rgba(37, 99, 235, 0.18);
+}
+.case-practice-card.compare summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+  cursor: pointer;
+}
+.case-practice-card.compare summary::-webkit-details-marker {
+  display: none;
+}
+.case-compare-content {
+  display: grid;
+  gap: 10px;
+  padding-top: 8px;
+}
+.case-practice-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+}
+.case-practice-head span {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+.case-practice-head strong {
+  font-size: 1rem;
+}
+.case-practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.case-practice-grid div {
+  display: grid;
+  gap: 4px;
+  min-height: 88px;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-practice-grid b {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.case-practice-grid span,
+.case-practice-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.case-practice-steps,
+.case-practice-review {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.case-compare-block {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-compare-block b {
+  color: var(--blue);
+  font-size: 0.84rem;
+}
+.case-compare-block span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 .copy-prompt {
   margin: 0;
@@ -1302,6 +1403,7 @@ li { margin-bottom: 8px; }
   .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
+  .case-practice-grid { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
@@ -1475,23 +1577,79 @@ li { margin-bottom: 8px; }
       <h2>读完后怎么把它用出来</h2>
       <ul><li>提示词是什么</li><li>常见结构模板</li><li>输出格式的重要性</li><li>简单示例</li></ul>
     </article>
-    <article class="card">
-      <span class="label">怎么读案例</span>
-      <h2>先看这 2 类真实场景</h2>
-      <div class="case-read-grid">
-        <div class="case-read-card">
-          <strong>文章大纲提示词</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>会议纪要提示词</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div>
-        <div class="case-read-card">
-          <strong>商品标题提示词</strong>
-          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
-        </div></div>
-    </article>
+<article class="card case-practice">
+  <span class="label">多案例演练</span>
+  <h2>把同一个概念迁移到 5 个真实场景</h2>
+  <p class="small-note">先用四格拆场景，再看课堂演练和对照案例。练的不是背定义，而是把同一方法迁移到不同任务。</p>
+  <div class="case-practice-list">
+<article class="case-practice-card primary">
+  <div class="case-practice-head">
+    <span>案例 01</span>
+    <strong>文章大纲提示词</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
+    <div><b>AI 动作</b><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
+    <div><b>人工检查</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+    <div><b>交付物</b><span>沉淀一条可复用提示词模板。</span></div>
+  </div>
+  <p>套用本课方法：优先写清任务与输出，而不是堆砌修饰词。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 02</span>
+    <strong>会议纪要提示词</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
+    <div><b>AI 动作</b><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
+    <div><b>人工检查</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+    <div><b>交付物</b><span>沉淀一条可复用提示词模板。</span></div>
+  </div>
+  <p>套用本课方法：复杂结果尽量给固定结构，比如表格、分点、JSON、步骤。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 03</span>
+    <strong>商品标题提示词</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
+    <div><b>AI 动作</b><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
+    <div><b>人工检查</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+    <div><b>交付物</b><span>沉淀一条可复用提示词模板。</span></div>
+  </div>
+  <p>套用本课方法：对反复使用的提示词逐渐模板化。</p>
+</article>
+<article class="case-practice-card guided">
+  <div class="case-practice-head">
+    <span>课堂演练</span>
+    <strong>写一篇新品介绍提示词</strong>
+  </div>
+  <ol class="case-practice-steps"><li>设定角色：你是一名电商商品文案编辑。</li><li>说明任务：为新品保温杯写 500 字介绍。</li><li>给上下文：列出材质、容量、人群、卖点。</li><li>定格式：标题、卖点列表、正文、注意事项。</li></ol>
+</article>
+<details class="case-practice-card compare">
+  <summary>
+    <span>对照案例</span>
+    <strong>从差输入改到可交付</strong>
+  </summary>
+  <div class="case-compare-content">
+    <div class="case-practice-head">
+      <span>对照案例</span>
+      <strong>从差输入改到可交付</strong>
+    </div>
+    <div class="case-compare-block">
+      <b>可用输入</b>
+      <span>你是一名电商商品文案编辑。请根据以下信息写一篇 500 字新品介绍：产品是 500ml 不锈钢保温杯，卖点是轻便、防漏、保温 8 小时，受众是通勤上班族。输出格式固定为：1. 标题；2. 三个卖点；3. 500 字正文；4. 不适合夸大的表述清单。</span>
+    </div>
+    <div class="case-compare-block">
+      <b>样例结果</b>
+      <span>输出会先给标题，再给三条卖点，正文围绕通勤、水杯重量、密封和保温场景展开，最后列出不能写的夸张词，例如“永久保温”“绝不漏水”。</span>
+    </div>
+    <ul class="case-practice-review"><li>角色是否让 AI 知道用什么专业视角写。</li><li>任务和素材是否足够完整。</li><li>格式是否方便直接复制到文档或表格。</li></ul>
+  </div>
+</details></div>
+</article>
 
 
 <article class="card">
