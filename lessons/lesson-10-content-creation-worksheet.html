@@ -1288,6 +1288,46 @@ li { margin-bottom: 8px; }
   display: grid;
   gap: 12px;
 }
+.worksheet-case-practice {
+  gap: 14px;
+}
+.worksheet-case-list {
+  display: grid;
+  gap: 12px;
+}
+.worksheet-case-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.worksheet-case-card h3 {
+  font-family: var(--sans);
+  font-size: 1.02rem;
+}
+.worksheet-case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.worksheet-case-grid > div {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.10);
+  border-radius: var(--radius);
+}
+.worksheet-case-grid strong {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.worksheet-case-grid span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 .teaching-segment {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
@@ -1401,6 +1441,7 @@ li { margin-bottom: 8px; }
   .case-meta div { grid-template-columns: 1fr; }
   .case-index-list a { grid-template-columns: 1fr; }
   .worksheet-table > div { grid-template-columns: 1fr; }
+  .worksheet-case-grid { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
   .case-practice-grid { grid-template-columns: 1fr; }
@@ -1423,7 +1464,7 @@ li { margin-bottom: 8px; }
   <div class="navlinks">
     <a href="./lesson-10-content-creation.html">返回主讲义</a>
     <a href="../course.html#beginner">新手入门</a>
-    <a href="../course.html#advanced">老鸟进阶</a>
+    <a href="../course.html#advanced">游戏落地</a>
     <a href="../mindmap-hub.html">资源</a>
   </div>
 </nav>
@@ -1516,6 +1557,69 @@ li { margin-bottom: 8px; }
     <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我有没有先说明渠道和受众？</span></div><div class="check-item"><strong>2</strong><span>AI 有没有夸大功效、价格或库存？</span></div><div class="check-item"><strong>3</strong><span>不同渠道文案是否真的有差异？</span></div></div>
     <label class="writing-label"><span>我还没想明白的问题</span><textarea class="writing-box" aria-label="我还没想明白的问题" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
+
+  <article class="worksheet-block worksheet-case-practice">
+    <span class="label">多案例填写</span>
+    <h2>把同一个方法写进 3 个真实场景</h2>
+    <p class="small-note">先看示意，再写自己的案例。不要照抄页面内容，要换成你自己的业务、工作或学习场景。</p>
+    <div class="worksheet-case-list">
+  <article class="worksheet-case-card">
+    <span class="label">案例 01</span>
+    <h3>公众号文章</h3>
+    <div class="worksheet-case-grid">
+      <div><strong>输入</strong><span>真实素材、目标受众、输出格式、风险边界。</span></div>
+      <div><strong>AI 动作</strong><span>生成、改写、总结、检索或转换成一个最小可用样例。</span></div>
+      <div><strong>人工检查</strong><span>核对事实、格式、版权、品牌语气和是否可发布。</span></div>
+      <div><strong>交付物</strong><span>形成一个日常任务模板或样稿。</span></div>
+    </div>
+    <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
+    <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+  </article>
+  <article class="worksheet-case-card">
+    <span class="label">案例 02</span>
+    <h3>小红书文案</h3>
+    <div class="worksheet-case-grid">
+      <div><strong>输入</strong><span>真实素材、目标受众、输出格式、风险边界。</span></div>
+      <div><strong>AI 动作</strong><span>生成、改写、总结、检索或转换成一个最小可用样例。</span></div>
+      <div><strong>人工检查</strong><span>核对事实、格式、版权、品牌语气和是否可发布。</span></div>
+      <div><strong>交付物</strong><span>形成一个日常任务模板或样稿。</span></div>
+    </div>
+    <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
+    <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+  </article>
+  <article class="worksheet-case-card">
+    <span class="label">案例 03</span>
+    <h3>商品详情页</h3>
+    <div class="worksheet-case-grid">
+      <div><strong>输入</strong><span>真实素材、目标受众、输出格式、风险边界。</span></div>
+      <div><strong>AI 动作</strong><span>生成、改写、总结、检索或转换成一个最小可用样例。</span></div>
+      <div><strong>人工检查</strong><span>核对事实、格式、版权、品牌语气和是否可发布。</span></div>
+      <div><strong>交付物</strong><span>形成一个日常任务模板或样稿。</span></div>
+    </div>
+    <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
+    <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+  </article>
+  <article class="worksheet-case-card">
+    <span class="label">案例 04</span>
+    <h3>短视频脚本</h3>
+    <div class="worksheet-case-grid">
+      <div><strong>输入</strong><span>真实素材、目标受众、输出格式、风险边界。</span></div>
+      <div><strong>AI 动作</strong><span>生成、改写、总结、检索或转换成一个最小可用样例。</span></div>
+      <div><strong>人工检查</strong><span>核对事实、格式、版权、品牌语气和是否可发布。</span></div>
+      <div><strong>交付物</strong><span>形成一个日常任务模板或样稿。</span></div>
+    </div>
+    <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
+    <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+  </article></div>
+  </article>
   <article class="worksheet-block">
     <span class="label">5. 风险检查</span>
     <h2>哪些地方不能直接相信</h2>
@@ -1576,7 +1680,7 @@ li { margin-bottom: 8px; }
   <span>同一主题的不同版本。</span>
 </div></div>
     <label class="writing-label"><span>我自己的术语解释</span><textarea class="writing-box" aria-label="我自己的术语解释" placeholder="在这里写下你的答案。"></textarea></label>
-  </article>
+</article>
 </section>
 <section class="notes-wrap">
   <article class="notes">

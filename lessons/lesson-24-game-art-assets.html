@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第25课 你真的会用Dify吗？</title>
+  <title>第24课 美术资产生成与游戏管线</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -1288,6 +1288,46 @@ li { margin-bottom: 8px; }
   display: grid;
   gap: 12px;
 }
+.worksheet-case-practice {
+  gap: 14px;
+}
+.worksheet-case-list {
+  display: grid;
+  gap: 12px;
+}
+.worksheet-case-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.worksheet-case-card h3 {
+  font-family: var(--sans);
+  font-size: 1.02rem;
+}
+.worksheet-case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.worksheet-case-grid > div {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.10);
+  border-radius: var(--radius);
+}
+.worksheet-case-grid strong {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.worksheet-case-grid span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 .teaching-segment {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
@@ -1401,6 +1441,7 @@ li { margin-bottom: 8px; }
   .case-meta div { grid-template-columns: 1fr; }
   .case-index-list a { grid-template-columns: 1fr; }
   .worksheet-table > div { grid-template-columns: 1fr; }
+  .worksheet-case-grid { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
   .case-practice-grid { grid-template-columns: 1fr; }
@@ -1422,29 +1463,29 @@ li { margin-bottom: 8px; }
   <a class="brand" href="../course.html">AI入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
-    <a href="../course.html#advanced">老鸟进阶</a>
+    <a href="../course.html#advanced">游戏落地</a>
     <a href="../case-library.html">案例库</a>
     <a href="../mindmap-hub.html">资源</a>
   </div>
 </nav>
 <header class="hero">
   <div>
-    <div class="eyebrow">老鸟进阶：Codex 扩展学习 · 第25课</div>
-    <h1>第25课：你真的会用Dify吗？</h1>
-    <p class="lead">学会用 Codex 搭建 Dify 平台、完成 Docker 部署，并把 Wiki 发布、Bug 汇总和自动 Code Review 做成自动化流程。</p>
+    <div class="eyebrow">第六章：游戏场景落地 · 第24课</div>
+    <h1>第24课：美术资产生成与游戏管线</h1>
+    <p class="lead">理解 AI 美术在游戏里更适合作为概念、占位、变体和沟通工具，正式上线前必须经过风格、版权、性能和格式管线检查。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
-      <a class="btn" href="./lesson-25-dify-codex-workflow-worksheet.html">打开工作纸</a>
+      <a class="btn" href="./lesson-24-game-art-assets-worksheet.html">打开工作纸</a>
     </div>
   </div>
   <aside class="progress-panel" aria-label="学习进度">
     <strong>当前进度</strong>
     <div class="progress-meta">
-      <span>25 / 25</span>
-      <span>100%</span>
+      <span>24 / 25</span>
+      <span>96%</span>
     </div>
-    <div class="progress-bar"><span style="width:100%"></span></div>
+    <div class="progress-bar"><span style="width:96%"></span></div>
     <ol class="mini-steps">
       <li>先读核心问题</li>
       <li>抓住 3 个最小原理</li>
@@ -1455,29 +1496,29 @@ li { margin-bottom: 8px; }
 <section class="callout" id="start">
   <span class="label">为什么要学</span>
   <h2>核心问题</h2>
-  <p>为什么只会拖 Dify 节点还不够，真正项目要同时处理平台部署、流程设计、任务触发、结果发布和持续 review？</p>
+  <p>为什么 AI 生成一张好看的图，还远远不等于一个能进游戏包、能商用、能跑得动的正式资产？</p>
 </section>
 <section class="card">
   <span class="label">学习元信息</span>
   <h2>开始前先确认这些边界</h2>
   <div class="lesson-meta-grid"><div class="meta-item">
   <strong>预计用时</strong>
-  <span>30-45 分钟</span>
+  <span>40-55 分钟</span>
 </div><div class="meta-item">
   <strong>难度</strong>
-  <span>入门</span>
+  <span>进阶入门</span>
 </div><div class="meta-item">
   <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；也可以只看页面完成纸面练习</span>
+  <span>任意图像生成工具、图像编辑工具、游戏引擎资源导入面板；可用纸面方案完成</span>
 </div><div class="meta-item">
   <strong>隐私边界</strong>
-  <span>练习时使用公开或虚构材料，不上传客户隐私、内部资料、账号信息或未公开策略。</span>
+  <span>不要上传未授权 IP、商业角色设定、合作方原画或玩家隐私素材；商用前必须保留来源和授权记录。</span>
 </div><div class="meta-item">
   <strong>更新时间</strong>
   <span>2026-06-17</span>
 </div><div class="meta-item">
   <strong>来源提示</strong>
-  <span>本课强调稳定方法和学习路径；具体工具能力以实际产品为准。</span>
+  <span>本课不提供法律意见；Steam 等平台已经要求开发者披露生成式 AI 使用情况，具体披露和版权要求以平台官方规则和专业意见为准。</span>
 </div></div>
 </section>
 <div class="grid">
@@ -1490,23 +1531,23 @@ li { margin-bottom: 8px; }
   <h2>把这一课讲透：先翻译，再演示，再提问</h2>
   <div class="plain-language">
     <strong>人话解释</strong>
-    <p>Dify 适合编排自动化流程，Codex 适合读项目、改文件、跑命令和做工程验收。两者结合时，先用 Codex 搭好环境和规则，再用 Dify 把 Wiki 发布、Bug 汇总、Code Review 这类重复流程串起来。</p>
+    <p>AI 生成图可以帮你更快探索角色、场景、道具和 UI，但它只是资产管线的入口。正式进游戏前，还要做版权记录、人工修整、格式规范、贴图压缩、引擎导入和性能检查。</p>
   </div>
   <div class="deep-script-grid"><div class="deep-script">
-  <strong>Dify 不是只做聊天机器人</strong>
-  <p>真正有价值的是把输入、判断、工具调用、输出和记录做成可重复流程。</p>
+  <strong>先区分概念图和正式资产</strong>
+  <p>概念图是沟通方向，正式资产要能进包、能跑、能维护。新手最容易把一张漂亮图误认为已经完成资产。</p>
 </div><div class="deep-script">
-  <strong>Codex 负责工程现场</strong>
-  <p>部署 Docker、看日志、改脚本、跑测试、查发布结果，这些更适合 Codex 在项目里完成。</p>
+  <strong>再讲资产清单</strong>
+  <p>每张图都要记录用途、来源、提示词、修改人、授权状态、尺寸、格式和导入设置。没有清单，后期很难查版权和性能问题。</p>
 </div><div class="deep-script">
-  <strong>先跑通一条小流程</strong>
-  <p>不要一开始做全自动平台，先选 Wiki 发布或 Bug 汇总，跑通后再扩展。</p>
+  <strong>最后讲平台和性能</strong>
+  <p>平台可能要求披露生成式 AI 使用；引擎还要关心贴图大小、压缩格式、透明通道、材质数量、Draw Call 和内存占用。</p>
 </div></div>
 </article>
 <article class="card">
   <span class="label">跟做案例</span>
-  <h2>设计 Dify + Codex 的 Wiki 发布自动化</h2>
-  <ol class="walkthrough-list"><li>用 Codex 准备 Dify Docker 部署并验证服务可访问。</li><li>在 Dify 设计入口：输入标题、正文、发布目标和检查规则。</li><li>让 Codex 负责生成内容、检查链接、输出发布包。</li><li>Dify 记录发布结果，失败时生成待人工处理清单。</li></ol>
+  <h2>暗黑风格 ARPG 道具图标管线</h2>
+  <ol class="walkthrough-list"><li>用 AI 生成 20 张道具图标草稿，先只做方向探索。</li><li>人工筛选 8 张，统一视角、边框、光照、尺寸和透明通道。</li><li>记录每张图的生成工具、提示词、修改过程、授权状态和用途。</li><li>导入引擎后检查尺寸、压缩、清晰度、内存占用和 UI 可读性。</li></ol>
 </article>
 <article class="card worked-example">
   <span class="label">完整示范</span>
@@ -1514,26 +1555,26 @@ li { margin-bottom: 8px; }
   <div class="example-grid">
     <div class="example-block bad">
       <strong>差输入</strong>
-      <p>帮我用 Dify 做一个自动化平台。</p>
+      <p>帮我生成一套能直接商用的游戏装备图标。</p>
     </div>
     <div class="example-block good">
       <strong>好输入</strong>
-      <p>请设计一个 Dify + Codex 自动化方案，先做三条最小流程：1. Wiki 发布；2. Bug 汇总成飞书文档；3. 自动 Code Review。每条流程都写清输入、Dify 节点、Codex 任务、人工审批点、输出结果、失败处理和验收证据。前置条件包括 Docker 部署 Dify 并验证访问。</p>
+      <p>请为暗黑风格 ARPG 生成装备图标探索方案，不直接声明可商用。输出 12 个图标方向，每个包含用途、风格关键词、生成提示词、后期修整要求、导入规格和版权记录字段。正式使用前需要人工重绘或修整、统一 UI 风格、记录来源并按平台要求披露。</p>
     </div>
   </div>
   <div class="example-block">
     <strong>输出样例</strong>
-    <p>Wiki 发布流程：输入文章主题和目标栏目；Dify 调用内容整理节点；Codex 生成页面、检查链接和格式；人工审批后发布；输出线上链接和检查报告。Bug 汇总流程输出飞书文档草稿。Code Review 流程输出问题列表和文件行号。</p>
+    <p>输出应是一张资产表：名称、用途、提示词、参考风格、尺寸、透明通道、修整要求、授权状态、导入压缩设置和验收标准。验收包括小尺寸可读、边框统一、风格一致、引擎中显示清晰。</p>
   </div>
   <div class="example-block">
     <strong>检查点</strong>
-    <ul><li>是否先包含 Dify 部署和访问验证。</li><li>是否把三条流程拆成清楚节点。</li><li>是否有人工审批、日志和失败处理。</li></ul>
+    <ul><li>是否避免直接承诺可商用。</li><li>是否包含资产表和来源记录。</li><li>是否写清引擎导入与性能检查。</li></ul>
   </div>
 </article>
 <article class="card">
   <span class="label">检查理解</span>
   <h2>学完后先回答这 3 个问题</h2>
-  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>哪些工作交给 Dify 编排，哪些交给 Codex 执行？</span></div><div class="check-item"><strong>2</strong><span>流程有没有输入、节点、输出和失败处理？</span></div><div class="check-item"><strong>3</strong><span>是否保留日志、人工审批和可复查结果？</span></div></div>
+  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>这张图是概念、占位还是正式资产？</span></div><div class="check-item"><strong>2</strong><span>来源、提示词、授权状态和人工修改是否记录？</span></div><div class="check-item"><strong>3</strong><span>进入引擎后是否检查尺寸、压缩、透明通道和性能？</span></div></div>
 </article>
     <section class="learner-brief">
       <span class="label">先怎么学</span>
@@ -1541,41 +1582,41 @@ li { margin-bottom: 8px; }
       <p class="small-note">每一课的学习路线都不同。先抓本课最关键的问题，再用案例和产物证明自己真的会用。</p>
       <div class="flow">
         <div class="flow-step">
-          <strong>1. 用 Codex 准备 Dify 平台和 Docker 部署</strong>
-          <span>先把本课变成一个 Codex 可执行任务：用 Codex 准备 Dify 平台和 Docker 部署。写清最终文件、页面或验证证据。</span>
+          <strong>1. AI 美术能做什么</strong>
+          <span>先把本课变成一个游戏开发小切片：AI 美术能做什么。写清玩法目标、工具边界和验证证据。</span>
         </div>
         <div class="flow-step">
-          <strong>2. Dify 工作流的入口/节点/分支和输出</strong>
-          <span>把关键点翻译成协作规则：Codex 可以先搭建 Dify 运行环境：读文档、准备 Docker 配置、启动服务并做访问验证。明确哪些能改、哪些不能动、怎样验收。</span>
+          <strong>2. 从图片到游戏资产的差距</strong>
+          <span>把关键点翻译成协作规则：游戏美术资产要进入管线：命名、尺寸、透明通道、贴图压缩、LOD、材质和导入设置。明确哪些交给 Agent、哪些必须人工把关。</span>
         </div>
         <div class="flow-step">
-          <strong>3. 把 Wiki 发布/Bug 文档和 Code Review 做成</strong>
-          <span>套进“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”做一轮 Loop：让 Codex 读上下文、改产物、跑检查，再看证据。</span>
+          <strong>3. 角色/道具/UI/场景的生成案例</strong>
+          <span>套进“用生成图先做 20 张道具图标草稿，再人工统一描边、尺寸和透明通道”做一轮最小验证：生成草稿、接入引擎或设计工具，再收集证据。</span>
         </div>
         <div class="flow-step">
-          <strong>4. 从一次跑通沉淀成团队可复用的流程资产</strong>
-          <span>最后把结果、问题和下一轮动作写下来：先用 Codex 把 Dify 的 Docker 部署步骤整理清楚，并跑通启动、登录和基础工作流测试。 本课产物：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span>
+          <strong>4. 版权/性能和平台披露检查</strong>
+          <span>最后把运行结果、资产风险和下一轮动作写下来：先让 AI 生成方向图和变体，不急着定稿。 本课产物：为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工复审。</span>
         </div></div>
     </section>
     <article class="card">
       <span class="label">先记住</span>
       <h2>本课只抓 3 件事</h2>
-      <ul><li>Codex 可以先搭建 Dify 运行环境：读文档、准备 Docker 配置、启动服务并做访问验证</li><li>Dify 负责自动化流程编排：把输入、条件分支、外部服务调用和结果输出串起来</li><li>真实落地重点是 Wiki 发布、Bug 汇总成飞书文档、自动 Code Review，而不是只做聊天机器人</li></ul>
+      <ul><li>游戏美术资产要进入管线：命名、尺寸、透明通道、贴图压缩、LOD、材质和导入设置</li><li>AI 生成图适合做情绪板、角色探索、图标草稿、场景占位和营销视觉备选</li><li>正式资产必须处理版权来源、风格一致性、平台披露、性能预算和人工修整</li></ul>
     </article>
     <article class="card">
       <span class="label">想明白</span>
       <h2>第一性拆解</h2>
-      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先让 Codex 处理平台搭建：看官方部署要求、整理 Docker Compose、启动 Dify 服务并检查访问是否正常。</span></div><div class="principle-block"><strong>拆解 2</strong><span>再让 Dify 做流程编排：把触发入口、任务分支、Codex 执行、文档输出和状态记录串成自动化链路。</span></div><div class="principle-block"><strong>拆解 3</strong><span>最后把三类高频任务产品化：Wiki 发布、Bug 汇总成飞书文档、自动 Code Review 都应该能重复运行。</span></div></div>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把“图好看”和“资产可用”分开：游戏资产还要满足格式、性能、风格和版权要求。</span></div><div class="principle-block"><strong>拆解 2</strong><span>AI 美术最大的价值是提高探索速度，让团队更快对齐方向和占位验证。</span></div><div class="principle-block"><strong>拆解 3</strong><span>正式使用前必须有资产清单、来源记录、人工修整、引擎导入和平台披露检查。</span></div></div>
     </article>
     <article class="card">
       <span class="label">可迁移</span>
       <h2>最小原理</h2>
-      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：Dify 是流程平台，重点是把多步任务稳定编排起来。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：Codex 是搭建和执行助手，适合处理部署、脚本、文档生成、代码审查和验证。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：真正有价值的是可复用自动化流程，而不是单次问答或临时节点截图。</span></div></div>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：游戏资产是工程资源，不只是图片文件。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：生成式美术先服务探索和沟通，正式上线要走管线。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：版权、风格、性能和披露缺一项，都可能让资产不可用。</span></div></div>
     </article>
     <article class="card">
       <span class="label">怎么学</span>
       <h2>读完后怎么把它用出来</h2>
-      <ul><li>用 Codex 准备 Dify 平台和 Docker 部署</li><li>Dify 工作流的入口、节点、分支和输出</li><li>把 Wiki 发布、Bug 文档和 Code Review 做成三条自动化流程</li><li>从一次跑通沉淀成团队可复用的流程资产</li></ul>
+      <ul><li>AI 美术能做什么</li><li>从图片到游戏资产的差距</li><li>角色、道具、UI、场景的生成案例</li><li>版权、性能和平台披露检查</li></ul>
     </article>
 <article class="card case-practice">
   <span class="label">多案例演练</span>
@@ -1585,48 +1626,48 @@ li { margin-bottom: 8px; }
 <article class="case-practice-card primary">
   <div class="case-practice-head">
     <span>案例 01</span>
-    <strong>Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果</strong>
+    <strong>用生成图先做 20 张道具图标草稿，再人工统一描边、尺寸和透明通道</strong>
   </div>
   <div class="case-practice-grid">
-    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
-    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
-    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+    <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
+    <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
-  <p>套用本课方法：先用 Codex 把 Dify 的 Docker 部署步骤整理清楚，并跑通启动、登录和基础工作流测试。</p>
+  <p>套用本课方法：先让 AI 生成方向图和变体，不急着定稿。</p>
 </article>
 <article class="case-practice-card">
   <div class="case-practice-head">
     <span>案例 02</span>
-    <strong>Bug 汇总 Workflow：自动抓取 Bug 线索，Dify 分组归纳，再生成飞书文档</strong>
+    <strong>用 AI 生成场景 moodboard，帮助关卡和灯光确定气氛，但不直接塞进最终包</strong>
   </div>
   <div class="case-practice-grid">
-    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
-    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
-    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+    <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
+    <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
-  <p>套用本课方法：再拆三条自动化链路：Wiki 发布、Bug 飞书文档、自动 Code Review，每条都写清输入、处理、输出和验收。</p>
+  <p>套用本课方法：把每张图记录为资产条目：用途、提示词、来源、授权状态、修改人、导入规格。</p>
 </article>
 <article class="case-practice-card">
   <div class="case-practice-head">
     <span>案例 03</span>
-    <strong>自动 Code Review Workflow：Dify 接收仓库或 PR 信息，Codex 执行审查，输出 review 报告</strong>
+    <strong>用生成图做怪物概念探索，再由美术重绘、拆件、绑定和压缩</strong>
   </div>
   <div class="case-practice-grid">
-    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
-    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
-    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+    <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
+    <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
-  <p>套用本课方法：最后把流程版本化：每次改节点、改提示词、改输出格式，都要留下可回滚的配置记录。</p>
+  <p>套用本课方法：进引擎前检查尺寸、压缩、透明通道、材质、命名和平台性能预算。</p>
 </article>
 <article class="case-practice-card guided">
   <div class="case-practice-head">
     <span>课堂演练</span>
-    <strong>设计 Dify + Codex 的 Wiki 发布自动化</strong>
+    <strong>暗黑风格 ARPG 道具图标管线</strong>
   </div>
-  <ol class="case-practice-steps"><li>用 Codex 准备 Dify Docker 部署并验证服务可访问。</li><li>在 Dify 设计入口：输入标题、正文、发布目标和检查规则。</li><li>让 Codex 负责生成内容、检查链接、输出发布包。</li><li>Dify 记录发布结果，失败时生成待人工处理清单。</li></ol>
+  <ol class="case-practice-steps"><li>用 AI 生成 20 张道具图标草稿，先只做方向探索。</li><li>人工筛选 8 张，统一视角、边框、光照、尺寸和透明通道。</li><li>记录每张图的生成工具、提示词、修改过程、授权状态和用途。</li><li>导入引擎后检查尺寸、压缩、清晰度、内存占用和 UI 可读性。</li></ol>
 </article>
 <details class="case-practice-card compare">
   <summary>
@@ -1640,13 +1681,13 @@ li { margin-bottom: 8px; }
     </div>
     <div class="case-compare-block">
       <b>可用输入</b>
-      <span>请设计一个 Dify + Codex 自动化方案，先做三条最小流程：1. Wiki 发布；2. Bug 汇总成飞书文档；3. 自动 Code Review。每条流程都写清输入、Dify 节点、Codex 任务、人工审批点、输出结果、失败处理和验收证据。前置条件包括 Docker 部署 Dify 并验证访问。</span>
+      <span>请为暗黑风格 ARPG 生成装备图标探索方案，不直接声明可商用。输出 12 个图标方向，每个包含用途、风格关键词、生成提示词、后期修整要求、导入规格和版权记录字段。正式使用前需要人工重绘或修整、统一 UI 风格、记录来源并按平台要求披露。</span>
     </div>
     <div class="case-compare-block">
       <b>样例结果</b>
-      <span>Wiki 发布流程：输入文章主题和目标栏目；Dify 调用内容整理节点；Codex 生成页面、检查链接和格式；人工审批后发布；输出线上链接和检查报告。Bug 汇总流程输出飞书文档草稿。Code Review 流程输出问题列表和文件行号。</span>
+      <span>输出应是一张资产表：名称、用途、提示词、参考风格、尺寸、透明通道、修整要求、授权状态、导入压缩设置和验收标准。验收包括小尺寸可读、边框统一、风格一致、引擎中显示清晰。</span>
     </div>
-    <ul class="case-practice-review"><li>是否先包含 Dify 部署和访问验证。</li><li>是否把三条流程拆成清楚节点。</li><li>是否有人工审批、日志和失败处理。</li></ul>
+    <ul class="case-practice-review"><li>是否避免直接承诺可商用。</li><li>是否包含资产表和来源记录。</li><li>是否写清引擎导入与性能检查。</li></ul>
   </div>
 </details></div>
 </article>
@@ -1658,34 +1699,34 @@ li { margin-bottom: 8px; }
   <div class="teaching-grid"><div class="teaching-segment">
   <span class="step-no">1</span>
   <div>
-    <h3>用 Codex 准备 Dify 平台和 Docker 部署</h3>
-    <p><strong>先讲清：</strong>Codex 可以先搭建 Dify 运行环境：读文档、准备 Docker 配置、启动服务并做访问验证。</p>
-    <p><strong>再落地：</strong>把它放进“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>先用 Codex 把 Dify 的 Docker 部署步骤整理清楚，并跑通启动、登录和基础工作流测试。</p>
+    <h3>AI 美术能做什么</h3>
+    <p><strong>先讲清：</strong>游戏美术资产要进入管线：命名、尺寸、透明通道、贴图压缩、LOD、材质和导入设置。</p>
+    <p><strong>再落地：</strong>把它放进“用生成图先做 20 张道具图标草稿，再人工统一描边、尺寸和透明通道”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先让 AI 生成方向图和变体，不急着定稿。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">2</span>
   <div>
-    <h3>Dify 工作流的入口、节点、分支和输出</h3>
-    <p><strong>先讲清：</strong>Dify 负责自动化流程编排：把输入、条件分支、外部服务调用和结果输出串起来。</p>
-    <p><strong>再落地：</strong>把它放进“Bug 汇总 Workflow：自动抓取 Bug 线索，Dify 分组归纳，再生成飞书文档”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>再拆三条自动化链路：Wiki 发布、Bug 飞书文档、自动 Code Review，每条都写清输入、处理、输出和验收。</p>
+    <h3>从图片到游戏资产的差距</h3>
+    <p><strong>先讲清：</strong>AI 生成图适合做情绪板、角色探索、图标草稿、场景占位和营销视觉备选。</p>
+    <p><strong>再落地：</strong>把它放进“用 AI 生成场景 moodboard，帮助关卡和灯光确定气氛，但不直接塞进最终包”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>把每张图记录为资产条目：用途、提示词、来源、授权状态、修改人、导入规格。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">3</span>
   <div>
-    <h3>把 Wiki 发布、Bug 文档和 Code Review 做成三条自动化流程</h3>
-    <p><strong>先讲清：</strong>真实落地重点是 Wiki 发布、Bug 汇总成飞书文档、自动 Code Review，而不是只做聊天机器人。</p>
-    <p><strong>再落地：</strong>把它放进“自动 Code Review Workflow：Dify 接收仓库或 PR 信息，Codex 执行审查，输出 review 报告”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>最后把流程版本化：每次改节点、改提示词、改输出格式，都要留下可回滚的配置记录。</p>
+    <h3>角色、道具、UI、场景的生成案例</h3>
+    <p><strong>先讲清：</strong>正式资产必须处理版权来源、风格一致性、平台披露、性能预算和人工修整。</p>
+    <p><strong>再落地：</strong>把它放进“用生成图做怪物概念探索，再由美术重绘、拆件、绑定和压缩”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>进引擎前检查尺寸、压缩、透明通道、材质、命名和平台性能预算。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">4</span>
   <div>
-    <h3>从一次跑通沉淀成团队可复用的流程资产</h3>
-    <p><strong>先讲清：</strong>Codex 可以先搭建 Dify 运行环境：读文档、准备 Docker 配置、启动服务并做访问验证。</p>
-    <p><strong>再落地：</strong>把它放进“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>先用 Codex 把 Dify 的 Docker 部署步骤整理清楚，并跑通启动、登录和基础工作流测试。</p>
+    <h3>版权、性能和平台披露检查</h3>
+    <p><strong>先讲清：</strong>游戏美术资产要进入管线：命名、尺寸、透明通道、贴图压缩、LOD、材质和导入设置。</p>
+    <p><strong>再落地：</strong>把它放进“用生成图先做 20 张道具图标草稿，再人工统一描边、尺寸和透明通道”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先让 AI 生成方向图和变体，不急着定稿。</p>
   </div>
 </div></div>
 </article>
@@ -1695,11 +1736,11 @@ li { margin-bottom: 8px; }
   <div class="practice-path">
     <div>
       <strong>老师先演示</strong>
-      <span>用“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
+      <span>用“用生成图先做 20 张道具图标草稿，再人工统一描边、尺寸和透明通道”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
     </div>
     <div>
       <strong>你再跟做</strong>
-      <span>设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span>
+      <span>为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工复审。</span>
     </div>
     <div>
       <strong>最后验收</strong>
@@ -1710,29 +1751,29 @@ li { margin-bottom: 8px; }
 <article class="card">
   <span class="label">下一步</span>
   <h2>学完后怎么继续扩展</h2>
-  <p class="small-note">这是本阶段最后一课，做完后回到课程总览，把自己的产物整理成一套可复用清单。</p>
+  <p class="small-note">下一课会进入“MCP在游戏开发中的使用”，你要带着本课产物继续往下用。</p>
   <div class="toolbar">
-    <a class="btn primary" href="./lesson-25-dify-codex-workflow-worksheet.html">打开本课练习工作纸</a>
+    <a class="btn primary" href="./lesson-24-game-art-assets-worksheet.html">打开本课练习工作纸</a>
   </div>
 </article>
 
 <article class="card learning-evidence">
   <span class="label">参考答案</span>
   <h2>不是标准话术，而是判断自己有没有学会</h2>
-  <ul><li>能用自己的话说明：Dify 适合编排自动化流程，Codex 适合读项目、改文件、跑命令和做工程验收。两者结合时，先用 Codex 搭好环境和规则，再用 Dify 把 Wiki 发布、Bug 汇总、Code Review 这类重复流程串起来。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”开始。</li><li>最终要留下一个可检查的小产物：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</li></ul>
+  <ul><li>管线应包含：生成探索、人工筛选、风格统一、来源记录、版权复查、格式处理、引擎导入、性能检查和平台披露。</li><li>角色概念、道具图标、场景 moodboard 都可以先由 AI 辅助，但正式资产要有人工修整和统一规范。</li><li>导入规格至少写清尺寸、格式、透明通道、压缩、命名、目录、材质数量和低配设备检查。</li></ul>
 </article>
 <article class="card learning-evidence">
   <span class="label">小测验</span>
   <h2>先自己答，再展开参考思路</h2>
   <div class="quiz-list"><details class="quiz-item">
-  <summary>哪些工作交给 Dify 编排，哪些交给 Codex 执行？</summary>
-  <p>Codex 可以先搭建 Dify 运行环境：读文档、准备 Docker 配置、启动服务并做访问验证</p>
+  <summary>这张图是概念、占位还是正式资产？</summary>
+  <p>游戏美术资产要进入管线：命名、尺寸、透明通道、贴图压缩、LOD、材质和导入设置</p>
 </details><details class="quiz-item">
-  <summary>流程有没有输入、节点、输出和失败处理？</summary>
+  <summary>来源、提示词、授权状态和人工修改是否记录？</summary>
   <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
 </details><details class="quiz-item">
-  <summary>是否保留日志、人工审批和可复查结果？</summary>
-  <p>只学拖节点，不会用 Codex 把 Dify 平台真正部署起来。</p>
+  <summary>进入引擎后是否检查尺寸、压缩、透明通道和性能？</summary>
+  <p>把生成图直接当最终商用资产，不记录来源和修改过程。</p>
 </details></div>
 </article>
 <article class="card learning-evidence">
@@ -1753,20 +1794,17 @@ li { margin-bottom: 8px; }
   <span class="label">术语表</span>
   <h2>把这一课的词翻译成人话</h2>
   <div class="glossary-grid"><div class="glossary-item">
-  <strong>Dify</strong>
-  <span>用于搭建 AI 应用和工作流的平台。</span>
+  <strong>Moodboard</strong>
+  <span>用多张参考图表达气氛、风格、颜色和方向的情绪板。</span>
 </div><div class="glossary-item">
-  <strong>Docker</strong>
-  <span>把服务和依赖打包运行的部署方式。</span>
+  <strong>贴图压缩</strong>
+  <span>把图片按平台格式压缩，降低内存和包体，可能影响清晰度。</span>
 </div><div class="glossary-item">
-  <strong>工作流节点</strong>
-  <span>Dify 流程中的一个输入、判断、调用或输出步骤。</span>
+  <strong>透明通道</strong>
+  <span>图片中控制透明区域的信息，常用于图标和 UI。</span>
 </div><div class="glossary-item">
-  <strong>Code Review</strong>
-  <span>检查代码问题、风险和缺少测试的过程。</span>
-</div><div class="glossary-item">
-  <strong>发布证据</strong>
-  <span>证明流程完成的链接、日志、截图或检查报告。</span>
+  <strong>平台披露</strong>
+  <span>按商店或平台要求说明生成式 AI 在游戏内容中的使用情况。</span>
 </div></div>
 </article>
   </main>
@@ -1774,40 +1812,40 @@ li { margin-bottom: 8px; }
     <article class="card">
       <span class="label">马上用</span>
       <h2>应用方法</h2>
-      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先用 Codex 把 Dify 的 Docker 部署步骤整理清楚，并跑通启动、登录和基础工作流测试。</span></div><div class="principle-block"><strong>方法 2</strong><span>再拆三条自动化链路：Wiki 发布、Bug 飞书文档、自动 Code Review，每条都写清输入、处理、输出和验收。</span></div><div class="principle-block"><strong>方法 3</strong><span>最后把流程版本化：每次改节点、改提示词、改输出格式，都要留下可回滚的配置记录。</span></div></div>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先让 AI 生成方向图和变体，不急着定稿。</span></div><div class="principle-block"><strong>方法 2</strong><span>把每张图记录为资产条目：用途、提示词、来源、授权状态、修改人、导入规格。</span></div><div class="principle-block"><strong>方法 3</strong><span>进引擎前检查尺寸、压缩、透明通道、材质、命名和平台性能预算。</span></div></div>
     </article>
     <article class="card">
       <span class="label">避坑</span>
       <h2>反常识提醒</h2>
-      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>只学拖节点，不会用 Codex 把 Dify 平台真正部署起来。</span></div><div class="principle-block"><strong>误区 2</strong><span>只做聊天入口，不把 Wiki、Bug 文档、Code Review 这些真实任务流程化。</span></div><div class="principle-block"><strong>误区 3</strong><span>只追求第一次跑通，不做失败重试、输出验收、流程版本管理和后续维护。</span></div></div>
+      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>把生成图直接当最终商用资产，不记录来源和修改过程。</span></div><div class="principle-block"><strong>误区 2</strong><span>只看单张图效果，不看整套游戏风格是否统一。</span></div><div class="principle-block"><strong>误区 3</strong><span>忽略贴图尺寸、压缩和 Draw Call，导致移动端或低配机器性能崩溃。</span></div></div>
     </article>
     <article class="card" id="practice">
       <span class="label">完成标准</span>
       <h2>做完这件事才算学会</h2>
       <div class="meta">
-        <div class="meta-item"><strong>本课产物</strong><span>设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span></div>
+        <div class="meta-item"><strong>本课产物</strong><span>为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工复审。</span></div>
         <div class="meta-item"><strong>验收方式</strong><span>能用自己的话解释本课概念，并把它套到一个真实工作或生活场景里。</span></div>
       </div>
     </article>
     <article class="card">
       <span class="label">可以直接复制</span>
       <h2>给 AI 的跟做提示</h2>
-      <pre class="copy-prompt"><code>我正在学习「你真的会用Dify吗？」，请用新手能听懂的话教我。
+      <pre class="copy-prompt"><code>我正在学习「美术资产生成与游戏管线」，请用新手能听懂的话教我。
 先用 120 字以内解释它，不要堆术语。
-再结合这两个场景举例：Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果；Bug 汇总 Workflow：自动抓取 Bug 线索，Dify 分组归纳，再生成飞书文档。
+再结合这两个场景举例：用生成图先做 20 张道具图标草稿，再人工统一描边、尺寸和透明通道；用 AI 生成场景 moodboard，帮助关卡和灯光确定气氛，但不直接塞进最终包。
 然后问我 3 个检查理解的问题。
-最后帮我完成这个练习：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</code></pre>
+最后帮我完成这个练习：为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工复审。</code></pre>
     </article>
     <article class="card">
       <span class="label">自检</span>
       <h2>学完请确认这 4 件事</h2>
-      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「你真的会用Dify吗？」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「美术资产生成与游戏管线」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工复审。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
     </article>
   </aside>
 </div>
 <nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-24-git-github-codex.html">上一课：Git、GitHub与Codex协作</a>
-  <a class="btn primary" href="../course.html">回到课程总览</a>
+  <a class="btn" href="./lesson-23-agent-gameplay-code.html">上一课：用Agent编写游戏玩法代码</a>
+  <a class="btn primary" href="./lesson-25-game-dev-mcp.html">下一课：MCP在游戏开发中的使用</a>
 </nav>
 <div class="footer">AI学习路线 · 第一性原则版逐课教程</div></main>
 

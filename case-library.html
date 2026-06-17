@@ -1288,6 +1288,46 @@ li { margin-bottom: 8px; }
   display: grid;
   gap: 12px;
 }
+.worksheet-case-practice {
+  gap: 14px;
+}
+.worksheet-case-list {
+  display: grid;
+  gap: 12px;
+}
+.worksheet-case-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.worksheet-case-card h3 {
+  font-family: var(--sans);
+  font-size: 1.02rem;
+}
+.worksheet-case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.worksheet-case-grid > div {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.10);
+  border-radius: var(--radius);
+}
+.worksheet-case-grid strong {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.worksheet-case-grid span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 .teaching-segment {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
@@ -1401,6 +1441,7 @@ li { margin-bottom: 8px; }
   .case-meta div { grid-template-columns: 1fr; }
   .case-index-list a { grid-template-columns: 1fr; }
   .worksheet-table > div { grid-template-columns: 1fr; }
+  .worksheet-case-grid { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
   .case-practice-grid { grid-template-columns: 1fr; }
@@ -1422,7 +1463,7 @@ li { margin-bottom: 8px; }
   <a class="brand" href="./course.html">AI入门课</a>
   <div class="navlinks">
     <a href="./course.html#beginner">新手入门</a>
-    <a href="./course.html#advanced">老鸟进阶</a>
+    <a href="./course.html#advanced">游戏落地</a>
     <a href="./case-library.html">案例库</a>
     <a href="./mindmap-hub.html">资源</a>
   </div>
@@ -1444,7 +1485,7 @@ li { margin-bottom: 8px; }
       <div><strong>3</strong><span>任务类型</span></div>
       <div><strong>交付物</strong><span>页面、流程、工作纸、验证证据</span></div>
     </div>
-    <div class="showcase-track-strip" aria-label="案例分类"><span>工具迭代<strong>1</strong></span><span>内容生产<strong>1</strong></span><span>流程自动化<strong>1</strong></span></div>
+    <div class="showcase-track-strip" aria-label="案例分类"><span>工具迭代<strong>1</strong></span><span>内容生产<strong>1</strong></span><span>游戏开发<strong>1</strong></span></div>
   </div>
   <aside class="case-index-panel">
     <span class="label">案例索引</span>
@@ -1456,9 +1497,9 @@ li { margin-bottom: 8px; }
         </a><a href="./codex-novel-video-case.html">
           <strong>小说视频内容生产链</strong>
           <span>内容生产</span>
-        </a><a href="./lessons/lesson-25-dify-codex-workflow.html">
-          <strong>Dify + Codex 自动化</strong>
-          <span>流程自动化</span>
+        </a><a href="./lessons/lesson-25-game-dev-mcp.html">
+          <strong>游戏开发 MCP 工作流</strong>
+          <span>游戏开发</span>
         </a></div>
   </aside>
 </header>
@@ -1491,7 +1532,7 @@ li { margin-bottom: 8px; }
       </div>
       <div class="case-filter-group">
         <strong>任务类型</strong>
-        <div class="case-filter-buttons"><button class="case-filter-button active" type="button" data-case-filter="all">全部 <strong>3</strong></button><button class="case-filter-button" type="button" data-case-filter="工具迭代">工具迭代 <strong>1</strong></button><button class="case-filter-button" type="button" data-case-filter="内容生产">内容生产 <strong>1</strong></button><button class="case-filter-button" type="button" data-case-filter="流程自动化">流程自动化 <strong>1</strong></button></div>
+        <div class="case-filter-buttons"><button class="case-filter-button active" type="button" data-case-filter="all">全部 <strong>3</strong></button><button class="case-filter-button" type="button" data-case-filter="工具迭代">工具迭代 <strong>1</strong></button><button class="case-filter-button" type="button" data-case-filter="内容生产">内容生产 <strong>1</strong></button><button class="case-filter-button" type="button" data-case-filter="游戏开发">游戏开发 <strong>1</strong></button></div>
       </div>
       <div class="case-filter-group">
         <strong>新手读法</strong>
@@ -1556,28 +1597,28 @@ li { margin-bottom: 8px; }
     </div>
   </aside>
 </article>
-<article class="case-row" data-case-row data-track="流程自动化" data-search="Dify + Codex 自动化 流程自动化 课程化 从部署到工作流 看 Codex 搭平台、Docker 部署、Wiki 发布、Bug 飞书文档和自动 Code Review 如何串成自动化流程。 Dify 部署步骤、三条自动化流程、工作纸 Dify Docker Code Review">
+<article class="case-row" data-case-row data-track="游戏开发" data-search="游戏开发 MCP 工作流 游戏开发 课程化 从设计到引擎 看 Figma、Unity、Unreal 和文件系统如何通过 MCP 接入 Agent，把 UI 设计、引擎原型、截图验收和人工确认串成低风险流程。 MCP 工作流图、权限边界、截图验收和回滚清单 MCP Figma Unreal Unity">
   <div class="case-row-main">
     <div class="case-row-topline">
       <span class="case-index">案例 03</span>
       <span class="case-status">课程化</span>
-      <span class="case-status">流程自动化</span>
+      <span class="case-status">游戏开发</span>
     </div>
-    <h3>Dify + Codex 自动化</h3>
-    <p>看 Codex 搭平台、Docker 部署、Wiki 发布、Bug 飞书文档和自动 Code Review 如何串成自动化流程。</p>
+    <h3>游戏开发 MCP 工作流</h3>
+    <p>看 Figma、Unity、Unreal 和文件系统如何通过 MCP 接入 Agent，把 UI 设计、引擎原型、截图验收和人工确认串成低风险流程。</p>
     <div class="case-row-meta">
-      <span>从部署到工作流</span>
-      <span>Dify</span><span>Docker</span><span>Code Review</span>
+      <span>从设计到引擎</span>
+      <span>MCP</span><span>Figma</span><span>Unreal</span><span>Unity</span>
     </div>
   </div>
   <aside class="case-row-side">
     <div class="case-row-outcome">
       <strong>最终产物</strong>
-      <span>Dify 部署步骤、三条自动化流程、工作纸</span>
+      <span>MCP 工作流图、权限边界、截图验收和回滚清单</span>
     </div>
     <div class="case-actions">
-      <a class="case-link primary" href="./lessons/lesson-25-dify-codex-workflow.html">打开案例</a>
-          <a class="case-link secondary" href="./lessons/lesson-25-dify-codex-workflow-worksheet.html">打开工作纸</a>
+      <a class="case-link primary" href="./lessons/lesson-25-game-dev-mcp.html">打开案例</a>
+          <a class="case-link secondary" href="./lessons/lesson-25-game-dev-mcp-worksheet.html">打开工作纸</a>
     </div>
   </aside>
 </article></div>

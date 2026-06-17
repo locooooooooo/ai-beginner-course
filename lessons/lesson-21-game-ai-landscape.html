@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第22课 Loop Engineering是什么</title>
+  <title>第21课 游戏行业为什么开始重视AI工作流</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -1288,6 +1288,46 @@ li { margin-bottom: 8px; }
   display: grid;
   gap: 12px;
 }
+.worksheet-case-practice {
+  gap: 14px;
+}
+.worksheet-case-list {
+  display: grid;
+  gap: 12px;
+}
+.worksheet-case-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.worksheet-case-card h3 {
+  font-family: var(--sans);
+  font-size: 1.02rem;
+}
+.worksheet-case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.worksheet-case-grid > div {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.10);
+  border-radius: var(--radius);
+}
+.worksheet-case-grid strong {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.worksheet-case-grid span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 .teaching-segment {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
@@ -1401,6 +1441,7 @@ li { margin-bottom: 8px; }
   .case-meta div { grid-template-columns: 1fr; }
   .case-index-list a { grid-template-columns: 1fr; }
   .worksheet-table > div { grid-template-columns: 1fr; }
+  .worksheet-case-grid { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
   .case-practice-grid { grid-template-columns: 1fr; }
@@ -1422,29 +1463,29 @@ li { margin-bottom: 8px; }
   <a class="brand" href="../course.html">AI入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
-    <a href="../course.html#advanced">老鸟进阶</a>
+    <a href="../course.html#advanced">游戏落地</a>
     <a href="../case-library.html">案例库</a>
     <a href="../mindmap-hub.html">资源</a>
   </div>
 </nav>
 <header class="hero">
   <div>
-    <div class="eyebrow">老鸟进阶：Codex 扩展学习 · 第22课</div>
-    <h1>第22课：Loop Engineering是什么</h1>
-    <p class="lead">理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。</p>
+    <div class="eyebrow">第六章：游戏场景落地 · 第21课</div>
+    <h1>第21课：游戏行业为什么开始重视AI工作流</h1>
+    <p class="lead">理解 AI 在游戏开发里的真实位置：它不是替代完整团队，而是把原型、内容、测试和协作变成更短的迭代循环。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
-      <a class="btn" href="./lesson-22-loop-engineering-worksheet.html">打开工作纸</a>
+      <a class="btn" href="./lesson-21-game-ai-landscape-worksheet.html">打开工作纸</a>
     </div>
   </div>
   <aside class="progress-panel" aria-label="学习进度">
     <strong>当前进度</strong>
     <div class="progress-meta">
-      <span>22 / 25</span>
-      <span>88%</span>
+      <span>21 / 25</span>
+      <span>84%</span>
     </div>
-    <div class="progress-bar"><span style="width:88%"></span></div>
+    <div class="progress-bar"><span style="width:84%"></span></div>
     <ol class="mini-steps">
       <li>先读核心问题</li>
       <li>抓住 3 个最小原理</li>
@@ -1455,29 +1496,29 @@ li { margin-bottom: 8px; }
 <section class="callout" id="start">
   <span class="label">为什么要学</span>
   <h2>核心问题</h2>
-  <p>为什么复杂任务不能只靠一次提示词完成，而要让 Codex 一轮一轮推进？</p>
+  <p>为什么 2026 年再学游戏开发，不能只学一个引擎按钮，而要学 AI、Agent、MCP 和验收一起组成的工作流？</p>
 </section>
 <section class="card">
   <span class="label">学习元信息</span>
   <h2>开始前先确认这些边界</h2>
   <div class="lesson-meta-grid"><div class="meta-item">
   <strong>预计用时</strong>
-  <span>30-45 分钟</span>
+  <span>35-45 分钟</span>
 </div><div class="meta-item">
   <strong>难度</strong>
-  <span>入门</span>
+  <span>进阶入门</span>
 </div><div class="meta-item">
   <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；也可以只看页面完成纸面练习</span>
+  <span>任意 AI 对话工具；建议准备一个小游戏点子或已有游戏项目想法</span>
 </div><div class="meta-item">
   <strong>隐私边界</strong>
-  <span>练习时使用公开或虚构材料，不上传客户隐私、内部资料、账号信息或未公开策略。</span>
+  <span>不要上传未公开游戏策划案、商业美术设定、合作方素材或平台账号信息。</span>
 </div><div class="meta-item">
   <strong>更新时间</strong>
   <span>2026-06-17</span>
 </div><div class="meta-item">
   <strong>来源提示</strong>
-  <span>本课强调稳定方法和学习路径；具体工具能力以实际产品为准。</span>
+  <span>本课结合 2026 年游戏行业对生成式 AI 的讨论、Steam 生成式 AI 披露要求、MCP 连接趋势和主流引擎工作流整理；具体工具能力要以官方文档和项目实测为准。</span>
 </div></div>
 </section>
 <div class="grid">
@@ -1490,23 +1531,23 @@ li { margin-bottom: 8px; }
   <h2>把这一课讲透：先翻译，再演示，再提问</h2>
   <div class="plain-language">
     <strong>人话解释</strong>
-    <p>Loop Engineering 就是用短循环做复杂任务：先定一个小目标，执行，验收，发现问题再修正。它不追求一次提示词完美，而是每一轮都留下证据，让结果越来越接近可交付。</p>
+    <p>游戏开发里的 AI 不是“自动生成完整游戏”，而是把原型、代码、资产草稿、测试、文档和复盘这些高频环节变快。真正能落地的关键，是每一步都有人工判断和验收证据。</p>
   </div>
   <div class="deep-script-grid"><div class="deep-script">
-  <strong>复杂任务靠反馈</strong>
-  <p>网页、发布、自动化流程都会在执行中暴露问题，所以要边做边验收。</p>
+  <strong>先拆游戏生产链路</strong>
+  <p>不要先问 AI 能不能做游戏。先把游戏拆成玩法设计、引擎实现、美术资产、UI、关卡、测试和发布。不同环节能交给 AI 的程度完全不同。</p>
 </div><div class="deep-script">
-  <strong>每轮只解决一个重点</strong>
-  <p>一轮做首页结构，一轮做移动端，一轮做断链检查，比一次全做更容易发现问题。</p>
+  <strong>再讲行业变化</strong>
+  <p>生成式 AI 已经进入游戏团队的实际工作，但争议也集中在裁员压力、版权、风格同质化和质量控制。课程要教的是安全落地，不是制造工具幻觉。</p>
 </div><div class="deep-script">
-  <strong>证据比感觉重要</strong>
-  <p>截图、测试结果、链接状态、命令输出，都是判断本轮是否完成的证据。</p>
+  <strong>最后建立验收意识</strong>
+  <p>游戏最终靠体验说话。一个 AI 输出要进入项目，至少要能被运行、试玩、截图、审查来源或写入复盘。没有证据的内容只能算草稿。</p>
 </div></div>
 </article>
 <article class="card">
   <span class="label">跟做案例</span>
-  <h2>把旧网页改成手机友好教程站</h2>
-  <ol class="walkthrough-list"><li>第 1 轮：改信息结构，验收首页是否能看清学习路径。</li><li>第 2 轮：改移动端布局，验收 390px 宽度无横向滚动。</li><li>第 3 轮：检查链接和发布目录，验收关键页面可访问。</li></ol>
+  <h2>设计一个 3 分钟可玩的小游戏原型</h2>
+  <ol class="walkthrough-list"><li>写核心循环：玩家移动、躲避敌人、收集能量、打开出口。</li><li>列 AI 可参与环节：玩法拆解、脚本初稿、占位图标、测试清单、说明文档。</li><li>列人工把关环节：是否好玩、节奏是否清楚、美术是否可商用、性能是否稳定。</li><li>定义验收证据：引擎截图、试玩录像、帧率记录、资产来源表和问题列表。</li></ol>
 </article>
 <article class="card worked-example">
   <span class="label">完整示范</span>
@@ -1514,26 +1555,26 @@ li { margin-bottom: 8px; }
   <div class="example-grid">
     <div class="example-block bad">
       <strong>差输入</strong>
-      <p>一次性帮我把旧网站全部改好并发布。</p>
+      <p>帮我用 AI 做一款暗黑刷宝游戏。</p>
     </div>
     <div class="example-block good">
       <strong>好输入</strong>
-      <p>请用 3 轮 Loop 完成旧课程网站改版。第 1 轮只优化首页学习路径并截图验收；第 2 轮只修移动端阅读和按钮触控；第 3 轮检查链接、生成目录和线上页面。每轮结束请说明改了什么、怎么验收、还有什么风险。</p>
+      <p>我想做一个 3 分钟可玩的暗黑风格刷宝原型。请先帮我拆工作流，不直接生成完整游戏。目标：玩家控制角色在小地图内打怪、捡 3 个装备、开传送门离开。请列出 AI 可参与的环节、必须人工把关的环节、每个环节的验收证据，以及第一轮最小原型范围。</p>
     </div>
   </div>
   <div class="example-block">
     <strong>输出样例</strong>
-    <p>第 1 轮结果：首页改为课程路径，验收证据是本地首页截图和入口链接清单。遗留风险：移动端按钮间距未检查，进入第 2 轮处理。</p>
+    <p>第一轮范围可以只做灰盒地图、移动、敌人碰撞、装备拾取和传送门。AI 负责工单拆解、脚本草稿、占位图标和测试清单；人工负责试玩节奏、战斗反馈、资产版权和性能判断。验收证据包括运行截图、30 秒试玩记录、资源来源表和问题清单。</p>
   </div>
   <div class="example-block">
     <strong>检查点</strong>
-    <ul><li>是否每轮目标足够小。</li><li>是否有截图、测试或链接检查等证据。</li><li>是否把遗留问题带入下一轮。</li></ul>
+    <ul><li>是否先做最小可玩核心循环。</li><li>是否区分 AI 草稿、原型资源和正式资产。</li><li>是否为每个环节写了证据，而不是只写愿望。</li></ul>
   </div>
 </article>
 <article class="card">
   <span class="label">检查理解</span>
   <h2>学完后先回答这 3 个问题</h2>
-  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我有没有把大任务拆成 2 到 4 轮？</span></div><div class="check-item"><strong>2</strong><span>每轮是否有明确验收证据？</span></div><div class="check-item"><strong>3</strong><span>上一轮发现的问题是否进入下一轮修正？</span></div></div>
+  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我是否把游戏拆成了多个生产环节，而不是只写一个工具名？</span></div><div class="check-item"><strong>2</strong><span>哪些 AI 输出只能做草稿，哪些可以进入原型？</span></div><div class="check-item"><strong>3</strong><span>每个环节有没有运行、试玩、版权或人工审美证据？</span></div></div>
 </article>
     <section class="learner-brief">
       <span class="label">先怎么学</span>
@@ -1541,41 +1582,41 @@ li { margin-bottom: 8px; }
       <p class="small-note">每一课的学习路线都不同。先抓本课最关键的问题，再用案例和产物证明自己真的会用。</p>
       <div class="flow">
         <div class="flow-step">
-          <strong>1. 什么是 Loop Engineering</strong>
-          <span>先把本课变成一个 Codex 可执行任务：什么是 Loop Engineering。写清最终文件、页面或验证证据。</span>
+          <strong>1. 游戏生产链路为什么复杂</strong>
+          <span>先把本课变成一个游戏开发小切片：游戏生产链路为什么复杂。写清玩法目标、工具边界和验证证据。</span>
         </div>
         <div class="flow-step">
-          <strong>2. 一次性大提示容易失败</strong>
-          <span>把关键点翻译成协作规则：Loop Engineering 的核心是短循环：目标 -> 实施 -> 验收 -> 修正。明确哪些能改、哪些不能动、怎样验收。</span>
+          <strong>2. AI 能先接住哪些任务</strong>
+          <span>把关键点翻译成协作规则：游戏开发是多工种协作：玩法、代码、美术、关卡、叙事、测试和发布互相牵制。明确哪些交给 Agent、哪些必须人工把关。</span>
         </div>
         <div class="flow-step">
-          <strong>3. Codex 中的循环 读上下文/改文件/跑验证/复盘</strong>
-          <span>套进“网页改版：先改首页，再截图验收，再修移动端问题”做一轮 Loop：让 Codex 读上下文、改产物、跑检查，再看证据。</span>
+          <strong>3. 哪些任务必须人来判断</strong>
+          <span>套进“独立开发者用 AI 先做 1 个可玩的 3 分钟核心循环，再决定是否扩展”做一轮最小验证：生成草稿、接入引擎或设计工具，再收集证据。</span>
         </div>
         <div class="flow-step">
-          <strong>4. 用多会话节省时间并降低盲区</strong>
-          <span>最后把结果、问题和下一轮动作写下来：先把大目标拆成 2 到 4 个小循环。 本课产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span>
+          <strong>4. 从单点工具升级到可验收工作流</strong>
+          <span>最后把运行结果、资产风险和下一轮动作写下来：先写清核心循环：玩家做什么、为什么继续玩、3 分钟内能看到什么反馈。 本课产物：选择一个小游戏点子，写出 AI 能参与的 5 个环节、必须人工把关的 5 个环节，以及每个环节的验收证据。</span>
         </div></div>
     </section>
     <article class="card">
       <span class="label">先记住</span>
       <h2>本课只抓 3 件事</h2>
-      <ul><li>Loop Engineering 的核心是短循环：目标 -> 实施 -> 验收 -> 修正</li><li>每一轮都要有可观察证据，比如截图、测试、链接检查</li><li>在 Codex 里可以用主会话收口，多会话并行探索和验收</li></ul>
+      <ul><li>游戏开发是多工种协作：玩法、代码、美术、关卡、叙事、测试和发布互相牵制</li><li>AI 最先落地在高频低风险环节：原型、脚本、占位资产、文档、测试用例和版本复盘</li><li>真正有效的 AI 游戏工作流必须保留人工审美、版权检查、性能测试和平台合规</li></ul>
     </article>
     <article class="card">
       <span class="label">想明白</span>
       <h2>第一性拆解</h2>
-      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先承认复杂任务天然不确定：需求会变、页面会错、测试会暴露新问题。</span></div><div class="principle-block"><strong>拆解 2</strong><span>因此工程方法不应该追求一次命中，而应该追求每一轮都让结果更接近目标。</span></div><div class="principle-block"><strong>拆解 3</strong><span>Codex 的优势是能快速执行和验证，所以特别适合短循环推进。</span></div></div>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把游戏拆成生产链路，而不是只看最终画面：玩法、代码、美术、关卡、测试、发布都要协同。</span></div><div class="principle-block"><strong>拆解 2</strong><span>AI 能提升的是迭代速度和信息整理能力，不自动等于好玩、好看、不卡顿、可商用。</span></div><div class="principle-block"><strong>拆解 3</strong><span>游戏 AI 工作流的关键不是生成多少内容，而是每一步是否有人工判断和验收证据。</span></div></div>
     </article>
     <article class="card">
       <span class="label">可迁移</span>
       <h2>最小原理</h2>
-      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：复杂交付靠反馈，不靠一次性完美计划。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：每轮必须产生证据，否则只是主观感觉变好了。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：多会话不是为了热闹，而是为了并行发现不同风险。</span></div></div>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：游戏是可体验系统，不是素材集合。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：AI 更适合加速迭代，不适合替代最终创意判断。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：没有验收标准的 AI 输出，只是草稿，不是资产。</span></div></div>
     </article>
     <article class="card">
       <span class="label">怎么学</span>
       <h2>读完后怎么把它用出来</h2>
-      <ul><li>什么是 Loop Engineering</li><li>为什么一次性大提示容易失败</li><li>Codex 中的循环：读上下文、改文件、跑验证、复盘</li><li>如何用多会话节省时间并降低盲区</li></ul>
+      <ul><li>游戏生产链路为什么复杂</li><li>AI 能先接住哪些任务</li><li>哪些任务必须人来判断</li><li>从单点工具升级到可验收工作流</li></ul>
     </article>
 <article class="card case-practice">
   <span class="label">多案例演练</span>
@@ -1585,48 +1626,48 @@ li { margin-bottom: 8px; }
 <article class="case-practice-card primary">
   <div class="case-practice-head">
     <span>案例 01</span>
-    <strong>网页改版：先改首页，再截图验收，再修移动端问题</strong>
+    <strong>独立开发者用 AI 先做 1 个可玩的 3 分钟核心循环，再决定是否扩展</strong>
   </div>
   <div class="case-practice-grid">
-    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
-    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
-    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+    <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
+    <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
-  <p>套用本课方法：先把大目标拆成 2 到 4 个小循环。</p>
+  <p>套用本课方法：先写清核心循环：玩家做什么、为什么继续玩、3 分钟内能看到什么反馈。</p>
 </article>
 <article class="case-practice-card">
   <div class="case-practice-head">
     <span>案例 02</span>
-    <strong>课程重构：一个会话看内容，一个会话看 UI，一个会话查断链</strong>
+    <strong>关卡策划用 Agent 生成测试地图脚本，但人工检查节奏、可读性和卡点</strong>
   </div>
   <div class="case-practice-grid">
-    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
-    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
-    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+    <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
+    <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
-  <p>套用本课方法：每轮只解决一个主要问题，并定义明确验收证据。</p>
+  <p>套用本课方法：把 AI 分配到原型、脚本、文档、占位资产、测试和复盘这些可检查环节。</p>
 </article>
 <article class="case-practice-card">
   <div class="case-practice-head">
     <span>案例 03</span>
-    <strong>发布修复：本地生成、提交推送、线上验证，发现缓存再复查</strong>
+    <strong>美术用生成图做情绪板和占位资源，正式资产再走版权、风格和性能检查</strong>
   </div>
   <div class="case-practice-grid">
-    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
-    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
-    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+    <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
+    <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
-  <p>套用本课方法：让 Codex 在每轮结束时总结结果、问题和下一轮动作。</p>
+  <p>套用本课方法：每个 AI 产物都配一个验收动作：运行、截图、性能指标、版权检查或人工试玩记录。</p>
 </article>
 <article class="case-practice-card guided">
   <div class="case-practice-head">
     <span>课堂演练</span>
-    <strong>把旧网页改成手机友好教程站</strong>
+    <strong>设计一个 3 分钟可玩的小游戏原型</strong>
   </div>
-  <ol class="case-practice-steps"><li>第 1 轮：改信息结构，验收首页是否能看清学习路径。</li><li>第 2 轮：改移动端布局，验收 390px 宽度无横向滚动。</li><li>第 3 轮：检查链接和发布目录，验收关键页面可访问。</li></ol>
+  <ol class="case-practice-steps"><li>写核心循环：玩家移动、躲避敌人、收集能量、打开出口。</li><li>列 AI 可参与环节：玩法拆解、脚本初稿、占位图标、测试清单、说明文档。</li><li>列人工把关环节：是否好玩、节奏是否清楚、美术是否可商用、性能是否稳定。</li><li>定义验收证据：引擎截图、试玩录像、帧率记录、资产来源表和问题列表。</li></ol>
 </article>
 <details class="case-practice-card compare">
   <summary>
@@ -1640,13 +1681,13 @@ li { margin-bottom: 8px; }
     </div>
     <div class="case-compare-block">
       <b>可用输入</b>
-      <span>请用 3 轮 Loop 完成旧课程网站改版。第 1 轮只优化首页学习路径并截图验收；第 2 轮只修移动端阅读和按钮触控；第 3 轮检查链接、生成目录和线上页面。每轮结束请说明改了什么、怎么验收、还有什么风险。</span>
+      <span>我想做一个 3 分钟可玩的暗黑风格刷宝原型。请先帮我拆工作流，不直接生成完整游戏。目标：玩家控制角色在小地图内打怪、捡 3 个装备、开传送门离开。请列出 AI 可参与的环节、必须人工把关的环节、每个环节的验收证据，以及第一轮最小原型范围。</span>
     </div>
     <div class="case-compare-block">
       <b>样例结果</b>
-      <span>第 1 轮结果：首页改为课程路径，验收证据是本地首页截图和入口链接清单。遗留风险：移动端按钮间距未检查，进入第 2 轮处理。</span>
+      <span>第一轮范围可以只做灰盒地图、移动、敌人碰撞、装备拾取和传送门。AI 负责工单拆解、脚本草稿、占位图标和测试清单；人工负责试玩节奏、战斗反馈、资产版权和性能判断。验收证据包括运行截图、30 秒试玩记录、资源来源表和问题清单。</span>
     </div>
-    <ul class="case-practice-review"><li>是否每轮目标足够小。</li><li>是否有截图、测试或链接检查等证据。</li><li>是否把遗留问题带入下一轮。</li></ul>
+    <ul class="case-practice-review"><li>是否先做最小可玩核心循环。</li><li>是否区分 AI 草稿、原型资源和正式资产。</li><li>是否为每个环节写了证据，而不是只写愿望。</li></ul>
   </div>
 </details></div>
 </article>
@@ -1658,34 +1699,34 @@ li { margin-bottom: 8px; }
   <div class="teaching-grid"><div class="teaching-segment">
   <span class="step-no">1</span>
   <div>
-    <h3>什么是 Loop Engineering</h3>
-    <p><strong>先讲清：</strong>Loop Engineering 的核心是短循环：目标 -> 实施 -> 验收 -> 修正。</p>
-    <p><strong>再落地：</strong>把它放进“网页改版：先改首页，再截图验收，再修移动端问题”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>先把大目标拆成 2 到 4 个小循环。</p>
+    <h3>游戏生产链路为什么复杂</h3>
+    <p><strong>先讲清：</strong>游戏开发是多工种协作：玩法、代码、美术、关卡、叙事、测试和发布互相牵制。</p>
+    <p><strong>再落地：</strong>把它放进“独立开发者用 AI 先做 1 个可玩的 3 分钟核心循环，再决定是否扩展”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先写清核心循环：玩家做什么、为什么继续玩、3 分钟内能看到什么反馈。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">2</span>
   <div>
-    <h3>为什么一次性大提示容易失败</h3>
-    <p><strong>先讲清：</strong>每一轮都要有可观察证据，比如截图、测试、链接检查。</p>
-    <p><strong>再落地：</strong>把它放进“课程重构：一个会话看内容，一个会话看 UI，一个会话查断链”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>每轮只解决一个主要问题，并定义明确验收证据。</p>
+    <h3>AI 能先接住哪些任务</h3>
+    <p><strong>先讲清：</strong>AI 最先落地在高频低风险环节：原型、脚本、占位资产、文档、测试用例和版本复盘。</p>
+    <p><strong>再落地：</strong>把它放进“关卡策划用 Agent 生成测试地图脚本，但人工检查节奏、可读性和卡点”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>把 AI 分配到原型、脚本、文档、占位资产、测试和复盘这些可检查环节。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">3</span>
   <div>
-    <h3>Codex 中的循环：读上下文、改文件、跑验证、复盘</h3>
-    <p><strong>先讲清：</strong>在 Codex 里可以用主会话收口，多会话并行探索和验收。</p>
-    <p><strong>再落地：</strong>把它放进“发布修复：本地生成、提交推送、线上验证，发现缓存再复查”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>让 Codex 在每轮结束时总结结果、问题和下一轮动作。</p>
+    <h3>哪些任务必须人来判断</h3>
+    <p><strong>先讲清：</strong>真正有效的 AI 游戏工作流必须保留人工审美、版权检查、性能测试和平台合规。</p>
+    <p><strong>再落地：</strong>把它放进“美术用生成图做情绪板和占位资源，正式资产再走版权、风格和性能检查”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>每个 AI 产物都配一个验收动作：运行、截图、性能指标、版权检查或人工试玩记录。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">4</span>
   <div>
-    <h3>如何用多会话节省时间并降低盲区</h3>
-    <p><strong>先讲清：</strong>Loop Engineering 的核心是短循环：目标 -> 实施 -> 验收 -> 修正。</p>
-    <p><strong>再落地：</strong>把它放进“网页改版：先改首页，再截图验收，再修移动端问题”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>先把大目标拆成 2 到 4 个小循环。</p>
+    <h3>从单点工具升级到可验收工作流</h3>
+    <p><strong>先讲清：</strong>游戏开发是多工种协作：玩法、代码、美术、关卡、叙事、测试和发布互相牵制。</p>
+    <p><strong>再落地：</strong>把它放进“独立开发者用 AI 先做 1 个可玩的 3 分钟核心循环，再决定是否扩展”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先写清核心循环：玩家做什么、为什么继续玩、3 分钟内能看到什么反馈。</p>
   </div>
 </div></div>
 </article>
@@ -1695,11 +1736,11 @@ li { margin-bottom: 8px; }
   <div class="practice-path">
     <div>
       <strong>老师先演示</strong>
-      <span>用“网页改版：先改首页，再截图验收，再修移动端问题”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
+      <span>用“独立开发者用 AI 先做 1 个可玩的 3 分钟核心循环，再决定是否扩展”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
     </div>
     <div>
       <strong>你再跟做</strong>
-      <span>为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span>
+      <span>选择一个小游戏点子，写出 AI 能参与的 5 个环节、必须人工把关的 5 个环节，以及每个环节的验收证据。</span>
     </div>
     <div>
       <strong>最后验收</strong>
@@ -1710,29 +1751,29 @@ li { margin-bottom: 8px; }
 <article class="card">
   <span class="label">下一步</span>
   <h2>学完后怎么继续扩展</h2>
-  <p class="small-note">下一课会进入“如何用Codex制作好看的网页”，你要带着本课产物继续往下用。</p>
+  <p class="small-note">下一课会进入“用Codex做游戏引擎原型”，你要带着本课产物继续往下用。</p>
   <div class="toolbar">
-    <a class="btn primary" href="./lesson-22-loop-engineering-worksheet.html">打开本课练习工作纸</a>
+    <a class="btn primary" href="./lesson-21-game-ai-landscape-worksheet.html">打开本课练习工作纸</a>
   </div>
 </article>
 
 <article class="card learning-evidence">
   <span class="label">参考答案</span>
   <h2>不是标准话术，而是判断自己有没有学会</h2>
-  <ul><li>能用自己的话说明：Loop Engineering 就是用短循环做复杂任务：先定一个小目标，执行，验收，发现问题再修正。它不追求一次提示词完美，而是每一轮都留下证据，让结果越来越接近可交付。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“网页改版：先改首页，再截图验收，再修移动端问题”开始。</li><li>最终要留下一个可检查的小产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</li></ul>
+  <ul><li>AI 可参与环节可以包括：玩法拆解、工单生成、脚本初稿、占位资产、测试用例、Bug 归纳、版本复盘。</li><li>必须人工把关环节可以包括：核心乐趣、战斗手感、关卡节奏、美术风格、版权授权、平台披露、性能和最终发布。</li><li>验收证据可以包括：引擎运行截图、试玩录像、帧率数据、资源来源表、Code Review、人工试玩记录和问题复盘。</li></ul>
 </article>
 <article class="card learning-evidence">
   <span class="label">小测验</span>
   <h2>先自己答，再展开参考思路</h2>
   <div class="quiz-list"><details class="quiz-item">
-  <summary>我有没有把大任务拆成 2 到 4 轮？</summary>
-  <p>Loop Engineering 的核心是短循环：目标 -> 实施 -> 验收 -> 修正</p>
+  <summary>我是否把游戏拆成了多个生产环节，而不是只写一个工具名？</summary>
+  <p>游戏开发是多工种协作：玩法、代码、美术、关卡、叙事、测试和发布互相牵制</p>
 </details><details class="quiz-item">
-  <summary>每轮是否有明确验收证据？</summary>
+  <summary>哪些 AI 输出只能做草稿，哪些可以进入原型？</summary>
   <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
 </details><details class="quiz-item">
-  <summary>上一轮发现的问题是否进入下一轮修正？</summary>
-  <p>一开始就要求 Codex 一次完成所有事情。</p>
+  <summary>每个环节有没有运行、试玩、版权或人工审美证据？</summary>
+  <p>把 AI 生成素材直接当正式商用资产。</p>
 </details></div>
 </article>
 <article class="card learning-evidence">
@@ -1753,17 +1794,17 @@ li { margin-bottom: 8px; }
   <span class="label">术语表</span>
   <h2>把这一课的词翻译成人话</h2>
   <div class="glossary-grid"><div class="glossary-item">
-  <strong>Loop</strong>
-  <span>目标、执行、验收、修正组成的一轮循环。</span>
+  <strong>核心循环</strong>
+  <span>玩家反复做的主要动作链，比如探索、战斗、拾取、升级。</span>
+</div><div class="glossary-item">
+  <strong>灰盒原型</strong>
+  <span>用简单形状和占位资源验证玩法，不追求正式美术。</span>
+</div><div class="glossary-item">
+  <strong>占位资产</strong>
+  <span>先用于测试功能和节奏的临时图片、模型、音效或动画。</span>
 </div><div class="glossary-item">
   <strong>验收证据</strong>
-  <span>证明结果可用的截图、测试、链接或命令输出。</span>
-</div><div class="glossary-item">
-  <strong>复盘</strong>
-  <span>回看本轮做了什么、哪里失败、下一步怎么改。</span>
-</div><div class="glossary-item">
-  <strong>多会话</strong>
-  <span>让不同 Codex 会话并行做实现、检查或研究。</span>
+  <span>证明某个输出能用的截图、运行记录、测试结果或人工审查记录。</span>
 </div></div>
 </article>
   </main>
@@ -1771,40 +1812,40 @@ li { margin-bottom: 8px; }
     <article class="card">
       <span class="label">马上用</span>
       <h2>应用方法</h2>
-      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先把大目标拆成 2 到 4 个小循环。</span></div><div class="principle-block"><strong>方法 2</strong><span>每轮只解决一个主要问题，并定义明确验收证据。</span></div><div class="principle-block"><strong>方法 3</strong><span>让 Codex 在每轮结束时总结结果、问题和下一轮动作。</span></div></div>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先写清核心循环：玩家做什么、为什么继续玩、3 分钟内能看到什么反馈。</span></div><div class="principle-block"><strong>方法 2</strong><span>把 AI 分配到原型、脚本、文档、占位资产、测试和复盘这些可检查环节。</span></div><div class="principle-block"><strong>方法 3</strong><span>每个 AI 产物都配一个验收动作：运行、截图、性能指标、版权检查或人工试玩记录。</span></div></div>
     </article>
     <article class="card">
       <span class="label">避坑</span>
       <h2>反常识提醒</h2>
-      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>一开始就要求 Codex 一次完成所有事情。</span></div><div class="principle-block"><strong>误区 2</strong><span>没有验收证据，只凭感觉继续往下做。</span></div><div class="principle-block"><strong>误区 3</strong><span>多会话做重复工作，而不是内容、实现、验收分工。</span></div></div>
+      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>把 AI 生成素材直接当正式商用资产。</span></div><div class="principle-block"><strong>误区 2</strong><span>只追求画面炫，不验证帧率、交互和玩家理解成本。</span></div><div class="principle-block"><strong>误区 3</strong><span>让 Agent 一次性重写项目核心逻辑，却没有版本备份和回滚方案。</span></div></div>
     </article>
     <article class="card" id="practice">
       <span class="label">完成标准</span>
       <h2>做完这件事才算学会</h2>
       <div class="meta">
-        <div class="meta-item"><strong>本课产物</strong><span>为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span></div>
+        <div class="meta-item"><strong>本课产物</strong><span>选择一个小游戏点子，写出 AI 能参与的 5 个环节、必须人工把关的 5 个环节，以及每个环节的验收证据。</span></div>
         <div class="meta-item"><strong>验收方式</strong><span>能用自己的话解释本课概念，并把它套到一个真实工作或生活场景里。</span></div>
       </div>
     </article>
     <article class="card">
       <span class="label">可以直接复制</span>
       <h2>给 AI 的跟做提示</h2>
-      <pre class="copy-prompt"><code>我正在学习「Loop Engineering是什么」，请用新手能听懂的话教我。
+      <pre class="copy-prompt"><code>我正在学习「游戏行业为什么开始重视AI工作流」，请用新手能听懂的话教我。
 先用 120 字以内解释它，不要堆术语。
-再结合这两个场景举例：网页改版：先改首页，再截图验收，再修移动端问题；课程重构：一个会话看内容，一个会话看 UI，一个会话查断链。
+再结合这两个场景举例：独立开发者用 AI 先做 1 个可玩的 3 分钟核心循环，再决定是否扩展；关卡策划用 Agent 生成测试地图脚本，但人工检查节奏、可读性和卡点。
 然后问我 3 个检查理解的问题。
-最后帮我完成这个练习：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</code></pre>
+最后帮我完成这个练习：选择一个小游戏点子，写出 AI 能参与的 5 个环节、必须人工把关的 5 个环节，以及每个环节的验收证据。</code></pre>
     </article>
     <article class="card">
       <span class="label">自检</span>
       <h2>学完请确认这 4 件事</h2>
-      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「Loop Engineering是什么」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「游戏行业为什么开始重视AI工作流」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：选择一个小游戏点子，写出 AI 能参与的 5 个环节、必须人工把关的 5 个环节，以及每个环节的验收证据。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
     </article>
   </aside>
 </div>
 <nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-21-codex-overview.html">上一课：Codex能做什么</a>
-  <a class="btn primary" href="./lesson-23-codex-web-design.html">下一课：如何用Codex制作好看的网页</a>
+  <a class="btn" href="./lesson-20-ecommerce-system-view.html">上一课：电商AI系统全景</a>
+  <a class="btn primary" href="./lesson-22-game-engine-codex.html">下一课：用Codex做游戏引擎原型</a>
 </nav>
 <div class="footer">AI学习路线 · 第一性原则版逐课教程</div></main>
 

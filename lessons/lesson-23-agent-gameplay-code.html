@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第24课 Git、GitHub与Codex协作</title>
+  <title>第23课 用Agent编写游戏玩法代码</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -1288,6 +1288,46 @@ li { margin-bottom: 8px; }
   display: grid;
   gap: 12px;
 }
+.worksheet-case-practice {
+  gap: 14px;
+}
+.worksheet-case-list {
+  display: grid;
+  gap: 12px;
+}
+.worksheet-case-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.worksheet-case-card h3 {
+  font-family: var(--sans);
+  font-size: 1.02rem;
+}
+.worksheet-case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.worksheet-case-grid > div {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.10);
+  border-radius: var(--radius);
+}
+.worksheet-case-grid strong {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.worksheet-case-grid span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 .teaching-segment {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
@@ -1401,6 +1441,7 @@ li { margin-bottom: 8px; }
   .case-meta div { grid-template-columns: 1fr; }
   .case-index-list a { grid-template-columns: 1fr; }
   .worksheet-table > div { grid-template-columns: 1fr; }
+  .worksheet-case-grid { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
   .case-practice-grid { grid-template-columns: 1fr; }
@@ -1422,29 +1463,29 @@ li { margin-bottom: 8px; }
   <a class="brand" href="../course.html">AI入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
-    <a href="../course.html#advanced">老鸟进阶</a>
+    <a href="../course.html#advanced">游戏落地</a>
     <a href="../case-library.html">案例库</a>
     <a href="../mindmap-hub.html">资源</a>
   </div>
 </nav>
 <header class="hero">
   <div>
-    <div class="eyebrow">老鸟进阶：Codex 扩展学习 · 第24课</div>
-    <h1>第24课：Git、GitHub与Codex协作</h1>
-    <p class="lead">理解 Git 记录本地修改，GitHub 托管和发布代码，Codex 可以帮助提交、推送和验证线上结果。</p>
+    <div class="eyebrow">第六章：游戏场景落地 · 第23课</div>
+    <h1>第23课：用Agent编写游戏玩法代码</h1>
+    <p class="lead">学会把玩法需求拆成状态、输入、事件、数据和测试，让 Agent 生成代码后仍能被人审查和迭代。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
-      <a class="btn" href="./lesson-24-git-github-codex-worksheet.html">打开工作纸</a>
+      <a class="btn" href="./lesson-23-agent-gameplay-code-worksheet.html">打开工作纸</a>
     </div>
   </div>
   <aside class="progress-panel" aria-label="学习进度">
     <strong>当前进度</strong>
     <div class="progress-meta">
-      <span>24 / 25</span>
-      <span>96%</span>
+      <span>23 / 25</span>
+      <span>92%</span>
     </div>
-    <div class="progress-bar"><span style="width:96%"></span></div>
+    <div class="progress-bar"><span style="width:92%"></span></div>
     <ol class="mini-steps">
       <li>先读核心问题</li>
       <li>抓住 3 个最小原理</li>
@@ -1455,29 +1496,29 @@ li { margin-bottom: 8px; }
 <section class="callout" id="start">
   <span class="label">为什么要学</span>
   <h2>核心问题</h2>
-  <p>为什么本地已经改好了，线上网站却没有变化？因为还缺少提交、推送、发布和缓存验证这条链路。</p>
+  <p>为什么游戏玩法代码不能只让 Agent “自由发挥”，而要先写清状态机、边界条件、测试场景和回滚策略？</p>
 </section>
 <section class="card">
   <span class="label">学习元信息</span>
   <h2>开始前先确认这些边界</h2>
   <div class="lesson-meta-grid"><div class="meta-item">
   <strong>预计用时</strong>
-  <span>30-45 分钟</span>
+  <span>45-60 分钟</span>
 </div><div class="meta-item">
   <strong>难度</strong>
-  <span>入门</span>
+  <span>进阶</span>
 </div><div class="meta-item">
   <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；也可以只看页面完成纸面练习</span>
+  <span>Codex 或其他代码 Agent；一个小型 Unity、Unreal、Godot 或纯脚本游戏项目</span>
 </div><div class="meta-item">
   <strong>隐私边界</strong>
-  <span>练习时使用公开或虚构材料，不上传客户隐私、内部资料、账号信息或未公开策略。</span>
+  <span>不要上传商业项目核心源码、未公开玩法数值或联网服务密钥；练习时优先用小样项目。</span>
 </div><div class="meta-item">
   <strong>更新时间</strong>
   <span>2026-06-17</span>
 </div><div class="meta-item">
   <strong>来源提示</strong>
-  <span>本课强调稳定方法和学习路径；具体工具能力以实际产品为准。</span>
+  <span>本课讲 Agent 写玩法代码的提示结构和审查方法；实际 API、网络同步和平台规范需按项目技术栈复核。</span>
 </div></div>
 </section>
 <div class="grid">
@@ -1490,23 +1531,23 @@ li { margin-bottom: 8px; }
   <h2>把这一课讲透：先翻译，再演示，再提问</h2>
   <div class="plain-language">
     <strong>人话解释</strong>
-    <p>Git 记录本地修改，GitHub 保存远端代码，GitHub Pages 把文件发布成网页。本地改好了不等于线上变了，中间还要检查状态、提交、推送、等待发布，并访问线上地址确认。</p>
+    <p>Agent 能帮你写玩法代码，但你必须先把玩法翻译成状态、事件、数据和边界条件。正常路径越清楚，Agent 越容易写对；异常路径越完整，项目越不容易埋坑。</p>
   </div>
   <div class="deep-script-grid"><div class="deep-script">
-  <strong>先分清本地和线上</strong>
-  <p>本地文件只在自己电脑上，用户看到的是 GitHub Pages 或服务器上的版本。</p>
+  <strong>先写状态机</strong>
+  <p>敌人 AI、角色技能、背包、任务系统都可以先写状态。比如巡逻、警戒、追击、返回。状态清楚，代码需求才清楚。</p>
 </div><div class="deep-script">
-  <strong>Git 是版本记录</strong>
-  <p>status 看改了什么，diff 看具体变化，commit 保存一次版本，push 才同步到 GitHub。</p>
+  <strong>再写事件和数据</strong>
+  <p>什么触发状态变化、需要哪些参数、哪些值可配置、哪些日志要保留。Agent 不是读心术，它需要明确接口和数据。</p>
 </div><div class="deep-script">
-  <strong>发布要线上验证</strong>
-  <p>push 成功不代表页面立即更新，Pages 构建和缓存都需要实际访问确认。</p>
+  <strong>最后做审查</strong>
+  <p>Agent 写完后要查空引用、无限循环、每帧分配、硬编码路径、多人同步和存档兼容。游戏代码出错往往不是编译不过，而是体验里才暴露。</p>
 </div></div>
 </article>
 <article class="card">
   <span class="label">跟做案例</span>
-  <h2>用 Codex 辅助发布课程网站</h2>
-  <ol class="walkthrough-list"><li>运行生成脚本，确认本地产物已更新。</li><li>让 Codex 执行 git status 和 diff --stat，确认提交范围。</li><li>提交并 push 到 GitHub。</li><li>访问 GitHub Pages URL，检查关键页面和更新时间。</li></ol>
+  <h2>敌人巡逻、发现玩家、追击、丢失后返回</h2>
+  <ol class="walkthrough-list"><li>状态：Patrol、Chase、Return。</li><li>事件：玩家进入视野、玩家离开视野、敌人回到巡逻点。</li><li>数据：巡逻点、视野距离、追击速度、丢失时间、调试日志开关。</li><li>测试：玩家靠近触发追击，绕开视野后敌人返回，重复多次不报错。</li></ol>
 </article>
 <article class="card worked-example">
   <span class="label">完整示范</span>
@@ -1514,26 +1555,26 @@ li { margin-bottom: 8px; }
   <div class="example-grid">
     <div class="example-block bad">
       <strong>差输入</strong>
-      <p>我本地改好了，为什么网站没变？</p>
+      <p>帮我写一个敌人 AI。</p>
     </div>
     <div class="example-block good">
       <strong>好输入</strong>
-      <p>请帮我检查 GitHub Pages 发布链路。先看 git status 和 diff --stat，确认本地修改；再判断是否已 commit 和 push；最后访问线上 course.html 和关键 lesson 页面，确认页面是否更新。不要覆盖未提交的用户改动。</p>
+      <p>请为一个单机场景写敌人状态机组件，不要改玩家控制器。状态：Patrol、Chase、Return。玩家距离小于 8 米且无遮挡进入 Chase；连续 2 秒看不到玩家进入 Return；回到最近巡逻点后进入 Patrol。参数可在 Inspector 调整。请输出代码、关键注释、测试场景步骤和 Code Review 风险清单。</p>
     </div>
   </div>
   <div class="example-block">
     <strong>输出样例</strong>
-    <p>检查结果可能是：本地文件已生成，但没有 commit；或 commit 已有但没有 push；或 push 成功但 Pages 缓存未刷新，需要等待并用线上 URL 复查。</p>
+    <p>Agent 应生成一个小组件，包含枚举状态、可配置参数、状态切换方法和调试日志。测试步骤包括玩家进入视野、离开视野、敌人返回巡逻点。风险包括射线检测层、目标引用为空、NavMesh 未配置和每帧查找对象。</p>
   </div>
   <div class="example-block">
     <strong>检查点</strong>
-    <ul><li>是否区分本地生成、Git 提交、远端推送、Pages 发布。</li><li>是否保护未提交的本地改动。</li><li>是否用线上 URL 做最终验证。</li></ul>
+    <ul><li>状态、事件、参数是否完整。</li><li>是否避免改无关系统。</li><li>是否列出测试步骤和风险清单。</li></ul>
   </div>
 </article>
 <article class="card">
   <span class="label">检查理解</span>
   <h2>学完后先回答这 3 个问题</h2>
-  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能否说清工作区、commit、push 的区别？</span></div><div class="check-item"><strong>2</strong><span>提交前是否确认没有无关文件？</span></div><div class="check-item"><strong>3</strong><span>推送后是否访问线上页面验证？</span></div></div>
+  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我是否写清了所有状态和状态切换条件？</span></div><div class="check-item"><strong>2</strong><span>是否列出了边界条件，比如玩家死亡、目标为空、场景切换？</span></div><div class="check-item"><strong>3</strong><span>Agent 生成代码后，我准备怎么审查和试玩？</span></div></div>
 </article>
     <section class="learner-brief">
       <span class="label">先怎么学</span>
@@ -1541,41 +1582,41 @@ li { margin-bottom: 8px; }
       <p class="small-note">每一课的学习路线都不同。先抓本课最关键的问题，再用案例和产物证明自己真的会用。</p>
       <div class="flow">
         <div class="flow-step">
-          <strong>1. Git 的基本概念 工作区/暂存区/提交</strong>
-          <span>先把本课变成一个 Codex 可执行任务：Git 的基本概念：工作区、暂存区、提交。写清最终文件、页面或验证证据。</span>
+          <strong>1. 把玩法翻译成代码需求</strong>
+          <span>先把本课变成一个游戏开发小切片：把玩法翻译成代码需求。写清玩法目标、工具边界和验证证据。</span>
         </div>
         <div class="flow-step">
-          <strong>2. GitHub 的基本概念 远端仓库/分支/Pages</strong>
-          <span>把关键点翻译成协作规则：Git 负责记录修改历史，commit 是一次明确的版本快照。明确哪些能改、哪些不能动、怎样验收。</span>
+          <strong>2. Agent 生成代码的提示结构</strong>
+          <span>把关键点翻译成协作规则：玩法代码的核心是规则和状态：输入、角色状态、交互事件、奖励惩罚和失败条件。明确哪些交给 Agent、哪些必须人工把关。</span>
         </div>
         <div class="flow-step">
-          <strong>3. Codex 下的常见流程 status/add/commit/p</strong>
-          <span>套进“本地新增 codex.html 后，线上没有入口，因为还没 push”做一轮 Loop：让 Codex 读上下文、改产物、跑检查，再看证据。</span>
+          <strong>3. 常见游戏代码风险</strong>
+          <span>套进“让 Agent 写一个生命值、受伤无敌帧和死亡重生组件”做一轮最小验证：生成草稿、接入引擎或设计工具，再收集证据。</span>
         </div>
         <div class="flow-step">
-          <strong>4. 保护已有改动，避免误删和误覆盖</strong>
-          <span>最后把结果、问题和下一轮动作写下来：让 Codex 先运行 git status，确认哪些文件会被提交。 本课产物：写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span>
+          <strong>4. 测试/审查和复盘</strong>
+          <span>最后把运行结果、资产风险和下一轮动作写下来：先写玩法规则，再写数据结构，再写事件流，最后写测试和日志。 本课产物：写一份 Agent 玩法代码需求：实现“敌人巡逻、发现玩家、追击、丢失后返回”，并列出状态、事件、边界条件、测试方法和禁止改动范围。</span>
         </div></div>
     </section>
     <article class="card">
       <span class="label">先记住</span>
       <h2>本课只抓 3 件事</h2>
-      <ul><li>Git 负责记录修改历史，commit 是一次明确的版本快照</li><li>GitHub 负责远端托管，push 后线上仓库才会更新</li><li>GitHub Pages 还需要等待构建和缓存刷新，必须线上验证</li></ul>
+      <ul><li>玩法代码的核心是规则和状态：输入、角色状态、交互事件、奖励惩罚和失败条件</li><li>Agent 可以生成初版组件、测试脚本、调试日志和重构建议，但不能替代试玩判断</li><li>代码生成后必须做审查：命名、性能、空引用、网络同步、保存读档和可测试性</li></ul>
     </article>
     <article class="card">
       <span class="label">想明白</span>
       <h2>第一性拆解</h2>
-      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把软件发布拆成两个世界：本地文件变化和线上用户看到的变化。</span></div><div class="principle-block"><strong>拆解 2</strong><span>Git 只负责记录版本，GitHub 负责远端同步，Pages 负责把文件变成网站。</span></div><div class="principle-block"><strong>拆解 3</strong><span>Codex 可以帮你执行链路，但每一步都要看状态和证据，不能跳过验证。</span></div></div>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把玩法拆成状态和事件：角色在什么状态、什么输入触发变化、成功失败怎么判断。</span></div><div class="principle-block"><strong>拆解 2</strong><span>Agent 生成代码前，必须知道引擎版本、脚本位置、已有架构和不能改的接口。</span></div><div class="principle-block"><strong>拆解 3</strong><span>代码写出来只是第一步，审查、运行、日志、测试和试玩才决定它能不能进入项目。</span></div></div>
     </article>
     <article class="card">
       <span class="label">可迁移</span>
       <h2>最小原理</h2>
-      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：没 commit 的修改只是工作区状态，不是版本历史。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：没 push 的提交只在本地，线上仓库不会变化。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：push 成功也不等于用户马上看到，Pages 构建和缓存需要验证。</span></div></div>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：玩法代码是规则系统，不是代码片段集合。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：Agent 适合生成候选实现，人负责架构和体验判断。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：边界条件比正常路径更容易暴露 AI 代码问题。</span></div></div>
     </article>
     <article class="card">
       <span class="label">怎么学</span>
       <h2>读完后怎么把它用出来</h2>
-      <ul><li>Git 的基本概念：工作区、暂存区、提交</li><li>GitHub 的基本概念：远端仓库、分支、Pages</li><li>Codex 下的常见流程：status、add、commit、push、线上检查</li><li>如何保护已有改动，避免误删和误覆盖</li></ul>
+      <ul><li>把玩法翻译成代码需求</li><li>Agent 生成代码的提示结构</li><li>常见游戏代码风险</li><li>测试、审查和复盘</li></ul>
     </article>
 <article class="card case-practice">
   <span class="label">多案例演练</span>
@@ -1585,48 +1626,48 @@ li { margin-bottom: 8px; }
 <article class="case-practice-card primary">
   <div class="case-practice-head">
     <span>案例 01</span>
-    <strong>本地新增 codex.html 后，线上没有入口，因为还没 push</strong>
+    <strong>让 Agent 写一个生命值、受伤无敌帧和死亡重生组件</strong>
   </div>
   <div class="case-practice-grid">
-    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
-    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
-    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+    <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
+    <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
-  <p>套用本课方法：让 Codex 先运行 git status，确认哪些文件会被提交。</p>
+  <p>套用本课方法：先写玩法规则，再写数据结构，再写事件流，最后写测试和日志。</p>
 </article>
 <article class="case-practice-card">
   <div class="case-practice-head">
     <span>案例 02</span>
-    <strong>推送成功后，GitHub Pages 需要等待缓存刷新</strong>
+    <strong>让 Agent 为背包物品写数据结构、拾取事件和 UI 刷新逻辑</strong>
   </div>
   <div class="case-practice-grid">
-    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
-    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
-    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+    <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
+    <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
-  <p>套用本课方法：提交前看 diff 或 diff --stat，避免把无关文件带进去。</p>
+  <p>套用本课方法：要求 Agent 保持小提交：一个组件、一个状态机或一个测试场景为一轮。</p>
 </article>
 <article class="case-practice-card">
   <div class="case-practice-head">
     <span>案例 03</span>
-    <strong>用链接检查确认发布目录没有断链</strong>
+    <strong>让 Agent 给敌人巡逻、追击、返回三段状态机补单元测试思路</strong>
   </div>
   <div class="case-practice-grid">
-    <div><b>输入</b><span>项目目标、文件范围、验收标准、禁止事项和发布要求。</span></div>
-    <div><b>AI 动作</b><span>读文件、改产物、运行命令、修复问题并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对 diff、测试、截图、链接和线上行为是否符合目标。</span></div>
-    <div><b>交付物</b><span>交付一个可验证的文件、页面、流程或发布记录。</span></div>
+    <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
+    <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
+    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
-  <p>套用本课方法：推送后访问线上 URL，并用 cache-busting 或强刷新确认页面更新。</p>
+  <p>套用本课方法：让 Agent 在回答里说明改了哪些文件、如何运行、哪些风险需要人复查。</p>
 </article>
 <article class="case-practice-card guided">
   <div class="case-practice-head">
     <span>课堂演练</span>
-    <strong>用 Codex 辅助发布课程网站</strong>
+    <strong>敌人巡逻、发现玩家、追击、丢失后返回</strong>
   </div>
-  <ol class="case-practice-steps"><li>运行生成脚本，确认本地产物已更新。</li><li>让 Codex 执行 git status 和 diff --stat，确认提交范围。</li><li>提交并 push 到 GitHub。</li><li>访问 GitHub Pages URL，检查关键页面和更新时间。</li></ol>
+  <ol class="case-practice-steps"><li>状态：Patrol、Chase、Return。</li><li>事件：玩家进入视野、玩家离开视野、敌人回到巡逻点。</li><li>数据：巡逻点、视野距离、追击速度、丢失时间、调试日志开关。</li><li>测试：玩家靠近触发追击，绕开视野后敌人返回，重复多次不报错。</li></ol>
 </article>
 <details class="case-practice-card compare">
   <summary>
@@ -1640,13 +1681,13 @@ li { margin-bottom: 8px; }
     </div>
     <div class="case-compare-block">
       <b>可用输入</b>
-      <span>请帮我检查 GitHub Pages 发布链路。先看 git status 和 diff --stat，确认本地修改；再判断是否已 commit 和 push；最后访问线上 course.html 和关键 lesson 页面，确认页面是否更新。不要覆盖未提交的用户改动。</span>
+      <span>请为一个单机场景写敌人状态机组件，不要改玩家控制器。状态：Patrol、Chase、Return。玩家距离小于 8 米且无遮挡进入 Chase；连续 2 秒看不到玩家进入 Return；回到最近巡逻点后进入 Patrol。参数可在 Inspector 调整。请输出代码、关键注释、测试场景步骤和 Code Review 风险清单。</span>
     </div>
     <div class="case-compare-block">
       <b>样例结果</b>
-      <span>检查结果可能是：本地文件已生成，但没有 commit；或 commit 已有但没有 push；或 push 成功但 Pages 缓存未刷新，需要等待并用线上 URL 复查。</span>
+      <span>Agent 应生成一个小组件，包含枚举状态、可配置参数、状态切换方法和调试日志。测试步骤包括玩家进入视野、离开视野、敌人返回巡逻点。风险包括射线检测层、目标引用为空、NavMesh 未配置和每帧查找对象。</span>
     </div>
-    <ul class="case-practice-review"><li>是否区分本地生成、Git 提交、远端推送、Pages 发布。</li><li>是否保护未提交的本地改动。</li><li>是否用线上 URL 做最终验证。</li></ul>
+    <ul class="case-practice-review"><li>状态、事件、参数是否完整。</li><li>是否避免改无关系统。</li><li>是否列出测试步骤和风险清单。</li></ul>
   </div>
 </details></div>
 </article>
@@ -1658,34 +1699,34 @@ li { margin-bottom: 8px; }
   <div class="teaching-grid"><div class="teaching-segment">
   <span class="step-no">1</span>
   <div>
-    <h3>Git 的基本概念：工作区、暂存区、提交</h3>
-    <p><strong>先讲清：</strong>Git 负责记录修改历史，commit 是一次明确的版本快照。</p>
-    <p><strong>再落地：</strong>把它放进“本地新增 codex.html 后，线上没有入口，因为还没 push”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>让 Codex 先运行 git status，确认哪些文件会被提交。</p>
+    <h3>把玩法翻译成代码需求</h3>
+    <p><strong>先讲清：</strong>玩法代码的核心是规则和状态：输入、角色状态、交互事件、奖励惩罚和失败条件。</p>
+    <p><strong>再落地：</strong>把它放进“让 Agent 写一个生命值、受伤无敌帧和死亡重生组件”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先写玩法规则，再写数据结构，再写事件流，最后写测试和日志。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">2</span>
   <div>
-    <h3>GitHub 的基本概念：远端仓库、分支、Pages</h3>
-    <p><strong>先讲清：</strong>GitHub 负责远端托管，push 后线上仓库才会更新。</p>
-    <p><strong>再落地：</strong>把它放进“推送成功后，GitHub Pages 需要等待缓存刷新”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>提交前看 diff 或 diff --stat，避免把无关文件带进去。</p>
+    <h3>Agent 生成代码的提示结构</h3>
+    <p><strong>先讲清：</strong>Agent 可以生成初版组件、测试脚本、调试日志和重构建议，但不能替代试玩判断。</p>
+    <p><strong>再落地：</strong>把它放进“让 Agent 为背包物品写数据结构、拾取事件和 UI 刷新逻辑”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>要求 Agent 保持小提交：一个组件、一个状态机或一个测试场景为一轮。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">3</span>
   <div>
-    <h3>Codex 下的常见流程：status、add、commit、push、线上检查</h3>
-    <p><strong>先讲清：</strong>GitHub Pages 还需要等待构建和缓存刷新，必须线上验证。</p>
-    <p><strong>再落地：</strong>把它放进“用链接检查确认发布目录没有断链”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>推送后访问线上 URL，并用 cache-busting 或强刷新确认页面更新。</p>
+    <h3>常见游戏代码风险</h3>
+    <p><strong>先讲清：</strong>代码生成后必须做审查：命名、性能、空引用、网络同步、保存读档和可测试性。</p>
+    <p><strong>再落地：</strong>把它放进“让 Agent 给敌人巡逻、追击、返回三段状态机补单元测试思路”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>让 Agent 在回答里说明改了哪些文件、如何运行、哪些风险需要人复查。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">4</span>
   <div>
-    <h3>如何保护已有改动，避免误删和误覆盖</h3>
-    <p><strong>先讲清：</strong>Git 负责记录修改历史，commit 是一次明确的版本快照。</p>
-    <p><strong>再落地：</strong>把它放进“本地新增 codex.html 后，线上没有入口，因为还没 push”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>让 Codex 先运行 git status，确认哪些文件会被提交。</p>
+    <h3>测试、审查和复盘</h3>
+    <p><strong>先讲清：</strong>玩法代码的核心是规则和状态：输入、角色状态、交互事件、奖励惩罚和失败条件。</p>
+    <p><strong>再落地：</strong>把它放进“让 Agent 写一个生命值、受伤无敌帧和死亡重生组件”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先写玩法规则，再写数据结构，再写事件流，最后写测试和日志。</p>
   </div>
 </div></div>
 </article>
@@ -1695,11 +1736,11 @@ li { margin-bottom: 8px; }
   <div class="practice-path">
     <div>
       <strong>老师先演示</strong>
-      <span>用“本地新增 codex.html 后，线上没有入口，因为还没 push”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
+      <span>用“让 Agent 写一个生命值、受伤无敌帧和死亡重生组件”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
     </div>
     <div>
       <strong>你再跟做</strong>
-      <span>写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span>
+      <span>写一份 Agent 玩法代码需求：实现“敌人巡逻、发现玩家、追击、丢失后返回”，并列出状态、事件、边界条件、测试方法和禁止改动范围。</span>
     </div>
     <div>
       <strong>最后验收</strong>
@@ -1710,29 +1751,29 @@ li { margin-bottom: 8px; }
 <article class="card">
   <span class="label">下一步</span>
   <h2>学完后怎么继续扩展</h2>
-  <p class="small-note">下一课会进入“你真的会用Dify吗？”，你要带着本课产物继续往下用。</p>
+  <p class="small-note">下一课会进入“美术资产生成与游戏管线”，你要带着本课产物继续往下用。</p>
   <div class="toolbar">
-    <a class="btn primary" href="./lesson-24-git-github-codex-worksheet.html">打开本课练习工作纸</a>
+    <a class="btn primary" href="./lesson-23-agent-gameplay-code-worksheet.html">打开本课练习工作纸</a>
   </div>
 </article>
 
 <article class="card learning-evidence">
   <span class="label">参考答案</span>
   <h2>不是标准话术，而是判断自己有没有学会</h2>
-  <ul><li>能用自己的话说明：Git 记录本地修改，GitHub 保存远端代码，GitHub Pages 把文件发布成网页。本地改好了不等于线上变了，中间还要检查状态、提交、推送、等待发布，并访问线上地址确认。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“本地新增 codex.html 后，线上没有入口，因为还没 push”开始。</li><li>最终要留下一个可检查的小产物：写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</li></ul>
+  <ul><li>状态至少包括 Patrol、Chase、Return，并写清进入和退出条件。</li><li>边界条件要覆盖目标为空、玩家死亡、场景重载、巡逻点缺失、寻路失败和距离抖动。</li><li>测试方法要包括正常追击、丢失返回、重复触发和日志检查，禁止改动范围要保护玩家控制器和项目设置。</li></ul>
 </article>
 <article class="card learning-evidence">
   <span class="label">小测验</span>
   <h2>先自己答，再展开参考思路</h2>
   <div class="quiz-list"><details class="quiz-item">
-  <summary>我能否说清工作区、commit、push 的区别？</summary>
-  <p>Git 负责记录修改历史，commit 是一次明确的版本快照</p>
+  <summary>我是否写清了所有状态和状态切换条件？</summary>
+  <p>玩法代码的核心是规则和状态：输入、角色状态、交互事件、奖励惩罚和失败条件</p>
 </details><details class="quiz-item">
-  <summary>提交前是否确认没有无关文件？</summary>
+  <summary>是否列出了边界条件，比如玩家死亡、目标为空、场景切换？</summary>
   <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
 </details><details class="quiz-item">
-  <summary>推送后是否访问线上页面验证？</summary>
-  <p>以为本地文件改了，GitHub Pages 就会自动更新。</p>
+  <summary>Agent 生成代码后，我准备怎么审查和试玩？</summary>
+  <p>只说“做一个敌人 AI”，不描述状态、范围、速度和失败条件。</p>
 </details></div>
 </article>
 <article class="card learning-evidence">
@@ -1753,20 +1794,17 @@ li { margin-bottom: 8px; }
   <span class="label">术语表</span>
   <h2>把这一课的词翻译成人话</h2>
   <div class="glossary-grid"><div class="glossary-item">
-  <strong>Git</strong>
-  <span>记录文件修改历史的版本管理工具。</span>
+  <strong>状态机</strong>
+  <span>把角色或系统拆成有限状态，并规定状态之间如何切换。</span>
 </div><div class="glossary-item">
-  <strong>commit</strong>
-  <span>把一组修改保存成一次版本快照。</span>
+  <strong>事件</strong>
+  <span>触发代码变化的事情，比如碰撞、输入、计时结束或目标进入视野。</span>
 </div><div class="glossary-item">
-  <strong>push</strong>
-  <span>把本地提交同步到 GitHub 远端仓库。</span>
+  <strong>边界条件</strong>
+  <span>正常流程之外的情况，比如引用为空、对象销毁、网络延迟。</span>
 </div><div class="glossary-item">
-  <strong>GitHub Pages</strong>
-  <span>GitHub 提供的静态网页发布服务。</span>
-</div><div class="glossary-item">
-  <strong>diff</strong>
-  <span>显示文件修改前后的差异。</span>
+  <strong>Code Review</strong>
+  <span>检查代码是否有 bug、风险、性能问题和缺少测试。</span>
 </div></div>
 </article>
   </main>
@@ -1774,40 +1812,40 @@ li { margin-bottom: 8px; }
     <article class="card">
       <span class="label">马上用</span>
       <h2>应用方法</h2>
-      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>让 Codex 先运行 git status，确认哪些文件会被提交。</span></div><div class="principle-block"><strong>方法 2</strong><span>提交前看 diff 或 diff --stat，避免把无关文件带进去。</span></div><div class="principle-block"><strong>方法 3</strong><span>推送后访问线上 URL，并用 cache-busting 或强刷新确认页面更新。</span></div></div>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先写玩法规则，再写数据结构，再写事件流，最后写测试和日志。</span></div><div class="principle-block"><strong>方法 2</strong><span>要求 Agent 保持小提交：一个组件、一个状态机或一个测试场景为一轮。</span></div><div class="principle-block"><strong>方法 3</strong><span>让 Agent 在回答里说明改了哪些文件、如何运行、哪些风险需要人复查。</span></div></div>
     </article>
     <article class="card">
       <span class="label">避坑</span>
       <h2>反常识提醒</h2>
-      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>以为本地文件改了，GitHub Pages 就会自动更新。</span></div><div class="principle-block"><strong>误区 2</strong><span>不看 git status，直接把一堆无关文件提交。</span></div><div class="principle-block"><strong>误区 3</strong><span>推送后不验线上页面，导致用户还在看旧版本。</span></div></div>
+      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>只说“做一个敌人 AI”，不描述状态、范围、速度和失败条件。</span></div><div class="principle-block"><strong>误区 2</strong><span>不审查 Agent 生成的空引用、无限循环、每帧分配和硬编码路径。</span></div><div class="principle-block"><strong>误区 3</strong><span>把单机可用代码直接用于多人同步或正式存档系统。</span></div></div>
     </article>
     <article class="card" id="practice">
       <span class="label">完成标准</span>
       <h2>做完这件事才算学会</h2>
       <div class="meta">
-        <div class="meta-item"><strong>本课产物</strong><span>写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span></div>
+        <div class="meta-item"><strong>本课产物</strong><span>写一份 Agent 玩法代码需求：实现“敌人巡逻、发现玩家、追击、丢失后返回”，并列出状态、事件、边界条件、测试方法和禁止改动范围。</span></div>
         <div class="meta-item"><strong>验收方式</strong><span>能用自己的话解释本课概念，并把它套到一个真实工作或生活场景里。</span></div>
       </div>
     </article>
     <article class="card">
       <span class="label">可以直接复制</span>
       <h2>给 AI 的跟做提示</h2>
-      <pre class="copy-prompt"><code>我正在学习「Git、GitHub与Codex协作」，请用新手能听懂的话教我。
+      <pre class="copy-prompt"><code>我正在学习「用Agent编写游戏玩法代码」，请用新手能听懂的话教我。
 先用 120 字以内解释它，不要堆术语。
-再结合这两个场景举例：本地新增 codex.html 后，线上没有入口，因为还没 push；推送成功后，GitHub Pages 需要等待缓存刷新。
+再结合这两个场景举例：让 Agent 写一个生命值、受伤无敌帧和死亡重生组件；让 Agent 为背包物品写数据结构、拾取事件和 UI 刷新逻辑。
 然后问我 3 个检查理解的问题。
-最后帮我完成这个练习：写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</code></pre>
+最后帮我完成这个练习：写一份 Agent 玩法代码需求：实现“敌人巡逻、发现玩家、追击、丢失后返回”，并列出状态、事件、边界条件、测试方法和禁止改动范围。</code></pre>
     </article>
     <article class="card">
       <span class="label">自检</span>
       <h2>学完请确认这 4 件事</h2>
-      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「Git、GitHub与Codex协作」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「用Agent编写游戏玩法代码」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：写一份 Agent 玩法代码需求：实现“敌人巡逻、发现玩家、追击、丢失后返回”，并列出状态、事件、边界条件、测试方法和禁止改动范围。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
     </article>
   </aside>
 </div>
 <nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-23-codex-web-design.html">上一课：如何用Codex制作好看的网页</a>
-  <a class="btn primary" href="./lesson-25-dify-codex-workflow.html">下一课：你真的会用Dify吗？</a>
+  <a class="btn" href="./lesson-22-game-engine-codex.html">上一课：用Codex做游戏引擎原型</a>
+  <a class="btn primary" href="./lesson-24-game-art-assets.html">下一课：美术资产生成与游戏管线</a>
 </nav>
 <div class="footer">AI学习路线 · 第一性原则版逐课教程</div></main>
 

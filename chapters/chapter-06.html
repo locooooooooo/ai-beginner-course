@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>老鸟进阶：Codex 扩展学习 · 章节导学</title>
+  <title>第六章：游戏场景落地 · 章节导学</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -1288,6 +1288,46 @@ li { margin-bottom: 8px; }
   display: grid;
   gap: 12px;
 }
+.worksheet-case-practice {
+  gap: 14px;
+}
+.worksheet-case-list {
+  display: grid;
+  gap: 12px;
+}
+.worksheet-case-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.worksheet-case-card h3 {
+  font-family: var(--sans);
+  font-size: 1.02rem;
+}
+.worksheet-case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.worksheet-case-grid > div {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.10);
+  border-radius: var(--radius);
+}
+.worksheet-case-grid strong {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+.worksheet-case-grid span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 .teaching-segment {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
@@ -1401,6 +1441,7 @@ li { margin-bottom: 8px; }
   .case-meta div { grid-template-columns: 1fr; }
   .case-index-list a { grid-template-columns: 1fr; }
   .worksheet-table > div { grid-template-columns: 1fr; }
+  .worksheet-case-grid { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
   .case-practice-grid { grid-template-columns: 1fr; }
@@ -1422,17 +1463,17 @@ li { margin-bottom: 8px; }
   <a class="brand" href="../course.html">AI入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
-    <a href="../course.html#advanced">老鸟进阶</a>
+    <a href="../course.html#advanced">游戏落地</a>
     <a href="../mindmap-hub.html">资源</a>
   </div>
 </nav>
 <header class="hero course-hero">
   <div>
     <div class="eyebrow">章节导学 · 第 6 章</div>
-    <h1>老鸟进阶：Codex 扩展学习</h1>
-    <p class="lead">把 Codex 当成能交付的软件工作助手来学，掌握多会话、网页制作、GitHub 发布和 Dify 平台自动化。</p>
+    <h1>第六章：游戏场景落地</h1>
+    <p class="lead">把 AI 放进真实游戏开发链路：从行业判断、引擎原型、Agent 写代码、美术资产生成，到 MCP 连接 Unreal、Unity 和 Figma。</p>
     <div class="toolbar">
-      <a class="btn primary" href="../lessons/lesson-21-codex-overview.html">从本章第一课开始</a>
+      <a class="btn primary" href="../lessons/lesson-21-game-ai-landscape.html">从本章第一课开始</a>
       <a class="btn" href="#outputs">查看本章产物</a>
     </div>
   </div>
@@ -1457,49 +1498,49 @@ li { margin-bottom: 8px; }
   </div>
   <div class="chapters"><article class="chapter-card">
   <span class="label">第 21 课</span>
-  <h3>Codex能做什么</h3>
-  <p>理解 Codex 不是普通聊天机器人，而是能进入项目现场读、改、跑、验收的 AI 工作助手。</p>
+  <h3>游戏行业为什么开始重视AI工作流</h3>
+  <p>理解 AI 在游戏开发里的真实位置：它不是替代完整团队，而是把原型、内容、测试和协作变成更短的迭代循环。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
-    <span>写一个给 Codex 的任务说明，包含目标、范围、验收标准和禁止事项。</span>
+    <span>选择一个小游戏点子，写出 AI 能参与的 5 个环节、必须人工把关的 5 个环节，以及每个环节的验收证据。</span>
   </div>
-  <div class="toolbar"><a class="btn primary" href="../lessons/lesson-21-codex-overview.html">主讲义</a><a class="btn" href="../lessons/lesson-21-codex-overview-worksheet.html">工作纸</a></div>
+  <div class="toolbar"><a class="btn primary" href="../lessons/lesson-21-game-ai-landscape.html">主讲义</a><a class="btn" href="../lessons/lesson-21-game-ai-landscape-worksheet.html">工作纸</a></div>
 </article><article class="chapter-card">
   <span class="label">第 22 课</span>
-  <h3>Loop Engineering是什么</h3>
-  <p>理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。</p>
+  <h3>用Codex做游戏引擎原型</h3>
+  <p>学会把 Unreal、Unity 或 Godot 中的原型任务写成 Codex 能执行、能运行、能验收的小工单。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
-    <span>为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span>
+    <span>把一个“玩家收集 10 个能量球并开门”的玩法，拆成 3 个 Codex 工单：场景、脚本、验收，每个工单写清可改文件和通过标准。</span>
   </div>
-  <div class="toolbar"><a class="btn primary" href="../lessons/lesson-22-loop-engineering.html">主讲义</a><a class="btn" href="../lessons/lesson-22-loop-engineering-worksheet.html">工作纸</a></div>
+  <div class="toolbar"><a class="btn primary" href="../lessons/lesson-22-game-engine-codex.html">主讲义</a><a class="btn" href="../lessons/lesson-22-game-engine-codex-worksheet.html">工作纸</a></div>
 </article><article class="chapter-card">
   <span class="label">第 23 课</span>
-  <h3>如何用Codex制作好看的网页</h3>
-  <p>学会把目标用户、页面结构、视觉规范和移动端验收交给 Codex，让网页既能看又能用。</p>
+  <h3>用Agent编写游戏玩法代码</h3>
+  <p>学会把玩法需求拆成状态、输入、事件、数据和测试，让 Agent 生成代码后仍能被人审查和迭代。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
-    <span>写一段网页制作需求，让 Codex 为“AI 新手课程”设计一个手机优先首页，并列出 5 条验收标准。</span>
+    <span>写一份 Agent 玩法代码需求：实现“敌人巡逻、发现玩家、追击、丢失后返回”，并列出状态、事件、边界条件、测试方法和禁止改动范围。</span>
   </div>
-  <div class="toolbar"><a class="btn primary" href="../lessons/lesson-23-codex-web-design.html">主讲义</a><a class="btn" href="../lessons/lesson-23-codex-web-design-worksheet.html">工作纸</a></div>
+  <div class="toolbar"><a class="btn primary" href="../lessons/lesson-23-agent-gameplay-code.html">主讲义</a><a class="btn" href="../lessons/lesson-23-agent-gameplay-code-worksheet.html">工作纸</a></div>
 </article><article class="chapter-card">
   <span class="label">第 24 课</span>
-  <h3>Git、GitHub与Codex协作</h3>
-  <p>理解 Git 记录本地修改，GitHub 托管和发布代码，Codex 可以帮助提交、推送和验证线上结果。</p>
+  <h3>美术资产生成与游戏管线</h3>
+  <p>理解 AI 美术在游戏里更适合作为概念、占位、变体和沟通工具，正式上线前必须经过风格、版权、性能和格式管线检查。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
-    <span>写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span>
+    <span>为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工复审。</span>
   </div>
-  <div class="toolbar"><a class="btn primary" href="../lessons/lesson-24-git-github-codex.html">主讲义</a><a class="btn" href="../lessons/lesson-24-git-github-codex-worksheet.html">工作纸</a></div>
+  <div class="toolbar"><a class="btn primary" href="../lessons/lesson-24-game-art-assets.html">主讲义</a><a class="btn" href="../lessons/lesson-24-game-art-assets-worksheet.html">工作纸</a></div>
 </article><article class="chapter-card">
   <span class="label">第 25 课</span>
-  <h3>你真的会用Dify吗？</h3>
-  <p>学会用 Codex 搭建 Dify 平台、完成 Docker 部署，并把 Wiki 发布、Bug 汇总和自动 Code Review 做成自动化流程。</p>
+  <h3>MCP在游戏开发中的使用</h3>
+  <p>理解 MCP 如何把 AI Agent 接到 Unreal、Unity、Figma、文件系统和内部工具，让游戏开发从聊天建议变成可执行工作流。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
-    <span>设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span>
+    <span>设计一个“AI 帮我做游戏 UI 和引擎原型”的 MCP 工作流：列出 Figma、Unity 或 Unreal、文件系统、截图验收、人工确认和回滚机制。</span>
   </div>
-  <div class="toolbar"><a class="btn primary" href="../lessons/lesson-25-dify-codex-workflow.html">主讲义</a><a class="btn" href="../lessons/lesson-25-dify-codex-workflow-worksheet.html">工作纸</a></div>
+  <div class="toolbar"><a class="btn primary" href="../lessons/lesson-25-game-dev-mcp.html">主讲义</a><a class="btn" href="../lessons/lesson-25-game-dev-mcp-worksheet.html">工作纸</a></div>
 </article></div>
 </section>
 <section>
@@ -1508,19 +1549,19 @@ li { margin-bottom: 8px; }
     <p>先从熟悉场景理解，不要一上来背抽象定义。</p>
   </div>
   <div class="case-grid"><article class="case-card">
-  <strong>把课程内容生成手机友好的 HTML 网站</strong>
+  <strong>独立开发者用 AI 先做 1 个可玩的 3 分钟核心循环，再决定是否扩展</strong>
   <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
 </article><article class="case-card">
-  <strong>网页改版：先改首页，再截图验收，再修移动端问题</strong>
+  <strong>Unity 里生成一个可移动角色、金币收集物和计分 UI 的灰盒原型</strong>
   <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
 </article><article class="case-card">
-  <strong>把课程首页从资源堆叠改成学习路径</strong>
+  <strong>让 Agent 写一个生命值、受伤无敌帧和死亡重生组件</strong>
   <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
 </article><article class="case-card">
-  <strong>本地新增 codex.html 后，线上没有入口，因为还没 push</strong>
+  <strong>用生成图先做 20 张道具图标草稿，再人工统一描边、尺寸和透明通道</strong>
   <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
 </article><article class="case-card">
-  <strong>Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果</strong>
+  <strong>Unity MCP：让 Agent 查询场景对象、创建测试关卡、管理资源并生成编辑器内工作流</strong>
   <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
 </article></div>
 </section>
@@ -1531,10 +1572,10 @@ li { margin-bottom: 8px; }
   </div>
   <article class="callout">
     <span class="label">本章总产物</span>
-    <h2>写出一个能交给 Codex 执行的任务说明，并能说明目标、范围、验收标准、禁止事项和发布证据。</h2>
+    <h2>设计一个 AI 辅助游戏开发小样方案：包含玩法目标、引擎任务、代码 Agent 分工、美术资产规范、MCP 工具连接和验收清单。</h2>
     <p>每节课的小产物都要服务于这个总产物。做完后，把它整理成一份可以复用的模板或清单。</p>
   </article>
-  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>写一个给 Codex 的任务说明，包含目标、范围、验收标准和禁止事项。</span></div><div class="check-item"><strong>2</strong><span>为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span></div><div class="check-item"><strong>3</strong><span>写一段网页制作需求，让 Codex 为“AI 新手课程”设计一个手机优先首页，并列出 5 条验收标准。</span></div><div class="check-item"><strong>4</strong><span>写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。</span></div><div class="check-item"><strong>5</strong><span>设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span></div></div>
+  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>选择一个小游戏点子，写出 AI 能参与的 5 个环节、必须人工把关的 5 个环节，以及每个环节的验收证据。</span></div><div class="check-item"><strong>2</strong><span>把一个“玩家收集 10 个能量球并开门”的玩法，拆成 3 个 Codex 工单：场景、脚本、验收，每个工单写清可改文件和通过标准。</span></div><div class="check-item"><strong>3</strong><span>写一份 Agent 玩法代码需求：实现“敌人巡逻、发现玩家、追击、丢失后返回”，并列出状态、事件、边界条件、测试方法和禁止改动范围。</span></div><div class="check-item"><strong>4</strong><span>为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工复审。</span></div><div class="check-item"><strong>5</strong><span>设计一个“AI 帮我做游戏 UI 和引擎原型”的 MCP 工作流：列出 Figma、Unity 或 Unreal、文件系统、截图验收、人工确认和回滚机制。</span></div></div>
 </section>
 <section class="notes-wrap">
   <article class="notes">
