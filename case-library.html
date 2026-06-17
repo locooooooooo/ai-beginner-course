@@ -904,6 +904,201 @@ li { margin-bottom: 8px; }
   color: var(--muted);
   font-size: 0.94rem;
 }
+.case-board {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.case-filter-panel,
+.case-results-panel {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.case-filter-panel {
+  position: sticky;
+  top: 18px;
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+.case-filter-panel p {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.case-filter-group {
+  display: grid;
+  gap: 8px;
+}
+.case-filter-group strong {
+  font-size: 0.9rem;
+}
+.case-search input {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 11px;
+  color: var(--ink);
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font: inherit;
+}
+.case-search input:focus {
+  outline: 3px solid rgba(15, 118, 110, 0.18);
+  border-color: rgba(15, 118, 110, 0.42);
+}
+.case-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.case-filter-button {
+  min-height: 34px;
+  padding: 6px 10px;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.case-filter-button.active {
+  color: #ffffff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.case-learning-path {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.case-learning-path li {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.case-learning-path b {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: var(--primary);
+  border-radius: 50%;
+  font-size: 0.78rem;
+}
+.case-results-panel {
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+}
+.case-results-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--line);
+}
+.case-count-pill {
+  color: var(--primary);
+  font-weight: 900;
+}
+.case-results-hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.case-results-list {
+  display: grid;
+}
+.case-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 240px);
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.case-row:last-child {
+  border-bottom: 0;
+}
+.case-row[hidden] {
+  display: none !important;
+}
+.case-row-main {
+  display: grid;
+  gap: 8px;
+}
+.case-row-topline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.case-row h3 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.08rem;
+}
+.case-row p {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.case-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.case-row-meta span {
+  padding: 5px 8px;
+  color: var(--ink);
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+.case-row-side {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+.case-row-outcome {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.case-row-outcome strong {
+  color: var(--primary);
+  font-size: 0.86rem;
+}
+.case-row-outcome span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.case-empty-state {
+  display: none;
+  padding: 24px;
+  color: var(--muted);
+}
+.case-empty-state.show {
+  display: block;
+}
 .system-hero {
   padding-top: 40px;
 }
@@ -1079,7 +1274,7 @@ li { margin-bottom: 8px; }
   font-size: 0.94rem;
 }
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid, .case-method-grid, .system-grid, .system-ladder, .system-template-grid, .system-gate-grid { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid, .case-method-grid, .case-board, .case-row, .system-grid, .system-ladder, .system-template-grid, .system-gate-grid { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
   .newbie-focus, .scenario-grid { grid-template-columns: 1fr; }
@@ -1100,6 +1295,8 @@ li { margin-bottom: 8px; }
   .track-card { min-height: 0; }
   .showcase-library { padding: 18px; }
   .showcase-summary, .showcase-case-grid { grid-template-columns: 1fr; }
+  .case-filter-panel { position: static; }
+  .case-results-toolbar { align-items: flex-start; }
   .case-meta div { grid-template-columns: 1fr; }
   .case-index-list a { grid-template-columns: 1fr; }
   .worksheet-table > div { grid-template-columns: 1fr; }
@@ -1164,7 +1361,7 @@ li { margin-bottom: 8px; }
   </aside>
 </header>
 
-<section>
+<section aria-label="案例学习方法">
   <div class="section-title">
     <h2>读案例的 4 个动作</h2>
     <p>新手不要只看结果，要把案例拆回自己能复用的方法。</p>
@@ -1177,64 +1374,114 @@ li { margin-bottom: 8px; }
   </div>
 </section>
 
-<section id="cases">
+<section id="cases" data-case-board>
   <div class="section-title">
-    <h2>全部案例</h2>
-    <p>案例会持续扩充。每张卡片都保留类型、阶段、产物和标签，方便以后筛选和课程化。</p>
+    <h2>案例工作台</h2>
+    <p>后续案例会持续扩充。这里用筛选、搜索和紧凑行卡组织，适合几十个案例长期沉淀。</p>
   </div>
-  <div class="showcase-case-grid">
-<article class="showcase-case featured">
-  <div class="case-topline">
-    <span class="case-index">案例 01</span>
-    <span class="case-status">已上线</span>
+  <div class="case-board">
+    <aside class="case-filter-panel" aria-label="案例筛选">
+      <span class="label">筛选案例</span>
+      <p>先按任务类型缩小范围，再用关键词找工具、产物或场景。</p>
+      <div class="case-filter-group case-search">
+        <strong>关键词</strong>
+        <input type="search" data-case-search placeholder="搜索：Codex、视频、Docker、发布..." aria-label="搜索案例" />
+      </div>
+      <div class="case-filter-group">
+        <strong>任务类型</strong>
+        <div class="case-filter-buttons"><button class="case-filter-button active" type="button" data-case-filter="all">全部 <strong>3</strong></button><button class="case-filter-button" type="button" data-case-filter="工具迭代">工具迭代 <strong>1</strong></button><button class="case-filter-button" type="button" data-case-filter="内容生产">内容生产 <strong>1</strong></button><button class="case-filter-button" type="button" data-case-filter="流程自动化">流程自动化 <strong>1</strong></button></div>
+      </div>
+      <div class="case-filter-group">
+        <strong>新手读法</strong>
+        <ol class="case-learning-path">
+          <li><b>1</b><span>先看案例属于哪类任务。</span></li>
+          <li><b>2</b><span>再看输入、限制和验收标准。</span></li>
+          <li><b>3</b><span>最后复制方法到自己的工作纸。</span></li>
+        </ol>
+      </div>
+    </aside>
+    <div class="case-results-panel">
+      <div class="case-results-toolbar">
+        <strong>当前显示 <span class="case-count-pill" data-case-count>3</span> 个案例</strong>
+        <span class="case-results-hint">每行都保留阶段、标签、产物和入口，方便快速扫读。</span>
+      </div>
+      <div class="case-results-list">
+<article class="case-row featured" data-case-row data-track="工具迭代" data-search="策略看板迭代 工具迭代 已上线 从需求到发布 看 Codex 如何持续修改、验证、上线一个策略看板，并把高风险内容改成公开安全的工程案例。 公开版策略看板、风险边界说明、发布验证证据 Codex Loop GitHub Pages">
+  <div class="case-row-main">
+    <div class="case-row-topline">
+      <span class="case-index">案例 01</span>
+      <span class="case-status">已上线</span>
+      <span class="case-status">工具迭代</span>
+    </div>
+    <h3>策略看板迭代</h3>
+    <p>看 Codex 如何持续修改、验证、上线一个策略看板，并把高风险内容改成公开安全的工程案例。</p>
+    <div class="case-row-meta">
+      <span>从需求到发布</span>
+      <span>Codex</span><span>Loop</span><span>GitHub Pages</span>
+    </div>
   </div>
-  <h3>策略看板迭代</h3>
-  <p>看 Codex 如何持续修改、验证、上线一个策略看板，并把高风险内容改成公开安全的工程案例。</p>
-  <dl class="case-meta">
-    <div><dt>类型</dt><dd>工具迭代</dd></div>
-    <div><dt>阶段</dt><dd>从需求到发布</dd></div>
-    <div><dt>产物</dt><dd>公开版策略看板、风险边界说明、发布验证证据</dd></div>
-  </dl>
-  <div class="case-tags"><span>Codex</span><span>Loop</span><span>GitHub Pages</span></div>
-  <div class="case-actions">
-    <a class="case-link primary" href="./worldcup-strategy-case.html">打开案例</a>
-  </div>
+  <aside class="case-row-side">
+    <div class="case-row-outcome">
+      <strong>最终产物</strong>
+      <span>公开版策略看板、风险边界说明、发布验证证据</span>
+    </div>
+    <div class="case-actions">
+      <a class="case-link primary" href="./worldcup-strategy-case.html">打开案例</a>
+    </div>
+  </aside>
 </article>
-<article class="showcase-case">
-  <div class="case-topline">
-    <span class="case-index">案例 02</span>
-    <span class="case-status">已上线</span>
+<article class="case-row" data-case-row data-track="内容生产" data-search="小说视频内容生产链 内容生产 已上线 从脚本到成片 看小说脚本如何被拆成分镜、视频素材、成片交付和复盘清单，适合理解多步骤内容生产。 脚本拆解、分镜流程、视频交付路径 内容 视频 分镜">
+  <div class="case-row-main">
+    <div class="case-row-topline">
+      <span class="case-index">案例 02</span>
+      <span class="case-status">已上线</span>
+      <span class="case-status">内容生产</span>
+    </div>
+    <h3>小说视频内容生产链</h3>
+    <p>看小说脚本如何被拆成分镜、视频素材、成片交付和复盘清单，适合理解多步骤内容生产。</p>
+    <div class="case-row-meta">
+      <span>从脚本到成片</span>
+      <span>内容</span><span>视频</span><span>分镜</span>
+    </div>
   </div>
-  <h3>小说视频内容生产链</h3>
-  <p>看小说脚本如何被拆成分镜、视频素材、成片交付和复盘清单，适合理解多步骤内容生产。</p>
-  <dl class="case-meta">
-    <div><dt>类型</dt><dd>内容生产</dd></div>
-    <div><dt>阶段</dt><dd>从脚本到成片</dd></div>
-    <div><dt>产物</dt><dd>脚本拆解、分镜流程、视频交付路径</dd></div>
-  </dl>
-  <div class="case-tags"><span>内容</span><span>视频</span><span>分镜</span></div>
-  <div class="case-actions">
-    <a class="case-link primary" href="./codex-novel-video-case.html">打开案例</a>
-  </div>
+  <aside class="case-row-side">
+    <div class="case-row-outcome">
+      <strong>最终产物</strong>
+      <span>脚本拆解、分镜流程、视频交付路径</span>
+    </div>
+    <div class="case-actions">
+      <a class="case-link primary" href="./codex-novel-video-case.html">打开案例</a>
+    </div>
+  </aside>
 </article>
-<article class="showcase-case">
-  <div class="case-topline">
-    <span class="case-index">案例 03</span>
-    <span class="case-status">课程化</span>
+<article class="case-row" data-case-row data-track="流程自动化" data-search="Dify + Codex 自动化 流程自动化 课程化 从部署到工作流 看 Codex 搭平台、Docker 部署、Wiki 发布、Bug 飞书文档和自动 Code Review 如何串成自动化流程。 Dify 部署步骤、三条自动化流程、工作纸 Dify Docker Code Review">
+  <div class="case-row-main">
+    <div class="case-row-topline">
+      <span class="case-index">案例 03</span>
+      <span class="case-status">课程化</span>
+      <span class="case-status">流程自动化</span>
+    </div>
+    <h3>Dify + Codex 自动化</h3>
+    <p>看 Codex 搭平台、Docker 部署、Wiki 发布、Bug 飞书文档和自动 Code Review 如何串成自动化流程。</p>
+    <div class="case-row-meta">
+      <span>从部署到工作流</span>
+      <span>Dify</span><span>Docker</span><span>Code Review</span>
+    </div>
   </div>
-  <h3>Dify + Codex 自动化</h3>
-  <p>看 Codex 搭平台、Docker 部署、Wiki 发布、Bug 飞书文档和自动 Code Review 如何串成自动化流程。</p>
-  <dl class="case-meta">
-    <div><dt>类型</dt><dd>流程自动化</dd></div>
-    <div><dt>阶段</dt><dd>从部署到工作流</dd></div>
-    <div><dt>产物</dt><dd>Dify 部署步骤、三条自动化流程、工作纸</dd></div>
-  </dl>
-  <div class="case-tags"><span>Dify</span><span>Docker</span><span>Code Review</span></div>
-  <div class="case-actions">
-    <a class="case-link primary" href="./lessons/lesson-25-dify-codex-workflow.html">打开案例</a>
-    <a class="case-link secondary" href="./lessons/lesson-25-dify-codex-workflow-worksheet.html">打开工作纸</a>
-  </div>
+  <aside class="case-row-side">
+    <div class="case-row-outcome">
+      <strong>最终产物</strong>
+      <span>Dify 部署步骤、三条自动化流程、工作纸</span>
+    </div>
+    <div class="case-actions">
+      <a class="case-link primary" href="./lessons/lesson-25-dify-codex-workflow.html">打开案例</a>
+          <a class="case-link secondary" href="./lessons/lesson-25-dify-codex-workflow-worksheet.html">打开工作纸</a>
+    </div>
+  </aside>
 </article></div>
+      <div class="case-empty-state" data-case-empty>没有匹配的案例。换一个关键词，或先查看全部类型。</div>
+    </div>
+  </div>
 </section>
 
 <div class="footer">
@@ -1293,6 +1540,50 @@ li { margin-bottom: 8px; }
       closeLightbox();
     }
   });
+})();
+</script>
+
+
+<script>
+(() => {
+  const board = document.querySelector('[data-case-board]');
+  if (!board) return;
+
+  const rows = Array.from(board.querySelectorAll('[data-case-row]'));
+  const search = board.querySelector('[data-case-search]');
+  const count = board.querySelector('[data-case-count]');
+  const empty = board.querySelector('[data-case-empty]');
+  const filterButtons = Array.from(board.querySelectorAll('[data-case-filter]'));
+  let activeTrack = 'all';
+
+  function normalize(text) {
+    return (text || '').toLowerCase().trim();
+  }
+
+  function updateCases() {
+    const query = normalize(search ? search.value : '');
+    let visible = 0;
+    rows.forEach((row) => {
+      const matchesTrack = activeTrack === 'all' || row.dataset.track === activeTrack;
+      const haystack = normalize(row.dataset.search);
+      const matchesQuery = !query || haystack.includes(query);
+      const show = matchesTrack && matchesQuery;
+      row.hidden = !show;
+      if (show) visible += 1;
+    });
+    if (count) count.textContent = String(visible);
+    if (empty) empty.classList.toggle('show', visible === 0);
+  }
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      activeTrack = button.dataset.caseFilter || 'all';
+      filterButtons.forEach((item) => item.classList.toggle('active', item === button));
+      updateCases();
+    });
+  });
+  if (search) search.addEventListener('input', updateCases);
+  updateCases();
 })();
 </script>
 
