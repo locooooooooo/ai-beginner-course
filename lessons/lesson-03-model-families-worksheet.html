@@ -314,7 +314,16 @@ li { margin-bottom: 8px; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
-.lesson-visual img {
+.image-zoom-trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: zoom-in;
+}
+.image-zoom-trigger img {
   width: 100%;
   max-height: 360px;
   object-fit: contain;
@@ -323,10 +332,81 @@ li { margin-bottom: 8px; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
+.image-zoom-trigger span {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  color: #ffffff;
+  background: rgba(15, 23, 42, 0.72);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+.image-zoom-trigger:focus-visible {
+  outline: 3px solid rgba(15, 118, 110, 0.35);
+  outline-offset: 4px;
+  border-radius: var(--radius);
+}
 .lesson-visual figcaption {
   margin-top: 8px;
   color: var(--muted);
   font-size: 0.92rem;
+}
+.lesson-visual figcaption a {
+  color: var(--primary);
+  font-weight: 800;
+}
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.86);
+}
+.image-lightbox.open {
+  display: flex;
+}
+.image-lightbox-panel {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  max-width: 96vw;
+  max-height: 94vh;
+}
+.image-lightbox img {
+  max-width: 96vw;
+  max-height: 86vh;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: var(--radius);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.35);
+}
+.image-lightbox-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.image-lightbox-actions a,
+.image-lightbox-actions button {
+  min-height: 40px;
+  padding: 8px 12px;
+  color: #ffffff;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: var(--radius);
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+.image-lightbox-actions button {
+  background: var(--primary);
+  border-color: var(--primary);
 }
 .visual-chain {
   display: grid;
@@ -1219,5 +1299,61 @@ li { margin-bottom: 8px; }
   <a class="btn primary" href="./lesson-04-ai-boundaries-worksheet.html">下一课工作纸</a>
 </nav>
 <div class="footer">AI学习路线 · 练习工作纸 · 写下产物才算完成</div></main>
+
+<script>
+(() => {
+  const triggers = document.querySelectorAll('[data-image-src]');
+  if (!triggers.length) return;
+
+  const lightbox = document.createElement('div');
+  lightbox.className = 'image-lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.innerHTML = `
+    <div class="image-lightbox-panel">
+      <img alt="" />
+      <div class="image-lightbox-actions">
+        <a href="#" target="_blank" rel="noopener noreferrer">打开原图</a>
+        <button type="button">关闭</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+
+  const image = lightbox.querySelector('img');
+  const originalLink = lightbox.querySelector('a');
+  const closeButton = lightbox.querySelector('button');
+  let lastTrigger = null;
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    image.removeAttribute('src');
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      lastTrigger = trigger;
+      const src = trigger.dataset.imageSrc;
+      image.src = src;
+      image.alt = trigger.dataset.imageAlt || '';
+      originalLink.href = src;
+      lightbox.classList.add('open');
+      closeButton.focus();
+    });
+  });
+
+  closeButton.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+      closeLightbox();
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
