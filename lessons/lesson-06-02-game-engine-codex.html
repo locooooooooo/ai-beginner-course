@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第22课 用Codex做游戏引擎原型</title>
+  <title>入门 6-2 用Codex做游戏引擎原型</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -1507,29 +1507,29 @@ li { margin-bottom: 8px; }
   <a class="brand" href="../course.html">AI入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
-    <a href="../course.html#advanced">游戏落地</a>
+    <a href="../course.html#advanced">老鸟进阶</a>
     <a href="../case-library.html">案例库</a>
     <a href="../mindmap-hub.html">资源</a>
   </div>
 </nav>
 <header class="hero">
   <div>
-    <div class="eyebrow">第六章：游戏场景落地 · 第22课</div>
-    <h1>第22课：用Codex做游戏引擎原型</h1>
+    <div class="eyebrow">第六章：游戏场景落地 · 入门 6-2</div>
+    <h1>入门 6-2：用Codex做游戏引擎原型</h1>
     <p class="lead">学会把 Unreal、Unity 或 Godot 中的原型任务写成 Codex 能执行、能运行、能验收的小工单。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
-      <a class="btn" href="./lesson-22-game-engine-codex-worksheet.html">打开工作纸</a>
+      <a class="btn" href="./lesson-06-02-game-engine-codex-worksheet.html">打开工作纸</a>
     </div>
   </div>
   <aside class="progress-panel" aria-label="学习进度">
     <strong>当前进度</strong>
     <div class="progress-meta">
-      <span>22 / 25</span>
-      <span>88%</span>
+      <span>22 / 30</span>
+      <span>73%</span>
     </div>
-    <div class="progress-bar"><span style="width:88%"></span></div>
+    <div class="progress-bar"><span style="width:73%"></span></div>
     <ol class="mini-steps">
       <li>先读核心问题</li>
       <li>抓住 3 个最小原理</li>
@@ -1645,7 +1645,7 @@ li { margin-bottom: 8px; }
     <article class="card">
       <span class="label">先记住</span>
       <h2>本课只抓 3 件事</h2>
-      <ul><li>游戏引擎任务要先拆成场景对象、组件、脚本、资源、输入和运行配置</li><li>Codex 适合改 C#、C++、Blueprint 辅助脚本、Editor 工具和项目文档，但需要明确范围</li><li>引擎原型的验收不是代码能保存，而是能启动、能操作、能截图、能记录问题</li></ul>
+      <ul><li>游戏引擎任务要先拆成场景对象、组件、脚本、资源、输入和运行配置</li><li>Unity 已经把项目感知助手、AI Gateway 和官方 MCP Server 放进 Unity AI 方向；Unreal 侧则常见 MCP Server 加 Editor/Python 插件的桥接方案</li><li>Codex 适合改 C#、C++、Blueprint 辅助脚本、Editor 工具和项目文档，但需要明确范围</li><li>引擎原型的验收不是代码能保存，而是能启动、能操作、能截图、能记录问题</li></ul>
     </article>
     <article class="card">
       <span class="label">想明白</span>
@@ -1683,7 +1683,7 @@ li { margin-bottom: 8px; }
 <article class="case-practice-card">
   <div class="case-practice-head">
     <span>案例 02</span>
-    <strong>Unreal 里补一个拾取物 Actor、碰撞反馈和屏幕提示</strong>
+    <strong>Unreal 里通过受控插件或编辑器脚本补一个拾取物 Actor、碰撞反馈和屏幕提示</strong>
   </div>
   <div class="case-practice-grid">
     <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
@@ -1752,15 +1752,15 @@ li { margin-bottom: 8px; }
   <span class="step-no">2</span>
   <div>
     <h3>给 Codex 的游戏工单怎么写</h3>
-    <p><strong>先讲清：</strong>Codex 适合改 C#、C++、Blueprint 辅助脚本、Editor 工具和项目文档，但需要明确范围。</p>
-    <p><strong>再落地：</strong>把它放进“Unreal 里补一个拾取物 Actor、碰撞反馈和屏幕提示”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>先讲清：</strong>Unity 已经把项目感知助手、AI Gateway 和官方 MCP Server 放进 Unity AI 方向；Unreal 侧则常见 MCP Server 加 Editor/Python 插件的桥接方案。</p>
+    <p><strong>再落地：</strong>把它放进“Unreal 里通过受控插件或编辑器脚本补一个拾取物 Actor、碰撞反馈和屏幕提示”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
     <p><strong>马上做：</strong>每个工单只改一个功能：移动、拾取、UI、门、敌人或保存点。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">3</span>
   <div>
     <h3>Unity 与 Unreal 的常见交付物</h3>
-    <p><strong>先讲清：</strong>引擎原型的验收不是代码能保存，而是能启动、能操作、能截图、能记录问题。</p>
+    <p><strong>先讲清：</strong>Codex 适合改 C#、C++、Blueprint 辅助脚本、Editor 工具和项目文档，但需要明确范围。</p>
     <p><strong>再落地：</strong>把它放进“Godot 里用脚本快速搭一个 2D 平台跳跃测试场景”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
     <p><strong>马上做：</strong>要求 Codex 输出运行方式、试玩步骤、风险和下一轮建议。</p>
   </div>
@@ -1768,7 +1768,7 @@ li { margin-bottom: 8px; }
   <span class="step-no">4</span>
   <div>
     <h3>运行、试玩和回滚验收</h3>
-    <p><strong>先讲清：</strong>游戏引擎任务要先拆成场景对象、组件、脚本、资源、输入和运行配置。</p>
+    <p><strong>先讲清：</strong>引擎原型的验收不是代码能保存，而是能启动、能操作、能截图、能记录问题。</p>
     <p><strong>再落地：</strong>把它放进“Unity 里生成一个可移动角色、金币收集物和计分 UI 的灰盒原型”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
     <p><strong>马上做：</strong>先让 Codex 读取项目结构，说明引擎版本、入口场景和可改范围。</p>
   </div>
@@ -1797,7 +1797,7 @@ li { margin-bottom: 8px; }
   <h2>学完后怎么继续扩展</h2>
   <p class="small-note">下一课会进入“用Agent编写游戏玩法代码”，你要带着本课产物继续往下用。</p>
   <div class="toolbar">
-    <a class="btn primary" href="./lesson-22-game-engine-codex-worksheet.html">打开本课练习工作纸</a>
+    <a class="btn primary" href="./lesson-06-02-game-engine-codex-worksheet.html">打开本课练习工作纸</a>
   </div>
 </article>
 
@@ -1876,7 +1876,7 @@ li { margin-bottom: 8px; }
       <h2>给 AI 的跟做提示</h2>
       <pre class="copy-prompt"><code>我正在学习「用Codex做游戏引擎原型」，请用新手能听懂的话教我。
 先用 120 字以内解释它，不要堆术语。
-再结合这两个场景举例：Unity 里生成一个可移动角色、金币收集物和计分 UI 的灰盒原型；Unreal 里补一个拾取物 Actor、碰撞反馈和屏幕提示。
+再结合这两个场景举例：Unity 里生成一个可移动角色、金币收集物和计分 UI 的灰盒原型；Unreal 里通过受控插件或编辑器脚本补一个拾取物 Actor、碰撞反馈和屏幕提示。
 然后问我 3 个检查理解的问题。
 最后帮我完成这个练习：把一个“玩家收集 10 个能量球并开门”的玩法，拆成 3 个 Codex 工单：场景、脚本、验收，每个工单写清可改文件和通过标准。</code></pre>
     </article>
@@ -1888,8 +1888,8 @@ li { margin-bottom: 8px; }
   </aside>
 </div>
 <nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-21-game-ai-landscape.html">上一课：游戏行业为什么开始重视AI工作流</a>
-  <a class="btn primary" href="./lesson-23-agent-gameplay-code.html">下一课：用Agent编写游戏玩法代码</a>
+  <a class="btn" href="./lesson-06-01-game-ai-landscape.html">上一课：入门 6-1 游戏行业为什么开始重视AI工作流</a>
+  <a class="btn primary" href="./lesson-06-03-agent-gameplay-code.html">下一课：入门 6-3 用Agent编写游戏玩法代码</a>
 </nav>
 <div class="footer">AI学习路线 · 第一性原则版逐课教程</div></main>
 

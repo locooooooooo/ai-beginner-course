@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第25课练习工作纸 MCP在游戏开发中的使用</title>
+  <title>第25课 你真的会用Dify吗？</title>
   <style>
 :root {
   --canvas: #f6f7fb;
@@ -1506,183 +1506,246 @@ li { margin-bottom: 8px; }
   <main class="wrap"><nav class="topbar" aria-label="课程导航">
   <a class="brand" href="../course.html">AI入门课</a>
   <div class="navlinks">
-    <a href="./lesson-25-game-dev-mcp.html">返回主讲义</a>
     <a href="../course.html#beginner">新手入门</a>
-    <a href="../course.html#advanced">游戏落地</a>
+    <a href="../course.html#advanced">老鸟进阶</a>
+    <a href="../case-library.html">案例库</a>
     <a href="../mindmap-hub.html">资源</a>
   </div>
 </nav>
-<header class="hero worksheet-hero">
+<header class="hero">
   <div>
-    <div class="eyebrow">第六章：游戏场景落地 · 第25课工作纸</div>
-    <h1>第25课练习工作纸：MCP在游戏开发中的使用</h1>
-    <p class="lead">这页不是再讲一遍课，而是让你把本课写成自己的可用产物。打开后按空格填写，最后再回主讲义自检。</p>
+    <div class="eyebrow">老鸟进阶：Codex 扩展学习 · 第25课</div>
+    <h1>第25课：你真的会用Dify吗？</h1>
+    <p class="lead">学会用 Codex 搭建 Dify 平台、完成 Docker 部署，并把 Wiki 发布、Bug 汇总和自动 Code Review 做成自动化流程。</p>
     <div class="toolbar">
-      <a class="btn primary" href="#worksheet">开始填写</a>
-      <a class="btn" href="./lesson-25-game-dev-mcp.html">回到主讲义</a>
+      <a class="btn primary" href="#start">开始本课</a>
+      <a class="btn" href="#practice">做完练习</a>
+      <a class="btn" href="./lesson-25-dify-codex-workflow-worksheet.html">打开工作纸</a>
     </div>
   </div>
-  <aside class="starter-panel">
-    <strong>本课交付物</strong>
-    <p class="small-note">设计一个“AI 帮我做游戏 UI 和引擎原型”的 MCP 工作流：列出 Figma、Unity 或 Unreal、文件系统、截图验收、人工确认和回滚机制。</p>
+  <aside class="progress-panel" aria-label="学习进度">
+    <strong>当前进度</strong>
+    <div class="progress-meta">
+      <span>30 / 30</span>
+      <span>100%</span>
+    </div>
+    <div class="progress-bar"><span style="width:100%"></span></div>
+    <ol class="mini-steps">
+      <li>先读核心问题</li>
+      <li>抓住 3 个最小原理</li>
+      <li>完成一个可交付练习</li>
+    </ol>
   </aside>
 </header>
-<section class="callout">
-  <span class="label">填写原则</span>
-  <h2>写给自己看，不写给老师看</h2>
-  <p>每个空格都尽量写真实工作或生活里的内容。页面里的输入框适合边学边写，但不会自动保存；需要保留时请复制到自己的笔记或文档。</p>
+<section class="callout" id="start">
+  <span class="label">为什么要学</span>
+  <h2>核心问题</h2>
+  <p>为什么 Dify 不只是一个聊天应用搭建器，而是可以和 Codex 一起组成自动化工作流入口？</p>
 </section>
 <section class="card">
   <span class="label">学习元信息</span>
   <h2>开始前先确认这些边界</h2>
   <div class="lesson-meta-grid"><div class="meta-item">
   <strong>预计用时</strong>
-  <span>45-60 分钟</span>
+  <span>30-45 分钟</span>
 </div><div class="meta-item">
   <strong>难度</strong>
-  <span>进阶</span>
+  <span>入门</span>
 </div><div class="meta-item">
   <strong>需要工具</strong>
-  <span>Codex 或其他支持 MCP 的 Agent；Figma、Unity 或 Unreal 项目可选</span>
+  <span>任意聊天式 AI 工具；也可以只看页面完成纸面练习</span>
 </div><div class="meta-item">
   <strong>隐私边界</strong>
-  <span>MCP 会连接真实工具和项目，练习时先用测试文件；写权限、删除、批量重命名和发布动作必须人工确认。</span>
+  <span>练习时使用公开或虚构材料，不上传客户隐私、内部资料、账号信息或未公开策略。</span>
 </div><div class="meta-item">
   <strong>更新时间</strong>
   <span>2026-06-17</span>
 </div><div class="meta-item">
   <strong>来源提示</strong>
-  <span>本课基于 MCP 官方架构说明、Figma Dev Mode MCP 文档、Unity MCP 趋势和 Unreal 社区 UEMCP 工作流整理；具体服务器能力、授权和 API 会随版本变化。</span>
+  <span>本课强调稳定方法和学习路径；具体工具能力以实际产品为准。</span>
 </div></div>
 </section>
-<section class="worksheet-grid" id="worksheet">
-  <article class="worksheet-block">
-    <span class="label">1. 课前定位</span>
-    <h2>我为什么要学这一课</h2>
-    <p>为什么 MCP 对游戏开发重要？因为游戏项目里最难的不是让 AI 回答，而是让它安全地看见项目、调用工具、修改场景、读取设计并留下证据。</p>
-    <label class="writing-label"><span>我的困惑</span><textarea class="writing-box" aria-label="我的困惑" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我希望这节课解决的问题</span><textarea class="writing-box" aria-label="我希望这节课解决的问题" placeholder="在这里写下你的答案。"></textarea></label>
-  </article>
-  <article class="worksheet-block">
-    <span class="label">2. 概念翻译</span>
-    <h2>把术语翻译成人话</h2>
-    <div class="worksheet-list"><div class="principle-block"><strong>关键点 1</strong><span>MCP 是把 AI 应用和外部工具连接起来的协议，核心是工具、资源、提示和权限边界</span></div><div class="principle-block"><strong>关键点 2</strong><span>Unity MCP、UEMCP、Figma MCP 代表三类游戏开发连接：引擎编辑器、项目脚本和设计稿</span></div><div class="principle-block"><strong>关键点 3</strong><span>游戏开发使用 MCP 必须设置权限、日志、人工确认、版本控制和失败回滚</span></div></div>
-    <label class="writing-label"><span>我自己的 120 字解释</span><textarea class="writing-box large" aria-label="我自己的 120 字解释" placeholder="在这里写下你的答案。"></textarea></label>
-  </article>
-  <article class="worksheet-block">
-    <span class="label">3. 场景拆解</span>
-    <h2>选一个自己的场景来套</h2>
-    <p class="small-note">可以参考这些案例：Unity MCP：让 Agent 查询场景对象、创建测试关卡、管理资源并生成编辑器内工作流；UEMCP：让 Agent 读取 Unreal 项目上下文，辅助生成 Actor、Blueprint 流程和自动化检查；Figma MCP：让 Agent 读取 UI 设计上下文，把血条、背包、技能按钮翻译成前端或 UMG 实现要求</p>
-    <div class="worksheet-table">
-      <div><strong>我的场景</strong><span>例如一个真实任务、一个业务流程或一次学习需求。</span></div>
-      <div><strong>输入</strong><span>我会给 AI 什么材料、背景、限制或数据。</span></div>
-      <div><strong>AI 动作</strong><span>AI 负责生成、总结、分类、检索、执行还是连接工具。</span></div>
-      <div><strong>人工检查</strong><span>我怎么确认结果没有跑偏或出错。</span></div>
-      <div><strong>最终输出</strong><span>最后能留下什么文件、话术、流程图、清单或页面。</span></div>
-    </div>
-  </article>
-  <article class="worksheet-block">
-    <span class="label">4. 跟做任务</span>
-    <h2>完成本课产物</h2>
-    <p>设计一个“AI 帮我做游戏 UI 和引擎原型”的 MCP 工作流：列出 Figma、Unity 或 Unreal、文件系统、截图验收、人工确认和回滚机制。</p>
-    <label class="writing-label"><span>我的产物草稿</span><textarea class="writing-box extra-large" aria-label="我的产物草稿" placeholder="在这里写下你的答案。"></textarea></label>
-  </article>
+<div class="grid">
+  <main>
 
-  <article class="worksheet-block">
-    <span class="label">助教示范</span>
-    <h2>从 Figma 血条设计到引擎 UI 原型</h2>
-    <p>MCP 可以理解成 AI 和工具之间的连接协议。游戏开发里，它能让 Agent 读取 Figma 设计、查询引擎场景、调用脚本或整理文件，但每个工具能读什么、能写什么、何时需要人确认，都必须提前设边界。</p>
-    <ol class="walkthrough-list"><li>Figma MCP：读取血条、技能按钮、背包格子的尺寸、颜色、间距和状态。</li><li>Agent：生成 UI 实现清单和组件命名，不直接改正式项目。</li><li>引擎 MCP：在测试场景创建 UI 预制体或 UMG 草稿。</li><li>验收：截图对比设计稿、记录差异、人工确认后再进入正式分支。</li></ol>
-    <label class="writing-label"><span>我照这个案例改成自己的版本</span><textarea class="writing-box large" aria-label="我照这个案例改成自己的版本" placeholder="在这里写下你的答案。"></textarea></label>
-  </article>
-  <article class="worksheet-block">
-    <span class="label">理解检查</span>
-    <h2>先回答，再继续下一课</h2>
-    <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>这个 MCP 工作流只读、可写、还是会影响正式项目？</span></div><div class="check-item"><strong>2</strong><span>哪些动作必须人工确认？</span></div><div class="check-item"><strong>3</strong><span>是否留下工具调用日志、变更文件、截图和回滚方式？</span></div></div>
-    <label class="writing-label"><span>我还没想明白的问题</span><textarea class="writing-box" aria-label="我还没想明白的问题" placeholder="在这里写下你的答案。"></textarea></label>
-  </article>
 
-  <article class="worksheet-block worksheet-case-practice">
-    <span class="label">多案例填写</span>
-    <h2>把同一个方法写进 3 个真实场景</h2>
-    <p class="small-note">先看示意，再写自己的案例。不要照抄页面内容，要换成你自己的业务、工作或学习场景。</p>
-    <div class="worksheet-case-list">
-  <article class="worksheet-case-card">
-    <span class="label">案例 01</span>
-    <h3>Unity MCP：让 Agent 查询场景对象、创建测试关卡、管理资源并生成编辑器内工作流</h3>
-    <div class="worksheet-case-grid">
-      <div><strong>输入</strong><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
-      <div><strong>AI 动作</strong><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-      <div><strong>人工检查</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
-      <div><strong>交付物</strong><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
-    </div>
-    <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
-    <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
-  </article>
-  <article class="worksheet-case-card">
-    <span class="label">案例 02</span>
-    <h3>UEMCP：让 Agent 读取 Unreal 项目上下文，辅助生成 Actor、Blueprint 流程和自动化检查</h3>
-    <div class="worksheet-case-grid">
-      <div><strong>输入</strong><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
-      <div><strong>AI 动作</strong><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-      <div><strong>人工检查</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
-      <div><strong>交付物</strong><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
-    </div>
-    <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
-    <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
-  </article>
-  <article class="worksheet-case-card">
-    <span class="label">案例 03</span>
-    <h3>Figma MCP：让 Agent 读取 UI 设计上下文，把血条、背包、技能按钮翻译成前端或 UMG 实现要求</h3>
-    <div class="worksheet-case-grid">
-      <div><strong>输入</strong><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
-      <div><strong>AI 动作</strong><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-      <div><strong>人工检查</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
-      <div><strong>交付物</strong><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
-    </div>
-    <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
-    <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
-  </article></div>
-  </article>
-  <article class="worksheet-block">
-    <span class="label">5. 风险检查</span>
-    <h2>哪些地方不能直接相信</h2>
-    <div class="worksheet-list"><div class="principle-block"><strong>风险 1</strong><span>把 MCP 当成万能插件，一上来给 Agent 全项目写权限。</span></div><div class="principle-block"><strong>风险 2</strong><span>只看工具调用成功，不检查引擎场景、设计还原和运行结果。</span></div><div class="principle-block"><strong>风险 3</strong><span>没有日志和回滚，导致 Agent 改坏资源后无法定位原因。</span></div></div>
-    <label class="writing-label"><span>我需要额外验证的内容</span><textarea class="writing-box" aria-label="我需要额外验证的内容" placeholder="在这里写下你的答案。"></textarea></label>
-  </article>
-  <article class="worksheet-block">
-    <span class="label">6. 复盘升级</span>
-    <h2>下一次我会怎么问得更好</h2>
-    <div class="worksheet-list"><div class="principle-block"><strong>改进 1</strong><span>先选一个低风险工作流：读取 Figma UI、生成 UI 实现清单、创建测试场景或检查资源命名。</span></div><div class="principle-block"><strong>改进 2</strong><span>明确每个 MCP 工具能读什么、能写什么、哪些动作必须人工确认。</span></div><div class="principle-block"><strong>改进 3</strong><span>把运行日志、变更文件、截图和试玩记录作为验收证据。</span></div></div>
-    <label class="writing-label"><span>下一次我要补充的上下文、工具或数据</span><textarea class="writing-box large" aria-label="下一次我要补充的上下文、工具或数据" placeholder="在这里写下你的答案。"></textarea></label>
-  </article>
 
-  <article class="worksheet-block">
-    <span class="label">7. 小测验</span>
-    <h2>先自己答，再展开参考思路</h2>
-    <label class="writing-label"><span>我的小测答案</span><textarea class="writing-box large" aria-label="我的小测答案" placeholder="在这里写下你的答案。"></textarea></label>
-    <div class="quiz-list"><details class="quiz-item">
-  <summary>这个 MCP 工作流只读、可写、还是会影响正式项目？</summary>
-  <p>MCP 是把 AI 应用和外部工具连接起来的协议，核心是工具、资源、提示和权限边界</p>
+    <section class="learner-brief">
+      <span class="label">先怎么学</span>
+      <h2>按这节课自己的任务跑 4 步</h2>
+      <p class="small-note">每一课的学习路线都不同。先抓本课最关键的问题，再用案例和产物证明自己真的会用。</p>
+      <div class="flow">
+        <div class="flow-step">
+          <strong>1. Dify 能做什么</strong>
+          <span>先把本课对象画成链路：Dify 能做什么。标出输入、处理、输出和反馈。</span>
+        </div>
+        <div class="flow-step">
+          <strong>2. 用 Codex 部署 Dify 的步骤</strong>
+          <span>再把关键点拆成系统部件：Dify 适合把模型、知识库、工具调用和流程编排做成可复用应用。不要把所有责任都塞给模型。</span>
+        </div>
+        <div class="flow-step">
+          <strong>3. 三条自动化流程 Wiki/Bug/Review</strong>
+          <span>套进“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”这个任务，明确哪一步由 AI 做，哪一步由工具或人完成。</span>
+        </div>
+        <div class="flow-step">
+          <strong>4. 权限/日志和运维边界</strong>
+          <span>最后补验收、权限和失败处理：先用 Docker 跑起 Dify，并记录环境变量和访问地址。 本课产物：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span>
+        </div></div>
+    </section>
+    <article class="card">
+      <span class="label">先记住</span>
+      <h2>本课只抓 3 件事</h2>
+      <ul><li>Dify 适合把模型、知识库、工具调用和流程编排做成可复用应用</li><li>Codex 适合搭建、排错、改配置、写脚本和验证部署结果</li><li>Dify + Codex 可以把 Wiki 发布、Bug 汇总、Code Review 串成团队流程</li></ul>
+    </article>
+    <article class="card">
+      <span class="label">想明白</span>
+      <h2>第一性拆解</h2>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把 Dify 看成流程入口，而不是一个简单聊天框。</span></div><div class="principle-block"><strong>拆解 2</strong><span>Codex 负责工程侧：部署、配置、脚本、日志和验证。</span></div><div class="principle-block"><strong>拆解 3</strong><span>Dify 负责应用侧：模型、知识库、工具、流程和团队入口。</span></div></div>
+    </article>
+    <article class="card">
+      <span class="label">可迁移</span>
+      <h2>最小原理</h2>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：Dify 把 AI 能力包装成可复用应用。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：Codex 把部署和工程维护变成可执行任务。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：自动化流程必须有权限、日志和人工确认。</span></div></div>
+    </article>
+    <article class="card">
+      <span class="label">怎么学</span>
+      <h2>读完后怎么把它用出来</h2>
+      <ul><li>Dify 能做什么</li><li>用 Codex 部署 Dify 的步骤</li><li>三条自动化流程：Wiki、Bug、Review</li><li>权限、日志和运维边界</li></ul>
+    </article>
+<article class="card case-practice">
+  <span class="label">多案例演练</span>
+  <h2>把同一个概念迁移到 3 个真实场景</h2>
+  <p class="small-note">先用四格拆场景，再看课堂演练和对照案例。练的不是背定义，而是把同一方法迁移到不同任务。</p>
+  <div class="case-practice-list">
+<article class="case-practice-card primary">
+  <div class="case-practice-head">
+    <span>案例 01</span>
+    <strong>Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
+    <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
+    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
+    <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
+  </div>
+  <p>套用本课方法：先用 Docker 跑起 Dify，并记录环境变量和访问地址。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 02</span>
+    <strong>Bug 飞书文档：用户反馈进入 Dify，Codex 归纳、分类并生成修复任务</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
+    <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
+    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
+    <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
+  </div>
+  <p>套用本课方法：再设计流程输入、处理、输出和失败处理。</p>
+</article>
+<article class="case-practice-card">
+  <div class="case-practice-head">
+    <span>案例 03</span>
+    <strong>自动 Code Review：Dify 触发检查，Codex 输出风险点和测试建议</strong>
+  </div>
+  <div class="case-practice-grid">
+    <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
+    <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
+    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
+    <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
+  </div>
+  <p>套用本课方法：最后让 Codex 写脚本、检查配置并验证每条流程。</p>
+</article></div>
+</article>
+
+
+<article class="card">
+  <span class="label">分段讲稿</span>
+  <h2>这一课不是背概念，而是按 4 个小段理解</h2>
+  <div class="teaching-grid"><div class="teaching-segment">
+  <span class="step-no">1</span>
+  <div>
+    <h3>Dify 能做什么</h3>
+    <p><strong>先讲清：</strong>Dify 适合把模型、知识库、工具调用和流程编排做成可复用应用。</p>
+    <p><strong>再落地：</strong>把它放进“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先用 Docker 跑起 Dify，并记录环境变量和访问地址。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">2</span>
+  <div>
+    <h3>用 Codex 部署 Dify 的步骤</h3>
+    <p><strong>先讲清：</strong>Codex 适合搭建、排错、改配置、写脚本和验证部署结果。</p>
+    <p><strong>再落地：</strong>把它放进“Bug 飞书文档：用户反馈进入 Dify，Codex 归纳、分类并生成修复任务”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>再设计流程输入、处理、输出和失败处理。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">3</span>
+  <div>
+    <h3>三条自动化流程：Wiki、Bug、Review</h3>
+    <p><strong>先讲清：</strong>Dify + Codex 可以把 Wiki 发布、Bug 汇总、Code Review 串成团队流程。</p>
+    <p><strong>再落地：</strong>把它放进“自动 Code Review：Dify 触发检查，Codex 输出风险点和测试建议”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>最后让 Codex 写脚本、检查配置并验证每条流程。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">4</span>
+  <div>
+    <h3>权限、日志和运维边界</h3>
+    <p><strong>先讲清：</strong>Dify 适合把模型、知识库、工具调用和流程编排做成可复用应用。</p>
+    <p><strong>再落地：</strong>把它放进“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先用 Docker 跑起 Dify，并记录环境变量和访问地址。</p>
+  </div>
+</div></div>
+</article>
+<article class="card">
+  <span class="label">课堂演练</span>
+  <h2>把本课做成一个可检查的小成果</h2>
+  <div class="practice-path">
+    <div>
+      <strong>老师先演示</strong>
+      <span>用“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
+    </div>
+    <div>
+      <strong>你再跟做</strong>
+      <span>设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span>
+    </div>
+    <div>
+      <strong>最后验收</strong>
+      <span>把答案拿去对照“自检”区，如果无法说清场景、输出和风险，就回到工作纸重新补上下文。</span>
+    </div>
+  </div>
+</article>
+<article class="card">
+  <span class="label">下一步</span>
+  <h2>学完后怎么继续扩展</h2>
+  <p class="small-note">这是本阶段最后一课，做完后回到课程总览，把自己的产物整理成一套可复用清单。</p>
+  <div class="toolbar">
+    <a class="btn primary" href="./lesson-25-dify-codex-workflow-worksheet.html">打开本课练习工作纸</a>
+  </div>
+</article>
+
+<article class="card learning-evidence">
+  <span class="label">参考答案</span>
+  <h2>不是标准话术，而是判断自己有没有学会</h2>
+  <ul><li>能用自己的话说明：学会用 Codex 搭建 Dify 平台、完成 Docker 部署，并把 Wiki 发布、Bug 汇总和自动 Code Review 做成自动化流程。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果”开始。</li><li>最终要留下一个可检查的小产物：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</li></ul>
+</article>
+<article class="card learning-evidence">
+  <span class="label">小测验</span>
+  <h2>先自己答，再展开参考思路</h2>
+  <div class="quiz-list"><details class="quiz-item">
+  <summary>这节课解决的核心问题是什么？</summary>
+  <p>Dify 适合把模型、知识库、工具调用和流程编排做成可复用应用</p>
 </details><details class="quiz-item">
-  <summary>哪些动作必须人工确认？</summary>
+  <summary>把这节课放进真实场景时，第一步应该拆什么？</summary>
   <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
 </details><details class="quiz-item">
-  <summary>是否留下工具调用日志、变更文件、截图和回滚方式？</summary>
-  <p>把 MCP 当成万能插件，一上来给 Agent 全项目写权限。</p>
+  <summary>这一课最容易犯的错误是什么？</summary>
+  <p>只会点界面，不知道部署和数据在哪里。</p>
 </details></div>
-  </article>
-  <article class="worksheet-block">
-    <span class="label">8. 对照改进</span>
-    <h2>参考答案和评分标准</h2>
-    <ul class="reference-list"><li>一个安全的游戏 MCP 工作流应先读设计和项目上下文，再生成实现清单，最后只在测试场景或分支执行。</li><li>Figma 负责 UI 设计上下文，Unity 或 Unreal 负责引擎原型，文件系统负责资源清单，截图工具负责验收证据。</li><li>必须写清人工确认点、日志、版本控制、回滚机制和禁止动作，尤其是删除、批量重命名、提交和发布。</li></ul>
-    <div class="rubric-grid"><div class="rubric-item">
+</article>
+<article class="card learning-evidence">
+  <span class="label">评分标准</span>
+  <h2>用 3 档判断本课产物质量</h2>
+  <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
   <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
@@ -1692,46 +1755,65 @@ li { margin-bottom: 8px; }
   <strong>需要重做</strong>
   <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
 </div></div>
-  </article>
-  <article class="worksheet-block">
-    <span class="label">9. 术语复述</span>
-    <h2>把本课关键词变成自己的话</h2>
-    <div class="glossary-grid"><div class="glossary-item">
-  <strong>MCP</strong>
-  <span>Model Context Protocol，让 AI 应用通过标准方式连接工具、资源和提示。</span>
-</div><div class="glossary-item">
-  <strong>工具调用</strong>
-  <span>Agent 通过 MCP 执行一个外部动作，比如读取设计、列文件、创建对象。</span>
-</div><div class="glossary-item">
-  <strong>只读权限</strong>
-  <span>Agent 只能查看信息，不能修改项目。</span>
-</div><div class="glossary-item">
-  <strong>人工确认点</strong>
-  <span>高风险动作执行前必须由人明确批准的暂停节点。</span>
-</div></div>
-    <label class="writing-label"><span>我自己的术语解释</span><textarea class="writing-box" aria-label="我自己的术语解释" placeholder="在这里写下你的答案。"></textarea></label>
 </article>
-</section>
-<section class="notes-wrap">
-  <article class="notes">
-    <span class="label">助教提示</span>
-    <h3>可以复制给 AI 陪练</h3>
-    <pre class="copy-prompt"><code>我已经学完「MCP在游戏开发中的使用」，现在要完成本课工作纸。
-请你像助教一样追问我，不要直接替我编答案。
-本课产物是：设计一个“AI 帮我做游戏 UI 和引擎原型”的 MCP 工作流：列出 Figma、Unity 或 Unreal、文件系统、截图验收、人工确认和回滚机制。
-请按这 5 步带我完成：1. 用人话复述概念；2. 选择一个真实场景；3. 写输入、AI动作、人工检查、输出；4. 标出风险；5. 总结下一步改进。</code></pre>
-  </article>
-  <article class="notes">
-    <span class="label">完成后检查</span>
-    <h3>本课通过标准</h3>
-    <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「MCP在游戏开发中的使用」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：设计一个“AI 帮我做游戏 UI 和引擎原型”的 MCP 工作流：列出 Figma、Unity 或 Unreal、文件系统、截图验收、人工确认和回滚机制。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
-  </article>
-</section>
-<nav class="pager" aria-label="上一课下一课工作纸">
-  <a class="btn" href="./lesson-24-game-art-assets-worksheet.html">上一课工作纸</a>
+<article class="card learning-evidence">
+  <span class="label">术语表</span>
+  <h2>把这一课的词翻译成人话</h2>
+  <div class="glossary-grid"><div class="glossary-item">
+  <strong>本课核心概念</strong>
+  <span>学会用 Codex 搭建 Dify 平台、完成 Docker 部署，并把 Wiki 发布、Bug 汇总和自动 Code Review 做成自动化流程。</span>
+</div><div class="glossary-item">
+  <strong>输入</strong>
+  <span>交给 AI 的背景、材料、约束、数据或示例。</span>
+</div><div class="glossary-item">
+  <strong>人工检查</strong>
+  <span>人用事实、逻辑、风险和格式标准确认 AI 输出能不能进入真实工作。</span>
+</div><div class="glossary-item">
+  <strong>产物</strong>
+  <span>学习后能留下并复用的文档、清单、模板、流程图、提示词或页面。</span>
+</div></div>
+</article>
+  </main>
+  <aside class="lesson-side">
+    <article class="card">
+      <span class="label">马上用</span>
+      <h2>应用方法</h2>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先用 Docker 跑起 Dify，并记录环境变量和访问地址。</span></div><div class="principle-block"><strong>方法 2</strong><span>再设计流程输入、处理、输出和失败处理。</span></div><div class="principle-block"><strong>方法 3</strong><span>最后让 Codex 写脚本、检查配置并验证每条流程。</span></div></div>
+    </article>
+    <article class="card">
+      <span class="label">避坑</span>
+      <h2>反常识提醒</h2>
+      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>只会点界面，不知道部署和数据在哪里。</span></div><div class="principle-block"><strong>误区 2</strong><span>把生产账号、密钥和发布权限直接交给自动流程。</span></div><div class="principle-block"><strong>误区 3</strong><span>没有日志和回滚，自动化失败后无法追踪。</span></div></div>
+    </article>
+    <article class="card" id="practice">
+      <span class="label">完成标准</span>
+      <h2>做完这件事才算学会</h2>
+      <div class="meta">
+        <div class="meta-item"><strong>本课产物</strong><span>设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span></div>
+        <div class="meta-item"><strong>验收方式</strong><span>能用自己的话解释本课概念，并把它套到一个真实工作或生活场景里。</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <span class="label">可以直接复制</span>
+      <h2>给 AI 的跟做提示</h2>
+      <pre class="copy-prompt"><code>我正在学习「你真的会用Dify吗？」，请用新手能听懂的话教我。
+先用 120 字以内解释它，不要堆术语。
+再结合这两个场景举例：Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果；Bug 飞书文档：用户反馈进入 Dify，Codex 归纳、分类并生成修复任务。
+然后问我 3 个检查理解的问题。
+最后帮我完成这个练习：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</code></pre>
+    </article>
+    <article class="card">
+      <span class="label">自检</span>
+      <h2>学完请确认这 4 件事</h2>
+      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「你真的会用Dify吗？」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+    </article>
+  </aside>
+</div>
+<nav class="pager" aria-label="上一课下一课">
+  <a class="btn" href="./lesson-24-git-github-codex.html">上一课：第24课 Git、GitHub与Codex协作</a>
   <a class="btn primary" href="../course.html">回到课程总览</a>
 </nav>
-<div class="footer">AI学习路线 · 练习工作纸 · 写下产物才算完成</div></main>
+<div class="footer">AI学习路线 · 第一性原则版逐课教程</div></main>
 
 <script>
 (() => {
