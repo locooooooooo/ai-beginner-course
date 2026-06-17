@@ -94,7 +94,8 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
   border-radius: var(--radius);
@@ -138,6 +139,107 @@ li { margin-bottom: 8px; }
   font-family: "Consolas", "SFMono-Regular", monospace;
   font-size: 0.92rem;
   line-height: 1.6;
+}
+.plain-language {
+  margin: 12px 0;
+  padding: 16px;
+  color: #12312d;
+  background: #eef7f5;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+}
+.plain-language strong,
+.deep-script strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.plain-language p,
+.deep-script p {
+  color: var(--muted);
+}
+.deep-script {
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.example-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.example-block {
+  margin-top: 10px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.example-block strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.example-block p,
+.example-block li {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.example-block.bad {
+  border-color: rgba(211, 84, 63, 0.24);
+  background: #fff8f6;
+}
+.example-block.good {
+  border-color: rgba(15, 118, 110, 0.24);
+  background: #eef7f5;
+}
+.learning-evidence ul,
+.reference-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.quiz-item {
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.quiz-item summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 800;
+}
+.quiz-item p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.rubric-grid,
+.glossary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.glossary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.rubric-item,
+.glossary-item {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.rubric-item strong,
+.glossary-item strong {
+  color: var(--primary);
+}
+.rubric-item span,
+.glossary-item span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.walkthrough-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.walkthrough-list li {
+  padding: 8px 0;
 }
 .check-item {
   display: grid;
@@ -311,11 +413,31 @@ li { margin-bottom: 8px; }
 .chapter-outcome strong { color: var(--ink); }
 .lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
 .lesson-item { margin: 0; }
-.lesson-item a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
-.lesson-item a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
+.lesson-item > a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
+.lesson-item > a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
 .lesson-no { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius); color: #ffffff; background: var(--primary); font-weight: 800; }
 .lesson-item strong { display: block; margin-bottom: 4px; }
 .lesson-item span { color: var(--muted); font-size: 14px; }
+.lesson-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  padding-left: 56px;
+}
+.lesson-actions a {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  color: var(--primary);
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
 .callout { padding: 18px; border-left: 4px solid var(--coral); margin-bottom: 18px; }
 .callout p { color: var(--muted); }
 .label { display: inline-block; color: var(--coral); font-weight: 800; font-size: 0.88rem; margin-bottom: 6px; }
@@ -540,8 +662,99 @@ li { margin-bottom: 8px; }
 }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
+.worksheet-hero { align-items: center; }
+.teaching-grid, .practice-path, .worksheet-grid, .worksheet-list, .worksheet-table {
+  display: grid;
+  gap: 12px;
+}
+.teaching-segment {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.teaching-segment h3 {
+  font-family: var(--sans);
+  margin-bottom: 8px;
+}
+.teaching-segment p + p { margin-top: 6px; }
+.teaching-segment p { color: var(--muted); font-size: 0.95rem; }
+.teaching-segment p strong { color: var(--ink); }
+.practice-path {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.practice-path > div {
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.practice-path strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.practice-path span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.worksheet-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+.worksheet-block {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.worksheet-block p { color: var(--muted); }
+.writing-label {
+  display: grid;
+  gap: 8px;
+}
+.writing-label span {
+  color: var(--ink);
+  font-weight: 800;
+}
+.writing-box {
+  min-height: 108px;
+  padding: 12px 14px;
+  width: 100%;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px dashed rgba(15, 118, 110, 0.38);
+  border-radius: var(--radius);
+  font: inherit;
+  line-height: 1.65;
+  resize: vertical;
+}
+.writing-box::placeholder { color: #8a94a3; }
+.writing-box.large { min-height: 150px; }
+.writing-box.extra-large { min-height: 220px; }
+.worksheet-table {
+  grid-template-columns: 1fr;
+}
+.worksheet-table > div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.worksheet-table span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
   .placeholder-track { grid-template-columns: 1fr; }
@@ -563,13 +776,15 @@ li { margin-bottom: 8px; }
   .track-card { min-height: 0; }
   .placeholder-track { padding: 18px; }
   .showcase-point { grid-template-columns: 1fr; }
+  .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
-  .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
+  .lesson-item > a { grid-template-columns: 38px minmax(0, 1fr); }
   .lesson-no { width: 38px; height: 38px; }
+  .lesson-actions { padding-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -595,6 +810,7 @@ li { margin-bottom: 8px; }
     <div class="toolbar">
       <a class="btn primary" href="#start">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
+      <a class="btn" href="./lesson-06-prompt-basics-worksheet.html">打开工作纸</a>
     </div>
   </div>
   <aside class="progress-panel" aria-label="学习进度">
@@ -616,30 +832,104 @@ li { margin-bottom: 8px; }
   <h2>核心问题</h2>
   <p>提示词为什么不是“高级咒语”，而是结构化任务说明？</p>
 </section>
+<section class="card">
+  <span class="label">学习元信息</span>
+  <h2>开始前先确认这些边界</h2>
+  <div class="lesson-meta-grid"><div class="meta-item">
+  <strong>预计用时</strong>
+  <span>35-45 分钟</span>
+</div><div class="meta-item">
+  <strong>难度</strong>
+  <span>入门</span>
+</div><div class="meta-item">
+  <strong>需要工具</strong>
+  <span>任意聊天式 AI 工具；建议使用同一个任务反复改提示词</span>
+</div><div class="meta-item">
+  <strong>隐私边界</strong>
+  <span>示例素材使用虚构商品；不要上传真实未发布商品资料。</span>
+</div><div class="meta-item">
+  <strong>更新时间</strong>
+  <span>2026-06-17</span>
+</div><div class="meta-item">
+  <strong>来源提示</strong>
+  <span>提示词结构会随工具变化，但角色、任务、上下文、格式、示例仍是稳定基础。</span>
+</div></div>
+</section>
 <div class="grid">
   <main>
 
 
+
+<article class="card deep-note-card">
+  <span class="label">深度讲稿</span>
+  <h2>把这一课讲透：先翻译，再演示，再提问</h2>
+  <div class="plain-language">
+    <strong>人话解释</strong>
+    <p>提示词就是结构化任务说明。它通常要讲清角色、任务、上下文、输出格式和示例。提示词越像一份清楚的工作单，结果越容易复用。</p>
+  </div>
+  <div class="deep-script-grid"><div class="deep-script">
+  <strong>把提示词还原成工作单</strong>
+  <p>不要把提示词讲成神秘咒语。让学生想象自己把任务交给一个实习生，必须说清角色、材料、要求、格式和验收点。</p>
+</div><div class="deep-script">
+  <strong>强调输出格式</strong>
+  <p>新手常常只要求“写好一点”，但没有格式。结果看着不错却难复制、难检查、难放进表格。固定格式是提示词最实用的部分。</p>
+</div><div class="deep-script">
+  <strong>用示例降低歧义</strong>
+  <p>如果你想要某种标题风格，就给 1 到 2 个示例。示例不是为了让 AI 抄，而是让它理解你说的风格到底是什么。</p>
+</div></div>
+</article>
+<article class="card">
+  <span class="label">跟做案例</span>
+  <h2>写一篇新品介绍提示词</h2>
+  <ol class="walkthrough-list"><li>设定角色：你是一名电商商品文案编辑。</li><li>说明任务：为新品保温杯写 500 字介绍。</li><li>给上下文：列出材质、容量、人群、卖点。</li><li>定格式：标题、卖点列表、正文、注意事项。</li></ol>
+</article>
+<article class="card worked-example">
+  <span class="label">完整示范</span>
+  <h2>从差输入改到可用输入</h2>
+  <div class="example-grid">
+    <div class="example-block bad">
+      <strong>差输入</strong>
+      <p>写一篇新品介绍，写好一点。</p>
+    </div>
+    <div class="example-block good">
+      <strong>好输入</strong>
+      <p>你是一名电商商品文案编辑。请根据以下信息写一篇 500 字新品介绍：产品是 500ml 不锈钢保温杯，卖点是轻便、防漏、保温 8 小时，受众是通勤上班族。输出格式固定为：1. 标题；2. 三个卖点；3. 500 字正文；4. 不适合夸大的表述清单。</p>
+    </div>
+  </div>
+  <div class="example-block">
+    <strong>输出样例</strong>
+    <p>输出会先给标题，再给三条卖点，正文围绕通勤、水杯重量、密封和保温场景展开，最后列出不能写的夸张词，例如“永久保温”“绝不漏水”。</p>
+  </div>
+  <div class="example-block">
+    <strong>检查点</strong>
+    <ul><li>角色是否让 AI 知道用什么专业视角写。</li><li>任务和素材是否足够完整。</li><li>格式是否方便直接复制到文档或表格。</li></ul>
+  </div>
+</article>
+<article class="card">
+  <span class="label">检查理解</span>
+  <h2>学完后先回答这 3 个问题</h2>
+  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我的提示词有没有说明 AI 扮演什么角色？</span></div><div class="check-item"><strong>2</strong><span>我有没有指定输出格式？</span></div><div class="check-item"><strong>3</strong><span>我有没有给出必要素材，而不是只让 AI 自由发挥？</span></div></div>
+</article>
     <section class="learner-brief">
       <span class="label">先怎么学</span>
-      <h2>先用 4 步把这课跑起来</h2>
-      <p class="small-note">这不是标题清单，是给新手的跟做路线。你不需要先记住所有名词，先把任务做完再回头理解术语。</p>
+      <h2>按这节课自己的任务跑 4 步</h2>
+      <p class="small-note">每一课的学习路线都不同。先抓本课最关键的问题，再用案例和产物证明自己真的会用。</p>
       <div class="flow">
         <div class="flow-step">
-          <strong>1. 先说人话</strong>
-          <span>用自己的话回答：这节课到底解决什么困惑？可以先照着核心问题复述一遍：提示词为什么不是“高级咒语”，而是结构化任务说明？</span>
+          <strong>1. 提示词是什么</strong>
+          <span>先处理“提示词是什么”。用自己的话回答本课核心问题：提示词为什么不是“高级咒语”，而是结构化任务说明？</span>
         </div>
         <div class="flow-step">
-          <strong>2. 只抓三句</strong>
-          <span>先记住前 3 个重点，不急着背完整定义：提示词不是咒语，是任务说明；角色、任务、格式、示例四要素很常见；输出格式明确，结果更容易用。</span>
+          <strong>2. 常见结构模板</strong>
+          <span>再抓本课判断标准：提示词不是咒语，是任务说明。先不要扩展概念，把这句话变成你自己的检查规则。</span>
         </div>
         <div class="flow-step">
-          <strong>3. 套进场景</strong>
-          <span>从案例里挑一个最熟的场景，例如“文章大纲提示词”，写出输入、AI 做什么、人工怎么检查。</span>
+          <strong>3. 输出格式的重要性</strong>
+          <span>放进“文章大纲提示词”这个案例里练一遍。按“输入是什么、AI 处理什么、人怎么验收”写下来。</span>
         </div>
         <div class="flow-step">
-          <strong>4. 留下产物</strong>
-          <span>完成本课产物：为“写一篇 500 字新品介绍”写一个基础提示词，要求固定输出格式。</span>
+          <strong>4. 简单示例</strong>
+          <span>最后按这条方法收尾：优先写清任务与输出，而不是堆砌修饰词。 本课要留下的产物是：为“写一篇 500 字新品介绍”写一个基础提示词，要求固定输出格式。</span>
         </div></div>
     </section>
     <article class="card">
@@ -680,6 +970,121 @@ li { margin-bottom: 8px; }
         </div></div>
     </article>
 
+
+<article class="card">
+  <span class="label">分段讲稿</span>
+  <h2>这一课不是背概念，而是按 4 个小段理解</h2>
+  <div class="teaching-grid"><div class="teaching-segment">
+  <span class="step-no">1</span>
+  <div>
+    <h3>提示词是什么</h3>
+    <p><strong>先讲清：</strong>提示词不是咒语，是任务说明。</p>
+    <p><strong>再落地：</strong>把它放进“文章大纲提示词”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>优先写清任务与输出，而不是堆砌修饰词。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">2</span>
+  <div>
+    <h3>常见结构模板</h3>
+    <p><strong>先讲清：</strong>角色、任务、格式、示例四要素很常见。</p>
+    <p><strong>再落地：</strong>把它放进“会议纪要提示词”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>复杂结果尽量给固定结构，比如表格、分点、JSON、步骤。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">3</span>
+  <div>
+    <h3>输出格式的重要性</h3>
+    <p><strong>先讲清：</strong>输出格式明确，结果更容易用。</p>
+    <p><strong>再落地：</strong>把它放进“商品标题提示词”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>对反复使用的提示词逐渐模板化。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">4</span>
+  <div>
+    <h3>简单示例</h3>
+    <p><strong>先讲清：</strong>提示词不是咒语，是任务说明。</p>
+    <p><strong>再落地：</strong>把它放进“文章大纲提示词”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>优先写清任务与输出，而不是堆砌修饰词。</p>
+  </div>
+</div></div>
+</article>
+<article class="card">
+  <span class="label">课堂演练</span>
+  <h2>把本课做成一个可检查的小成果</h2>
+  <div class="practice-path">
+    <div>
+      <strong>老师先演示</strong>
+      <span>用“文章大纲提示词”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
+    </div>
+    <div>
+      <strong>你再跟做</strong>
+      <span>为“写一篇 500 字新品介绍”写一个基础提示词，要求固定输出格式。</span>
+    </div>
+    <div>
+      <strong>最后验收</strong>
+      <span>把答案拿去对照“自检”区，如果无法说清场景、输出和风险，就回到工作纸重新补上下文。</span>
+    </div>
+  </div>
+</article>
+<article class="card">
+  <span class="label">下一步</span>
+  <h2>学完后怎么继续扩展</h2>
+  <p class="small-note">下一课会进入“提示词进阶”，你要带着本课产物继续往下用。</p>
+  <div class="toolbar">
+    <a class="btn primary" href="./lesson-06-prompt-basics-worksheet.html">打开本课练习工作纸</a>
+  </div>
+</article>
+
+<article class="card learning-evidence">
+  <span class="label">参考答案</span>
+  <h2>不是标准话术，而是判断自己有没有学会</h2>
+  <ul><li>能用自己的话说明：提示词就是结构化任务说明。它通常要讲清角色、任务、上下文、输出格式和示例。提示词越像一份清楚的工作单，结果越容易复用。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“文章大纲提示词”开始。</li><li>最终要留下一个可检查的小产物：为“写一篇 500 字新品介绍”写一个基础提示词，要求固定输出格式。</li></ul>
+</article>
+<article class="card learning-evidence">
+  <span class="label">小测验</span>
+  <h2>先自己答，再展开参考思路</h2>
+  <div class="quiz-list"><details class="quiz-item">
+  <summary>我的提示词有没有说明 AI 扮演什么角色？</summary>
+  <p>提示词不是咒语，是任务说明</p>
+</details><details class="quiz-item">
+  <summary>我有没有指定输出格式？</summary>
+  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+</details><details class="quiz-item">
+  <summary>我有没有给出必要素材，而不是只让 AI 自由发挥？</summary>
+  <p>把提示词写成模糊愿望而不是任务说明。</p>
+</details></div>
+</article>
+<article class="card learning-evidence">
+  <span class="label">评分标准</span>
+  <h2>用 3 档判断本课产物质量</h2>
+  <div class="rubric-grid"><div class="rubric-item">
+  <strong>通过</strong>
+  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+</div><div class="rubric-item">
+  <strong>优秀</strong>
+  <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
+</div><div class="rubric-item">
+  <strong>需要重做</strong>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+</div></div>
+</article>
+<article class="card learning-evidence">
+  <span class="label">术语表</span>
+  <h2>把这一课的词翻译成人话</h2>
+  <div class="glossary-grid"><div class="glossary-item">
+  <strong>本课核心概念</strong>
+  <span>理解提示词的基本构造，能写出稳定的基础提示。</span>
+</div><div class="glossary-item">
+  <strong>输入</strong>
+  <span>交给 AI 的背景、材料、约束、数据或示例。</span>
+</div><div class="glossary-item">
+  <strong>人工检查</strong>
+  <span>人用事实、逻辑、风险和格式标准确认 AI 输出能不能进入真实工作。</span>
+</div><div class="glossary-item">
+  <strong>产物</strong>
+  <span>学习后能留下并复用的文档、清单、模板、流程图、提示词或页面。</span>
+</div></div>
+</article>
   </main>
   <aside class="lesson-side">
     <article class="card">

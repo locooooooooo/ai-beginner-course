@@ -94,7 +94,8 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
   border-radius: var(--radius);
@@ -138,6 +139,107 @@ li { margin-bottom: 8px; }
   font-family: "Consolas", "SFMono-Regular", monospace;
   font-size: 0.92rem;
   line-height: 1.6;
+}
+.plain-language {
+  margin: 12px 0;
+  padding: 16px;
+  color: #12312d;
+  background: #eef7f5;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+}
+.plain-language strong,
+.deep-script strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.plain-language p,
+.deep-script p {
+  color: var(--muted);
+}
+.deep-script {
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.example-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.example-block {
+  margin-top: 10px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.example-block strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.example-block p,
+.example-block li {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.example-block.bad {
+  border-color: rgba(211, 84, 63, 0.24);
+  background: #fff8f6;
+}
+.example-block.good {
+  border-color: rgba(15, 118, 110, 0.24);
+  background: #eef7f5;
+}
+.learning-evidence ul,
+.reference-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.quiz-item {
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.quiz-item summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 800;
+}
+.quiz-item p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.rubric-grid,
+.glossary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.glossary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.rubric-item,
+.glossary-item {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.rubric-item strong,
+.glossary-item strong {
+  color: var(--primary);
+}
+.rubric-item span,
+.glossary-item span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.walkthrough-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.walkthrough-list li {
+  padding: 8px 0;
 }
 .check-item {
   display: grid;
@@ -311,11 +413,31 @@ li { margin-bottom: 8px; }
 .chapter-outcome strong { color: var(--ink); }
 .lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
 .lesson-item { margin: 0; }
-.lesson-item a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
-.lesson-item a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
+.lesson-item > a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
+.lesson-item > a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
 .lesson-no { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius); color: #ffffff; background: var(--primary); font-weight: 800; }
 .lesson-item strong { display: block; margin-bottom: 4px; }
 .lesson-item span { color: var(--muted); font-size: 14px; }
+.lesson-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  padding-left: 56px;
+}
+.lesson-actions a {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  color: var(--primary);
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
 .callout { padding: 18px; border-left: 4px solid var(--coral); margin-bottom: 18px; }
 .callout p { color: var(--muted); }
 .label { display: inline-block; color: var(--coral); font-weight: 800; font-size: 0.88rem; margin-bottom: 6px; }
@@ -540,8 +662,99 @@ li { margin-bottom: 8px; }
 }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
+.worksheet-hero { align-items: center; }
+.teaching-grid, .practice-path, .worksheet-grid, .worksheet-list, .worksheet-table {
+  display: grid;
+  gap: 12px;
+}
+.teaching-segment {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.teaching-segment h3 {
+  font-family: var(--sans);
+  margin-bottom: 8px;
+}
+.teaching-segment p + p { margin-top: 6px; }
+.teaching-segment p { color: var(--muted); font-size: 0.95rem; }
+.teaching-segment p strong { color: var(--ink); }
+.practice-path {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.practice-path > div {
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.practice-path strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.practice-path span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.worksheet-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+.worksheet-block {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.worksheet-block p { color: var(--muted); }
+.writing-label {
+  display: grid;
+  gap: 8px;
+}
+.writing-label span {
+  color: var(--ink);
+  font-weight: 800;
+}
+.writing-box {
+  min-height: 108px;
+  padding: 12px 14px;
+  width: 100%;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px dashed rgba(15, 118, 110, 0.38);
+  border-radius: var(--radius);
+  font: inherit;
+  line-height: 1.65;
+  resize: vertical;
+}
+.writing-box::placeholder { color: #8a94a3; }
+.writing-box.large { min-height: 150px; }
+.writing-box.extra-large { min-height: 220px; }
+.worksheet-table {
+  grid-template-columns: 1fr;
+}
+.worksheet-table > div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.worksheet-table span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
   .placeholder-track { grid-template-columns: 1fr; }
@@ -563,13 +776,15 @@ li { margin-bottom: 8px; }
   .track-card { min-height: 0; }
   .placeholder-track { padding: 18px; }
   .showcase-point { grid-template-columns: 1fr; }
+  .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
-  .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
+  .lesson-item > a { grid-template-columns: 38px minmax(0, 1fr); }
   .lesson-no { width: 38px; height: 38px; }
+  .lesson-actions { padding-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -595,6 +810,7 @@ li { margin-bottom: 8px; }
     <div class="toolbar">
       <a class="btn primary" href="#start">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
+      <a class="btn" href="./lesson-03-model-families-worksheet.html">打开工作纸</a>
     </div>
   </div>
   <aside class="progress-panel" aria-label="学习进度">
@@ -616,30 +832,104 @@ li { margin-bottom: 8px; }
   <h2>核心问题</h2>
   <p>为什么同样是“AI 模型”，有人用来写代码，有人用来做图，有人用来做视频？</p>
 </section>
+<section class="card">
+  <span class="label">学习元信息</span>
+  <h2>开始前先确认这些边界</h2>
+  <div class="lesson-meta-grid"><div class="meta-item">
+  <strong>预计用时</strong>
+  <span>30-45 分钟</span>
+</div><div class="meta-item">
+  <strong>难度</strong>
+  <span>入门</span>
+</div><div class="meta-item">
+  <strong>需要工具</strong>
+  <span>可打开自己常用的 AI 产品列表；不要求注册新账号</span>
+</div><div class="meta-item">
+  <strong>隐私边界</strong>
+  <span>模型对比时只用公开任务，不上传未公开代码、合同、客户数据或私密图片。</span>
+</div><div class="meta-item">
+  <strong>更新时间</strong>
+  <span>2026-06-17</span>
+</div><div class="meta-item">
+  <strong>来源提示</strong>
+  <span>模型家族和版本变化很快，本课只教选型思路；具体模型名称需要定期复核。</span>
+</div></div>
+</section>
 <div class="grid">
   <main>
 
 
+
+<article class="card deep-note-card">
+  <span class="label">深度讲稿</span>
+  <h2>把这一课讲透：先翻译，再演示，再提问</h2>
+  <div class="plain-language">
+    <strong>人话解释</strong>
+    <p>不同模型不是简单谁更强，而是擅长处理的对象和任务不同。文本、图像、视频、代码、多模态各有强项，新手选模型时先看任务类型，再看效果、成本和接入方式。</p>
+  </div>
+  <div class="deep-script-grid"><div class="deep-script">
+  <strong>先按输入输出分类</strong>
+  <p>让学生先写输入是什么、想要输出什么。输入是文字、图片、表格、代码还是多种混合，输出是回答、图片、视频还是可执行文件。这样比问哪个模型最好更有用。</p>
+</div><div class="deep-script">
+  <strong>再按业务目标判断</strong>
+  <p>同样是文本模型，有的更适合通用协作，有的更适合代码，有的更适合长文档。选型不是追热点，而是看它是否稳定解决当前任务。</p>
+</div><div class="deep-script">
+  <strong>最后加入落地因素</strong>
+  <p>真实项目里还要看价格、速度、上下文长度、工具调用、隐私要求和团队能否接入。新手要尽早形成综合判断，而不是只看榜单。</p>
+</div></div>
+</article>
+<article class="card">
+  <span class="label">跟做案例</span>
+  <h2>为一个活动做图文宣传</h2>
+  <ol class="walkthrough-list"><li>写活动介绍：优先选择文本模型。</li><li>生成海报主视觉：选择图像模型。</li><li>做 10 秒短视频分镜：选择视频模型或文本模型先写脚本。</li><li>如果要自动发布：再考虑 Agent 和工具连接。</li></ol>
+</article>
+<article class="card worked-example">
+  <span class="label">完整示范</span>
+  <h2>从差输入改到可用输入</h2>
+  <div class="example-grid">
+    <div class="example-block bad">
+      <strong>差输入</strong>
+      <p>哪个模型最好？我想以后都用一个最强的。</p>
+    </div>
+    <div class="example-block good">
+      <strong>好输入</strong>
+      <p>我先按任务选择模型：写活动文案用文本模型，生成海报用图像模型，做短视频分镜可以先用文本模型写脚本，再用视频模型生成镜头。选型要看输入输出、质量、速度、成本和能不能接入流程。</p>
+    </div>
+  </div>
+  <div class="example-block">
+    <strong>输出样例</strong>
+    <p>任务拆分：1. 活动说明和商品卖点整理：文本模型；2. 海报主视觉：图像模型；3. 15 秒短视频镜头：视频模型；4. 自动发布和检查：Agent 加工具连接。</p>
+  </div>
+  <div class="example-block">
+    <strong>检查点</strong>
+    <ul><li>是否先判断输入输出类型。</li><li>是否避免只按热度或排行榜选模型。</li><li>是否把同一项目拆成文本、图像、视频和流程任务。</li></ul>
+  </div>
+</article>
+<article class="card">
+  <span class="label">检查理解</span>
+  <h2>学完后先回答这 3 个问题</h2>
+  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能不能先说任务类型，而不是先说模型名字？</span></div><div class="check-item"><strong>2</strong><span>我能不能解释图像模型为什么不是传统 LLM？</span></div><div class="check-item"><strong>3</strong><span>我能不能为同一个项目拆出文本、图像、视频三个模型任务？</span></div></div>
+</article>
     <section class="learner-brief">
       <span class="label">先怎么学</span>
-      <h2>先用 4 步把这课跑起来</h2>
-      <p class="small-note">这不是标题清单，是给新手的跟做路线。你不需要先记住所有名词，先把任务做完再回头理解术语。</p>
+      <h2>按这节课自己的任务跑 4 步</h2>
+      <p class="small-note">每一课的学习路线都不同。先抓本课最关键的问题，再用案例和产物证明自己真的会用。</p>
       <div class="flow">
         <div class="flow-step">
-          <strong>1. 先说人话</strong>
-          <span>用自己的话回答：这节课到底解决什么困惑？可以先照着核心问题复述一遍：为什么同样是“AI 模型”，有人用来写代码，有人用来做图，有人用来做视频？</span>
+          <strong>1. 模型选型会影响结果</strong>
+          <span>先处理“为什么模型选型会影响结果”。用自己的话回答本课核心问题：为什么同样是“AI 模型”，有人用来写代码，有人用来做图，有人用来做视频？</span>
         </div>
         <div class="flow-step">
-          <strong>2. 只抓三句</strong>
-          <span>先记住前 3 个重点，不急着背完整定义：OpenAI GPT 家族偏通用、多模态、工具调用；DeepSeek 当前公开主推 V4-Flash / V4-Pro，偏推理、代码、Agent 流程；Claude 偏长文本理解与写作。</span>
+          <strong>2. 文本模型/图像模型/视频模型的区别</strong>
+          <span>再抓本课判断标准：OpenAI GPT 家族偏通用、多模态、工具调用。先不要扩展概念，把这句话变成你自己的检查规则。</span>
         </div>
         <div class="flow-step">
-          <strong>3. 套进场景</strong>
-          <span>从案例里挑一个最熟的场景，例如“GPT 做通用问答、代码和 Agent 编排”，写出输入、AI 做什么、人工怎么检查。</span>
+          <strong>3. 主流模型家族的定位</strong>
+          <span>放进“GPT 做通用问答、代码和 Agent 编排”这个案例里练一遍。按“输入是什么、AI 处理什么、人怎么验收”写下来。</span>
         </div>
         <div class="flow-step">
-          <strong>4. 留下产物</strong>
-          <span>完成本课产物：从你的使用场景里选 3 个任务，分别判断更适合文本模型、图像模型还是视频模型。</span>
+          <strong>4. 新手怎么选</strong>
+          <span>最后按这条方法收尾：先判断任务是文本、图像、视频还是多模态混合任务。 本课要留下的产物是：从你的使用场景里选 3 个任务，分别判断更适合文本模型、图像模型还是视频模型。</span>
         </div></div>
     </section>
     <article class="card">
@@ -684,6 +974,121 @@ li { margin-bottom: 8px; }
         </div></div>
     </article>
 
+
+<article class="card">
+  <span class="label">分段讲稿</span>
+  <h2>这一课不是背概念，而是按 4 个小段理解</h2>
+  <div class="teaching-grid"><div class="teaching-segment">
+  <span class="step-no">1</span>
+  <div>
+    <h3>为什么模型选型会影响结果</h3>
+    <p><strong>先讲清：</strong>OpenAI GPT 家族偏通用、多模态、工具调用。</p>
+    <p><strong>再落地：</strong>把它放进“GPT 做通用问答、代码和 Agent 编排”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先判断任务是文本、图像、视频还是多模态混合任务。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">2</span>
+  <div>
+    <h3>文本模型、图像模型、视频模型的区别</h3>
+    <p><strong>先讲清：</strong>DeepSeek 当前公开主推 V4-Flash / V4-Pro，偏推理、代码、Agent 流程。</p>
+    <p><strong>再落地：</strong>把它放进“DeepSeek 做推理问答和代码任务”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>再看任务最需要的是推理、创作、速度还是系统协同。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">3</span>
+  <div>
+    <h3>主流模型家族的定位</h3>
+    <p><strong>先讲清：</strong>Claude 偏长文本理解与写作。</p>
+    <p><strong>再落地：</strong>把它放进“gpt-image-1 做商品图和广告图”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>最后再比较是否能稳定接入你的工具链和业务流程。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">4</span>
+  <div>
+    <h3>新手怎么选</h3>
+    <p><strong>先讲清：</strong>Gemini 偏谷歌生态整合与多模态入口。</p>
+    <p><strong>再落地：</strong>把它放进“Seedance 2.0 做短视频和镜头生成”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先判断任务是文本、图像、视频还是多模态混合任务。</p>
+  </div>
+</div></div>
+</article>
+<article class="card">
+  <span class="label">课堂演练</span>
+  <h2>把本课做成一个可检查的小成果</h2>
+  <div class="practice-path">
+    <div>
+      <strong>老师先演示</strong>
+      <span>用“GPT 做通用问答、代码和 Agent 编排”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
+    </div>
+    <div>
+      <strong>你再跟做</strong>
+      <span>从你的使用场景里选 3 个任务，分别判断更适合文本模型、图像模型还是视频模型。</span>
+    </div>
+    <div>
+      <strong>最后验收</strong>
+      <span>把答案拿去对照“自检”区，如果无法说清场景、输出和风险，就回到工作纸重新补上下文。</span>
+    </div>
+  </div>
+</article>
+<article class="card">
+  <span class="label">下一步</span>
+  <h2>学完后怎么继续扩展</h2>
+  <p class="small-note">下一课会进入“AI能做什么不能做什么”，你要带着本课产物继续往下用。</p>
+  <div class="toolbar">
+    <a class="btn primary" href="./lesson-03-model-families-worksheet.html">打开本课练习工作纸</a>
+  </div>
+</article>
+
+<article class="card learning-evidence">
+  <span class="label">参考答案</span>
+  <h2>不是标准话术，而是判断自己有没有学会</h2>
+  <ul><li>能用自己的话说明：不同模型不是简单谁更强，而是擅长处理的对象和任务不同。文本、图像、视频、代码、多模态各有强项，新手选模型时先看任务类型，再看效果、成本和接入方式。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“GPT 做通用问答、代码和 Agent 编排”开始。</li><li>最终要留下一个可检查的小产物：从你的使用场景里选 3 个任务，分别判断更适合文本模型、图像模型还是视频模型。</li></ul>
+</article>
+<article class="card learning-evidence">
+  <span class="label">小测验</span>
+  <h2>先自己答，再展开参考思路</h2>
+  <div class="quiz-list"><details class="quiz-item">
+  <summary>我能不能先说任务类型，而不是先说模型名字？</summary>
+  <p>OpenAI GPT 家族偏通用、多模态、工具调用</p>
+</details><details class="quiz-item">
+  <summary>我能不能解释图像模型为什么不是传统 LLM？</summary>
+  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+</details><details class="quiz-item">
+  <summary>我能不能为同一个项目拆出文本、图像、视频三个模型任务？</summary>
+  <p>只按排行榜选模型。</p>
+</details></div>
+</article>
+<article class="card learning-evidence">
+  <span class="label">评分标准</span>
+  <h2>用 3 档判断本课产物质量</h2>
+  <div class="rubric-grid"><div class="rubric-item">
+  <strong>通过</strong>
+  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+</div><div class="rubric-item">
+  <strong>优秀</strong>
+  <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
+</div><div class="rubric-item">
+  <strong>需要重做</strong>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+</div></div>
+</article>
+<article class="card learning-evidence">
+  <span class="label">术语表</span>
+  <h2>把这一课的词翻译成人话</h2>
+  <div class="glossary-grid"><div class="glossary-item">
+  <strong>本课核心概念</strong>
+  <span>理解不同模型家族的定位差异，避免把所有模型看成一回事。</span>
+</div><div class="glossary-item">
+  <strong>输入</strong>
+  <span>交给 AI 的背景、材料、约束、数据或示例。</span>
+</div><div class="glossary-item">
+  <strong>人工检查</strong>
+  <span>人用事实、逻辑、风险和格式标准确认 AI 输出能不能进入真实工作。</span>
+</div><div class="glossary-item">
+  <strong>产物</strong>
+  <span>学习后能留下并复用的文档、清单、模板、流程图、提示词或页面。</span>
+</div></div>
+</article>
   </main>
   <aside class="lesson-side">
     <article class="card">

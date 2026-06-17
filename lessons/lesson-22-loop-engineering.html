@@ -94,7 +94,8 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
   border-radius: var(--radius);
@@ -138,6 +139,107 @@ li { margin-bottom: 8px; }
   font-family: "Consolas", "SFMono-Regular", monospace;
   font-size: 0.92rem;
   line-height: 1.6;
+}
+.plain-language {
+  margin: 12px 0;
+  padding: 16px;
+  color: #12312d;
+  background: #eef7f5;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+}
+.plain-language strong,
+.deep-script strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.plain-language p,
+.deep-script p {
+  color: var(--muted);
+}
+.deep-script {
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.example-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.example-block {
+  margin-top: 10px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.example-block strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.example-block p,
+.example-block li {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.example-block.bad {
+  border-color: rgba(211, 84, 63, 0.24);
+  background: #fff8f6;
+}
+.example-block.good {
+  border-color: rgba(15, 118, 110, 0.24);
+  background: #eef7f5;
+}
+.learning-evidence ul,
+.reference-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.quiz-item {
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.quiz-item summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 800;
+}
+.quiz-item p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.rubric-grid,
+.glossary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.glossary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.rubric-item,
+.glossary-item {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.rubric-item strong,
+.glossary-item strong {
+  color: var(--primary);
+}
+.rubric-item span,
+.glossary-item span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.walkthrough-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.walkthrough-list li {
+  padding: 8px 0;
 }
 .check-item {
   display: grid;
@@ -311,11 +413,31 @@ li { margin-bottom: 8px; }
 .chapter-outcome strong { color: var(--ink); }
 .lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
 .lesson-item { margin: 0; }
-.lesson-item a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
-.lesson-item a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
+.lesson-item > a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
+.lesson-item > a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
 .lesson-no { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius); color: #ffffff; background: var(--primary); font-weight: 800; }
 .lesson-item strong { display: block; margin-bottom: 4px; }
 .lesson-item span { color: var(--muted); font-size: 14px; }
+.lesson-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  padding-left: 56px;
+}
+.lesson-actions a {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  color: var(--primary);
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
 .callout { padding: 18px; border-left: 4px solid var(--coral); margin-bottom: 18px; }
 .callout p { color: var(--muted); }
 .label { display: inline-block; color: var(--coral); font-weight: 800; font-size: 0.88rem; margin-bottom: 6px; }
@@ -540,8 +662,99 @@ li { margin-bottom: 8px; }
 }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
+.worksheet-hero { align-items: center; }
+.teaching-grid, .practice-path, .worksheet-grid, .worksheet-list, .worksheet-table {
+  display: grid;
+  gap: 12px;
+}
+.teaching-segment {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.teaching-segment h3 {
+  font-family: var(--sans);
+  margin-bottom: 8px;
+}
+.teaching-segment p + p { margin-top: 6px; }
+.teaching-segment p { color: var(--muted); font-size: 0.95rem; }
+.teaching-segment p strong { color: var(--ink); }
+.practice-path {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.practice-path > div {
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.practice-path strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.practice-path span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.worksheet-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+.worksheet-block {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.worksheet-block p { color: var(--muted); }
+.writing-label {
+  display: grid;
+  gap: 8px;
+}
+.writing-label span {
+  color: var(--ink);
+  font-weight: 800;
+}
+.writing-box {
+  min-height: 108px;
+  padding: 12px 14px;
+  width: 100%;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px dashed rgba(15, 118, 110, 0.38);
+  border-radius: var(--radius);
+  font: inherit;
+  line-height: 1.65;
+  resize: vertical;
+}
+.writing-box::placeholder { color: #8a94a3; }
+.writing-box.large { min-height: 150px; }
+.writing-box.extra-large { min-height: 220px; }
+.worksheet-table {
+  grid-template-columns: 1fr;
+}
+.worksheet-table > div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.worksheet-table span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
   .placeholder-track { grid-template-columns: 1fr; }
@@ -563,13 +776,15 @@ li { margin-bottom: 8px; }
   .track-card { min-height: 0; }
   .placeholder-track { padding: 18px; }
   .showcase-point { grid-template-columns: 1fr; }
+  .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
-  .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
+  .lesson-item > a { grid-template-columns: 38px minmax(0, 1fr); }
   .lesson-no { width: 38px; height: 38px; }
+  .lesson-actions { padding-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -595,6 +810,7 @@ li { margin-bottom: 8px; }
     <div class="toolbar">
       <a class="btn primary" href="#start">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
+      <a class="btn" href="./lesson-22-loop-engineering-worksheet.html">打开工作纸</a>
     </div>
   </div>
   <aside class="progress-panel" aria-label="学习进度">
@@ -616,30 +832,104 @@ li { margin-bottom: 8px; }
   <h2>核心问题</h2>
   <p>为什么复杂任务不能只靠一次提示词完成，而要让 Codex 一轮一轮推进？</p>
 </section>
+<section class="card">
+  <span class="label">学习元信息</span>
+  <h2>开始前先确认这些边界</h2>
+  <div class="lesson-meta-grid"><div class="meta-item">
+  <strong>预计用时</strong>
+  <span>30-45 分钟</span>
+</div><div class="meta-item">
+  <strong>难度</strong>
+  <span>入门</span>
+</div><div class="meta-item">
+  <strong>需要工具</strong>
+  <span>任意聊天式 AI 工具；也可以只看页面完成纸面练习</span>
+</div><div class="meta-item">
+  <strong>隐私边界</strong>
+  <span>练习时使用公开或虚构材料，不上传客户隐私、内部资料、账号信息或未公开策略。</span>
+</div><div class="meta-item">
+  <strong>更新时间</strong>
+  <span>2026-06-17</span>
+</div><div class="meta-item">
+  <strong>来源提示</strong>
+  <span>本课强调稳定方法和学习路径；具体工具能力以实际产品为准。</span>
+</div></div>
+</section>
 <div class="grid">
   <main>
 
 
+
+<article class="card deep-note-card">
+  <span class="label">深度讲稿</span>
+  <h2>把这一课讲透：先翻译，再演示，再提问</h2>
+  <div class="plain-language">
+    <strong>人话解释</strong>
+    <p>Loop Engineering 就是用短循环做复杂任务：先定一个小目标，执行，验收，发现问题再修正。它不追求一次提示词完美，而是每一轮都留下证据，让结果越来越接近可交付。</p>
+  </div>
+  <div class="deep-script-grid"><div class="deep-script">
+  <strong>复杂任务靠反馈</strong>
+  <p>网页、发布、自动化流程都会在执行中暴露问题，所以要边做边验收。</p>
+</div><div class="deep-script">
+  <strong>每轮只解决一个重点</strong>
+  <p>一轮做首页结构，一轮做移动端，一轮做断链检查，比一次全做更容易发现问题。</p>
+</div><div class="deep-script">
+  <strong>证据比感觉重要</strong>
+  <p>截图、测试结果、链接状态、命令输出，都是判断本轮是否完成的证据。</p>
+</div></div>
+</article>
+<article class="card">
+  <span class="label">跟做案例</span>
+  <h2>把旧网页改成手机友好教程站</h2>
+  <ol class="walkthrough-list"><li>第 1 轮：改信息结构，验收首页是否能看清学习路径。</li><li>第 2 轮：改移动端布局，验收 390px 宽度无横向滚动。</li><li>第 3 轮：检查链接和发布目录，验收关键页面可访问。</li></ol>
+</article>
+<article class="card worked-example">
+  <span class="label">完整示范</span>
+  <h2>从差输入改到可用输入</h2>
+  <div class="example-grid">
+    <div class="example-block bad">
+      <strong>差输入</strong>
+      <p>一次性帮我把旧网站全部改好并发布。</p>
+    </div>
+    <div class="example-block good">
+      <strong>好输入</strong>
+      <p>请用 3 轮 Loop 完成旧课程网站改版。第 1 轮只优化首页学习路径并截图验收；第 2 轮只修移动端阅读和按钮触控；第 3 轮检查链接、生成目录和线上页面。每轮结束请说明改了什么、怎么验收、还有什么风险。</p>
+    </div>
+  </div>
+  <div class="example-block">
+    <strong>输出样例</strong>
+    <p>第 1 轮结果：首页改为课程路径，验收证据是本地首页截图和入口链接清单。遗留风险：移动端按钮间距未检查，进入第 2 轮处理。</p>
+  </div>
+  <div class="example-block">
+    <strong>检查点</strong>
+    <ul><li>是否每轮目标足够小。</li><li>是否有截图、测试或链接检查等证据。</li><li>是否把遗留问题带入下一轮。</li></ul>
+  </div>
+</article>
+<article class="card">
+  <span class="label">检查理解</span>
+  <h2>学完后先回答这 3 个问题</h2>
+  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我有没有把大任务拆成 2 到 4 轮？</span></div><div class="check-item"><strong>2</strong><span>每轮是否有明确验收证据？</span></div><div class="check-item"><strong>3</strong><span>上一轮发现的问题是否进入下一轮修正？</span></div></div>
+</article>
     <section class="learner-brief">
       <span class="label">先怎么学</span>
-      <h2>先用 4 步把这课跑起来</h2>
-      <p class="small-note">这不是标题清单，是给新手的跟做路线。你不需要先记住所有名词，先把任务做完再回头理解术语。</p>
+      <h2>按这节课自己的任务跑 4 步</h2>
+      <p class="small-note">每一课的学习路线都不同。先抓本课最关键的问题，再用案例和产物证明自己真的会用。</p>
       <div class="flow">
         <div class="flow-step">
-          <strong>1. 先说人话</strong>
-          <span>用自己的话回答：这节课到底解决什么困惑？可以先照着核心问题复述一遍：为什么复杂任务不能只靠一次提示词完成，而要让 Codex 一轮一轮推进？</span>
+          <strong>1. 什么是 Loop Engineering</strong>
+          <span>先处理“什么是 Loop Engineering”。用自己的话回答本课核心问题：为什么复杂任务不能只靠一次提示词完成，而要让 Codex 一轮一轮推进？</span>
         </div>
         <div class="flow-step">
-          <strong>2. 只抓三句</strong>
-          <span>先记住前 3 个重点，不急着背完整定义：Loop Engineering 的核心是短循环：目标 -> 实施 -> 验收 -> 修正；每一轮都要有可观察证据，比如截图、测试、链接检查；在 Codex 里可以用主会话收口，多会话并行探索和验收。</span>
+          <strong>2. 一次性大提示容易失败</strong>
+          <span>再抓本课判断标准：Loop Engineering 的核心是短循环：目标 -> 实施 -> 验收 -> 修正。先不要扩展概念，把这句话变成你自己的检查规则。</span>
         </div>
         <div class="flow-step">
-          <strong>3. 套进场景</strong>
-          <span>从案例里挑一个最熟的场景，例如“网页改版：先改首页，再截图验收，再修移动端问题”，写出输入、AI 做什么、人工怎么检查。</span>
+          <strong>3. Codex 中的循环 读上下文/改文件/跑验证/复盘</strong>
+          <span>放进“网页改版：先改首页，再截图验收，再修移动端问题”这个案例里练一遍。按“输入是什么、AI 处理什么、人怎么验收”写下来。</span>
         </div>
         <div class="flow-step">
-          <strong>4. 留下产物</strong>
-          <span>完成本课产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span>
+          <strong>4. 用多会话节省时间并降低盲区</strong>
+          <span>最后按这条方法收尾：先把大目标拆成 2 到 4 个小循环。 本课要留下的产物是：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span>
         </div></div>
     </section>
     <article class="card">
@@ -680,6 +970,121 @@ li { margin-bottom: 8px; }
         </div></div>
     </article>
 
+
+<article class="card">
+  <span class="label">分段讲稿</span>
+  <h2>这一课不是背概念，而是按 4 个小段理解</h2>
+  <div class="teaching-grid"><div class="teaching-segment">
+  <span class="step-no">1</span>
+  <div>
+    <h3>什么是 Loop Engineering</h3>
+    <p><strong>先讲清：</strong>Loop Engineering 的核心是短循环：目标 -> 实施 -> 验收 -> 修正。</p>
+    <p><strong>再落地：</strong>把它放进“网页改版：先改首页，再截图验收，再修移动端问题”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先把大目标拆成 2 到 4 个小循环。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">2</span>
+  <div>
+    <h3>为什么一次性大提示容易失败</h3>
+    <p><strong>先讲清：</strong>每一轮都要有可观察证据，比如截图、测试、链接检查。</p>
+    <p><strong>再落地：</strong>把它放进“课程重构：一个会话看内容，一个会话看 UI，一个会话查断链”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>每轮只解决一个主要问题，并定义明确验收证据。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">3</span>
+  <div>
+    <h3>Codex 中的循环：读上下文、改文件、跑验证、复盘</h3>
+    <p><strong>先讲清：</strong>在 Codex 里可以用主会话收口，多会话并行探索和验收。</p>
+    <p><strong>再落地：</strong>把它放进“发布修复：本地生成、提交推送、线上验证，发现缓存再复查”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>让 Codex 在每轮结束时总结结果、问题和下一轮动作。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">4</span>
+  <div>
+    <h3>如何用多会话节省时间并降低盲区</h3>
+    <p><strong>先讲清：</strong>Loop Engineering 的核心是短循环：目标 -> 实施 -> 验收 -> 修正。</p>
+    <p><strong>再落地：</strong>把它放进“网页改版：先改首页，再截图验收，再修移动端问题”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先把大目标拆成 2 到 4 个小循环。</p>
+  </div>
+</div></div>
+</article>
+<article class="card">
+  <span class="label">课堂演练</span>
+  <h2>把本课做成一个可检查的小成果</h2>
+  <div class="practice-path">
+    <div>
+      <strong>老师先演示</strong>
+      <span>用“网页改版：先改首页，再截图验收，再修移动端问题”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
+    </div>
+    <div>
+      <strong>你再跟做</strong>
+      <span>为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span>
+    </div>
+    <div>
+      <strong>最后验收</strong>
+      <span>把答案拿去对照“自检”区，如果无法说清场景、输出和风险，就回到工作纸重新补上下文。</span>
+    </div>
+  </div>
+</article>
+<article class="card">
+  <span class="label">下一步</span>
+  <h2>学完后怎么继续扩展</h2>
+  <p class="small-note">下一课会进入“如何用Codex制作好看的网页”，你要带着本课产物继续往下用。</p>
+  <div class="toolbar">
+    <a class="btn primary" href="./lesson-22-loop-engineering-worksheet.html">打开本课练习工作纸</a>
+  </div>
+</article>
+
+<article class="card learning-evidence">
+  <span class="label">参考答案</span>
+  <h2>不是标准话术，而是判断自己有没有学会</h2>
+  <ul><li>能用自己的话说明：Loop Engineering 就是用短循环做复杂任务：先定一个小目标，执行，验收，发现问题再修正。它不追求一次提示词完美，而是每一轮都留下证据，让结果越来越接近可交付。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“网页改版：先改首页，再截图验收，再修移动端问题”开始。</li><li>最终要留下一个可检查的小产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</li></ul>
+</article>
+<article class="card learning-evidence">
+  <span class="label">小测验</span>
+  <h2>先自己答，再展开参考思路</h2>
+  <div class="quiz-list"><details class="quiz-item">
+  <summary>我有没有把大任务拆成 2 到 4 轮？</summary>
+  <p>Loop Engineering 的核心是短循环：目标 -> 实施 -> 验收 -> 修正</p>
+</details><details class="quiz-item">
+  <summary>每轮是否有明确验收证据？</summary>
+  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+</details><details class="quiz-item">
+  <summary>上一轮发现的问题是否进入下一轮修正？</summary>
+  <p>一开始就要求 Codex 一次完成所有事情。</p>
+</details></div>
+</article>
+<article class="card learning-evidence">
+  <span class="label">评分标准</span>
+  <h2>用 3 档判断本课产物质量</h2>
+  <div class="rubric-grid"><div class="rubric-item">
+  <strong>通过</strong>
+  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+</div><div class="rubric-item">
+  <strong>优秀</strong>
+  <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
+</div><div class="rubric-item">
+  <strong>需要重做</strong>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+</div></div>
+</article>
+<article class="card learning-evidence">
+  <span class="label">术语表</span>
+  <h2>把这一课的词翻译成人话</h2>
+  <div class="glossary-grid"><div class="glossary-item">
+  <strong>Loop</strong>
+  <span>目标、执行、验收、修正组成的一轮循环。</span>
+</div><div class="glossary-item">
+  <strong>验收证据</strong>
+  <span>证明结果可用的截图、测试、链接或命令输出。</span>
+</div><div class="glossary-item">
+  <strong>复盘</strong>
+  <span>回看本轮做了什么、哪里失败、下一步怎么改。</span>
+</div><div class="glossary-item">
+  <strong>多会话</strong>
+  <span>让不同 Codex 会话并行做实现、检查或研究。</span>
+</div></div>
+</article>
   </main>
   <aside class="lesson-side">
     <article class="card">

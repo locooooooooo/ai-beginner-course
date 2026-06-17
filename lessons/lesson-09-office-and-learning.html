@@ -94,7 +94,8 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
   border-radius: var(--radius);
@@ -138,6 +139,107 @@ li { margin-bottom: 8px; }
   font-family: "Consolas", "SFMono-Regular", monospace;
   font-size: 0.92rem;
   line-height: 1.6;
+}
+.plain-language {
+  margin: 12px 0;
+  padding: 16px;
+  color: #12312d;
+  background: #eef7f5;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+}
+.plain-language strong,
+.deep-script strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.plain-language p,
+.deep-script p {
+  color: var(--muted);
+}
+.deep-script {
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.example-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.example-block {
+  margin-top: 10px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.example-block strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.example-block p,
+.example-block li {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.example-block.bad {
+  border-color: rgba(211, 84, 63, 0.24);
+  background: #fff8f6;
+}
+.example-block.good {
+  border-color: rgba(15, 118, 110, 0.24);
+  background: #eef7f5;
+}
+.learning-evidence ul,
+.reference-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.quiz-item {
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.quiz-item summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 800;
+}
+.quiz-item p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.rubric-grid,
+.glossary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.glossary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.rubric-item,
+.glossary-item {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.rubric-item strong,
+.glossary-item strong {
+  color: var(--primary);
+}
+.rubric-item span,
+.glossary-item span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.walkthrough-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.walkthrough-list li {
+  padding: 8px 0;
 }
 .check-item {
   display: grid;
@@ -311,11 +413,31 @@ li { margin-bottom: 8px; }
 .chapter-outcome strong { color: var(--ink); }
 .lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
 .lesson-item { margin: 0; }
-.lesson-item a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
-.lesson-item a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
+.lesson-item > a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
+.lesson-item > a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
 .lesson-no { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius); color: #ffffff; background: var(--primary); font-weight: 800; }
 .lesson-item strong { display: block; margin-bottom: 4px; }
 .lesson-item span { color: var(--muted); font-size: 14px; }
+.lesson-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  padding-left: 56px;
+}
+.lesson-actions a {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  color: var(--primary);
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
 .callout { padding: 18px; border-left: 4px solid var(--coral); margin-bottom: 18px; }
 .callout p { color: var(--muted); }
 .label { display: inline-block; color: var(--coral); font-weight: 800; font-size: 0.88rem; margin-bottom: 6px; }
@@ -540,8 +662,99 @@ li { margin-bottom: 8px; }
 }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
+.worksheet-hero { align-items: center; }
+.teaching-grid, .practice-path, .worksheet-grid, .worksheet-list, .worksheet-table {
+  display: grid;
+  gap: 12px;
+}
+.teaching-segment {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.teaching-segment h3 {
+  font-family: var(--sans);
+  margin-bottom: 8px;
+}
+.teaching-segment p + p { margin-top: 6px; }
+.teaching-segment p { color: var(--muted); font-size: 0.95rem; }
+.teaching-segment p strong { color: var(--ink); }
+.practice-path {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.practice-path > div {
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.practice-path strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.practice-path span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.worksheet-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+.worksheet-block {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.worksheet-block p { color: var(--muted); }
+.writing-label {
+  display: grid;
+  gap: 8px;
+}
+.writing-label span {
+  color: var(--ink);
+  font-weight: 800;
+}
+.writing-box {
+  min-height: 108px;
+  padding: 12px 14px;
+  width: 100%;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px dashed rgba(15, 118, 110, 0.38);
+  border-radius: var(--radius);
+  font: inherit;
+  line-height: 1.65;
+  resize: vertical;
+}
+.writing-box::placeholder { color: #8a94a3; }
+.writing-box.large { min-height: 150px; }
+.writing-box.extra-large { min-height: 220px; }
+.worksheet-table {
+  grid-template-columns: 1fr;
+}
+.worksheet-table > div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.worksheet-table span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
   .placeholder-track { grid-template-columns: 1fr; }
@@ -563,13 +776,15 @@ li { margin-bottom: 8px; }
   .track-card { min-height: 0; }
   .placeholder-track { padding: 18px; }
   .showcase-point { grid-template-columns: 1fr; }
+  .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
-  .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
+  .lesson-item > a { grid-template-columns: 38px minmax(0, 1fr); }
   .lesson-no { width: 38px; height: 38px; }
+  .lesson-actions { padding-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -595,6 +810,7 @@ li { margin-bottom: 8px; }
     <div class="toolbar">
       <a class="btn primary" href="#start">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
+      <a class="btn" href="./lesson-09-office-and-learning-worksheet.html">打开工作纸</a>
     </div>
   </div>
   <aside class="progress-panel" aria-label="学习进度">
@@ -616,30 +832,104 @@ li { margin-bottom: 8px; }
   <h2>核心问题</h2>
   <p>为什么办公场景最适合新手入门？因为它高频、低风险、结果又容易判断。</p>
 </section>
+<section class="card">
+  <span class="label">学习元信息</span>
+  <h2>开始前先确认这些边界</h2>
+  <div class="lesson-meta-grid"><div class="meta-item">
+  <strong>预计用时</strong>
+  <span>30-45 分钟</span>
+</div><div class="meta-item">
+  <strong>难度</strong>
+  <span>入门</span>
+</div><div class="meta-item">
+  <strong>需要工具</strong>
+  <span>任意聊天式 AI 工具；也可以只看页面完成纸面练习</span>
+</div><div class="meta-item">
+  <strong>隐私边界</strong>
+  <span>练习时使用公开或虚构材料，不上传客户隐私、内部资料、账号信息或未公开策略。</span>
+</div><div class="meta-item">
+  <strong>更新时间</strong>
+  <span>2026-06-17</span>
+</div><div class="meta-item">
+  <strong>来源提示</strong>
+  <span>本课强调稳定方法和学习路径；具体工具能力以实际产品为准。</span>
+</div></div>
+</section>
 <div class="grid">
   <main>
 
 
+
+<article class="card deep-note-card">
+  <span class="label">深度讲稿</span>
+  <h2>把这一课讲透：先翻译，再演示，再提问</h2>
+  <div class="plain-language">
+    <strong>人话解释</strong>
+    <p>办公和学习是新手最适合先练 AI 的场景，因为任务高频、风险较低、结果容易检查。不要一上来让 AI 解决复杂决策，先让它帮你整理信息、改写邮件、提炼行动项、做学习笔记。</p>
+  </div>
+  <div class="deep-script-grid"><div class="deep-script">
+  <strong>先从低风险高频任务开始</strong>
+  <p>会议纪要、邮件、日报、学习笔记每天都用，错了也容易发现，最适合建立 AI 使用习惯。</p>
+</div><div class="deep-script">
+  <strong>固定输出格式</strong>
+  <p>不要每次都说“帮我整理一下”，要固定为摘要、行动项、负责人、截止时间、待确认问题。</p>
+</div><div class="deep-script">
+  <strong>先脱敏再输入</strong>
+  <p>客户姓名、手机号、订单号、内部价格先替换成占位符，练效率不能牺牲隐私。</p>
+</div></div>
+</article>
+<article class="card">
+  <span class="label">跟做案例</span>
+  <h2>把会议录音文字整理成纪要</h2>
+  <ol class="walkthrough-list"><li>先删除姓名、手机号、客户编号等敏感信息。</li><li>要求 AI 按摘要、决策、行动项、风险、待确认问题输出。</li><li>人工核对行动项是否有负责人和截止时间。</li><li>把确认后的内容再发到团队文档。</li></ol>
+</article>
+<article class="card worked-example">
+  <span class="label">完整示范</span>
+  <h2>从差输入改到可用输入</h2>
+  <div class="example-grid">
+    <div class="example-block bad">
+      <strong>差输入</strong>
+      <p>帮我整理一下这段会议内容。</p>
+    </div>
+    <div class="example-block good">
+      <strong>好输入</strong>
+      <p>请把下面的会议文字整理成纪要。输出格式：1. 100 字摘要；2. 已确定决策；3. 行动项表格，列为事项、负责人、截止时间；4. 待确认问题。不要补充原文没有的信息。</p>
+    </div>
+  </div>
+  <div class="example-block">
+    <strong>输出样例</strong>
+    <p>摘要：本次会议确定下周上线活动页，设计今天出首版，运营补充商品清单。行动项：设计-活动页首版-周三；运营-商品清单-周二。</p>
+  </div>
+  <div class="example-block">
+    <strong>检查点</strong>
+    <ul><li>是否没有编造负责人和时间。</li><li>是否保留待确认问题。</li><li>是否能直接复制进团队文档。</li></ul>
+  </div>
+</article>
+<article class="card">
+  <span class="label">检查理解</span>
+  <h2>学完后先回答这 3 个问题</h2>
+  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我有没有给 AI 固定输出格式？</span></div><div class="check-item"><strong>2</strong><span>结果里是否能看出谁要做什么、什么时候做完？</span></div><div class="check-item"><strong>3</strong><span>输入前是否处理了敏感信息？</span></div></div>
+</article>
     <section class="learner-brief">
       <span class="label">先怎么学</span>
-      <h2>先用 4 步把这课跑起来</h2>
-      <p class="small-note">这不是标题清单，是给新手的跟做路线。你不需要先记住所有名词，先把任务做完再回头理解术语。</p>
+      <h2>按这节课自己的任务跑 4 步</h2>
+      <p class="small-note">每一课的学习路线都不同。先抓本课最关键的问题，再用案例和产物证明自己真的会用。</p>
       <div class="flow">
         <div class="flow-step">
-          <strong>1. 先说人话</strong>
-          <span>用自己的话回答：这节课到底解决什么困惑？可以先照着核心问题复述一遍：为什么办公场景最适合新手入门？因为它高频、低风险、结果又容易判断。</span>
+          <strong>1. 办公场景有哪些机会</strong>
+          <span>先处理“办公场景有哪些机会”。用自己的话回答本课核心问题：为什么办公场景最适合新手入门？因为它高频、低风险、结果又容易判断。</span>
         </div>
         <div class="flow-step">
-          <strong>2. 只抓三句</strong>
-          <span>先记住前 3 个重点，不急着背完整定义：AI 可以提高信息处理速度；办公类任务最适合新手入门；要固定模板和输出格式。</span>
+          <strong>2. 常见任务模板</strong>
+          <span>再抓本课判断标准：AI 可以提高信息处理速度。先不要扩展概念，把这句话变成你自己的检查规则。</span>
         </div>
         <div class="flow-step">
-          <strong>3. 套进场景</strong>
-          <span>从案例里挑一个最熟的场景，例如“会议纪要”，写出输入、AI 做什么、人工怎么检查。</span>
+          <strong>3. 适合新手的 5 个入口</strong>
+          <span>放进“会议纪要”这个案例里练一遍。按“输入是什么、AI 处理什么、人怎么验收”写下来。</span>
         </div>
         <div class="flow-step">
-          <strong>4. 留下产物</strong>
-          <span>完成本课产物：设计一个“会议纪要”提示模板，要求包含行动项、负责人和截止时间。</span>
+          <strong>4. 避免泄露敏感信息</strong>
+          <span>最后按这条方法收尾：先从纪要、邮件、日报、笔记这些标准化任务入手。 本课要留下的产物是：设计一个“会议纪要”提示模板，要求包含行动项、负责人和截止时间。</span>
         </div></div>
     </section>
     <article class="card">
@@ -684,6 +974,118 @@ li { margin-bottom: 8px; }
         </div></div>
     </article>
 
+
+<article class="card">
+  <span class="label">分段讲稿</span>
+  <h2>这一课不是背概念，而是按 4 个小段理解</h2>
+  <div class="teaching-grid"><div class="teaching-segment">
+  <span class="step-no">1</span>
+  <div>
+    <h3>办公场景有哪些机会</h3>
+    <p><strong>先讲清：</strong>AI 可以提高信息处理速度。</p>
+    <p><strong>再落地：</strong>把它放进“会议纪要”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先从纪要、邮件、日报、笔记这些标准化任务入手。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">2</span>
+  <div>
+    <h3>常见任务模板</h3>
+    <p><strong>先讲清：</strong>办公类任务最适合新手入门。</p>
+    <p><strong>再落地：</strong>把它放进“日报周报”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>为每类任务做固定输出模板。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">3</span>
+  <div>
+    <h3>适合新手的 5 个入口</h3>
+    <p><strong>先讲清：</strong>要固定模板和输出格式。</p>
+    <p><strong>再落地：</strong>把它放进“邮件回复”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>从一开始就养成敏感信息脱敏意识。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">4</span>
+  <div>
+    <h3>怎么避免泄露敏感信息</h3>
+    <p><strong>先讲清：</strong>AI 可以提高信息处理速度。</p>
+    <p><strong>再落地：</strong>把它放进“学习笔记整理”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先从纪要、邮件、日报、笔记这些标准化任务入手。</p>
+  </div>
+</div></div>
+</article>
+<article class="card">
+  <span class="label">课堂演练</span>
+  <h2>把本课做成一个可检查的小成果</h2>
+  <div class="practice-path">
+    <div>
+      <strong>老师先演示</strong>
+      <span>用“会议纪要”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
+    </div>
+    <div>
+      <strong>你再跟做</strong>
+      <span>设计一个“会议纪要”提示模板，要求包含行动项、负责人和截止时间。</span>
+    </div>
+    <div>
+      <strong>最后验收</strong>
+      <span>把答案拿去对照“自检”区，如果无法说清场景、输出和风险，就回到工作纸重新补上下文。</span>
+    </div>
+  </div>
+</article>
+<article class="card">
+  <span class="label">下一步</span>
+  <h2>学完后怎么继续扩展</h2>
+  <p class="small-note">下一课会进入“内容创作场景”，你要带着本课产物继续往下用。</p>
+  <div class="toolbar">
+    <a class="btn primary" href="./lesson-09-office-and-learning-worksheet.html">打开本课练习工作纸</a>
+  </div>
+</article>
+
+<article class="card learning-evidence">
+  <span class="label">参考答案</span>
+  <h2>不是标准话术，而是判断自己有没有学会</h2>
+  <ul><li>能用自己的话说明：办公和学习是新手最适合先练 AI 的场景，因为任务高频、风险较低、结果容易检查。不要一上来让 AI 解决复杂决策，先让它帮你整理信息、改写邮件、提炼行动项、做学习笔记。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“会议纪要”开始。</li><li>最终要留下一个可检查的小产物：设计一个“会议纪要”提示模板，要求包含行动项、负责人和截止时间。</li></ul>
+</article>
+<article class="card learning-evidence">
+  <span class="label">小测验</span>
+  <h2>先自己答，再展开参考思路</h2>
+  <div class="quiz-list"><details class="quiz-item">
+  <summary>我有没有给 AI 固定输出格式？</summary>
+  <p>AI 可以提高信息处理速度</p>
+</details><details class="quiz-item">
+  <summary>结果里是否能看出谁要做什么、什么时候做完？</summary>
+  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+</details><details class="quiz-item">
+  <summary>输入前是否处理了敏感信息？</summary>
+  <p>一上来就拿敏感客户信息试验。</p>
+</details></div>
+</article>
+<article class="card learning-evidence">
+  <span class="label">评分标准</span>
+  <h2>用 3 档判断本课产物质量</h2>
+  <div class="rubric-grid"><div class="rubric-item">
+  <strong>通过</strong>
+  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+</div><div class="rubric-item">
+  <strong>优秀</strong>
+  <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
+</div><div class="rubric-item">
+  <strong>需要重做</strong>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+</div></div>
+</article>
+<article class="card learning-evidence">
+  <span class="label">术语表</span>
+  <h2>把这一课的词翻译成人话</h2>
+  <div class="glossary-grid"><div class="glossary-item">
+  <strong>行动项</strong>
+  <span>会议后必须有人负责推进的具体事项。</span>
+</div><div class="glossary-item">
+  <strong>脱敏</strong>
+  <span>把隐私或内部信息替换成安全占位符。</span>
+</div><div class="glossary-item">
+  <strong>结构化输出</strong>
+  <span>按固定栏目或表格输出，方便检查和复用。</span>
+</div></div>
+</article>
   </main>
   <aside class="lesson-side">
     <article class="card">

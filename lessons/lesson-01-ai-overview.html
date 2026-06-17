@@ -94,7 +94,8 @@ p { margin: 0; }
 .card + .card { margin-top: 18px; }
 ul { margin: 0; padding-left: 18px; }
 li { margin-bottom: 8px; }
-.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid { display: grid; gap: 10px; }
+.meta, .principles, .truths, .methods, .anti-patterns, .quick-grid, .flow, .case-read-grid, .checklist-grid, .deep-script-grid, .lesson-meta-grid, .example-grid, .quiz-list, .rubric-grid, .glossary-grid { display: grid; gap: 10px; }
+.lesson-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meta-item, .principle-block {
   padding: 14px;
   border-radius: var(--radius);
@@ -138,6 +139,107 @@ li { margin-bottom: 8px; }
   font-family: "Consolas", "SFMono-Regular", monospace;
   font-size: 0.92rem;
   line-height: 1.6;
+}
+.plain-language {
+  margin: 12px 0;
+  padding: 16px;
+  color: #12312d;
+  background: #eef7f5;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+}
+.plain-language strong,
+.deep-script strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.plain-language p,
+.deep-script p {
+  color: var(--muted);
+}
+.deep-script {
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.example-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.example-block {
+  margin-top: 10px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.example-block strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.example-block p,
+.example-block li {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.example-block.bad {
+  border-color: rgba(211, 84, 63, 0.24);
+  background: #fff8f6;
+}
+.example-block.good {
+  border-color: rgba(15, 118, 110, 0.24);
+  background: #eef7f5;
+}
+.learning-evidence ul,
+.reference-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.quiz-item {
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.quiz-item summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 800;
+}
+.quiz-item p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.rubric-grid,
+.glossary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.glossary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.rubric-item,
+.glossary-item {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.rubric-item strong,
+.glossary-item strong {
+  color: var(--primary);
+}
+.rubric-item span,
+.glossary-item span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.walkthrough-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.walkthrough-list li {
+  padding: 8px 0;
 }
 .check-item {
   display: grid;
@@ -311,11 +413,31 @@ li { margin-bottom: 8px; }
 .chapter-outcome strong { color: var(--ink); }
 .lesson-list { list-style: none; padding-left: 0; display: grid; gap: 10px; }
 .lesson-item { margin: 0; }
-.lesson-item a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
-.lesson-item a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
+.lesson-item > a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
+.lesson-item > a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
 .lesson-no { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius); color: #ffffff; background: var(--primary); font-weight: 800; }
 .lesson-item strong { display: block; margin-bottom: 4px; }
 .lesson-item span { color: var(--muted); font-size: 14px; }
+.lesson-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  padding-left: 56px;
+}
+.lesson-actions a {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  color: var(--primary);
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
 .callout { padding: 18px; border-left: 4px solid var(--coral); margin-bottom: 18px; }
 .callout p { color: var(--muted); }
 .label { display: inline-block; color: var(--coral); font-weight: 800; font-size: 0.88rem; margin-bottom: 6px; }
@@ -540,8 +662,99 @@ li { margin-bottom: 8px; }
 }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
+.worksheet-hero { align-items: center; }
+.teaching-grid, .practice-path, .worksheet-grid, .worksheet-list, .worksheet-table {
+  display: grid;
+  gap: 12px;
+}
+.teaching-segment {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.teaching-segment h3 {
+  font-family: var(--sans);
+  margin-bottom: 8px;
+}
+.teaching-segment p + p { margin-top: 6px; }
+.teaching-segment p { color: var(--muted); font-size: 0.95rem; }
+.teaching-segment p strong { color: var(--ink); }
+.practice-path {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.practice-path > div {
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.practice-path strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.practice-path span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.worksheet-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+.worksheet-block {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.worksheet-block p { color: var(--muted); }
+.writing-label {
+  display: grid;
+  gap: 8px;
+}
+.writing-label span {
+  color: var(--ink);
+  font-weight: 800;
+}
+.writing-box {
+  min-height: 108px;
+  padding: 12px 14px;
+  width: 100%;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px dashed rgba(15, 118, 110, 0.38);
+  border-radius: var(--radius);
+  font: inherit;
+  line-height: 1.65;
+  resize: vertical;
+}
+.writing-box::placeholder { color: #8a94a3; }
+.writing-box.large { min-height: 150px; }
+.writing-box.extra-large { min-height: 220px; }
+.worksheet-table {
+  grid-template-columns: 1fr;
+}
+.worksheet-table > div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.worksheet-table span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
   .placeholder-track { grid-template-columns: 1fr; }
@@ -563,13 +776,15 @@ li { margin-bottom: 8px; }
   .track-card { min-height: 0; }
   .placeholder-track { padding: 18px; }
   .showcase-point { grid-template-columns: 1fr; }
+  .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
   .focus-main p { font-size: 1rem; }
   .section-title { display: block; }
   .section-title p { margin-top: 4px; }
-  .lesson-item a { grid-template-columns: 38px minmax(0, 1fr); }
+  .lesson-item > a { grid-template-columns: 38px minmax(0, 1fr); }
   .lesson-no { width: 38px; height: 38px; }
+  .lesson-actions { padding-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -594,7 +809,8 @@ li { margin-bottom: 8px; }
     <p class="lead">理解 AI 不是单一软件，而是一整类让机器完成智能任务的方法与系统。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start">开始本课</a>
-      <a class="btn" href="#practice">试着举例</a>
+      <a class="btn" href="#practice">做完练习</a>
+      <a class="btn" href="./lesson-01-ai-overview-worksheet.html">打开工作纸</a>
     </div>
   </div>
   <aside class="progress-panel" aria-label="学习进度">
@@ -605,9 +821,9 @@ li { margin-bottom: 8px; }
     </div>
     <div class="progress-bar"><span style="width:4%"></span></div>
     <ol class="mini-steps">
-      <li>先知道 AI 不是某个 App</li>
-      <li>再看它帮人完成什么事</li>
-      <li>最后用自己的例子说一遍</li>
+      <li>先读核心问题</li>
+      <li>抓住 3 个最小原理</li>
+      <li>完成一个可交付练习</li>
     </ol>
   </aside>
 </header>
@@ -616,25 +832,48 @@ li { margin-bottom: 8px; }
   <h2>核心问题</h2>
   <p>如果不先回答“AI 到底是什么”，后面所有工具名、模型名和产品名都会被误当成 AI 本身。</p>
 </section>
+<section class="card">
+  <span class="label">学习元信息</span>
+  <h2>开始前先确认这些边界</h2>
+  <div class="lesson-meta-grid"><div class="meta-item">
+  <strong>预计用时</strong>
+  <span>25-35 分钟</span>
+</div><div class="meta-item">
+  <strong>难度</strong>
+  <span>零基础</span>
+</div><div class="meta-item">
+  <strong>需要工具</strong>
+  <span>任意聊天式 AI 工具；也可以只看页面完成纸面练习</span>
+</div><div class="meta-item">
+  <strong>隐私边界</strong>
+  <span>不要上传公司内部资料、客户隐私或账号信息；本课只需要写公开生活或工作场景。</span>
+</div><div class="meta-item">
+  <strong>更新时间</strong>
+  <span>2026-06-17</span>
+</div><div class="meta-item">
+  <strong>来源提示</strong>
+  <span>概念课，重点是建立认知框架；具体产品能力以后续实际工具为准。</span>
+</div></div>
+</section>
 <div class="grid">
   <main>
 <section class="newbie-focus" aria-label="新手速读">
   <div class="focus-main">
-    <span class="label">第一次学 AI，先这样理解</span>
-    <h2>AI 不是某一个软件</h2>
-    <p>你可以把 AI 理解成一种“让电脑帮你做判断和生成内容”的能力。ChatGPT、DeepSeek、剪映里的 AI 功能，只是这种能力的不同入口。</p>
+    <span class="label">新手先看这里</span>
+    <h2>这一课只要先记住这句话</h2>
+    <p>AI 不是 ChatGPT 这个软件。AI 是一类能力：让机器帮人识别、预测、推荐、生成或执行任务。</p>
   </div>
   <div class="focus-check">
-    <strong>先别急着背名词</strong>
-    <span>先问自己：这个工具能帮我做哪件事？写字、识图、推荐、总结，还是回答问题？</span>
+    <strong>判断自己有没有看懂</strong>
+    <span>以后看到任何 AI 工具，先问一句：它到底帮我完成哪类任务？</span>
   </div>
 </section>
 <article class="card visual-card">
-  <span class="label">看图理解</span>
-  <h2>先分清四件事：任务、AI、模型、产品</h2>
+  <span class="label">图解</span>
+  <h2>一张图看懂：AI、模型、产品、任务的关系</h2>
   <figure class="lesson-visual">
   <img src="../chapter-01-cognition-mindmap.png" alt="第一章认知脑图，显示 AI、LLM、Agent、模型家族和边界的关系" loading="lazy" />
-  <figcaption>先看大块关系，不用一开始就读懂所有小字。</figcaption>
+  <figcaption>先不用逐个读小字，只看大分支：这一章到底分成哪几块。</figcaption>
 </figure>
   <div class="visual-chain"><div class="visual-node">
   <span>你真正要做的事</span>
@@ -653,70 +892,121 @@ li { margin-bottom: 8px; }
   <strong>产品</strong>
   <p>ChatGPT、剪映 AI、客服机器人、推荐系统，都是把能力包装给人使用。</p>
 </div></div>
-  <p class="visual-warning">读 AI 内容时，先从“我要完成什么任务”开始看，再看它用了什么能力、什么模型、什么产品。</p>
+  <p class="visual-warning">新手最容易反过来学：先背产品名，再背模型名，最后还是不知道它能帮自己做什么。正确顺序是先看任务，再看能力和工具。</p>
+</article>
+
+<article class="card deep-note-card">
+  <span class="label">深度讲稿</span>
+  <h2>把这一课讲透：先翻译，再演示，再提问</h2>
+  <div class="plain-language">
+    <strong>人话解释</strong>
+    <p>AI 是一类让机器帮人完成智能任务的能力，不是某一个聊天软件。你可以把它理解成一组方法：识别图片、预测结果、推荐内容、生成文字图片，或者辅助执行流程。</p>
+  </div>
+  <div class="deep-script-grid"><div class="deep-script">
+  <strong>先把 AI 从产品名里拿出来</strong>
+  <p>新手最容易把 AI 等同于 ChatGPT、DeepSeek 或某个 App。讲课时先问学生：如果明天这个 App 换名字了，AI 还在不在？答案是还在，因为 AI 是能力和方法，不是入口名称。</p>
+</div><div class="deep-script">
+  <strong>再用任务判断 AI 类型</strong>
+  <p>让学生把一个任务写出来，比如整理会议纪要、推荐商品、识别发票。再判断它属于生成、推荐、识别还是预测。这个动作能把抽象概念落到真实工作里。</p>
+</div><div class="deep-script">
+  <strong>最后建立三层视角</strong>
+  <p>任务是你要完成的事，模型是背后的能力引擎，产品是你操作的入口。学 AI 的顺序应该从任务开始，而不是从产品排行榜开始。</p>
+</div></div>
+</article>
+<article class="card">
+  <span class="label">跟做案例</span>
+  <h2>用 AI 写商品介绍</h2>
+  <ol class="walkthrough-list"><li>先写清任务：我要为一款保温杯写商品介绍。</li><li>判断能力：这属于文本生成，不是图像识别，也不是推荐排序。</li><li>选择工具：可以使用聊天模型产品完成草稿。</li><li>人工验收：检查容量、材质、价格、适用人群有没有事实错误。</li></ol>
+</article>
+<article class="card worked-example">
+  <span class="label">完整示范</span>
+  <h2>从差输入改到可用输入</h2>
+  <div class="example-grid">
+    <div class="example-block bad">
+      <strong>差输入</strong>
+      <p>AI 就是 ChatGPT，能帮我写东西。</p>
+    </div>
+    <div class="example-block good">
+      <strong>好输入</strong>
+      <p>我把 AI 理解成一类机器能力：它可以识别、预测、推荐、生成或执行任务。ChatGPT 只是其中一种产品入口。比如电商推荐属于预测和推荐，客服自动回复属于理解和生成，发票识别属于识别。</p>
+    </div>
+  </div>
+  <div class="example-block">
+    <strong>输出样例</strong>
+    <p>我的 AI 能力分类表：1. 会议纪要生成：生成；2. 商品推荐：预测和推荐；3. 发票识别：识别；4. 客服问答：理解和生成；5. 库存预警：预测；6. 自动发布文章：执行和连接。</p>
+  </div>
+  <div class="example-block">
+    <strong>检查点</strong>
+    <ul><li>是否把 AI 和某个产品名分开。</li><li>是否至少列出 6 个真实场景。</li><li>是否能判断每个场景属于哪类能力。</li></ul>
+  </div>
+</article>
+<article class="card">
+  <span class="label">检查理解</span>
+  <h2>学完后先回答这 3 个问题</h2>
+  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能不能举出一个不是聊天机器人的 AI 例子？</span></div><div class="check-item"><strong>2</strong><span>我能不能把一个工具拆成任务、模型、产品三层？</span></div><div class="check-item"><strong>3</strong><span>我能不能判断自己的例子属于识别、预测、推荐还是生成？</span></div></div>
 </article>
     <section class="learner-brief">
-      <span class="label">如果你不知道怎么往下看</span>
-      <h2>按这个顺序读就可以</h2>
-      <p class="small-note">你不用一次看懂全部。先读第一遍，有感觉了再回来看细节。</p>
+      <span class="label">先怎么学</span>
+      <h2>按这节课自己的任务跑 4 步</h2>
+      <p class="small-note">每一课的学习路线都不同。先抓本课最关键的问题，再用案例和产物证明自己真的会用。</p>
       <div class="flow">
         <div class="flow-step">
-          <strong>1. 先看一句话</strong>
-          <span>先记住：AI 不是某个 App，而是一类让电脑帮人完成任务的能力。</span>
+          <strong>1. 大家突然都在聊 AI</strong>
+          <span>先处理“为什么大家突然都在聊 AI”。用自己的话回答本课核心问题：如果不先回答“AI 到底是什么”，后面所有工具名、模型名和产品名都会被误当成 AI 本身。</span>
         </div>
         <div class="flow-step">
-          <strong>2. 再看图</strong>
-          <span>看“任务、AI、模型、产品”这四个词分别站在哪一层，先把关系看清楚。</span>
+          <strong>2. AI 的几种主要形态</strong>
+          <span>再抓本课判断标准：AI 的目标是让机器完成原本需要人类智能的任务。先不要扩展概念，把这句话变成你自己的检查规则。</span>
         </div>
         <div class="flow-step">
-          <strong>3. 找一个身边例子</strong>
-          <span>比如写文案、整理会议纪要、客服自动回复，想一想 AI 在里面帮了哪一步。</span>
+          <strong>3. AI 在工作和生活中的典型应用</strong>
+          <span>放进“办公软件里的智能写作和总结”这个案例里练一遍。按“输入是什么、AI 处理什么、人怎么验收”写下来。</span>
         </div>
         <div class="flow-step">
-          <strong>4. 用自己的话说一遍</strong>
-          <span>能说出“这个 AI 工具帮我做了什么”，就已经迈过了第一道门槛。</span>
+          <strong>4. 新手最容易误解的地方</strong>
+          <span>最后按这条方法收尾：先分清目标层、方法层、产品层。 本课要留下的产物是：列出你自己工作或生活里 3 个已经在使用 AI 的场景，并判断它们分别属于识别、预测、推荐还是生成。</span>
         </div></div>
     </section>
     <article class="card">
-      <span class="label">先放在心里</span>
-      <h2>读这一课时，记住 3 件事就够了</h2>
+      <span class="label">先记住</span>
+      <h2>本课只抓 3 件事</h2>
       <ul><li>AI 的目标是让机器完成原本需要人类智能的任务</li><li>AI 包含规则系统、机器学习、深度学习、生成式 AI</li><li>今天常说的 ChatGPT、DeepSeek 只是 AI 产品或模型，不等于 AI 全部</li></ul>
     </article>
     <article class="card">
-      <span class="label">换个角度看</span>
-      <h2>为什么不能把 AI 等同于 ChatGPT</h2>
-      <div class="principles"><div class="principle-block"><strong>先看目标</strong><span>AI 不是某个模型名，而是让机器表现出智能行为的一类方法。</span></div><div class="principle-block"><strong>再看方法</strong><span>规则、统计学习、深度学习、生成式模型，都是实现 AI 的不同办法。</span></div><div class="principle-block"><strong>最后看产品</strong><span>你平时看到的是工具和产品，不是底层 AI 的全部样子。</span></div></div>
+      <span class="label">想明白</span>
+      <h2>第一性拆解</h2>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把“目标”拆出来：AI 不是某个模型名，而是让机器表现出智能行为的方法集合。</span></div><div class="principle-block"><strong>拆解 2</strong><span>再把“实现路径”拆出来：规则、统计学习、深度学习、生成式模型只是不同实现手段。</span></div><div class="principle-block"><strong>拆解 3</strong><span>最后把“产品层”拆出来：用户看到的是工具和产品，不是底层 AI 全貌。</span></div></div>
     </article>
     <article class="card">
-      <span class="label">以后也用得上</span>
-      <h2>看到新工具时，可以这样判断</h2>
-      <div class="truths"><div class="principle-block"><strong>它在做什么事</strong><span>先看它是在识别、预测、推荐、生成，还是帮你控制某个流程。</span></div><div class="principle-block"><strong>它靠什么能力</strong><span>方法会变化，但目标通常都是让机器更好地判断、生成或执行。</span></div><div class="principle-block"><strong>它是不是入口</strong><span>产品只是你接触 AI 的入口，不等于 AI 的全部。</span></div></div>
+      <span class="label">可迁移</span>
+      <h2>最小原理</h2>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：智能任务先于工具存在。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：方法可以变化，但目标是让机器更好地完成判断、生成或控制。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：产品只是 AI 落地形态，不等于 AI 整体。</span></div></div>
     </article>
     <article class="card">
-      <span class="label">接下来会看到</span>
-      <h2>这节课会帮你把这些问题放清楚</h2>
+      <span class="label">怎么学</span>
+      <h2>读完后怎么把它用出来</h2>
       <ul><li>为什么大家突然都在聊 AI</li><li>AI 的几种主要形态</li><li>AI 在工作和生活中的典型应用</li><li>新手最容易误解的地方</li></ul>
     </article>
     <article class="card">
-      <span class="label">生活里的例子</span>
-      <h2>先从你见过的场景开始</h2>
+      <span class="label">怎么读案例</span>
+      <h2>先看这 2 类真实场景</h2>
       <div class="case-read-grid">
         <div class="case-read-card">
           <strong>办公软件里的智能写作和总结</strong>
-          <span>先看它帮人做了什么，不用先管背后模型叫什么。</span>
+          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
         </div>
         <div class="case-read-card">
           <strong>电商平台里的推荐系统</strong>
-          <span>先看它根据什么信息推荐，再想一想人看到的只是结果。</span>
+          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
         </div>
         <div class="case-read-card">
           <strong>客服系统里的自动问答</strong>
-          <span>先看它回答了哪类问题，再看哪些问题仍然需要人工处理。</span>
+          <span>读这个案例时，先找输入是什么，再看 AI 帮哪一步，最后确认谁负责检查结果。</span>
         </div></div>
     </article>
 <article class="card">
-  <span class="label">拆开看</span>
-  <h2>一个例子可以这样理解</h2>
+  <span class="label">看例子</span>
+  <h2>把抽象概念拆成你能看懂的 4 层</h2>
   <div class="scenario-grid"><div class="scenario-card">
   <strong>你打开 ChatGPT 写商品文案</strong>
   <ul><li>任务：写出一段能发布的商品介绍。</li><li>AI 能力：理解你的要求，并生成一段文本。</li><li>模型：背后可能是 GPT 这类语言模型。</li><li>产品：你看到的是 ChatGPT 的聊天界面。</li></ul>
@@ -725,12 +1015,127 @@ li { margin-bottom: 8px; }
   <ul><li>任务：从很多商品里挑出你更可能想买的。</li><li>AI 能力：根据行为数据做预测和排序。</li><li>模型：背后可能是推荐模型或排序模型。</li><li>产品：你看到的是首页、猜你喜欢、相关商品。</li></ul>
 </div></div>
 </article>
+
+<article class="card">
+  <span class="label">分段讲稿</span>
+  <h2>这一课不是背概念，而是按 4 个小段理解</h2>
+  <div class="teaching-grid"><div class="teaching-segment">
+  <span class="step-no">1</span>
+  <div>
+    <h3>为什么大家突然都在聊 AI</h3>
+    <p><strong>先讲清：</strong>AI 的目标是让机器完成原本需要人类智能的任务。</p>
+    <p><strong>再落地：</strong>把它放进“办公软件里的智能写作和总结”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先分清目标层、方法层、产品层。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">2</span>
+  <div>
+    <h3>AI 的几种主要形态</h3>
+    <p><strong>先讲清：</strong>AI 包含规则系统、机器学习、深度学习、生成式 AI。</p>
+    <p><strong>再落地：</strong>把它放进“电商平台里的推荐系统”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>看到一个新 AI 工具时，先问它在解决什么任务，再问它底层属于哪类能力。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">3</span>
+  <div>
+    <h3>AI 在工作和生活中的典型应用</h3>
+    <p><strong>先讲清：</strong>今天常说的 ChatGPT、DeepSeek 只是 AI 产品或模型，不等于 AI 全部。</p>
+    <p><strong>再落地：</strong>把它放进“客服系统里的自动问答”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>不要先记品牌名，先记能力分类。</p>
+  </div>
+</div><div class="teaching-segment">
+  <span class="step-no">4</span>
+  <div>
+    <h3>新手最容易误解的地方</h3>
+    <p><strong>先讲清：</strong>AI 的目标是让机器完成原本需要人类智能的任务。</p>
+    <p><strong>再落地：</strong>把它放进“办公软件里的智能写作和总结”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>马上做：</strong>先分清目标层、方法层、产品层。</p>
+  </div>
+</div></div>
+</article>
+<article class="card">
+  <span class="label">课堂演练</span>
+  <h2>把本课做成一个可检查的小成果</h2>
+  <div class="practice-path">
+    <div>
+      <strong>老师先演示</strong>
+      <span>用“办公软件里的智能写作和总结”示范：输入是什么，AI 处理什么，人怎么检查，最终输出什么。</span>
+    </div>
+    <div>
+      <strong>你再跟做</strong>
+      <span>列出你自己工作或生活里 3 个已经在使用 AI 的场景，并判断它们分别属于识别、预测、推荐还是生成。</span>
+    </div>
+    <div>
+      <strong>最后验收</strong>
+      <span>把答案拿去对照“自检”区，如果无法说清场景、输出和风险，就回到工作纸重新补上下文。</span>
+    </div>
+  </div>
+</article>
+<article class="card">
+  <span class="label">下一步</span>
+  <h2>学完后怎么继续扩展</h2>
+  <p class="small-note">下一课会进入“大模型、LLM、Agent、MCP、Skill”，你要带着本课产物继续往下用。</p>
+  <div class="toolbar">
+    <a class="btn primary" href="./lesson-01-ai-overview-worksheet.html">打开本课练习工作纸</a>
+  </div>
+</article>
+
+<article class="card learning-evidence">
+  <span class="label">参考答案</span>
+  <h2>不是标准话术，而是判断自己有没有学会</h2>
+  <ul><li>能用自己的话说明：AI 是一类让机器帮人完成智能任务的能力，不是某一个聊天软件。你可以把它理解成一组方法：识别图片、预测结果、推荐内容、生成文字图片，或者辅助执行流程。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“办公软件里的智能写作和总结”开始。</li><li>最终要留下一个可检查的小产物：列出你自己工作或生活里 3 个已经在使用 AI 的场景，并判断它们分别属于识别、预测、推荐还是生成。</li></ul>
+</article>
+<article class="card learning-evidence">
+  <span class="label">小测验</span>
+  <h2>先自己答，再展开参考思路</h2>
+  <div class="quiz-list"><details class="quiz-item">
+  <summary>我能不能举出一个不是聊天机器人的 AI 例子？</summary>
+  <p>AI 的目标是让机器完成原本需要人类智能的任务</p>
+</details><details class="quiz-item">
+  <summary>我能不能把一个工具拆成任务、模型、产品三层？</summary>
+  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+</details><details class="quiz-item">
+  <summary>我能不能判断自己的例子属于识别、预测、推荐还是生成？</summary>
+  <p>把 AI 等同于聊天机器人。</p>
+</details></div>
+</article>
+<article class="card learning-evidence">
+  <span class="label">评分标准</span>
+  <h2>用 3 档判断本课产物质量</h2>
+  <div class="rubric-grid"><div class="rubric-item">
+  <strong>通过</strong>
+  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+</div><div class="rubric-item">
+  <strong>优秀</strong>
+  <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
+</div><div class="rubric-item">
+  <strong>需要重做</strong>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+</div></div>
+</article>
+<article class="card learning-evidence">
+  <span class="label">术语表</span>
+  <h2>把这一课的词翻译成人话</h2>
+  <div class="glossary-grid"><div class="glossary-item">
+  <strong>本课核心概念</strong>
+  <span>理解 AI 不是单一软件，而是一整类让机器完成智能任务的方法与系统。</span>
+</div><div class="glossary-item">
+  <strong>输入</strong>
+  <span>交给 AI 的背景、材料、约束、数据或示例。</span>
+</div><div class="glossary-item">
+  <strong>人工检查</strong>
+  <span>人用事实、逻辑、风险和格式标准确认 AI 输出能不能进入真实工作。</span>
+</div><div class="glossary-item">
+  <strong>产物</strong>
+  <span>学习后能留下并复用的文档、清单、模板、流程图、提示词或页面。</span>
+</div></div>
+</article>
   </main>
   <aside class="lesson-side">
     <article class="card">
-      <span class="label">马上能用</span>
-      <h2>以后看到 AI 工具时，先问 3 个问题</h2>
-      <div class="methods"><div class="principle-block"><strong>它帮我做什么</strong><span>先分清要完成的任务，不要一上来就记产品名。</span></div><div class="principle-block"><strong>它用了哪类能力</strong><span>比如识别、预测、推荐、生成，或者把一段流程自动做完。</span></div><div class="principle-block"><strong>结果要不要检查</strong><span>AI 可以帮你更快开始，但重要结果仍然需要人来判断。</span></div></div>
+      <span class="label">马上用</span>
+      <h2>应用方法</h2>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>先分清目标层、方法层、产品层。</span></div><div class="principle-block"><strong>方法 2</strong><span>看到一个新 AI 工具时，先问它在解决什么任务，再问它底层属于哪类能力。</span></div><div class="principle-block"><strong>方法 3</strong><span>不要先记品牌名，先记能力分类。</span></div></div>
     </article>
     <article class="card">
       <span class="label">避坑</span>
@@ -738,26 +1143,26 @@ li { margin-bottom: 8px; }
       <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>把 AI 等同于聊天机器人。</span></div><div class="principle-block"><strong>误区 2</strong><span>把一个流行产品误当成整个 AI 行业。</span></div><div class="principle-block"><strong>误区 3</strong><span>只记工具名字，不理解任务与能力的对应关系。</span></div></div>
     </article>
     <article class="card" id="practice">
-      <span class="label">你可以试一试</span>
-      <h2>用自己的生活例子检查一下</h2>
+      <span class="label">完成标准</span>
+      <h2>做完这件事才算学会</h2>
       <div class="meta">
-        <div class="meta-item"><strong>写下 3 个场景</strong><span>想想你工作或生活里已经见过哪些 AI：写作、拍照修图、商品推荐、语音输入、客服回复都可以。</span></div>
-        <div class="meta-item"><strong>说出它帮了哪一步</strong><span>能用自己的话说出“它帮我识别、预测、推荐、生成了什么”，就说明你已经理解了这一课的核心。</span></div>
+        <div class="meta-item"><strong>本课产物</strong><span>列出你自己工作或生活里 3 个已经在使用 AI 的场景，并判断它们分别属于识别、预测、推荐还是生成。</span></div>
+        <div class="meta-item"><strong>验收方式</strong><span>能用自己的话解释本课概念，并把它套到一个真实工作或生活场景里。</span></div>
       </div>
     </article>
     <article class="card">
       <span class="label">可以直接复制</span>
-      <h2>如果你想让 AI 陪你再讲一遍</h2>
+      <h2>给 AI 的跟做提示</h2>
       <pre class="copy-prompt"><code>我正在学习「AI是什么」，请用新手能听懂的话教我。
 先用 120 字以内解释它，不要堆术语。
 再结合这两个场景举例：办公软件里的智能写作和总结；电商平台里的推荐系统。
 然后问我 3 个检查理解的问题。
-最后请让我说出 3 个自己见过的 AI 场景，并帮我判断它们分别属于识别、预测、推荐还是生成。</code></pre>
+最后帮我完成这个练习：列出你自己工作或生活里 3 个已经在使用 AI 的场景，并判断它们分别属于识别、预测、推荐还是生成。</code></pre>
     </article>
     <article class="card">
-      <span class="label">读完以后</span>
-      <h2>看看自己是不是已经理解</h2>
-      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话说明 AI 不是某一个 App。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我能说出这个例子里 AI 帮人做了哪一步。</span></div><div class="check-item"><strong>4</strong><span>我知道 AI 的结果有时能直接参考，有时必须自己再检查。</span></div></div>
+      <span class="label">自检</span>
+      <h2>学完请确认这 4 件事</h2>
+      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「AI是什么」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：列出你自己工作或生活里 3 个已经在使用 AI 的场景，并判断它们分别属于识别、预测、推荐还是生成。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
     </article>
   </aside>
 </div>
