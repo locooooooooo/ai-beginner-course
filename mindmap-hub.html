@@ -647,6 +647,11 @@ li { margin-bottom: 8px; }
   color: var(--primary);
   font-size: 0.84rem;
 }
+.showcase-library-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 .showcase-case-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -759,6 +764,66 @@ li { margin-bottom: 8px; }
   background: #ffffff;
   border: 1px solid var(--line);
 }
+.case-library-hero {
+  padding-top: 40px;
+}
+.case-index-panel {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.case-index-panel h2 {
+  margin-bottom: 0;
+}
+.case-index-list {
+  display: grid;
+  gap: 8px;
+}
+.case-index-list a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+.case-index-list strong {
+  font-size: 0.94rem;
+}
+.case-index-list span {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+.case-method-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.case-method-card {
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.case-method-card strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.case-method-card span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -853,7 +918,7 @@ li { margin-bottom: 8px; }
   font-size: 0.94rem;
 }
 @media (max-width: 920px) {
-  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid { grid-template-columns: 1fr; }
+  .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid, .case-method-grid { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-side { position: static; }
   .newbie-focus, .scenario-grid { grid-template-columns: 1fr; }
@@ -875,6 +940,7 @@ li { margin-bottom: 8px; }
   .showcase-library { padding: 18px; }
   .showcase-summary, .showcase-case-grid { grid-template-columns: 1fr; }
   .case-meta div { grid-template-columns: 1fr; }
+  .case-index-list a { grid-template-columns: 1fr; }
   .worksheet-table > div { grid-template-columns: 1fr; }
   .resource-actions { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: 1fr; }
@@ -897,7 +963,7 @@ li { margin-bottom: 8px; }
   <div class="navlinks">
     <a href="./course.html#beginner">新手入门</a>
     <a href="./course.html#advanced">老鸟进阶</a>
-    <a href="./course.html#showcase">实战演示</a>
+    <a href="./case-library.html">案例库</a>
     <a href="#resources">资源</a>
   </div>
 </nav>
@@ -937,7 +1003,7 @@ li { margin-bottom: 8px; }
 <article class="chapter-card">
   <div class="eyebrow">总览</div>
   <h3>AI学习路线</h3>
-  <p>课程总览：新手入门打基础，老鸟进阶学习 Codex、Loop、网页和 GitHub，实战演示从本地工具案例开始。</p>
+  <p>课程总览：新手入门打基础，老鸟进阶学习 Codex、Loop、网页、GitHub 和真实案例库。</p>
   <img class="gallery-thumb" src="./ai-beginner-20-lessons-course.png" alt="AI学习路线" loading="lazy" />
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./ai-beginner-20-lessons-course.png">PNG</a>
