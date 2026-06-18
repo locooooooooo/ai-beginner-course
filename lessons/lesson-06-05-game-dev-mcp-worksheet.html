@@ -1572,7 +1572,7 @@ li { margin-bottom: 8px; }
   <article class="worksheet-block">
     <span class="label">3. 场景拆解</span>
     <h2>选一个自己的场景来套</h2>
-    <p class="small-note">可以参考这些案例：Unity MCP：让 Agent 从 IDE 连接 Unity，查询场景对象、创建测试关卡、管理资源并生成编辑器内工作流；UEMCP：通过 MCP Server 与 Unreal Editor 插件桥接，让 Agent 读取项目上下文，辅助生成 Actor、Blueprint 流程和自动化检查；Figma MCP：让 Agent 读取 UI 设计上下文、组件和变量，把血条、背包、技能按钮翻译成前端或 UMG 实现要求</p>
+    <p class="small-note">可以参考这些案例：Unity MCP：让 Agent 从 IDE 连接 Unity，查询场景对象、创建测试关卡、管理资源并生成编辑器内工作流；UEMCP：通过 MCP Server 与 Unreal Editor 插件桥接，让 Agent 读取项目上下文，辅助生成 Actor、Blueprint 流程和自动化检查；Figma MCP：让 Agent 读取 UI 设计上下文、组件和变量，把血条、背包、技能按钮翻译成前端或 UMG 实现要求；智能体分工：用 Codex 改引擎项目，用 OpenClaw 处理外围资料/沟通任务，用 Hermes Agent 承担长期记忆和持续跟进</p>
     <div class="worksheet-table">
       <div><strong>我的场景</strong><span>例如一个真实任务、一个业务流程或一次学习需求。</span></div>
       <div><strong>输入</strong><span>我会给 AI 什么材料、背景、限制或数据。</span></div>
@@ -1598,7 +1598,7 @@ li { margin-bottom: 8px; }
   <article class="worksheet-block">
     <span class="label">理解检查</span>
     <h2>先回答，再继续下一课</h2>
-    <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>这个 MCP 工作流只读、可写、还是会影响正式项目？</span></div><div class="check-item"><strong>2</strong><span>哪些动作必须人工确认？</span></div><div class="check-item"><strong>3</strong><span>是否留下工具调用日志、变更文件、截图和回滚方式？</span></div></div>
+    <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>这个 MCP 工作流只读、可写、还是会影响正式项目？</span></div><div class="check-item"><strong>2</strong><span>这里更适合用 Codex、OpenClaw 还是 Hermes Agent，为什么？</span></div><div class="check-item"><strong>3</strong><span>哪些动作必须人工确认？</span></div><div class="check-item"><strong>4</strong><span>是否留下工具调用日志、变更文件、截图和回滚方式？</span></div></div>
     <label class="writing-label"><span>我还没想明白的问题</span><textarea class="writing-box" aria-label="我还没想明白的问题" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
 
@@ -1648,6 +1648,20 @@ li { margin-bottom: 8px; }
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+  </article>
+  <article class="worksheet-case-card">
+    <span class="label">案例 04</span>
+    <h3>智能体分工：用 Codex 改引擎项目，用 OpenClaw 处理外围资料/沟通任务，用 Hermes Agent 承担长期记忆和持续跟进</h3>
+    <div class="worksheet-case-grid">
+      <div><strong>输入</strong><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
+      <div><strong>AI 动作</strong><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
+      <div><strong>人工检查</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+      <div><strong>交付物</strong><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
+    </div>
+    <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
+    <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
   </article></div>
   </article>
   <article class="worksheet-block">
@@ -1671,17 +1685,17 @@ li { margin-bottom: 8px; }
   <summary>这个 MCP 工作流只读、可写、还是会影响正式项目？</summary>
   <p>MCP 是把 AI 应用和外部工具连接起来的协议，核心是工具、资源、提示和权限边界</p>
 </details><details class="quiz-item">
-  <summary>哪些动作必须人工确认？</summary>
+  <summary>这里更适合用 Codex、OpenClaw 还是 Hermes Agent，为什么？</summary>
   <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
 </details><details class="quiz-item">
-  <summary>是否留下工具调用日志、变更文件、截图和回滚方式？</summary>
+  <summary>哪些动作必须人工确认？</summary>
   <p>把 MCP 当成万能插件，一上来给 Agent 全项目写权限。</p>
 </details></div>
   </article>
   <article class="worksheet-block">
     <span class="label">8. 对照改进</span>
     <h2>参考答案和评分标准</h2>
-    <ul class="reference-list"><li>一个安全的游戏 MCP 工作流应先读设计和项目上下文，再生成实现清单，最后只在测试场景或分支执行。</li><li>Figma 负责 UI 设计上下文，Unity 或 Unreal 负责引擎原型，文件系统负责资源清单，截图工具负责验收证据。</li><li>必须写清人工确认点、日志、版本控制、回滚机制和禁止动作，尤其是删除、批量重命名、提交和发布。</li></ul>
+    <ul class="reference-list"><li>一个安全的游戏 MCP 工作流应先读设计和项目上下文，再生成实现清单，最后只在测试场景或分支执行。</li><li>Figma 负责 UI 设计上下文，Unity 或 Unreal 负责引擎原型，文件系统负责资源清单，截图工具负责验收证据。</li><li>如果任务核心是改项目、跑脚本、验证结果，优先想 Codex；如果任务是常驻消息入口、资料整理和外围自动化，更像 OpenClaw；如果任务要求长期记忆、持续沉淀和跨会话跟进，更接近 Hermes Agent。</li><li>必须写清人工确认点、日志、版本控制、回滚机制和禁止动作，尤其是删除、批量重命名、提交和发布。</li></ul>
     <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
   <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
@@ -1708,6 +1722,12 @@ li { margin-bottom: 8px; }
 </div><div class="glossary-item">
   <strong>人工确认点</strong>
   <span>高风险动作执行前必须由人明确批准的暂停节点。</span>
+</div><div class="glossary-item">
+  <strong>OpenClaw</strong>
+  <span>更偏常驻个人助理形态的 Agent，适合聊天入口、日程、浏览器、文件和外围自动化。</span>
+</div><div class="glossary-item">
+  <strong>Hermes Agent</strong>
+  <span>更强调长期记忆、自改进和技能沉淀的 Agent，适合长期项目和持续跟进。</span>
 </div></div>
     <label class="writing-label"><span>我自己的术语解释</span><textarea class="writing-box" aria-label="我自己的术语解释" placeholder="在这里写下你的答案。"></textarea></label>
 </article>
