@@ -5,22 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>智能体对比：Codex、OpenClaw、Hermes Agent</title>
   <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Silkscreen:wght@400;700&display=swap');
+
 :root {
-  --canvas: #f6f7fb;
+  --canvas: #F7F7F5;
   --surface: #ffffff;
-  --surface-soft: #f2f7f6;
-  --ink: #171a21;
-  --muted: #5f6876;
-  --line: #dfe5ee;
-  --primary: #0f766e;
-  --primary-dark: #115e59;
-  --coral: #d3543f;
-  --amber: #b7791f;
-  --blue: #2563eb;
-  --max: 1120px;
-  --radius: 8px;
-  --shadow: 0 14px 30px rgba(23, 26, 33, 0.08);
-  --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --surface-soft: #fff4d0;
+  --ink: #121212;
+  --muted: #3d3d3d;
+  --line: #121212;
+  --primary: #FF5C00;
+  --primary-dark: #c94700;
+  --coral: #FF5C00;
+  --amber: #FFD600;
+  --blue: #121212;
+  --max: 1160px;
+  --radius: 4px;
+  --shadow: 5px 5px 0 #121212;
+  --shadow-sm: 3px 3px 0 #121212;
+  --display: "Silkscreen", "Press Start 2P", "Zpix", "Fusion Pixel", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --serif: var(--display);
   --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 * { box-sizing: border-box; }
@@ -29,11 +33,12 @@ body {
   margin: 0;
   font-family: var(--sans);
   color: var(--ink);
-  background: linear-gradient(180deg, #f6f7fb 0%, #ffffff 46%, #eef7f5 100%);
+  background: var(--canvas);
   line-height: 1.7;
+  overflow-x: hidden;
 }
 a { color: inherit; }
-a:focus-visible, button:focus-visible { outline: 3px solid rgba(37, 99, 235, 0.35); outline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 18px 76px; }
 .topbar {
   position: sticky;
@@ -45,16 +50,17 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(37, 99, 235, 0.3
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  background: rgba(246, 247, 251, 0.94);
-  border-bottom: 1px solid rgba(223, 229, 238, 0.9);
-  backdrop-filter: blur(14px);
+  background: var(--surface);
+  border-bottom: 3px solid var(--ink);
+  box-shadow: 0 4px 0 var(--ink);
 }
-.brand { font-weight: 800; text-decoration: none; white-space: nowrap; }
-.navlinks { display: flex; align-items: center; justify-content: flex-end; gap: 8px; overflow-x: auto; }
-.navlinks a { flex: 0 0 auto; color: var(--muted); font-size: 0.9rem; text-decoration: none; padding: 7px 8px; border-radius: var(--radius); }
-.navlinks a:hover { color: var(--primary); background: rgba(15, 118, 110, 0.08); }
+.brand { font-family: var(--display); font-weight: 900; text-decoration: none; white-space: nowrap; }
+.navlinks { display: flex; align-items: center; justify-content: flex-start; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+.navlinks::-webkit-scrollbar { display: none; }
+.navlinks a { flex: 0 0 auto; color: var(--ink); font-size: 0.9rem; text-decoration: none; padding: 7px 9px; border: 2px solid transparent; border-radius: var(--radius); font-weight: 900; }
+.navlinks a:hover { color: var(--ink); background: var(--amber); border-color: var(--ink); }
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 20px; align-items: end; padding: 34px 0 18px; }
-.eyebrow { display: inline-flex; color: var(--primary); font-size: 0.86rem; font-weight: 800; letter-spacing: 0; margin-bottom: 10px; }
+.eyebrow { display: inline-flex; color: var(--ink); font-size: 0.86rem; font-weight: 900; letter-spacing: 0; margin-bottom: 10px; }
 h1,h2,h3 { margin: 0; font-family: var(--serif); line-height: 1.22; }
 h1 { font-size: 2.35rem; margin-bottom: 10px; max-width: 780px; }
 h2 { font-size: 1.45rem; margin-bottom: 12px; }
@@ -71,15 +77,18 @@ p { margin: 0; }
   border-radius: var(--radius);
   text-decoration: none;
   color: var(--ink);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  font-weight: 700;
+  background: var(--amber);
+  border: 3px solid var(--ink);
+  box-shadow: var(--shadow-sm);
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
 }
-.btn.primary { color: #ffffff; background: var(--primary); border-color: var(--primary); }
-.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(23, 26, 33, 0.08); }
+.btn.primary { color: var(--ink); background: var(--primary); border-color: var(--ink); }
+.btn:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
 .progress-panel, .card, .callout, .chapter-card, .notes, .starter-panel {
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 3px solid var(--ink);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
@@ -596,7 +605,9 @@ li { margin-bottom: 8px; }
 .lesson-item { margin: 0; }
 .lesson-item > a { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: var(--radius); background: #f8fafc; border: 1px solid var(--line); text-decoration: none; }
 .lesson-item > a:hover { border-color: rgba(15, 118, 110, 0.35); background: #f2f7f6; }
-.lesson-no { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius); color: #ffffff; background: var(--primary); font-weight: 800; }
+.lesson-no { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+.lesson-no img { display: block; width: 52px; height: 52px; object-fit: contain; transform: translate(-4px, -4px); }
+.lesson-no-fallback { border-radius: var(--radius); color: #ffffff; background: var(--primary); font-weight: 800; }
 .lesson-item strong { display: block; margin-bottom: 4px; }
 .lesson-item span { color: var(--muted); font-size: 14px; }
 .lesson-actions {
@@ -1458,6 +1469,323 @@ li { margin-bottom: 8px; }
   color: var(--muted);
   font-size: 0.94rem;
 }
+
+/* Retro-pixel street style: high contrast, hard edges, sticker labels. */
+.hero {
+  position: relative;
+  align-items: stretch;
+  padding: 44px 0 22px;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 18px -18px auto -18px;
+  height: 12px;
+  background:
+    repeating-linear-gradient(90deg, var(--ink) 0 18px, transparent 18px 30px),
+    var(--primary);
+  border-block: 3px solid var(--ink);
+  z-index: -1;
+}
+.lead,
+p,
+li,
+.small-note,
+.meta-item span,
+.chapter-outcome span,
+.resource-mini-item span,
+.case-row-outcome span,
+.system-card span,
+.system-template p,
+.system-gate span,
+.worksheet-block p {
+  color: var(--muted);
+}
+h1,
+h2,
+h3 {
+  letter-spacing: 0;
+}
+h1 {
+  text-transform: none;
+}
+.eyebrow,
+.label,
+.case-index,
+.case-status,
+.case-tags span,
+.case-row-meta span,
+.showcase-track-strip span,
+.case-filter-button,
+.track-meta {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+  background: var(--amber);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 4px 9px;
+  font-weight: 900;
+  transform: rotate(-1.2deg);
+}
+.eyebrow:nth-child(even),
+.label:nth-child(even),
+.case-status:nth-child(even),
+.case-tags span:nth-child(even),
+.case-row-meta span:nth-child(even) {
+  transform: rotate(1deg);
+}
+.label {
+  margin-bottom: 10px;
+}
+.topbar,
+.progress-panel,
+.card,
+.callout,
+.chapter-card,
+.notes,
+.starter-panel,
+.meta-item,
+.principle-block,
+.learner-brief,
+.flow-step,
+.case-read-card,
+.check-item,
+.case-practice-card,
+.case-practice-grid div,
+.case-compare-block,
+.plain-language,
+.deep-script,
+.example-block,
+.quiz-item,
+.rubric-item,
+.glossary-item,
+.focus-main,
+.focus-check,
+.lesson-visual,
+.image-zoom-trigger img,
+.visual-node,
+.scenario-card,
+.ppt-list li,
+.chapter-outcome,
+.lesson-item > a,
+.community-panel,
+.community-qr,
+.stat,
+.path-card,
+.case-card,
+.step-no,
+.track-card,
+.showcase-library,
+.showcase-summary > div,
+.showcase-case,
+.case-meta div,
+.case-index-panel,
+.case-index-list a,
+.case-method-card,
+.case-filter-panel,
+.case-results-panel,
+.case-search input,
+.case-row,
+.case-row-outcome,
+.system-panel,
+.system-card,
+.system-template,
+.system-gate,
+.system-ladder article,
+.gallery-thumb,
+.worksheet-case-card,
+.worksheet-case-grid > div,
+.teaching-segment,
+.practice-path > div,
+.worksheet-block,
+.writing-box,
+.worksheet-table > div,
+.resource-card,
+.resource-mini-item {
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.meta-item,
+.principle-block,
+.flow-step,
+.case-read-card,
+.check-item,
+.case-practice-grid div,
+.example-block,
+.quiz-item,
+.rubric-item,
+.glossary-item,
+.scenario-card,
+.ppt-list li,
+.chapter-outcome,
+.lesson-item > a,
+.path-card,
+.case-card,
+.case-meta div,
+.case-index-list a,
+.case-row-outcome,
+.system-ladder article,
+.worksheet-case-card,
+.worksheet-case-grid > div,
+.teaching-segment,
+.practice-path > div,
+.worksheet-table > div,
+.resource-mini-item {
+  background: #ffffff;
+}
+.callout {
+  border-left-width: 10px;
+  border-left-color: var(--primary);
+}
+.notes,
+.resource-card,
+.showcase-library,
+.community-panel,
+.system-panel {
+  background: var(--surface);
+}
+.focus-main,
+.track-card.primary-track,
+.case-link.primary,
+.case-filter-button.active,
+.check-item strong,
+.step-no,
+.case-learning-path b,
+.progress-bar span {
+  color: var(--ink);
+  background: var(--primary);
+  border-color: var(--ink);
+}
+.track-card.primary-track span,
+.track-card.primary-track .track-meta {
+  color: var(--ink);
+}
+.progress-bar {
+  height: 14px;
+  background: #ffffff;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+}
+.progress-bar span {
+  background: var(--primary);
+}
+.lesson-no {
+  width: 56px;
+  height: 56px;
+  overflow: visible;
+}
+.lesson-no img {
+  width: 60px;
+  height: 60px;
+  image-rendering: pixelated;
+  filter: drop-shadow(3px 3px 0 var(--ink));
+  transform: translate(-4px, -4px);
+}
+.lesson-no-fallback,
+.check-item strong,
+.step-no,
+.case-learning-path b {
+  color: var(--ink);
+  background: var(--primary);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.lesson-item > a:hover,
+.track-card:hover,
+.case-index-list a:hover,
+.showcase-case:hover,
+.case-row:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.lesson-actions a,
+.case-link,
+.image-lightbox-actions a,
+.image-lightbox-actions button {
+  color: var(--ink);
+  background: var(--amber);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  font-weight: 900;
+}
+.lesson-actions a {
+  background: var(--primary);
+}
+.lesson-actions a:hover,
+.case-link:hover,
+.image-lightbox-actions a:hover,
+.image-lightbox-actions button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+.case-link.primary {
+  background: var(--primary);
+}
+.copy-prompt,
+.writing-box {
+  color: var(--ink);
+  background:
+    linear-gradient(#ffffff 23px, rgba(18, 18, 18, 0.08) 24px),
+    #ffffff;
+  background-size: 100% 24px;
+  border: 3px dashed var(--ink);
+  border-radius: var(--radius);
+}
+.showcase-track-strip span,
+.case-tags span,
+.case-row-meta span,
+.case-status,
+.case-filter-button {
+  border-radius: var(--radius);
+}
+.case-filter-button {
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+.case-filter-button.active {
+  background: var(--primary);
+}
+.visual-node::after {
+  height: 4px;
+  background: var(--ink);
+}
+.visual-warning,
+.learner-brief,
+.focus-check,
+.example-block.bad,
+.case-practice-card.guided,
+.case-status {
+  background: #fff4d0;
+  border-color: var(--ink);
+}
+.example-block.good,
+.plain-language {
+  background: #fffbea;
+  border-color: var(--ink);
+}
+.case-practice-card.primary,
+.showcase-case.featured {
+  border-color: var(--ink);
+  box-shadow: var(--shadow), inset 8px 0 0 var(--primary);
+}
+.starter-panel figure {
+  border: 3px solid var(--ink) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow);
+}
+.community-qr img,
+.gallery-thumb,
+.lesson-visual img {
+  border-radius: var(--radius);
+}
 @media (max-width: 920px) {
   .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .community-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid, .case-method-grid, .case-board, .case-row, .system-grid, .system-ladder, .system-template-grid, .system-gate-grid { grid-template-columns: 1fr; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1500,7 +1828,49 @@ li { margin-bottom: 8px; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
-</style>
+
+.compare-table-wrap {
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.compare-table {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: collapse;
+}
+.compare-table th,
+.compare-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.compare-table thead th {
+  color: var(--ink);
+  background: #f8fafc;
+  font-size: 0.92rem;
+}
+.compare-table tbody th {
+  width: 17%;
+  color: var(--primary);
+  background: #fcfdff;
+}
+.compare-table tbody tr:last-child th,
+.compare-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.compare-table td strong {
+  color: var(--ink);
+}
+.compare-table td small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}</style>
 </head>
 <body>
   <main class="wrap"><nav class="topbar" aria-label="站点导航">
@@ -1516,55 +1886,152 @@ li { margin-bottom: 8px; }
   <div>
     <div class="eyebrow">补充主题 · 智能体对比</div>
     <h1>Codex、OpenClaw、Hermes Agent 怎么区分</h1>
-    <p class="lead">这一页不讲安装细节，只讲新手最需要的判断：这些智能体分别适合什么任务，风险边界在哪里，为什么不能只按名字追热点。</p>
+    <p class="lead">这一页不讲安装细节，只讲新手最需要的判断：这三类智能体分别适合什么任务、工作节奏和风险边界，为什么不能只按名字追热点。</p>
     <div class="toolbar">
       <a class="btn primary" href="#compare">先看对比</a>
-      <a class="btn" href="./lessons/lesson-06-05-game-dev-mcp.html">回到游戏 MCP 课</a>
+      <a class="btn" href="./course.html#advanced">看老鸟进阶</a>
     </div>
   </div>
   <aside class="starter-panel">
     <strong>先抓 3 个判断</strong>
+    <p class="small-note">先看它在做什么工作，再看它叫什么名字。</p>
     <ol>
-      <li>核心是改项目和验收，优先想 Codex。</li>
-      <li>核心是常驻入口和外围自动化，更像 OpenClaw。</li>
-      <li>核心是长期记忆和持续沉淀，更接近 Hermes Agent。</li>
+      <li>项目目录、代码改动和验证结果，优先想 Codex。</li>
+      <li>消息入口、浏览器、邮箱、日历和表单，更像 OpenClaw。</li>
+      <li>跨会话跟进、长期记忆和技能沉淀，更接近 Hermes Agent。</li>
     </ol>
   </aside>
 </header>
 
-<section id="compare">
+<section class="callout">
+  <span class="label">一句话判断</span>
+  <h2>能改仓库、能验收、能回滚的，先看 Codex；需要常驻接消息和连外部工具的，像 OpenClaw；要跨会话沉淀经验的，更接近 Hermes Agent。</h2>
+  <p>这页的重点不是给产品打分，而是帮你把“工程交付”“常驻助理”“长期记忆”三种工作方式分开。只要工作方式分开了，名字就不会把你带偏。</p>
+</section>
+
+<section>
   <div class="section-title">
-    <h2>先看定位，不先看名字</h2>
-    <p>同样都叫智能体，真正的差异在于任务边界、工具连接、记忆方式和风险面。</p>
+    <h2>4 个快速判断</h2>
+    <p>如果这 4 个问题里能立刻答出 2 个以上，基本就能选对。</p>
   </div>
   <div class="system-grid">
-    <article class="system-card"><strong>Codex</strong><span>偏工程交付。读代码、改文件、跑命令、看结果，最适合软件项目和可验证任务。</span></article>
-    <article class="system-card"><strong>OpenClaw</strong><span>偏常驻个人助理。更像消息入口加工具连接，适合资料整理、浏览器、邮箱、日历和外围自动化。</span></article>
-    <article class="system-card"><strong>Hermes Agent</strong><span>偏长期记忆和自改进。适合持续研究、长期项目、跨会话跟进和技能沉淀。</span></article>
+    <article class="system-card"><strong>看入口</strong><span>是项目文件夹、终端和代码仓库，还是聊天、邮箱、浏览器和日历。</span></article>
+    <article class="system-card"><strong>看动作</strong><span>它是在改文件、跑测试，还是在转发消息、抓网页、填表单。</span></article>
+    <article class="system-card"><strong>看状态</strong><span>它是一次性完成任务，还是要长期待命并不断接新任务。</span></article>
+    <article class="system-card"><strong>看治理</strong><span>它有没有日志、权限、审批、回滚和记忆清理。</span></article>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="section-title">
+    <h2>三类智能体的真正定位</h2>
+    <p>不是谁更强，而是谁更适合哪一层工作。</p>
+  </div>
+  <div class="case-grid">
+    <article class="case-card">
+      <strong>Codex：工程交付</strong>
+      <p>你给它项目目录，它回你文件改动、命令结果和可验收产物。最适合软件项目、页面修改、脚本生成和测试验证。</p>
+      <ul>
+        <li>适合：修 Bug、改代码、整理文档、跑检查。</li>
+        <li>常见产出：diff、脚本、说明、验证结果。</li>
+      </ul>
+    </article>
+    <article class="case-card">
+      <strong>OpenClaw：常驻助理</strong>
+      <p>它更像一个持续在线的工作入口，重点不在仓库改动，而在消息、浏览器、邮箱、日历和外部工具之间的串联。</p>
+      <ul>
+        <li>适合：资料整理、信息抓取、日程协调、表单流转。</li>
+        <li>常见产出：整理后的信息、自动流转、待办更新。</li>
+      </ul>
+    </article>
+    <article class="case-card">
+      <strong>Hermes Agent：长期沉淀</strong>
+      <p>它更强调跨会话记忆、持续跟进和技能积累，适合长期研究、长期项目和需要持续改进的场景。</p>
+      <ul>
+        <li>适合：长期跟踪、经验沉淀、持续学习、策略升级。</li>
+        <li>常见产出：积累的上下文、长期状态、复用经验。</li>
+      </ul>
+    </article>
   </div>
 </section>
 
 <section>
   <div class="section-title">
-    <h2>新手怎么选</h2>
-    <p>不要一上来比谁更强，先按手里的任务选工具。</p>
+    <h2>一张表看差异</h2>
+    <p>把任务、入口、节奏和风险放在一起看，最容易选对。</p>
   </div>
-  <div class="chapters">
-    <article class="chapter-card"><h3>如果你手里是项目目录</h3><p>需要读文件、修 Bug、改页面、跑验证，先用 Codex。</p></article>
-    <article class="chapter-card"><h3>如果你手里是聊天入口和日常任务</h3><p>需要常驻接消息、查资料、排日程、串浏览器和文件，更像 OpenClaw。</p></article>
-    <article class="chapter-card"><h3>如果你手里是长期项目</h3><p>需要跨会话记忆、沉淀经验、持续跟进，更接近 Hermes Agent。</p></article>
+  <div class="compare-table-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th scope="col">维度</th>
+          <th scope="col">Codex</th>
+          <th scope="col">OpenClaw</th>
+          <th scope="col">Hermes Agent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">核心工作</th>
+          <td>读代码、改文件、跑命令、看 diff 和测试结果。<small>目标是把工程改动做成可验收交付。</small></td>
+          <td>接消息、拉网页、连邮箱、日历和外部应用。<small>目标是把分散任务串成常驻助理流程。</small></td>
+          <td>持续跟进、积累记忆、复用经验和技能。<small>目标是让长期项目越跑越顺。</small></td>
+        </tr>
+        <tr>
+          <th scope="row">典型入口</th>
+          <td>项目目录、代码仓库、终端、编辑器。</td>
+          <td>聊天窗口、浏览器、邮箱、日历、文件流转。</td>
+          <td>长期会话、项目状态、记忆库、持续任务列表。</td>
+        </tr>
+        <tr>
+          <th scope="row">最适合</th>
+          <td>修 Bug、改页面、生成脚本、跑验证、整理文档。</td>
+          <td>资料整理、信息抓取、协调日程、外围自动化。</td>
+          <td>长期研究、持续复盘、技能沉淀、跨会话跟进。</td>
+        </tr>
+        <tr>
+          <th scope="row">主要风险</th>
+          <td>误删、误改、越权发布、把自动修改当成最终结果。</td>
+          <td>权限面大、消息来源杂、外部工具链容易扩散风险。</td>
+          <td>记忆污染、状态膨胀、长期自动化失控。</td>
+        </tr>
+        <tr>
+          <th scope="row">一句话判断</th>
+          <td>要动仓库，就先想它。</td>
+          <td>要常驻处理杂事，就更像它。</td>
+          <td>要把经验留住，就更接近它。</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
 <section>
   <div class="section-title">
-    <h2>最小对比表</h2>
-    <p>这张表面向课程判断，不等于完整产品评测。</p>
+    <h2>新手最容易混淆的点</h2>
+    <p>名字会变化，但这几个边界很稳定。</p>
   </div>
-  <div class="worksheet-table">
-    <div><strong>Codex</strong><span>优势：工程交付和验证闭环。风险：文件、命令、发布权限需要边界。</span></div>
-    <div><strong>OpenClaw</strong><span>优势：常驻入口和外围自动化。风险：账号、消息、浏览器、邮箱等权限面更大。</span></div>
-    <div><strong>Hermes Agent</strong><span>优势：长期记忆和持续沉淀。风险：记忆污染、自动技能失控、长期运行日志治理。</span></div>
+  <div class="notes-wrap">
+    <article class="notes">
+      <span class="label">常见误区</span>
+      <h3>别把“会规划”当成“会长期记忆”</h3>
+      <ul>
+        <li>Codex 可以帮你规划，但主场还是工程改动和验证。</li>
+        <li>OpenClaw 可以串联很多工具，但它的风险主要来自权限面。</li>
+        <li>Hermes Agent 最关键的不是回答更长，而是记忆是否可治理。</li>
+        <li>真正的分界线是控制权和运行状态，不只是界面样式。</li>
+      </ul>
+    </article>
+    <article class="notes">
+      <span class="label">选型口诀</span>
+      <h3>先按任务选，再按风险收口</h3>
+      <ul>
+        <li>项目目录、代码、脚本、测试 -> Codex。</li>
+        <li>消息入口、浏览器、邮箱、日历 -> OpenClaw。</li>
+        <li>长期项目、持续跟进、经验沉淀 -> Hermes Agent。</li>
+        <li>涉及账号、支付、生产发布时，先加审批和回滚。</li>
+      </ul>
+    </article>
   </div>
 </section>
 
@@ -1573,8 +2040,8 @@ li { margin-bottom: 8px; }
   <h2>先做低风险任务，再谈自治</h2>
   <p>这些智能体都不适合一上来接支付、删库、生产发布或高权限账号。先从测试项目、资料整理、设计到原型、只读检查这类任务开始，保留日志、审批和回滚点。</p>
   <div class="toolbar">
-    <a class="btn primary" href="./lessons/lesson-06-05-game-dev-mcp.html">回到 6-5</a>
-    <a class="btn" href="./mindmap-hub.html">打开资源脑图</a>
+    <a class="btn primary" href="./course.html#advanced">回到老鸟进阶</a>
+    <a class="btn" href="./lessons/lesson-06-05-game-dev-mcp.html">回到第25课</a>
   </div>
 </section>
 
