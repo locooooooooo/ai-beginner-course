@@ -40,6 +40,92 @@ body {
 a { color: inherit; }
 a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 18px 76px; }
+.page-frame {
+  width: 100%;
+}
+.wide-rail {
+  display: none;
+}
+.rail-card {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  background: var(--surface);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow-wrap: anywhere;
+}
+.rail-card strong {
+  display: block;
+  font-family: var(--display);
+  line-height: 1.25;
+}
+.rail-card span,
+.rail-card li {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.rail-card ul {
+  padding-left: 18px;
+}
+.rail-step {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+}
+.rail-step b {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  background: var(--primary);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  line-height: 1;
+}
+.rail-ticket {
+  background: var(--amber);
+  transform: rotate(-1.2deg);
+}
+.rail-ticket.alt {
+  background: var(--primary);
+  transform: rotate(1deg);
+}
+.rail-ticket span,
+.rail-ticket.alt span {
+  color: var(--ink);
+}
+.rail-note {
+  background:
+    linear-gradient(#ffffff 23px, rgba(18, 18, 18, 0.08) 24px),
+    #ffffff;
+  background-size: 100% 24px;
+}
+.rail-links a {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  color: var(--ink);
+  background: var(--amber);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  font-weight: 900;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.rail-links a:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
 .topbar {
   position: sticky;
   top: 0;
@@ -786,6 +872,33 @@ li { margin-bottom: 8px; }
 .path-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
 .path-card strong { display: block; margin-bottom: 6px; }
 .path-card span { color: var(--muted); font-size: 0.94rem; }
+.hero-path {
+  margin-top: 18px;
+  padding: 14px;
+  background: var(--surface);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.hero-path-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.hero-path-head strong { font-family: var(--display); font-size: 1rem; }
+.hero-path-head span { color: var(--muted); font-size: 0.86rem; }
+.hero-path .path-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.hero-path .path-card {
+  min-height: 118px;
+  padding: 10px;
+  background: #fff5c2;
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.hero-path .path-card strong { font-size: 0.86rem; margin-bottom: 4px; }
+.hero-path .path-card span { font-size: 0.78rem; line-height: 1.5; color: var(--ink); }
 .case-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .case-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .case-card {
@@ -1786,9 +1899,57 @@ h1 {
 .lesson-visual img {
   border-radius: var(--radius);
 }
+@media (min-width: 1400px) {
+  :root {
+    --rail-gap: clamp(12px, 1vw, 22px);
+    --rail-width: min(238px, calc((100vw - var(--max) - (2 * var(--rail-gap)) - 12px) / 2));
+  }
+  .page-frame {
+    display: grid;
+    grid-template-columns: minmax(0, var(--rail-width)) minmax(0, var(--max)) minmax(0, var(--rail-width));
+    gap: var(--rail-gap);
+    align-items: start;
+    justify-content: center;
+  }
+  .wrap {
+    width: 100%;
+    max-width: none;
+    padding-inline: 0;
+  }
+  .wide-rail {
+    position: sticky;
+    top: 86px;
+    display: grid;
+    gap: 14px;
+    padding-top: 34px;
+  }
+  .wide-rail-left {
+    justify-self: end;
+  }
+  .wide-rail-right {
+    justify-self: start;
+  }
+}
+@media (min-width: 1660px) {
+  :root {
+    --max: 1280px;
+  }
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 380px;
+  }
+  .grid {
+    grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+  }
+  .chapters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 @media (max-width: 920px) {
   .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .community-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid, .case-method-grid, .case-board, .case-row, .system-grid, .system-ladder, .system-template-grid, .system-gate-grid { grid-template-columns: 1fr; }
+  .hero::before { inset-inline: 0; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-path .path-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-path-head { align-items: start; flex-direction: column; }
   .lesson-side { position: static; }
   .newbie-focus, .scenario-grid { grid-template-columns: 1fr; }
   .visual-chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1805,6 +1966,7 @@ h1 {
   .lead { font-size: 1rem; }
   .toolbar .btn, .pager .btn { width: 100%; }
   .path-grid, .track-grid, .stat-grid { grid-template-columns: 1fr; }
+  .hero-path .path-grid { grid-template-columns: 1fr; }
   .track-card { min-height: 0; }
   .showcase-library { padding: 18px; }
   .showcase-summary, .showcase-case-grid { grid-template-columns: 1fr; }
@@ -1831,6 +1993,23 @@ h1 {
 </style>
 </head>
 <body>
+  <div class="page-frame">
+  <aside class="wide-rail wide-rail-left" aria-label="学习节奏">
+    <section class="rail-card rail-ticket">
+      <strong>打开页面先做什么</strong>
+      <span>先找这一页要交付的小结果，再决定要不要细读所有内容。</span>
+    </section>
+    <section class="rail-card">
+      <strong>新手学习节奏</strong>
+      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
+      <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
+    </section>
+    <section class="rail-card rail-note">
+      <strong>不要只收藏</strong>
+      <span>每页至少留下一个句子、一个清单或一个可复用模板。</span>
+    </section>
+  </aside>
   <main class="wrap"><nav class="topbar" aria-label="课程导航">
   <a class="brand" href="../course.html">AI入门课</a>
   <div class="navlinks">
@@ -2060,6 +2239,27 @@ h1 {
   <a class="btn primary" href="./lesson-14-agent-worksheet.html">下一课工作纸</a>
 </nav>
 <div class="footer">AI学习路线 · 练习工作纸 · 写下产物才算完成</div></main>
+  <aside class="wide-rail wide-rail-right" aria-label="学习验收和资源">
+    <section class="rail-card">
+      <strong>学完验收</strong>
+      <ul>
+        <li>能解释给非技术朋友听。</li>
+        <li>能套进一个自己的场景。</li>
+        <li>知道哪里必须人工检查。</li>
+      </ul>
+    </section>
+    <section class="rail-card rail-links">
+      <strong>快速入口</strong>
+      <a href="../course.html#beginner">课程地图</a>
+      <a href="../case-library.html">实战案例库</a>
+      <a href="../mindmap-hub.html">脑图资源</a>
+    </section>
+    <section class="rail-card rail-ticket alt">
+      <strong>产品经理视角</strong>
+      <span>这门课不是资料库，而是一条从理解到交付的训练路线。</span>
+    </section>
+  </aside>
+</div>
 
 <script>
 (() => {

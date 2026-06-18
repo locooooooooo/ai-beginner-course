@@ -1,5 +1,18 @@
 # AI 新手课文字系统与内容框架
 
+## 关联规范
+
+本文件负责课程内容、讲法、练习和验收。视觉风格的 Source of Truth 在：
+
+- `design-system/ai-beginner-course/MASTER.md`
+- `design-system/ai-beginner-course/pages/`
+
+后续迭代时先判断改动属于哪一类：
+
+- 改课程内容、课时结构、工作纸字段：先看本文件。
+- 改颜色、字体、卡片、按钮、贴纸、移动端布局：先看设计系统。
+- 改生成逻辑：改 `scripts/generate_lessons.py`，然后重新生成 `lessons/`、`site/`、`github-pages-publish/`。
+
 ## 课程定位
 
 这套课面向零基础学习者，不把 AI 当成名词百科讲，而是把每一课做成可跟做的教学单元。学习者每打开一节课，都应该知道：
