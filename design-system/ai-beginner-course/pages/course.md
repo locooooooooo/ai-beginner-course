@@ -23,6 +23,10 @@ Applies to:
 - Chapter labels use yellow stickers.
 - Lesson links should show `number-icons/NN.png` wherever possible.
 - Main lesson and worksheet actions should remain visible from the card.
+- Lesson row cards are child elements: use 2px borders and no large shadow so chapter cards remain the dominant container.
+- `主讲义` is the orange primary action. `工作纸` is the white outlined secondary action.
+- A small `CLEARED!` sticker may appear on completed lesson rows; it must not cover lesson title text.
+- Wide desktop gutters should show learning rails with practical guidance. Keep them hidden on mobile.
 
 ## Case Library
 
@@ -42,3 +46,9 @@ Applies to:
 
 - Mindmap thumbnails should use hard black frames.
 - Do not use blurred image cards or soft gallery shadows.
+
+## Global Learning HUD
+
+- The LED announcement strip and XP HUD appear above page content.
+- The HUD should stack into one column on mobile and must not push the top nav out of view.
+- The black-and-white theme switcher is allowed, but the default colorful mode remains the primary brand expression.

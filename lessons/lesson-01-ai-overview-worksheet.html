@@ -23,6 +23,10 @@
   --radius: 4px;
   --shadow: 5px 5px 0 #121212;
   --shadow-sm: 3px 3px 0 #121212;
+  --shadow-xs: 2px 2px 0 #121212;
+  --inner-line: 2px;
+  --paper: #fffef8;
+  --xp-green: #7CFF4E;
   --display: "Silkscreen", "Press Start 2P", "Zpix", "Fusion Pixel", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   --serif: var(--display);
   --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -37,8 +41,31 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
 }
+body.theme-mono {
+  --canvas: #F4F4F0;
+  --surface: #FFFFFF;
+  --surface-soft: #EEEEEA;
+  --paper: #FFFFFF;
+  --primary: #E6E6E0;
+  --primary-dark: #121212;
+  --coral: #121212;
+  --amber: #FFFFFF;
+  --xp-green: #121212;
+  --muted: #2F2F2F;
+}
 a { color: inherit; }
 a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+@media (pointer: fine) {
+  body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23121212' d='M2 2h4v2H4v2H2V2Zm4 4h4v2H8v2H6V6Zm4 4h4v2h-2v2h-2v-4Zm4 4h4v2h-2v4h-2v-6Z'/%3E%3Cpath fill='%23ffffff' d='M4 4h2v2H4V4Zm4 4h2v2H8V8Zm4 4h2v2h-2v-2Z'/%3E%3C/svg%3E") 2 2, auto;
+  }
+  a,
+  button,
+  [role="button"],
+  .image-zoom-trigger {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23121212' d='M5 2h8v2H7v2H5V2Zm2 4h8v2H9v2H7V6Zm2 4h8v2h-6v2H9v-4Zm2 4h6v2h-4v4h-2v-6Z'/%3E%3Cpath fill='%23ffffff' d='M7 4h4v2H7V4Zm2 4h4v2H9V8Zm2 4h4v2h-4v-2Z'/%3E%3C/svg%3E") 6 2, pointer;
+  }
+}
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 18px 76px; }
 .page-frame {
   width: 100%;
@@ -126,6 +153,97 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline
   transform: translate(2px, 2px);
   box-shadow: 1px 1px 0 var(--ink);
 }
+.learning-hud {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+  gap: 10px;
+  align-items: stretch;
+  margin: 16px 0 14px;
+}
+.pixel-marquee {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--primary);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.pixel-marquee-track {
+  display: inline-flex;
+  width: max-content;
+  min-width: 100%;
+  gap: 34px;
+  padding: 8px 12px;
+  font-family: var(--display);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  white-space: nowrap;
+  animation: marquee-scroll 24s linear infinite;
+}
+.pixel-marquee-track span {
+  display: inline-flex;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.xp-hud {
+  display: grid;
+  gap: 7px;
+  padding: 8px 10px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.xp-hud-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: var(--display);
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+.xp-track {
+  height: 14px;
+  overflow: hidden;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+}
+.xp-fill {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(90deg, rgba(18, 18, 18, 0.18) 0 4px, transparent 4px 8px),
+    var(--xp-green);
+}
+.theme-toggle {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  font-family: var(--display);
+  font-size: 0.72rem;
+  line-height: 1.1;
+  text-align: center;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+}
+.theme-toggle:hover,
+.theme-toggle:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
 .topbar {
   position: sticky;
   top: 0;
@@ -163,7 +281,7 @@ p { margin: 0; }
   border-radius: var(--radius);
   text-decoration: none;
   color: var(--ink);
-  background: var(--amber);
+  background: var(--surface);
   border: 3px solid var(--ink);
   box-shadow: var(--shadow-sm);
   font-weight: 900;
@@ -171,7 +289,8 @@ p { margin: 0; }
   transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
 }
 .btn.primary { color: var(--ink); background: var(--primary); border-color: var(--ink); }
-.btn:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.btn:hover,
+.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
 .progress-panel, .card, .callout, .chapter-card, .notes, .starter-panel {
   background: var(--surface);
   border: 3px solid var(--ink);
@@ -1899,6 +2018,144 @@ h1 {
 .lesson-visual img {
   border-radius: var(--radius);
 }
+/* Visual hierarchy tuning: outer blocks stay physical, inner learning blocks stay quiet. */
+.meta-item,
+.principle-block,
+.flow-step,
+.case-read-card,
+.check-item,
+.case-practice-card,
+.case-practice-grid div,
+.case-compare-block,
+.plain-language,
+.deep-script,
+.example-block,
+.quiz-item,
+.rubric-item,
+.glossary-item,
+.focus-check,
+.visual-node,
+.scenario-card,
+.ppt-list li,
+.chapter-outcome,
+.lesson-item > a,
+.case-meta div,
+.case-index-list a,
+.case-row-outcome,
+.system-ladder article,
+.worksheet-case-card,
+.worksheet-case-grid > div,
+.teaching-segment,
+.practice-path > div,
+.worksheet-table > div,
+.resource-mini-item {
+  background: var(--paper);
+  border: var(--inner-line) solid var(--ink);
+  box-shadow: none;
+}
+.lesson-item {
+  position: relative;
+}
+.lesson-item > a {
+  transition: transform 0.1s ease, background-color 0.1s ease, border-color 0.1s ease;
+}
+.lesson-item > a:hover {
+  background: #fff9df;
+  box-shadow: var(--shadow-xs);
+}
+.lesson-item.is-cleared > a {
+  background: #f6ffe9;
+}
+.lesson-item.is-cleared::after,
+.chapter-card.is-cleared::after {
+  content: "CLEARED!";
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  z-index: 2;
+  padding: 4px 8px;
+  color: var(--ink);
+  background: var(--xp-green);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-xs);
+  font-family: var(--display);
+  font-size: 0.68rem;
+  line-height: 1;
+  transform: rotate(2deg);
+}
+.chapter-card {
+  position: relative;
+}
+.lesson-actions a,
+.case-link,
+.image-lightbox-actions a,
+.image-lightbox-actions button,
+.rail-links a {
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-xs);
+}
+.lesson-actions a:first-child,
+.lesson-actions a.lesson-action-primary,
+.case-link.primary,
+.toolbar .btn.primary,
+.pager .btn.primary {
+  color: var(--ink);
+  background: var(--primary);
+  border-color: var(--ink);
+  box-shadow: var(--shadow-sm);
+}
+.lesson-actions a:last-child,
+.lesson-actions a.lesson-action-secondary,
+.case-link.secondary,
+.toolbar .btn:not(.primary),
+.pager .btn:not(.primary) {
+  color: var(--ink);
+  background: var(--surface);
+  border-color: var(--ink);
+}
+.lesson-actions a:hover,
+.lesson-actions a:active,
+.case-link:hover,
+.case-link:active,
+.rail-links a:hover,
+.rail-links a:active,
+.image-lightbox-actions a:hover,
+.image-lightbox-actions a:active,
+.image-lightbox-actions button:hover,
+.image-lightbox-actions button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+.focus-main,
+.track-card.primary-track,
+.case-filter-button.active,
+.step-no,
+.case-learning-path b,
+.progress-bar span {
+  color: var(--ink);
+  background: var(--primary);
+}
+body.theme-mono .pixel-marquee,
+body.theme-mono .btn.primary,
+body.theme-mono .toolbar .btn.primary,
+body.theme-mono .pager .btn.primary,
+body.theme-mono .lesson-actions a:first-child,
+body.theme-mono .lesson-actions a.lesson-action-primary,
+body.theme-mono .case-link.primary,
+body.theme-mono .focus-main,
+body.theme-mono .track-card.primary-track,
+body.theme-mono .case-filter-button.active {
+  background: var(--ink);
+  color: var(--surface);
+}
+body.theme-mono .xp-fill,
+body.theme-mono .lesson-item.is-cleared::after,
+body.theme-mono .chapter-card.is-cleared::after {
+  background: var(--ink);
+  color: var(--surface);
+}
 @media (min-width: 1400px) {
   :root {
     --rail-gap: clamp(12px, 1vw, 22px);
@@ -1930,7 +2187,7 @@ h1 {
     justify-self: start;
   }
 }
-@media (min-width: 1660px) {
+@media (min-width: 1840px) {
   :root {
     --max: 1280px;
   }
@@ -1946,6 +2203,7 @@ h1 {
 }
 @media (max-width: 920px) {
   .hero, .grid, .chapter-grid, .chapters, .notes-wrap, .mindmap-grid, .case-grid, .case-grid.two, .resource-panel, .community-panel, .practice-path, .worksheet-grid, .lesson-meta-grid, .example-grid, .rubric-grid, .glossary-grid, .case-method-grid, .case-board, .case-row, .system-grid, .system-ladder, .system-template-grid, .system-gate-grid { grid-template-columns: 1fr; }
+  .learning-hud { grid-template-columns: 1fr; }
   .hero::before { inset-inline: 0; }
   .path-grid, .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-path .path-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1985,10 +2243,15 @@ h1 {
   .lesson-item > a { grid-template-columns: 38px minmax(0, 1fr); }
   .lesson-no { width: 38px; height: 38px; }
   .lesson-actions { padding-left: 0; }
+  .lesson-actions a { flex: 1 1 120px; }
+  .pixel-marquee-track { font-size: 0.72rem; animation-duration: 18s; }
+  .xp-hud-top { font-size: 0.68rem; }
+  .theme-toggle { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
+  .pixel-marquee-track { animation: none !important; transform: none !important; }
 }
 </style>
 </head>
@@ -2010,7 +2273,8 @@ h1 {
       <span>每页至少留下一个句子、一个清单或一个可复用模板。</span>
     </section>
   </aside>
-  <main class="wrap"><nav class="topbar" aria-label="课程导航">
+  <main class="wrap">
+<nav class="topbar" aria-label="课程导航">
   <a class="brand" href="../course.html">AI入门课</a>
   <div class="navlinks">
     <a href="./lesson-01-ai-overview.html">返回主讲义</a>
@@ -2019,6 +2283,19 @@ h1 {
     <a href="../mindmap-hub.html">资源</a>
   </div>
 </nav>
+<div class="learning-hud" aria-label="学习状态栏">
+      <div class="pixel-marquee" aria-label="课程公告">
+        <div class="pixel-marquee-track">
+          <span>系统更新：像素学习地图已升级 · 主讲义先建立理解，工作纸负责产出 · AI 时代，人人都可以做自己的开发者</span>
+          <span aria-hidden="true">系统更新：像素学习地图已升级 · 主讲义先建立理解，工作纸负责产出 · AI 时代，人人都可以做自己的开发者</span>
+        </div>
+      </div>
+      <div class="xp-hud" aria-label="AI 玩家经验值">
+        <div class="xp-hud-top"><span>AI 玩家经验值</span><span data-xp-value>0%</span></div>
+        <div class="xp-track" aria-hidden="true"><span class="xp-fill" data-xp-fill></span></div>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">黑白复古</button>
+      </div>
+    </div>
 <header class="hero worksheet-hero">
   <div>
     <div class="eyebrow">第一章：先建立正确认知 · 第1课工作纸</div>
@@ -2238,7 +2515,8 @@ h1 {
   <a class="btn" href="../course.html">返回课程总览</a>
   <a class="btn primary" href="./lesson-02-llm-agent-mcp-skill-worksheet.html">下一课工作纸</a>
 </nav>
-<div class="footer">AI学习路线 · 练习工作纸 · 写下产物才算完成</div></main>
+<div class="footer">AI学习路线 · 练习工作纸 · 写下产物才算完成</div>
+  </main>
   <aside class="wide-rail wide-rail-right" aria-label="学习验收和资源">
     <section class="rail-card">
       <strong>学完验收</strong>
@@ -2313,6 +2591,108 @@ h1 {
       closeLightbox();
     }
   });
+})();
+
+(() => {
+  const root = document.documentElement;
+  const body = document.body;
+  const xpFill = document.querySelector('[data-xp-fill]');
+  const xpValue = document.querySelector('[data-xp-value]');
+  const themeToggle = document.querySelector('[data-theme-toggle]');
+  const storagePrefix = 'ai-beginner-course:';
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function storageGet(key) {
+    try {
+      return window.localStorage.getItem(storagePrefix + key);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function storageSet(key, value) {
+    try {
+      window.localStorage.setItem(storagePrefix + key, value);
+    } catch (error) {
+      // localStorage may be blocked in private browsing; visual state can stay session-only.
+    }
+  }
+
+  function currentProgress() {
+    const max = Math.max(1, root.scrollHeight - window.innerHeight);
+    return Math.max(0, Math.min(100, Math.round((window.scrollY / max) * 100)));
+  }
+
+  function updateXp() {
+    const value = currentProgress();
+    if (xpFill) xpFill.style.width = `${value}%`;
+    if (xpValue) xpValue.textContent = `${value}%`;
+    if (value >= 80) {
+      storageSet(`cleared:${window.location.pathname}`, '1');
+    }
+  }
+
+  function lessonKey(href) {
+    try {
+      const url = new URL(href, window.location.href);
+      return `cleared:${url.pathname}`;
+    } catch (error) {
+      return `cleared:${href}`;
+    }
+  }
+
+  function markLessonCard(card) {
+    if (!card) return;
+    card.classList.add('is-cleared');
+  }
+
+  function hydrateClearedLessons() {
+    document.querySelectorAll('.lesson-item').forEach((item) => {
+      const lessonLink = item.querySelector('a[href*="lessons/"]:not([href*="worksheet"])');
+      if (lessonLink && storageGet(lessonKey(lessonLink.href))) {
+        markLessonCard(item);
+      }
+    });
+    document.querySelectorAll('.chapter-card').forEach((card) => {
+      const lessonLink = card.querySelector('a.lesson-action-primary[href*="lessons/"]');
+      if (lessonLink && storageGet(lessonKey(lessonLink.href))) {
+        markLessonCard(card);
+      }
+    });
+  }
+
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href*="lessons/"]');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    if (href.includes('worksheet')) return;
+    storageSet(lessonKey(link.href), '1');
+    markLessonCard(link.closest('.lesson-item') || link.closest('.chapter-card'));
+  });
+
+  if (themeToggle) {
+    const savedTheme = storageGet('theme');
+    if (savedTheme === 'mono') body.classList.add('theme-mono');
+    const updateThemeLabel = () => {
+      const mono = body.classList.contains('theme-mono');
+      themeToggle.setAttribute('aria-pressed', String(mono));
+      themeToggle.textContent = mono ? '彩色像素' : '黑白复古';
+    };
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('theme-mono');
+      storageSet('theme', body.classList.contains('theme-mono') ? 'mono' : 'color');
+      updateThemeLabel();
+    });
+    updateThemeLabel();
+  }
+
+  hydrateClearedLessons();
+  updateXp();
+  if (!reduceMotion) {
+    window.addEventListener('scroll', updateXp, { passive: true });
+  } else {
+    window.addEventListener('scroll', updateXp, { passive: true });
+  }
 })();
 </script>
 

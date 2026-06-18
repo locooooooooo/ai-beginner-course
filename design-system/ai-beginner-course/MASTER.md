@@ -41,7 +41,7 @@ Do not use pixel fonts for dense paragraphs, worksheet instructions, long lists,
 
 ## Shape And Shadow
 
-All interactive and framed UI should use the same physical rule:
+Use border and shadow weight to show hierarchy. Outer page sections, major cards, hero media, rails, and important panels use the strongest physical rule:
 
 ```css
 border: 3px solid #121212;
@@ -49,10 +49,19 @@ border-radius: 4px;
 box-shadow: 5px 5px 0 #121212;
 ```
 
-Buttons and small stickers use:
+Buttons and small stickers use a smaller hard shadow:
 
 ```css
 box-shadow: 3px 3px 0 #121212;
+```
+
+Inner learning blocks inside cards, such as lesson rows, meta items, checklist rows, case details, and worksheet sub-blocks, should be quieter:
+
+```css
+border: 2px solid #121212;
+border-radius: 4px;
+box-shadow: none;
+background: #fffef8;
 ```
 
 Hover/press interaction:
@@ -70,7 +79,9 @@ Avoid soft blur shadows such as `0 14px 30px rgba(...)` unless it is inside a mo
 ### Buttons
 
 - Primary action: orange background, black text, black border, hard shadow.
-- Secondary action: yellow background, black text, black border, hard shadow.
+- Secondary action: white or paper background, black text, black border, smaller hard shadow.
+- Reserve yellow for stickers, labels, status chips, and short learning feedback, not every secondary button.
+- In lesson cards, `主讲义` is always the primary action and `工作纸` is always the secondary action.
 - Use full-width buttons on mobile when stacked in toolbars.
 - Every clickable element must visibly react on hover/focus.
 
@@ -82,6 +93,7 @@ Avoid soft blur shadows such as `0 14px 30px rgba(...)` unless it is inside a mo
 - 4px radius.
 - Cards can contain labels, titles, copy, lists, and actions.
 - Do not nest decorative cards inside other decorative cards. Inner blocks should be flatter unless they need strong emphasis.
+- Aim for at least 70% white or off-white surface area on long reading pages; orange/yellow should act as attention markers, not the dominant page fill.
 
 ### Stickers And Badges
 
@@ -109,6 +121,20 @@ Avoid soft blur shadows such as `0 14px 30px rgba(...)` unless it is inside a mo
 - White track with black border.
 - Orange filled segment.
 - No blue/green gradient.
+- The global scroll XP HUD may use a flat pixel green fill as a game-like completion indicator. Keep it small and do not use it for long reading panels.
+
+### Learning Feedback
+
+- Course map lesson rows can show a `CLEARED!` sticker after a learner opens or reads a lesson.
+- Keep completion stickers small, high contrast, and positioned at the card corner so they do not obscure lesson titles.
+- Use local browser state only; no login or account model is required for this static course.
+
+### Microinteractions
+
+- Use a thin LED-style marquee for course updates above page content.
+- Provide a `彩色像素 / 黑白复古` theme switcher for fun, but preserve contrast and layout in both modes.
+- Pixel cursor is allowed only for fine-pointer devices. Do not force it on touch devices.
+- Respect `prefers-reduced-motion`; marquee animation should stop when reduced motion is requested.
 
 ### Top Navigation
 
@@ -120,7 +146,9 @@ Avoid soft blur shadows such as `0 14px 30px rgba(...)` unless it is inside a mo
 
 - Max content width: `1160px`.
 - At wide desktop widths, keep the readable center column but use both outer gutters for sticky learning rails. These rails should feel like course guidance panels, not ads or decorative filler.
-- At `1660px` and above, the center column may expand to `1280px` so course maps and card grids use more of the screen while long reading stays organized by existing columns and side panels.
+- At `1400px` and above, use both outer gutters for sticky learning rails.
+- Keep the center column at `1160px` until very wide screens so the rails remain useful, not squeezed.
+- At `1840px` and above, the center column may expand to `1280px` so course maps and card grids use more of the screen while long reading stays organized by existing columns and side panels.
 - Mobile breakpoint must work at 375px width.
 - Use full-width stacking for cards and toolbars on mobile.
 - Hide wide learning rails below the desktop breakpoint; do not make mobile users scroll past duplicated side guidance before the lesson content.
@@ -159,6 +187,7 @@ If a new page family is added, create a page-specific override in `pages/` befor
 - Buttons without hard press feedback.
 - Labels without border/shadow.
 - Mobile nav that starts scrolled away from the first link.
+- Flattening every element into the same 3px border and 5px shadow, which makes long course pages tiring to read.
 
 ## Pre-Delivery Checklist
 
@@ -171,3 +200,4 @@ If a new page family is added, create a page-specific override in `pages/` befor
 - [ ] No horizontal scroll on mobile.
 - [ ] Top nav first link is visible on mobile.
 - [ ] Primary button background is `rgb(255, 92, 0)`.
+- [ ] Course pages contain the LED marquee, XP HUD, theme toggle, and `CLEARED!` lesson feedback CSS/JS.

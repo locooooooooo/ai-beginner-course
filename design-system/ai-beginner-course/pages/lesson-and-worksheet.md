@@ -12,14 +12,16 @@ Applies to:
 - Progress panel uses the same 3px black border and hard shadow as cards.
 - Progress bar fill is orange; no gradient.
 - Main content cards stay white for long-form reading.
+- Inner explanation blocks, examples, quizzes, and checklist rows should use 2px borders with no large shadow to reduce reading fatigue.
 - Visual explainers and diagrams should be framed with black borders.
 - Pixel number icons are not required in the lesson hero, but they must remain in course maps and chapter guide lesson cards.
+- The global XP HUD can reflect scroll depth. It should stay compact and never replace the lesson's own progress panel.
 
 ## Worksheet Pages
 
 - Writing fields use dashed black borders and ruled-paper background.
 - Keep worksheet cards readable; do not use pixel fonts in long instructions.
-- Primary action is orange, secondary action is yellow.
+- Primary action is orange, secondary action is white outlined.
 - Mobile button stacks must be full width.
 
 ## Chapter Guides
@@ -27,6 +29,7 @@ Applies to:
 - Lesson cards include `number-icons/NN.png` where the lesson number maps to 1-30.
 - Chapter routes should act like learning maps, not landing pages.
 - The "本章总产物" callout uses orange edge emphasis and hard card framing.
+- Lesson action buttons follow the same hierarchy as the course map: `主讲义` primary, `工作纸` secondary.
 
 ## Mobile Acceptance
 
