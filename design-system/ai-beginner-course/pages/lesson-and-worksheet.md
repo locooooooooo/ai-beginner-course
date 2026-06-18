@@ -16,6 +16,9 @@ Applies to:
 - Visual explainers and diagrams should be framed with black borders.
 - Pixel number icons are not required in the lesson hero, but they must remain in course maps and chapter guide lesson cards.
 - The global XP HUD can reflect scroll depth. It should stay compact and never replace the lesson's own progress panel.
+- `开始本课` toggles focus mode on wide screens: side rails fade/collapse and the center reading column expands. `Esc` exits focus mode.
+- Learning meta should use a staggered magazine layout: compact cards for time/difficulty/date and wider cards for tools/privacy/source notes.
+- On mobile, side rail guidance belongs in a bottom collapsed drawer, after the lesson content.
 
 ## Worksheet Pages
 

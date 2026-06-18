@@ -133,8 +133,10 @@ Avoid soft blur shadows such as `0 14px 30px rgba(...)` unless it is inside a mo
 
 - Use a thin LED-style marquee for course updates above page content.
 - Provide a `彩色像素 / 黑白复古` theme switcher for fun, but preserve contrast and layout in both modes.
+- The black-and-white mode should feel like a real retro easter egg: use whole-page grayscale/high-contrast treatment, not only token swaps.
 - Pixel cursor is allowed only for fine-pointer devices. Do not force it on touch devices.
 - Respect `prefers-reduced-motion`; marquee animation should stop when reduced motion is requested.
+- Lesson pages may use a `开始本课 / 退出聚焦` focus mode that fades side rails and lets the reading column breathe.
 
 ### Top Navigation
 
@@ -152,6 +154,8 @@ Avoid soft blur shadows such as `0 14px 30px rgba(...)` unless it is inside a mo
 - Mobile breakpoint must work at 375px width.
 - Use full-width stacking for cards and toolbars on mobile.
 - Hide wide learning rails below the desktop breakpoint; do not make mobile users scroll past duplicated side guidance before the lesson content.
+- On mobile, move rail content into a bottom `details` drawer so the main screen stays focused while guidance remains available.
+- Lesson meta should avoid forced six-cell symmetry. Short fields can sit in compact cards; long fields such as tools, privacy, and source notes should span wider rows.
 - `body { overflow-x: hidden; }` is allowed because hard shadows can extend a few pixels beyond the viewport; content itself still must not overflow.
 - Hero should show immediate course action, not marketing-only copy.
 
