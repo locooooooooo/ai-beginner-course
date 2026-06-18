@@ -1568,7 +1568,35 @@ li { margin-bottom: 8px; }
 <div class="grid">
   <main>
 
-
+<article class="card visual-card">
+  <span class="label">图解</span>
+  <h2>一张图看懂：Agent 如何连接 MCP 和 Skill</h2>
+  <figure class="lesson-visual">
+  <button class="image-zoom-trigger" type="button" data-image-src="../lesson-02-llm-agent-mcp-skill-visual.jpg" data-image-alt="LLM Agent 位于中间，左侧连接 MCP，右侧连接 Skill，展示理解执行、工具连接和方法复用之间的关系">
+    <img src="../lesson-02-llm-agent-mcp-skill-visual.jpg" alt="LLM Agent 位于中间，左侧连接 MCP，右侧连接 Skill，展示理解执行、工具连接和方法复用之间的关系" loading="lazy" />
+    <span>点击放大</span>
+  </button>
+  <figcaption>把这张图当成工作系统的俯视图：Agent 站在中间，MCP 让它接上外部系统，Skill 让做法可以复用。 <a href="../lesson-02-llm-agent-mcp-skill-visual.jpg" target="_blank" rel="noopener noreferrer">打开原图</a></figcaption>
+</figure>
+  <div class="visual-chain"><div class="visual-node">
+  <span>中间的执行者</span>
+  <strong>LLM Agent</strong>
+  <p>负责理解目标、拆下一步动作，并在需要时调用工具或流程。</p>
+</div><div class="visual-node">
+  <span>左边的连接层</span>
+  <strong>MCP</strong>
+  <p>让 Agent 以受控方式连接外部系统、数据源和工具接口。</p>
+</div><div class="visual-node">
+  <span>右边的方法包</span>
+  <strong>Skill</strong>
+  <p>把可重复的任务方法沉淀成模板、步骤、检查清单和经验规则。</p>
+</div><div class="visual-node">
+  <span>完整链路</span>
+  <strong>理解、连接、执行、复用</strong>
+  <p>LLM 提供语言能力，Agent 组织执行，MCP 接系统，Skill 保留可复用做法。</p>
+</div></div>
+  <p class="visual-warning">不要把这几个词背成孤立定义。真正要看的是一条业务任务怎么从“听懂要求”走到“调用工具”，再沉淀成下次还能复用的方法。</p>
+</article>
 
 <article class="card deep-note-card">
   <span class="label">深度讲稿</span>
