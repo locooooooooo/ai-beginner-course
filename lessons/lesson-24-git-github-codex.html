@@ -2364,7 +2364,48 @@ body > [class*="widget"] a {
   *, *::before, *::after { transition: none !important; }
   .pixel-marquee-track { animation: none !important; transform: none !important; }
 }
-</style>
+
+.rail-game-card {
+  display: none;
+  padding: 10px;
+  background:
+    linear-gradient(180deg, rgba(255, 214, 0, 0.20), rgba(255, 255, 255, 0.96)),
+    var(--surface);
+}
+.rail-game-card > strong {
+  font-size: 0.95rem;
+}
+.rail-game-card > span {
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+.rail-game-mount {
+  min-height: 462px;
+}
+#ai-coin-game-root {
+  width: 100%;
+  min-height: 462px;
+}
+.game-loading-state {
+  display: grid;
+  min-height: 420px;
+  place-items: center;
+  color: var(--ink);
+  background: var(--surface);
+  border: 3px dashed var(--ink);
+  border-radius: var(--radius);
+  font-family: var(--display);
+  font-size: 0.78rem;
+  text-align: center;
+}
+.rail-game-card .ai-coin-game-module {
+  margin-top: 2px;
+}
+@media (min-width: 1680px) {
+  .rail-game-card {
+    display: grid;
+  }
+}</style>
 </head>
 <body>
   <div class="page-frame">
@@ -2760,6 +2801,13 @@ body > [class*="widget"] a {
       <strong>产品经理视角</strong>
       <span>这门课不是资料库，而是一条从理解到交付的训练路线。</span>
     </section>
+    <section class="rail-card rail-game-card" aria-label="AI 金币小游戏">
+      <strong>AI 金币小游戏</strong>
+      <span>在右侧热身：接住 AI 词条，避开干扰项。</span>
+      <div class="rail-game-mount" id="ai-coin-game-root" data-ai-coin-game-root>
+        <div class="game-loading-state">小游戏加载中...</div>
+      </div>
+    </section>
   </aside>
 </div>
 
@@ -2943,5 +2991,6 @@ body > [class*="widget"] a {
 })();
 </script>
 
+<script type="module" crossorigin src="../game-module/assets/index-C__XnluX.js"></script>
 </body>
 </html>
