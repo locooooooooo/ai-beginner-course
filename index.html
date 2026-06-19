@@ -2364,7 +2364,45 @@ body > [class*="widget"] a {
   *, *::before, *::after { transition: none !important; }
   .pixel-marquee-track { animation: none !important; transform: none !important; }
 }
-</style>
+
+.home-game-section {
+  display: grid;
+  gap: 16px;
+  margin-top: 22px;
+}
+.home-game-panel {
+  padding: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 214, 0, 0.24), rgba(255, 255, 255, 0.96)),
+    var(--surface);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+#ai-coin-game-root {
+  min-height: 560px;
+}
+.game-loading-state {
+  display: grid;
+  min-height: 420px;
+  place-items: center;
+  color: var(--ink);
+  background: var(--surface);
+  border: 3px dashed var(--ink);
+  border-radius: var(--radius);
+  font-family: var(--display);
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .home-game-panel {
+    padding: 8px;
+  }
+  #ai-coin-game-root {
+    min-height: 520px;
+  }
+}</style>
+  <link rel="stylesheet" crossorigin href="./game-module/assets/index-BaQ7yj4Y.css" />
 </head>
 <body>
   <div class="page-frame">
@@ -2416,7 +2454,7 @@ body > [class*="widget"] a {
     </p>
     <div class="toolbar">
       <a class="btn primary" href="./lessons/lesson-01-ai-overview.html">从第 1 课开始</a>
-      <a class="btn" href="./game/index.html">打开互动小游戏</a>
+      <a class="btn" href="#coin-game">玩首页小游戏</a>
       <a class="btn" href="#path">先看怎么学</a>
     </div>
     <div class="track-grid" aria-label="课程三大类">
@@ -2696,6 +2734,21 @@ body > [class*="widget"] a {
   </article>
 </section>
 
+<section class="home-game-section" id="coin-game" aria-labelledby="coin-game-title">
+  <div class="section-title">
+    <div>
+      <span class="label">首页小游戏</span>
+      <h2 id="coin-game-title">吃金币学 AI</h2>
+    </div>
+    <p>这里只保留游戏模块本身。它放在首页课程地图后面，作为开课热身，不再跳转到独立页面。</p>
+  </div>
+  <div class="home-game-panel">
+    <div id="ai-coin-game-root" data-ai-coin-game-root>
+      <div class="game-loading-state">小游戏加载中...</div>
+    </div>
+  </div>
+</section>
+
 <section class="notes-wrap">
   <article class="notes">
     <span class="label">学习方法</span>
@@ -2749,7 +2802,7 @@ body > [class*="widget"] a {
         <a class="btn" href="./mindmap-hub.html">打开脑图资源库</a>
         <a class="btn" href="./codex.html">进入老鸟进阶</a>
         <a class="btn" href="./case-library.html">进入案例库</a>
-        <a class="btn" href="./game/index.html">进入互动小游戏</a>
+        <a class="btn" href="#coin-game">玩首页小游戏</a>
         <a class="btn" href="./ai-beginner-20-lessons-course.png">打开课程总脑图</a>
         <a class="btn" href="./course-system.html">查看课程规范</a>
       </div>
@@ -2768,10 +2821,6 @@ body > [class*="widget"] a {
         <div class="resource-mini-item">
           <strong>案例库</strong>
           <span>按任务类型查真实案例，直接看任务怎么被推进成文件、页面、视频和发布结果。</span>
-        </div>
-        <div class="resource-mini-item">
-          <strong>互动小游戏</strong>
-          <span>用吃金币小游戏体验 Token、Prompt、Agent 等课程概念，适合作为开课热身。</span>
         </div>
         <div class="resource-mini-item">
           <strong>课程文字系统</strong>
@@ -3017,5 +3066,6 @@ body > [class*="widget"] a {
 })();
 </script>
 
+<script type="module" crossorigin src="./game-module/assets/index-D8qYBXcO.js"></script>
 </body>
 </html>
