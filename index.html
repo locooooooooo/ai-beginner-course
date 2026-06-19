@@ -2365,23 +2365,25 @@ body > [class*="widget"] a {
   .pixel-marquee-track { animation: none !important; transform: none !important; }
 }
 
-.home-game-section {
-  display: grid;
-  gap: 16px;
-  margin-top: 22px;
-}
-.home-game-panel {
-  padding: 14px;
+.rail-game-card {
+  padding: 10px;
   background:
-    linear-gradient(180deg, rgba(255, 214, 0, 0.24), rgba(255, 255, 255, 0.96)),
+    linear-gradient(180deg, rgba(255, 214, 0, 0.20), rgba(255, 255, 255, 0.96)),
     var(--surface);
-  border: 3px solid var(--ink);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
+}
+.rail-game-card > strong {
+  font-size: 0.95rem;
+}
+.rail-game-card > span {
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+.rail-game-mount {
+  min-height: 462px;
 }
 #ai-coin-game-root {
-  min-height: 560px;
+  width: 100%;
+  min-height: 462px;
 }
 .game-loading-state {
   display: grid;
@@ -2392,17 +2394,18 @@ body > [class*="widget"] a {
   border: 3px dashed var(--ink);
   border-radius: var(--radius);
   font-family: var(--display);
+  font-size: 0.78rem;
   text-align: center;
 }
-@media (max-width: 720px) {
-  .home-game-panel {
-    padding: 8px;
-  }
-  #ai-coin-game-root {
-    min-height: 520px;
+.rail-game-card .ai-coin-game-module {
+  margin-top: 2px;
+}
+@media (max-width: 1399px) {
+  .rail-game-card {
+    display: none;
   }
 }</style>
-  <link rel="stylesheet" crossorigin href="./game-module/assets/index-BaQ7yj4Y.css" />
+  <link rel="stylesheet" crossorigin href="./game-module/assets/index-D6ntcrmf.css" />
 </head>
 <body>
   <div class="page-frame">
@@ -2454,7 +2457,6 @@ body > [class*="widget"] a {
     </p>
     <div class="toolbar">
       <a class="btn primary" href="./lessons/lesson-01-ai-overview.html">从第 1 课开始</a>
-      <a class="btn" href="#coin-game">玩首页小游戏</a>
       <a class="btn" href="#path">先看怎么学</a>
     </div>
     <div class="track-grid" aria-label="课程三大类">
@@ -2734,21 +2736,6 @@ body > [class*="widget"] a {
   </article>
 </section>
 
-<section class="home-game-section" id="coin-game" aria-labelledby="coin-game-title">
-  <div class="section-title">
-    <div>
-      <span class="label">首页小游戏</span>
-      <h2 id="coin-game-title">吃金币学 AI</h2>
-    </div>
-    <p>这里只保留游戏模块本身。它放在首页课程地图后面，作为开课热身，不再跳转到独立页面。</p>
-  </div>
-  <div class="home-game-panel">
-    <div id="ai-coin-game-root" data-ai-coin-game-root>
-      <div class="game-loading-state">小游戏加载中...</div>
-    </div>
-  </div>
-</section>
-
 <section class="notes-wrap">
   <article class="notes">
     <span class="label">学习方法</span>
@@ -2802,7 +2789,6 @@ body > [class*="widget"] a {
         <a class="btn" href="./mindmap-hub.html">打开脑图资源库</a>
         <a class="btn" href="./codex.html">进入老鸟进阶</a>
         <a class="btn" href="./case-library.html">进入案例库</a>
-        <a class="btn" href="#coin-game">玩首页小游戏</a>
         <a class="btn" href="./ai-beginner-20-lessons-course.png">打开课程总脑图</a>
         <a class="btn" href="./course-system.html">查看课程规范</a>
       </div>
@@ -2882,6 +2868,13 @@ body > [class*="widget"] a {
     <section class="rail-card rail-ticket alt">
       <strong>产品经理视角</strong>
       <span>这门课不是资料库，而是一条从理解到交付的训练路线。</span>
+    </section>
+    <section class="rail-card rail-game-card" aria-label="AI 金币小游戏">
+      <strong>AI 金币小游戏</strong>
+      <span>在右侧热身：接住 AI 词条，避开干扰项。</span>
+      <div class="rail-game-mount" id="ai-coin-game-root" data-ai-coin-game-root>
+        <div class="game-loading-state">小游戏加载中...</div>
+      </div>
     </section>
   </aside>
 </div>
@@ -3066,6 +3059,6 @@ body > [class*="widget"] a {
 })();
 </script>
 
-<script type="module" crossorigin src="./game-module/assets/index-D8qYBXcO.js"></script>
+<script type="module" crossorigin src="./game-module/assets/index-DjAgRoSb.js"></script>
 </body>
 </html>
