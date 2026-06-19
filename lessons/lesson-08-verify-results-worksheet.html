@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="./lesson-08-verify-results.html">返回主讲义</a>
     <a href="../course.html#beginner">新手入门</a>
@@ -2435,7 +2441,7 @@ body > [class*="widget"] a {
   <span>2026-06-17</span>
 </div><div class="meta-item meta-item-wide">
   <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；准备一段可公开的 AI 输出用于检查</span>
+  <span>任意支持对话式交互的 AI 工具；准备一段可公开的 AI 输出用于核校</span>
 </div><div class="meta-item meta-item-wide">
   <strong>隐私边界</strong>
   <span>用于验证的内容应先脱敏；不要把真实合同、病历、财务报表、客户投诉原文放进公开工具。</span>
@@ -2454,7 +2460,7 @@ body > [class*="widget"] a {
   </article>
   <article class="worksheet-block">
     <span class="label">2. 概念翻译</span>
-    <h2>把术语翻译成人话</h2>
+    <h2>把术语转成通俗解释</h2>
     <div class="worksheet-list"><div class="principle-block"><strong>关键点 1</strong><span>验证包括事实、逻辑、数据、格式四层</span></div><div class="principle-block"><strong>关键点 2</strong><span>不要只看“像不像对的”</span></div><div class="principle-block"><strong>关键点 3</strong><span>多版本对比和反向提问很有效</span></div></div>
     <label class="writing-label"><span>我自己的 120 字解释</span><textarea class="writing-box large" aria-label="我自己的 120 字解释" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
@@ -2466,7 +2472,7 @@ body > [class*="widget"] a {
       <div><strong>我的场景</strong><span>例如一个真实任务、一个业务流程或一次学习需求。</span></div>
       <div><strong>输入</strong><span>我会给 AI 什么材料、背景、限制或数据。</span></div>
       <div><strong>AI 动作</strong><span>AI 负责生成、总结、分类、检索、执行还是连接工具。</span></div>
-      <div><strong>人工检查</strong><span>我怎么确认结果没有跑偏或出错。</span></div>
+      <div><strong>人工核校</strong><span>我怎么确认结果没有跑偏或出错。</span></div>
       <div><strong>最终输出</strong><span>最后能留下什么文件、话术、流程图、清单或页面。</span></div>
     </div>
   </article>
@@ -2480,14 +2486,14 @@ body > [class*="widget"] a {
   <article class="worksheet-block">
     <span class="label">助教示范</span>
     <h2>检查一段商品文案</h2>
-    <p>AI 输出后必须验证。验证不是挑错，而是确认事实、逻辑、数据和格式能不能进入真实业务。越高风险，越不能只靠 AI 自己说没问题。</p>
+    <p>AI 输出后必须验证。验证不是挑错，而是确认事实、逻辑、数据和格式能不能进入真实业务。越高风险，越不能只依赖模型自检结论。</p>
     <ol class="walkthrough-list"><li>事实：材质、容量、保温时长是否和商品资料一致。</li><li>逻辑：卖点之间有没有互相矛盾。</li><li>数据：数字、单位、活动时间有没有写错。</li><li>格式：标题、卖点、正文是否符合发布渠道要求。</li></ol>
     <label class="writing-label"><span>我照这个案例改成自己的版本</span><textarea class="writing-box large" aria-label="我照这个案例改成自己的版本" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-block">
     <span class="label">理解检查</span>
     <h2>先回答，再继续下一课</h2>
-    <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我有没有把验证点写成清单？</span></div><div class="check-item"><strong>2</strong><span>我能不能区分事实错误、逻辑错误、格式错误？</span></div><div class="check-item"><strong>3</strong><span>高风险输出有没有人工审批路径？</span></div></div>
+    <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我有没有把验证点写成清单？</span></div><div class="check-item"><strong>2</strong><span>我能不能区分事实性偏离、逻辑错误、格式错误？</span></div><div class="check-item"><strong>3</strong><span>高风险输出有没有人工审批路径？</span></div></div>
     <label class="writing-label"><span>我还没想明白的问题</span><textarea class="writing-box" aria-label="我还没想明白的问题" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
 
@@ -2502,13 +2508,13 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
       <div><strong>AI 动作</strong><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
-      <div><strong>人工检查</strong><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+      <div><strong>人工核校</strong><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
       <div><strong>交付物</strong><span>沉淀一条可复用提示词模板。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-case-card">
     <span class="label">案例 02</span>
@@ -2516,13 +2522,13 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
       <div><strong>AI 动作</strong><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
-      <div><strong>人工检查</strong><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+      <div><strong>人工核校</strong><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
       <div><strong>交付物</strong><span>沉淀一条可复用提示词模板。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-case-card">
     <span class="label">案例 03</span>
@@ -2530,18 +2536,18 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
       <div><strong>AI 动作</strong><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
-      <div><strong>人工检查</strong><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+      <div><strong>人工核校</strong><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
       <div><strong>交付物</strong><span>沉淀一条可复用提示词模板。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article></div>
   </article>
   <article class="worksheet-block">
     <span class="label">5. 风险检查</span>
-    <h2>哪些地方不能直接相信</h2>
+    <h2>哪些地方需要人工核校</h2>
     <div class="worksheet-list"><div class="principle-block"><strong>风险 1</strong><span>只凭直觉判断结果。</span></div><div class="principle-block"><strong>风险 2</strong><span>验证时只看一句最顺眼的话。</span></div><div class="principle-block"><strong>风险 3</strong><span>错误发生后不追溯是输入问题、模型问题还是流程问题。</span></div></div>
     <label class="writing-label"><span>我需要额外验证的内容</span><textarea class="writing-box" aria-label="我需要额外验证的内容" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
@@ -2560,8 +2566,8 @@ body > [class*="widget"] a {
   <summary>我有没有把验证点写成清单？</summary>
   <p>验证包括事实、逻辑、数据、格式四层</p>
 </details><details class="quiz-item">
-  <summary>我能不能区分事实错误、逻辑错误、格式错误？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+  <summary>我能不能区分事实性偏离、逻辑错误、格式错误？</summary>
+  <p>先拆输入、AI 动作、人工核校和最终输出，不要直接跳到工具入口或产品端入口。</p>
 </details><details class="quiz-item">
   <summary>高风险输出有没有人工审批路径？</summary>
   <p>只凭直觉判断结果。</p>
@@ -2570,16 +2576,16 @@ body > [class*="widget"] a {
   <article class="worksheet-block">
     <span class="label">8. 对照改进</span>
     <h2>参考答案和评分标准</h2>
-    <ul class="reference-list"><li>能用自己的话说明：AI 输出后必须验证。验证不是挑错，而是确认事实、逻辑、数据和格式能不能进入真实业务。越高风险，越不能只靠 AI 自己说没问题。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“数字校验”开始。</li><li>最终要留下一个可检查的小产物：拿一段 AI 输出，列出 5 个你会检查的点，并说明分别怎么查。</li></ul>
+    <ul class="reference-list"><li>能用自己的话说明：AI 输出后必须验证。验证不是挑错，而是确认事实、逻辑、数据和格式能不能进入真实业务。越高风险，越不能只依赖模型自检结论。</li><li>能把一个真实场景拆成输入、AI 动作、人工核校和最终输出；可以先从“数字校验”开始。</li><li>最终要留下一个可检查的小产物：拿一段 AI 输出，列出 5 个你会检查的点，并说明分别怎么查。</li></ul>
     <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+  <span>能用通俗语言解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
   <strong>优秀</strong>
   <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
 </div><div class="rubric-item">
   <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工核校或最终输出。</span>
 </div></div>
   </article>
   <article class="worksheet-block">
@@ -2587,12 +2593,12 @@ body > [class*="widget"] a {
     <h2>把本课关键词变成自己的话</h2>
     <div class="glossary-grid"><div class="glossary-item">
   <strong>本课核心概念</strong>
-  <span>建立 AI 输出之后的检查流程，避免把错内容直接拿去用。</span>
+  <span>建立 AI 输出之后的核校流程，避免把存在事实性偏离的内容直接投入业务。</span>
 </div><div class="glossary-item">
   <strong>输入</strong>
   <span>交给 AI 的背景、材料、约束、数据或示例。</span>
 </div><div class="glossary-item">
-  <strong>人工检查</strong>
+  <strong>人工核校</strong>
   <span>人用事实、逻辑、风险和格式标准确认 AI 输出能不能进入真实工作。</span>
 </div><div class="glossary-item">
   <strong>产物</strong>
@@ -2608,7 +2614,7 @@ body > [class*="widget"] a {
     <pre class="copy-prompt"><code>我已经学完「结果验证与纠错」，现在要完成本课工作纸。
 请你像助教一样追问我，不要直接替我编答案。
 本课产物是：拿一段 AI 输出，列出 5 个你会检查的点，并说明分别怎么查。
-请按这 5 步带我完成：1. 用人话复述概念；2. 选择一个真实场景；3. 写输入、AI动作、人工检查、输出；4. 标出风险；5. 总结下一步改进。</code></pre>
+请按这 5 步带我完成：1. 用通俗语言复述概念；2. 选择一个真实场景；3. 写输入、AI 动作、人工核校、输出；4. 标出风险；5. 总结下一步改进。</code></pre>
   </article>
   <article class="notes">
     <span class="label">完成后检查</span>
@@ -2620,7 +2626,7 @@ body > [class*="widget"] a {
   <a class="btn" href="./lesson-07-prompt-advanced-worksheet.html">上一课工作纸</a>
   <a class="btn primary" href="./lesson-09-office-and-learning-worksheet.html">下一课工作纸</a>
 </nav>
-<div class="footer">AI学习路线 · 练习工作纸 · 写下产物才算完成</div>
+<div class="footer">AI 学习路线 · 练习工作纸 · 写下产物才算完成</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2630,7 +2636,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2639,7 +2645,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2657,7 +2663,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

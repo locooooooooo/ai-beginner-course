@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="章节导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
     <a href="../course.html#advanced">老鸟进阶</a>
@@ -2432,8 +2438,8 @@ body > [class*="widget"] a {
   <div class="chapters"><article class="chapter-card">
   <span class="lesson-no"><img src="../number-icons/01.png" alt="第1课" loading="lazy" /></span>
   <span class="label">第 1 课</span>
-  <h3>Codex能做什么</h3>
-  <p>理解 Codex 不是普通聊天机器人，而是能进入项目现场读、改、跑、验收的 AI 工作助手。</p>
+  <h3>Codex 能做什么</h3>
+  <p>理解 Codex 不是普通对话式交互应用，而是能进入项目现场读取、修改、运行和验证的 AI 工程助手。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
     <span>写一个给 Codex 的任务说明，包含目标、范围、验收标准和禁止事项。</span>
@@ -2442,7 +2448,7 @@ body > [class*="widget"] a {
 </article><article class="chapter-card">
   <span class="lesson-no"><img src="../number-icons/02.png" alt="第2课" loading="lazy" /></span>
   <span class="label">第 2 课</span>
-  <h3>Loop Engineering是什么</h3>
+  <h3>Loop Engineering 是什么</h3>
   <p>理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
@@ -2452,7 +2458,7 @@ body > [class*="widget"] a {
 </article><article class="chapter-card">
   <span class="lesson-no"><img src="../number-icons/03.png" alt="第3课" loading="lazy" /></span>
   <span class="label">第 3 课</span>
-  <h3>如何用Codex制作好看的网页</h3>
+  <h3>如何用 Codex 制作好看的网页</h3>
   <p>学会把目标用户、页面结构、视觉规范和移动端验收交给 Codex，让网页既能看又能用。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
@@ -2462,7 +2468,7 @@ body > [class*="widget"] a {
 </article><article class="chapter-card">
   <span class="lesson-no"><img src="../number-icons/04.png" alt="第4课" loading="lazy" /></span>
   <span class="label">第 4 课</span>
-  <h3>Git、GitHub与Codex协作</h3>
+  <h3>Git、GitHub 与 Codex 协作</h3>
   <p>理解 Git 记录本地修改，GitHub 托管和发布代码，Codex 可以帮助提交、推送和验证线上结果。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
@@ -2472,8 +2478,8 @@ body > [class*="widget"] a {
 </article><article class="chapter-card">
   <span class="lesson-no"><img src="../number-icons/05.png" alt="第5课" loading="lazy" /></span>
   <span class="label">第 5 课</span>
-  <h3>你真的会用Dify吗？</h3>
-  <p>学会用 Codex 搭建 Dify 平台、完成 Docker 部署，并把 Wiki 发布、Bug 汇总和自动 Code Review 做成自动化流程。</p>
+  <h3>你真的会用 Dify 吗？</h3>
+  <p>学会用 Codex 搭建 Dify 平台，完成 Docker 部署，并把 Wiki 发布、Bug 汇总和自动 Code Review 做成自动化工作流。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
     <span>设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span>
@@ -2488,19 +2494,19 @@ body > [class*="widget"] a {
   </div>
   <div class="case-grid"><article class="case-card">
   <strong>把课程内容生成手机友好的 HTML 网站</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article><article class="case-card">
   <strong>网页改版：先改首页，再截图验收，再修移动端问题</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article><article class="case-card">
   <strong>把课程首页从资源堆叠改成学习路径</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article><article class="case-card">
   <strong>本地新增 codex.html 后，线上没有入口，因为还没 push</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article><article class="case-card">
   <strong>Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article></div>
 </section>
 <section id="outputs">
@@ -2532,7 +2538,7 @@ body > [class*="widget"] a {
     <div class="toolbar"><a class="btn primary" href="../course.html">回到课程总览</a></div>
   </article>
 </section>
-<div class="footer">AI学习路线 · 章节导学 · 主讲义和工作纸配套学习</div>
+<div class="footer">AI 学习路线 · 章节导学 · 主讲义和工作纸配套学习</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2542,7 +2548,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2551,7 +2557,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2569,7 +2575,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="./lesson-06-04-game-art-assets.html">返回主讲义</a>
     <a href="../course.html#beginner">新手入门</a>
@@ -2413,7 +2419,7 @@ body > [class*="widget"] a {
   </div>
   <aside class="starter-panel">
     <strong>本课交付物</strong>
-    <p class="small-note">为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工复审。</p>
+    <p class="small-note">为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工核校。</p>
   </aside>
 </header>
 <section class="callout">
@@ -2454,7 +2460,7 @@ body > [class*="widget"] a {
   </article>
   <article class="worksheet-block">
     <span class="label">2. 概念翻译</span>
-    <h2>把术语翻译成人话</h2>
+    <h2>把术语转成通俗解释</h2>
     <div class="worksheet-list"><div class="principle-block"><strong>关键点 1</strong><span>游戏美术资产要进入管线：命名、尺寸、透明通道、贴图压缩、LOD、材质和导入设置</span></div><div class="principle-block"><strong>关键点 2</strong><span>AI 生成图适合做情绪板、角色探索、图标草稿、场景占位和营销视觉备选</span></div><div class="principle-block"><strong>关键点 3</strong><span>正式资产必须处理版权来源、风格一致性、平台披露、性能预算和人工修整</span></div></div>
     <label class="writing-label"><span>我自己的 120 字解释</span><textarea class="writing-box large" aria-label="我自己的 120 字解释" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
@@ -2466,14 +2472,14 @@ body > [class*="widget"] a {
       <div><strong>我的场景</strong><span>例如一个真实任务、一个业务流程或一次学习需求。</span></div>
       <div><strong>输入</strong><span>我会给 AI 什么材料、背景、限制或数据。</span></div>
       <div><strong>AI 动作</strong><span>AI 负责生成、总结、分类、检索、执行还是连接工具。</span></div>
-      <div><strong>人工检查</strong><span>我怎么确认结果没有跑偏或出错。</span></div>
+      <div><strong>人工核校</strong><span>我怎么确认结果没有跑偏或出错。</span></div>
       <div><strong>最终输出</strong><span>最后能留下什么文件、话术、流程图、清单或页面。</span></div>
     </div>
   </article>
   <article class="worksheet-block">
     <span class="label">4. 跟做任务</span>
     <h2>完成本课产物</h2>
-    <p>为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工复审。</p>
+    <p>为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工核校。</p>
     <label class="writing-label"><span>我的产物草稿</span><textarea class="writing-box extra-large" aria-label="我的产物草稿" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
 
@@ -2502,13 +2508,13 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
       <div><strong>AI 动作</strong><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-      <div><strong>人工检查</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+      <div><strong>人工核校</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
       <div><strong>交付物</strong><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-case-card">
     <span class="label">案例 02</span>
@@ -2516,13 +2522,13 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
       <div><strong>AI 动作</strong><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-      <div><strong>人工检查</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+      <div><strong>人工核校</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
       <div><strong>交付物</strong><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-case-card">
     <span class="label">案例 03</span>
@@ -2530,18 +2536,18 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
       <div><strong>AI 动作</strong><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-      <div><strong>人工检查</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+      <div><strong>人工核校</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
       <div><strong>交付物</strong><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article></div>
   </article>
   <article class="worksheet-block">
     <span class="label">5. 风险检查</span>
-    <h2>哪些地方不能直接相信</h2>
+    <h2>哪些地方需要人工核校</h2>
     <div class="worksheet-list"><div class="principle-block"><strong>风险 1</strong><span>把生成图直接当最终商用资产，不记录来源和修改过程。</span></div><div class="principle-block"><strong>风险 2</strong><span>只看单张图效果，不看整套游戏风格是否统一。</span></div><div class="principle-block"><strong>风险 3</strong><span>忽略贴图尺寸、压缩和 Draw Call，导致移动端或低配机器性能崩溃。</span></div></div>
     <label class="writing-label"><span>我需要额外验证的内容</span><textarea class="writing-box" aria-label="我需要额外验证的内容" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
@@ -2561,7 +2567,7 @@ body > [class*="widget"] a {
   <p>游戏美术资产要进入管线：命名、尺寸、透明通道、贴图压缩、LOD、材质和导入设置</p>
 </details><details class="quiz-item">
   <summary>来源、提示词、授权状态和人工修改是否记录？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+  <p>先拆输入、AI 动作、人工核校和最终输出，不要直接跳到工具入口或产品端入口。</p>
 </details><details class="quiz-item">
   <summary>进入引擎后是否检查尺寸、压缩、透明通道和性能？</summary>
   <p>把生成图直接当最终商用资产，不记录来源和修改过程。</p>
@@ -2573,13 +2579,13 @@ body > [class*="widget"] a {
     <ul class="reference-list"><li>管线应包含：生成探索、人工筛选、风格统一、来源记录、版权复查、格式处理、引擎导入、性能检查和平台披露。</li><li>角色概念、道具图标、场景 moodboard 都可以先由 AI 辅助，但正式资产要有人工修整和统一规范。</li><li>导入规格至少写清尺寸、格式、透明通道、压缩、命名、目录、材质数量和低配设备检查。</li></ul>
     <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+  <span>能用通俗语言解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
   <strong>优秀</strong>
   <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
 </div><div class="rubric-item">
   <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工核校或最终输出。</span>
 </div></div>
   </article>
   <article class="worksheet-block">
@@ -2607,20 +2613,20 @@ body > [class*="widget"] a {
     <h3>可以复制给 AI 陪练</h3>
     <pre class="copy-prompt"><code>我已经学完「美术资产生成与游戏管线」，现在要完成本课工作纸。
 请你像助教一样追问我，不要直接替我编答案。
-本课产物是：为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工复审。
-请按这 5 步带我完成：1. 用人话复述概念；2. 选择一个真实场景；3. 写输入、AI动作、人工检查、输出；4. 标出风险；5. 总结下一步改进。</code></pre>
+本课产物是：为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工核校。
+请按这 5 步带我完成：1. 用通俗语言复述概念；2. 选择一个真实场景；3. 写输入、AI 动作、人工核校、输出；4. 标出风险；5. 总结下一步改进。</code></pre>
   </article>
   <article class="notes">
     <span class="label">完成后检查</span>
     <h3>本课通过标准</h3>
-    <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「美术资产生成与游戏管线」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工复审。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+    <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「美术资产生成与游戏管线」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：为一款暗黑风格 ARPG 设计一套 AI 美术资产管线：角色概念、道具图标、场景 moodboard、导入规格、版权记录、性能检查和人工核校。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
   </article>
 </section>
 <nav class="pager" aria-label="上一课下一课工作纸">
   <a class="btn" href="./lesson-06-03-agent-gameplay-code-worksheet.html">上一课工作纸</a>
   <a class="btn primary" href="./lesson-06-05-game-dev-mcp-worksheet.html">下一课工作纸</a>
 </nav>
-<div class="footer">AI学习路线 · 练习工作纸 · 写下产物才算完成</div>
+<div class="footer">AI 学习路线 · 练习工作纸 · 写下产物才算完成</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2630,7 +2636,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2639,7 +2645,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2657,7 +2663,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

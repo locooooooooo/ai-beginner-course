@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第4课 AI能做什么不能做什么</title>
+  <title>第4课 AI 能做什么不能做什么</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Silkscreen:wght@400;700&display=swap');
 
@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
     <a href="../course.html#advanced">老鸟进阶</a>
@@ -2404,8 +2410,8 @@ body > [class*="widget"] a {
 <header class="hero">
   <div>
     <div class="eyebrow">第一章：先建立正确认知 · 第4课</div>
-    <h1>第4课：AI能做什么不能做什么</h1>
-    <p class="lead">建立边界意识，知道 AI 强在哪里，也知道它会错在哪里。</p>
+    <h1>第4课：AI 能做什么不能做什么</h1>
+    <p class="lead">建立边界意识，知道 AI 适合辅助哪些任务，也知道它可能在哪些环节出现事实性偏离。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start" data-focus-toggle aria-pressed="false">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
@@ -2429,7 +2435,7 @@ body > [class*="widget"] a {
 <section class="callout" id="start">
   <span class="label">为什么要学</span>
   <h2>核心问题</h2>
-  <p>为什么看起来很聪明的 AI，仍然会一本正经地说错？</p>
+  <p>为什么 AI 输出看起来很自然，仍然可能一本正经地说错？</p>
 </section>
 <section class="card">
   <span class="label">学习元信息</span>
@@ -2445,10 +2451,10 @@ body > [class*="widget"] a {
   <span>2026-06-17</span>
 </div><div class="meta-item meta-item-wide">
   <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；建议准备一段低风险 AI 输出用于练习检查</span>
+  <span>任意支持对话式交互的 AI 工具；建议准备一段低风险 AI 输出用于练习检查</span>
 </div><div class="meta-item meta-item-wide">
   <strong>隐私边界</strong>
-  <span>不要用真实医疗、法律、财务、客户投诉原文做公开练习；先脱敏再练。</span>
+  <span>不要用真实医疗、法律、财务、客户投诉原文做公开练习；必须先进行数据脱敏，再使用虚拟数据或非机密数据演练。</span>
 </div><div class="meta-item meta-item-wide">
   <strong>来源提示</strong>
   <span>边界课以通用风险治理为主，不替代法律、医疗、财务等专业意见。</span>
@@ -2463,24 +2469,24 @@ body > [class*="widget"] a {
   <span class="label">深度讲稿</span>
   <h2>把这一课讲透：先翻译，再演示，再提问</h2>
   <div class="plain-language">
-    <strong>人话解释</strong>
-    <p>AI 能快速生成、总结和分析，但它不天然知道事实，也不会替你承担责任。越靠近钱、法律、健康、售后、品牌承诺，越要把验证、审批和回滚放在前面。</p>
+    <strong>通俗解释</strong>
+    <p>AI 能快速生成、总结和分析，但生成内容不天然等于事实，也不会替你承担责任。越靠近钱、法律、健康、售后、品牌承诺，越要把验证、审批和回滚放在前面。</p>
   </div>
   <div class="deep-script-grid"><div class="deep-script">
   <strong>先拆开流畅和正确</strong>
-  <p>AI 的回答常常很顺，但顺不代表真。课堂上可以给一段看起来很像官方说明的文字，让学生找事实来源，训练他们不要被语气骗过。</p>
+  <p>AI 的输出常常很顺，但顺不代表真。课堂上可以给一段看起来很像官方说明的文字，让学生找事实来源，训练他们不要被语气骗过。</p>
 </div><div class="deep-script">
   <strong>用风险等级决定能不能直接用</strong>
   <p>低风险内容可以快速试用，中风险内容要抽检，高风险内容必须人工审批。边界意识不是不用 AI，而是知道哪些地方不能让它直接决定。</p>
 </div><div class="deep-script">
   <strong>把错误看成流程问题</strong>
-  <p>AI 出错后，不要只说模型不行。要追问是输入缺上下文、知识库没接、验收标准没写，还是人工审核流程缺失。</p>
+  <p>AI 输出出现事实性偏离后，不要只归因于模型。要追问是输入缺上下文、知识库没接、核校标准没写，还是人工核校流程缺失。</p>
 </div></div>
 </article>
 <article class="card">
   <span class="label">跟做案例</span>
   <h2>让 AI 生成售后政策回复</h2>
-  <ol class="walkthrough-list"><li>先判断风险：这涉及客户权益和品牌承诺，不能直接发。</li><li>提供依据：给 AI 官方售后政策和适用范围。</li><li>输出草稿：要求标出引用条款。</li><li>人工验收：客服负责人确认后再使用。</li></ol>
+  <ol class="walkthrough-list"><li>先判断风险：这涉及客户权益和品牌承诺，不能直接发。</li><li>提供依据：给 AI 官方售后政策和适用范围。</li><li>输出草稿：要求标出引用条款。</li><li>人工核校：客服负责人确认后再使用。</li></ol>
 </article>
 <article class="card worked-example">
   <span class="label">完整示范</span>
@@ -2492,12 +2498,12 @@ body > [class*="widget"] a {
     </div>
     <div class="example-block good">
       <strong>好输入</strong>
-      <p>售后回复涉及客户权益，不能直接发。我要先提供官方售后政策，让 AI 只生成草稿，并要求标出依据条款、适用条件和不确定项。最后由客服负责人确认后再发送。</p>
+      <p>售后回复涉及客户权益，不能直接发。我要先提供官方售后政策，让 AI 只生成草稿，并要求标出依据条款、适用条件和不确定项。最后由客服负责人核校后再发送。</p>
     </div>
   </div>
   <div class="example-block">
     <strong>输出样例</strong>
-    <p>风险检查结果：文案里如果出现“必定赔偿”“任何情况都可退”这类政策外承诺，必须删除；如果政策文档没有覆盖该情况，要转人工确认，不能让 AI 自己补规则。</p>
+    <p>风险核校结果：文案里如果出现“必定赔偿”“任何情况都可退”这类政策外承诺，必须删除；如果政策文档没有覆盖该情况，要转人工确认，不能让模型补写规则。</p>
   </div>
   <div class="example-block">
     <strong>检查点</strong>
@@ -2509,6 +2515,7 @@ body > [class*="widget"] a {
   <h2>学完后先回答这 3 个问题</h2>
   <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能不能列出哪些 AI 输出必须人工审批？</span></div><div class="check-item"><strong>2</strong><span>我能不能说明自然流畅为什么不等于真实？</span></div><div class="check-item"><strong>3</strong><span>我能不能为一个高风险任务设计验证步骤？</span></div></div>
 </article>
+
     <section class="learner-brief">
       <span class="label">先怎么学</span>
       <h2>按这节课自己的任务跑 4 步</h2>
@@ -2516,7 +2523,7 @@ body > [class*="widget"] a {
       <div class="flow">
         <div class="flow-step">
           <strong>1. AI 的强项</strong>
-          <span>先把“AI能做什么不能做什么”放回概念地图：它解决什么问题，和相邻概念有什么边界。</span>
+          <span>先把“AI 能做什么不能做什么”放回概念地图：它解决什么问题，和相邻概念有什么边界。</span>
         </div>
         <div class="flow-step">
           <strong>2. AI 的常见失败方式</strong>
@@ -2524,7 +2531,7 @@ body > [class*="widget"] a {
         </div>
         <div class="flow-step">
           <strong>3. 哪些任务必须人审</strong>
-          <span>把“写一篇文章很快但事实可能错”拆成对象、能力、输入、输出四格，确认你不是把产品名当成能力本身。</span>
+          <span>把“写一篇文章很快但事实可能错”拆成对象、能力、输入、输出四格，确认你不是把产品端入口当成能力本身。</span>
         </div>
         <div class="flow-step">
           <strong>4. 建立验证习惯</strong>
@@ -2532,14 +2539,14 @@ body > [class*="widget"] a {
         </div></div>
     </section>
     <article class="card">
-      <span class="label">先记住</span>
+      <span class="label">先抓住</span>
       <h2>本课只抓 3 件事</h2>
-      <ul><li>AI 擅长总结、生成、归纳、辅助分析</li><li>AI 可能会幻觉、会误解上下文、会一本正经地说错话</li><li>结果必须验证，尤其是高风险内容</li></ul>
+      <ul><li>AI 擅长总结、生成、归纳、辅助分析</li><li>AI 可能出现幻觉现象、上下文误配和事实性偏离</li><li>结果必须验证，尤其是高风险内容</li></ul>
     </article>
     <article class="card">
       <span class="label">想明白</span>
       <h2>第一性拆解</h2>
-      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把“看起来像会思考”和“真的有事实依据”分开。</span></div><div class="principle-block"><strong>拆解 2</strong><span>AI 的输出本质上是高概率生成，不天然等于事实正确。</span></div><div class="principle-block"><strong>拆解 3</strong><span>高风险任务必须引入验证、审批和回滚，而不是只看语气是否自然。</span></div></div>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把“语言输出很自然”和“真的有事实依据”分开。</span></div><div class="principle-block"><strong>拆解 2</strong><span>AI 的输出本质上是高概率生成，不天然等于事实正确。</span></div><div class="principle-block"><strong>拆解 3</strong><span>高风险任务必须引入验证、审批和回滚，而不是只看语气是否自然。</span></div></div>
     </article>
     <article class="card">
       <span class="label">可迁移</span>
@@ -2564,7 +2571,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
     <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>人工核校</b><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
     <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
   </div>
   <p>套用本课方法：先给输出分风险等级。</p>
@@ -2577,7 +2584,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
     <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>人工核校</b><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
     <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
   </div>
   <p>套用本课方法：低风险结果先用，中风险结果抽检，高风险结果强制审批。</p>
@@ -2590,7 +2597,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
     <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>人工核校</b><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
     <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
   </div>
   <p>套用本课方法：所有关键业务都要有验证路径。</p>
@@ -2600,7 +2607,7 @@ body > [class*="widget"] a {
     <span>课堂演练</span>
     <strong>让 AI 生成售后政策回复</strong>
   </div>
-  <ol class="case-practice-steps"><li>先判断风险：这涉及客户权益和品牌承诺，不能直接发。</li><li>提供依据：给 AI 官方售后政策和适用范围。</li><li>输出草稿：要求标出引用条款。</li><li>人工验收：客服负责人确认后再使用。</li></ol>
+  <ol class="case-practice-steps"><li>先判断风险：这涉及客户权益和品牌承诺，不能直接发。</li><li>提供依据：给 AI 官方售后政策和适用范围。</li><li>输出草稿：要求标出引用条款。</li><li>人工核校：客服负责人确认后再使用。</li></ol>
 </article>
 <details class="case-practice-card compare">
   <summary>
@@ -2614,11 +2621,11 @@ body > [class*="widget"] a {
     </div>
     <div class="case-compare-block">
       <b>可用输入</b>
-      <span>售后回复涉及客户权益，不能直接发。我要先提供官方售后政策，让 AI 只生成草稿，并要求标出依据条款、适用条件和不确定项。最后由客服负责人确认后再发送。</span>
+      <span>售后回复涉及客户权益，不能直接发。我要先提供官方售后政策，让 AI 只生成草稿，并要求标出依据条款、适用条件和不确定项。最后由客服负责人核校后再发送。</span>
     </div>
     <div class="case-compare-block">
       <b>样例结果</b>
-      <span>风险检查结果：文案里如果出现“必定赔偿”“任何情况都可退”这类政策外承诺，必须删除；如果政策文档没有覆盖该情况，要转人工确认，不能让 AI 自己补规则。</span>
+      <span>风险核校结果：文案里如果出现“必定赔偿”“任何情况都可退”这类政策外承诺，必须删除；如果政策文档没有覆盖该情况，要转人工确认，不能让模型补写规则。</span>
     </div>
     <ul class="case-practice-review"><li>是否区分流畅表达和真实依据。</li><li>是否给高风险任务设置人工审批。</li><li>是否能写出验证来源、适用范围和转人工条件。</li></ul>
   </div>
@@ -2641,7 +2648,7 @@ body > [class*="widget"] a {
   <span class="step-no">2</span>
   <div>
     <h3>AI 的常见失败方式</h3>
-    <p><strong>先讲清：</strong>AI 可能会幻觉、会误解上下文、会一本正经地说错话。</p>
+    <p><strong>先讲清：</strong>AI 可能出现幻觉现象、上下文误配和事实性偏离。</p>
     <p><strong>再落地：</strong>把它放进“生成客服回复很自然但政策可能错”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
     <p><strong>马上做：</strong>低风险结果先用，中风险结果抽检，高风险结果强制审批。</p>
   </div>
@@ -2693,7 +2700,7 @@ body > [class*="widget"] a {
 <article class="card learning-evidence">
   <span class="label">参考答案</span>
   <h2>不是标准话术，而是判断自己有没有学会</h2>
-  <ul><li>能用自己的话说明：AI 能快速生成、总结和分析，但它不天然知道事实，也不会替你承担责任。越靠近钱、法律、健康、售后、品牌承诺，越要把验证、审批和回滚放在前面。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“写一篇文章很快但事实可能错”开始。</li><li>最终要留下一个可检查的小产物：列出你认为必须人工审批的 5 类 AI 输出，并说明原因。</li></ul>
+  <ul><li>能用自己的话说明：AI 能快速生成、总结和分析，但生成内容不天然等于事实，也不会替你承担责任。越靠近钱、法律、健康、售后、品牌承诺，越要把验证、审批和回滚放在前面。</li><li>能把一个真实场景拆成输入、AI 动作、人工核校和最终输出；可以先从“写一篇文章很快但事实可能错”开始。</li><li>最终要留下一个可检查的小产物：列出你认为必须人工审批的 5 类 AI 输出，并说明原因。</li></ul>
 </article>
 <article class="card learning-evidence">
   <span class="label">小测验</span>
@@ -2703,7 +2710,7 @@ body > [class*="widget"] a {
   <p>AI 擅长总结、生成、归纳、辅助分析</p>
 </details><details class="quiz-item">
   <summary>我能不能说明自然流畅为什么不等于真实？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+  <p>先拆输入、AI 动作、人工核校和最终输出，不要直接跳到工具入口或产品端入口。</p>
 </details><details class="quiz-item">
   <summary>我能不能为一个高风险任务设计验证步骤？</summary>
   <p>把自然流畅误判成可信。</p>
@@ -2714,26 +2721,26 @@ body > [class*="widget"] a {
   <h2>用 3 档判断本课产物质量</h2>
   <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+  <span>能用通俗语言解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
   <strong>优秀</strong>
   <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
 </div><div class="rubric-item">
   <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工核校或最终输出。</span>
 </div></div>
 </article>
 <article class="card learning-evidence">
   <span class="label">术语表</span>
-  <h2>把这一课的词翻译成人话</h2>
+  <h2>把这一课的术语转成通俗解释</h2>
   <div class="glossary-grid"><div class="glossary-item">
   <strong>本课核心概念</strong>
-  <span>建立边界意识，知道 AI 强在哪里，也知道它会错在哪里。</span>
+  <span>建立边界意识，知道 AI 适合辅助哪些任务，也知道它可能在哪些环节出现事实性偏离。</span>
 </div><div class="glossary-item">
   <strong>输入</strong>
   <span>交给 AI 的背景、材料、约束、数据或示例。</span>
 </div><div class="glossary-item">
-  <strong>人工检查</strong>
+  <strong>人工核校</strong>
   <span>人用事实、逻辑、风险和格式标准确认 AI 输出能不能进入真实工作。</span>
 </div><div class="glossary-item">
   <strong>产物</strong>
@@ -2763,7 +2770,7 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">可以直接复制</span>
       <h2>给 AI 的跟做提示</h2>
-      <pre class="copy-prompt"><code>我正在学习「AI能做什么不能做什么」，请用新手能听懂的话教我。
+      <pre class="copy-prompt"><code>我正在学习「AI 能做什么不能做什么」，请用新手能听懂的话教我。
 先用 120 字以内解释它，不要堆术语。
 再结合这两个场景举例：写一篇文章很快但事实可能错；生成客服回复很自然但政策可能错。
 然后问我 3 个检查理解的问题。
@@ -2772,7 +2779,7 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">自检</span>
       <h2>学完请确认这 4 件事</h2>
-      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「AI能做什么不能做什么」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：列出你认为必须人工审批的 5 类 AI 输出，并说明原因。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「AI 能做什么不能做什么」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：列出你认为必须人工审批的 5 类 AI 输出，并说明原因。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
     </article>
   </aside>
 </div>
@@ -2781,7 +2788,7 @@ body > [class*="widget"] a {
   <a class="btn primary" href="./lesson-05-ask-better-questions.html">下一课：第5课 怎么提一个高质量问题</a>
 </nav>
 
-<div class="footer">AI学习路线 · 第一性原则版逐课教程</div>
+<div class="footer">AI 学习路线 · 第一性原则版逐课教程</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2791,7 +2798,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2800,7 +2807,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2818,7 +2825,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

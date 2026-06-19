@@ -1,0 +1,62 @@
+# This file is editable lesson text. Run scripts/generate_lessons.py after changing it.
+# Text fields use TOML triple-quoted strings so Chinese punctuation and line breaks are safe.
+
+chapter_no = 7
+no = 2
+slug = """lesson-22-loop-engineering"""
+title = """Loop Engineering 是什么"""
+goal = """理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。"""
+big_question = """为什么复杂 AI 任务不能只靠一次提示词，而要靠一轮一轮的执行和验收？"""
+exercise = """为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。"""
+
+keyPoints = [
+  """Loop Engineering 的基本循环是目标、执行、验收、修正""",
+  """每一轮都要缩小范围，留下可验证结果""",
+  """复杂项目要把内容、实现、测试和发布拆成多轮推进""",
+]
+
+structure = [
+  """Loop Engineering 的定义""",
+  """为什么一次性大提示容易失败""",
+  """如何设计一轮 Loop""",
+  """如何用验收结果进入下一轮""",
+]
+
+cases = [
+  """网页改版：先改首页，再截图验收，再修移动端问题""",
+  """课程生成：先出目录，再补讲义，再补工作纸，再查断链""",
+  """Bug 修复：先复现，再定位，再最小修改，再跑测试""",
+]
+
+ppt = [
+  """封面：Loop Engineering""",
+  """一次提示为什么不够""",
+  """目标-执行-验收-修正""",
+  """三轮任务设计""",
+  """验收证据样例""",
+  """课堂练习页""",
+]
+
+first_principles = [
+  """先承认不确定性：复杂任务一开始很难一次说清全部细节。""",
+  """把大任务拆成小循环，每轮只解决一个可验证问题。""",
+  """每轮产出的证据决定下一轮怎么改，而不是凭感觉继续加需求。""",
+]
+
+atomic_truths = [
+  """本质一：Loop 是用反馈降低不确定性。""",
+  """本质二：每轮都要有明确验收证据。""",
+  """本质三：好流程比一次性神提示更稳定。""",
+]
+
+method = [
+  """每轮只设一个主目标。""",
+  """先定义验收方式，再让 Codex 执行。""",
+  """把失败原因写进下一轮输入。""",
+]
+
+anti_patterns = [
+  """一轮里塞太多目标。""",
+  """没有截图、测试、链接或人工核校就进入下一轮。""",
+  """每次都从零开始，不复用上一轮结论。""",
+]

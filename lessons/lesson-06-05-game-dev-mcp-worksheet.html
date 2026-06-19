@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第25课练习工作纸 MCP在游戏开发中的使用</title>
+  <title>第25课练习工作纸 MCP 在游戏开发中的使用</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Silkscreen:wght@400;700&display=swap');
 
@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="./lesson-06-05-game-dev-mcp.html">返回主讲义</a>
     <a href="../course.html#beginner">新手入门</a>
@@ -2404,7 +2410,7 @@ body > [class*="widget"] a {
 <header class="hero worksheet-hero">
   <div>
     <div class="eyebrow">第六章：游戏场景落地 · 第25课工作纸</div>
-    <h1>第25课练习工作纸：MCP在游戏开发中的使用</h1>
+    <h1>第25课练习工作纸：MCP 在游戏开发中的使用</h1>
     <p class="lead">这页不是再讲一遍课，而是让你把本课写成自己的可用产物。打开后按空格填写，最后再回主讲义自检。</p>
     <div class="toolbar">
       <a class="btn primary" href="#worksheet">开始填写</a>
@@ -2448,13 +2454,13 @@ body > [class*="widget"] a {
   <article class="worksheet-block">
     <span class="label">1. 课前定位</span>
     <h2>我为什么要学这一课</h2>
-    <p>为什么 MCP 对游戏开发重要？因为游戏项目里最难的不是让 AI 回答，而是让它安全地看见项目、调用工具、修改场景、读取设计并留下证据。</p>
+    <p>为什么 MCP 对游戏开发重要？因为游戏项目里最难的不是让 AI 输出回答，而是让它安全地读取项目上下文、调用工具、修改测试场景、读取设计并留下证据。</p>
     <label class="writing-label"><span>我的困惑</span><textarea class="writing-box" aria-label="我的困惑" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我希望这节课解决的问题</span><textarea class="writing-box" aria-label="我希望这节课解决的问题" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-block">
     <span class="label">2. 概念翻译</span>
-    <h2>把术语翻译成人话</h2>
+    <h2>把术语转成通俗解释</h2>
     <div class="worksheet-list"><div class="principle-block"><strong>关键点 1</strong><span>MCP 是把 AI 应用和外部工具连接起来的协议，核心是工具、资源、提示和权限边界</span></div><div class="principle-block"><strong>关键点 2</strong><span>Unity MCP、UEMCP、Figma MCP 代表三类游戏开发连接：引擎编辑器、项目脚本和设计稿</span></div><div class="principle-block"><strong>关键点 3</strong><span>Figma MCP 可以把设计上下文、组件和 Code Connect 信息交给 Codex，适合游戏 UI 从设计稿走到实现清单</span></div></div>
     <label class="writing-label"><span>我自己的 120 字解释</span><textarea class="writing-box large" aria-label="我自己的 120 字解释" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
@@ -2466,7 +2472,7 @@ body > [class*="widget"] a {
       <div><strong>我的场景</strong><span>例如一个真实任务、一个业务流程或一次学习需求。</span></div>
       <div><strong>输入</strong><span>我会给 AI 什么材料、背景、限制或数据。</span></div>
       <div><strong>AI 动作</strong><span>AI 负责生成、总结、分类、检索、执行还是连接工具。</span></div>
-      <div><strong>人工检查</strong><span>我怎么确认结果没有跑偏或出错。</span></div>
+      <div><strong>人工核校</strong><span>我怎么确认结果没有跑偏或出错。</span></div>
       <div><strong>最终输出</strong><span>最后能留下什么文件、话术、流程图、清单或页面。</span></div>
     </div>
   </article>
@@ -2502,13 +2508,13 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
       <div><strong>AI 动作</strong><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-      <div><strong>人工检查</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+      <div><strong>人工核校</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
       <div><strong>交付物</strong><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-case-card">
     <span class="label">案例 02</span>
@@ -2516,13 +2522,13 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
       <div><strong>AI 动作</strong><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-      <div><strong>人工检查</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+      <div><strong>人工核校</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
       <div><strong>交付物</strong><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-case-card">
     <span class="label">案例 03</span>
@@ -2530,13 +2536,13 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
       <div><strong>AI 动作</strong><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-      <div><strong>人工检查</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+      <div><strong>人工核校</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
       <div><strong>交付物</strong><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-case-card">
     <span class="label">案例 04</span>
@@ -2544,18 +2550,18 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
       <div><strong>AI 动作</strong><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-      <div><strong>人工检查</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+      <div><strong>人工核校</strong><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
       <div><strong>交付物</strong><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article></div>
   </article>
   <article class="worksheet-block">
     <span class="label">5. 风险检查</span>
-    <h2>哪些地方不能直接相信</h2>
+    <h2>哪些地方需要人工核校</h2>
     <div class="worksheet-list"><div class="principle-block"><strong>风险 1</strong><span>把 MCP 当成万能插件，一上来给 Agent 全项目写权限。</span></div><div class="principle-block"><strong>风险 2</strong><span>只看工具调用成功，不检查引擎场景、设计还原和运行结果。</span></div><div class="principle-block"><strong>风险 3</strong><span>没有日志和回滚，导致 Agent 改坏资源后无法定位原因。</span></div></div>
     <label class="writing-label"><span>我需要额外验证的内容</span><textarea class="writing-box" aria-label="我需要额外验证的内容" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
@@ -2575,7 +2581,7 @@ body > [class*="widget"] a {
   <p>MCP 是把 AI 应用和外部工具连接起来的协议，核心是工具、资源、提示和权限边界</p>
 </details><details class="quiz-item">
   <summary>这里更适合用 Codex、OpenClaw 还是 Hermes Agent，为什么？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+  <p>先拆输入、AI 动作、人工核校和最终输出，不要直接跳到工具入口或产品端入口。</p>
 </details><details class="quiz-item">
   <summary>哪些动作必须人工确认？</summary>
   <p>把 MCP 当成万能插件，一上来给 Agent 全项目写权限。</p>
@@ -2587,13 +2593,13 @@ body > [class*="widget"] a {
     <ul class="reference-list"><li>一个安全的游戏 MCP 工作流应先读设计和项目上下文，再生成实现清单，最后只在测试场景或分支执行。</li><li>Figma 负责 UI 设计上下文，Unity 或 Unreal 负责引擎原型，文件系统负责资源清单，截图工具负责验收证据。</li><li>如果任务核心是改项目、跑脚本、验证结果，优先想 Codex；如果任务是常驻消息入口、资料整理和外围自动化，更像 OpenClaw；如果任务要求长期记忆、持续沉淀和跨会话跟进，更接近 Hermes Agent。</li><li>必须写清人工确认点、日志、版本控制、回滚机制和禁止动作，尤其是删除、批量重命名、提交和发布。</li></ul>
     <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+  <span>能用通俗语言解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
   <strong>优秀</strong>
   <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
 </div><div class="rubric-item">
   <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工核校或最终输出。</span>
 </div></div>
   </article>
   <article class="worksheet-block">
@@ -2625,22 +2631,22 @@ body > [class*="widget"] a {
   <article class="notes">
     <span class="label">助教提示</span>
     <h3>可以复制给 AI 陪练</h3>
-    <pre class="copy-prompt"><code>我已经学完「MCP在游戏开发中的使用」，现在要完成本课工作纸。
+    <pre class="copy-prompt"><code>我已经学完「MCP 在游戏开发中的使用」，现在要完成本课工作纸。
 请你像助教一样追问我，不要直接替我编答案。
 本课产物是：设计一个“AI 帮我做游戏 UI 和引擎原型”的 MCP 工作流：列出 Figma、Unity 或 Unreal、文件系统、截图验收、人工确认和回滚机制。
-请按这 5 步带我完成：1. 用人话复述概念；2. 选择一个真实场景；3. 写输入、AI动作、人工检查、输出；4. 标出风险；5. 总结下一步改进。</code></pre>
+请按这 5 步带我完成：1. 用通俗语言复述概念；2. 选择一个真实场景；3. 写输入、AI 动作、人工核校、输出；4. 标出风险；5. 总结下一步改进。</code></pre>
   </article>
   <article class="notes">
     <span class="label">完成后检查</span>
     <h3>本课通过标准</h3>
-    <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「MCP在游戏开发中的使用」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：设计一个“AI 帮我做游戏 UI 和引擎原型”的 MCP 工作流：列出 Figma、Unity 或 Unreal、文件系统、截图验收、人工确认和回滚机制。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+    <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「MCP 在游戏开发中的使用」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：设计一个“AI 帮我做游戏 UI 和引擎原型”的 MCP 工作流：列出 Figma、Unity 或 Unreal、文件系统、截图验收、人工确认和回滚机制。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
   </article>
 </section>
 <nav class="pager" aria-label="上一课下一课工作纸">
   <a class="btn" href="./lesson-06-04-game-art-assets-worksheet.html">上一课工作纸</a>
   <a class="btn primary" href="./lesson-21-codex-overview-worksheet.html">下一课工作纸</a>
 </nav>
-<div class="footer">AI学习路线 · 练习工作纸 · 写下产物才算完成</div>
+<div class="footer">AI 学习路线 · 练习工作纸 · 写下产物才算完成</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2650,7 +2656,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2659,7 +2665,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2677,7 +2683,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

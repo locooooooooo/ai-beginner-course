@@ -1,0 +1,14 @@
+# This file is editable course text. Run scripts/generate_lessons.py after changing it.
+# Keep ids and lesson slugs stable unless you also update links/assets intentionally.
+
+id = """chapter-6"""
+title = """第六章：游戏场景落地"""
+summary = """把 AI 放进真实游戏开发链路：从行业判断、引擎原型、Agent 写代码、美术资产生成，到 MCP 连接 Unreal、Unity 和 Figma。"""
+outcome = """设计一个 AI 辅助游戏开发小样方案：包含玩法目标、引擎任务、代码 Agent 分工、美术资产规范、MCP 工具连接和验收清单。"""
+lessons = [
+  """lesson-06-01-game-ai-landscape""",
+  """lesson-06-02-game-engine-codex""",
+  """lesson-06-03-agent-gameplay-code""",
+  """lesson-06-04-game-art-assets""",
+  """lesson-06-05-game-dev-mcp""",
+]

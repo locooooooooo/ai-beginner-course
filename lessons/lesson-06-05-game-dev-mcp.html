@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第25课 MCP在游戏开发中的使用</title>
+  <title>第25课 MCP 在游戏开发中的使用</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Silkscreen:wght@400;700&display=swap');
 
@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
     <a href="../course.html#advanced">老鸟进阶</a>
@@ -2404,8 +2410,8 @@ body > [class*="widget"] a {
 <header class="hero">
   <div>
     <div class="eyebrow">第六章：游戏场景落地 · 第25课</div>
-    <h1>第25课：MCP在游戏开发中的使用</h1>
-    <p class="lead">理解 MCP 如何把 AI Agent 接到 Unreal、Unity、Figma、文件系统和内部工具，让游戏开发从聊天建议变成可执行工作流。</p>
+    <h1>第25课：MCP 在游戏开发中的使用</h1>
+    <p class="lead">理解 MCP 如何把 AI Agent 接到 Unreal、Unity、Figma、文件系统和内部工具，让游戏开发从对话式建议变成可执行工作流。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start" data-focus-toggle aria-pressed="false">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
@@ -2429,7 +2435,7 @@ body > [class*="widget"] a {
 <section class="callout" id="start">
   <span class="label">为什么要学</span>
   <h2>核心问题</h2>
-  <p>为什么 MCP 对游戏开发重要？因为游戏项目里最难的不是让 AI 回答，而是让它安全地看见项目、调用工具、修改场景、读取设计并留下证据。</p>
+  <p>为什么 MCP 对游戏开发重要？因为游戏项目里最难的不是让 AI 输出回答，而是让它安全地读取项目上下文、调用工具、修改测试场景、读取设计并留下证据。</p>
 </section>
 <section class="card">
   <span class="label">学习元信息</span>
@@ -2463,7 +2469,7 @@ body > [class*="widget"] a {
   <span class="label">深度讲稿</span>
   <h2>把这一课讲透：先翻译，再演示，再提问</h2>
   <div class="plain-language">
-    <strong>人话解释</strong>
+    <strong>通俗解释</strong>
     <p>MCP 可以理解成 AI 和工具之间的连接协议。游戏开发里，它能让 Agent 读取 Figma 设计、查询引擎场景、调用脚本或整理文件，但每个工具能读什么、能写什么、何时需要人确认，都必须提前设边界。</p>
   </div>
   <div class="deep-script-grid"><div class="deep-script">
@@ -2512,18 +2518,19 @@ body > [class*="widget"] a {
   <h2>学完后先回答这 3 个问题</h2>
   <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>这个 MCP 工作流只读、可写、还是会影响正式项目？</span></div><div class="check-item"><strong>2</strong><span>这里更适合用 Codex、OpenClaw 还是 Hermes Agent，为什么？</span></div><div class="check-item"><strong>3</strong><span>哪些动作必须人工确认？</span></div><div class="check-item"><strong>4</strong><span>是否留下工具调用日志、变更文件、截图和回滚方式？</span></div></div>
 </article>
+
     <section class="learner-brief">
       <span class="label">先怎么学</span>
       <h2>按这节课自己的任务跑 4 步</h2>
       <p class="small-note">每一课的学习路线都不同。先抓本课最关键的问题，再用案例和产物证明自己真的会用。</p>
       <div class="flow">
         <div class="flow-step">
-          <strong>1. MCP 用人话怎么理解</strong>
-          <span>先把本课变成一个游戏开发小切片：MCP 用人话怎么理解。写清玩法目标、工具边界和验证证据。</span>
+          <strong>1. MCP 用通俗语言怎么理解</strong>
+          <span>先把本课变成一个游戏开发小切片：MCP 用通俗语言怎么理解。写清玩法目标、工具边界和验证证据。</span>
         </div>
         <div class="flow-step">
           <strong>2. Unity MCP 与 UEMCP 的引擎场景</strong>
-          <span>把关键点翻译成协作规则：MCP 是把 AI 应用和外部工具连接起来的协议，核心是工具、资源、提示和权限边界。明确哪些交给 Agent、哪些必须人工把关。</span>
+          <span>把关键点翻译成协作规则：MCP 是把 AI 应用和外部工具连接起来的协议，核心是工具、资源、提示和权限边界。明确哪些交给 Agent、哪些必须人工核校。</span>
         </div>
         <div class="flow-step">
           <strong>3. Figma MCP 的 UI 和设计协作场景</strong>
@@ -2535,14 +2542,14 @@ body > [class*="widget"] a {
         </div></div>
     </section>
     <article class="card">
-      <span class="label">先记住</span>
+      <span class="label">先抓住</span>
       <h2>本课只抓 3 件事</h2>
       <ul><li>MCP 是把 AI 应用和外部工具连接起来的协议，核心是工具、资源、提示和权限边界</li><li>Unity MCP、UEMCP、Figma MCP 代表三类游戏开发连接：引擎编辑器、项目脚本和设计稿</li><li>Figma MCP 可以把设计上下文、组件和 Code Connect 信息交给 Codex，适合游戏 UI 从设计稿走到实现清单</li><li>游戏开发使用 MCP 必须设置权限、日志、人工确认、版本控制和失败回滚</li></ul>
     </article>
     <article class="card">
       <span class="label">想明白</span>
       <h2>第一性拆解</h2>
-      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把 MCP 理解成连接层：它让 AI 不只会说话，还能通过受控工具看设计、查项目、改场景和生成证据。</span></div><div class="principle-block"><strong>拆解 2</strong><span>游戏项目适合 MCP，因为设计稿、引擎、资源、脚本和测试分散在不同工具里。</span></div><div class="principle-block"><strong>拆解 3</strong><span>但 MCP 不是无限授权，越接近真实项目，越需要权限边界、日志、人工确认和回滚。</span></div></div>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先把 MCP 理解成连接层：它让 AI 不只输出文本，还能通过受控工具读取设计上下文、检索项目、修改测试场景和生成证据。</span></div><div class="principle-block"><strong>拆解 2</strong><span>游戏项目适合 MCP，因为设计稿、引擎、资源、脚本和测试分散在不同工具里。</span></div><div class="principle-block"><strong>拆解 3</strong><span>但 MCP 不是无限授权，越接近真实项目，越需要权限边界、日志、人工确认和回滚。</span></div></div>
     </article>
     <article class="card">
       <span class="label">可迁移</span>
@@ -2552,7 +2559,7 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">怎么学</span>
       <h2>读完后怎么把它用出来</h2>
-      <ul><li>MCP 用人话怎么理解</li><li>Unity MCP 与 UEMCP 的引擎场景</li><li>Figma MCP 的 UI 和设计协作场景</li><li>Codex、OpenClaw、Hermes Agent 的职责差异</li><li>游戏 MCP 工作流的安全边界</li></ul>
+      <ul><li>MCP 用通俗语言怎么理解</li><li>Unity MCP 与 UEMCP 的引擎场景</li><li>Figma MCP 的 UI 和设计协作场景</li><li>Codex、OpenClaw、Hermes Agent 的职责差异</li><li>游戏 MCP 工作流的安全边界</li></ul>
     </article>
 <article class="card case-practice">
   <span class="label">多案例演练</span>
@@ -2567,7 +2574,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
     <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>人工核校</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
     <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
   <p>套用本课方法：先选一个低风险工作流：读取 Figma UI、生成 UI 实现清单、创建测试场景或检查资源命名。</p>
@@ -2580,7 +2587,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
     <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>人工核校</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
     <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
   <p>套用本课方法：明确每个 MCP 工具能读什么、能写什么、哪些动作必须人工确认。</p>
@@ -2593,7 +2600,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
     <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>人工核校</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
     <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
   <p>套用本课方法：把运行日志、变更文件、截图和试玩记录作为验收证据。</p>
@@ -2606,7 +2613,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。</span></div>
     <div><b>AI 动作</b><span>拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。</span></div>
-    <div><b>人工检查</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
+    <div><b>人工核校</b><span>核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。</span></div>
     <div><b>交付物</b><span>交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。</span></div>
   </div>
   <p>套用本课方法：先选一个低风险工作流：读取 Figma UI、生成 UI 实现清单、创建测试场景或检查资源命名。</p>
@@ -2648,7 +2655,7 @@ body > [class*="widget"] a {
   <div class="teaching-grid"><div class="teaching-segment">
   <span class="step-no">1</span>
   <div>
-    <h3>MCP 用人话怎么理解</h3>
+    <h3>MCP 用通俗语言怎么理解</h3>
     <p><strong>先讲清：</strong>MCP 是把 AI 应用和外部工具连接起来的协议，核心是工具、资源、提示和权限边界。</p>
     <p><strong>再落地：</strong>把它放进“Unity MCP：让 Agent 从 IDE 连接 Unity，查询场景对象、创建测试关卡、管理资源并生成编辑器内工作流”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
     <p><strong>马上做：</strong>先选一个低风险工作流：读取 Figma UI、生成 UI 实现清单、创建测试场景或检查资源命名。</p>
@@ -2708,7 +2715,7 @@ body > [class*="widget"] a {
 <article class="card">
   <span class="label">下一步</span>
   <h2>学完后怎么继续扩展</h2>
-  <p class="small-note">下一课会进入“Codex能做什么”，你要带着本课产物继续往下用。</p>
+  <p class="small-note">下一课会进入“Codex 能做什么”，你要带着本课产物继续往下用。</p>
   <div class="toolbar">
     <a class="btn primary" href="./lesson-06-05-game-dev-mcp-worksheet.html">打开本课练习工作纸</a>
   </div>
@@ -2727,7 +2734,7 @@ body > [class*="widget"] a {
   <p>MCP 是把 AI 应用和外部工具连接起来的协议，核心是工具、资源、提示和权限边界</p>
 </details><details class="quiz-item">
   <summary>这里更适合用 Codex、OpenClaw 还是 Hermes Agent，为什么？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+  <p>先拆输入、AI 动作、人工核校和最终输出，不要直接跳到工具入口或产品端入口。</p>
 </details><details class="quiz-item">
   <summary>哪些动作必须人工确认？</summary>
   <p>把 MCP 当成万能插件，一上来给 Agent 全项目写权限。</p>
@@ -2738,18 +2745,18 @@ body > [class*="widget"] a {
   <h2>用 3 档判断本课产物质量</h2>
   <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+  <span>能用通俗语言解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
   <strong>优秀</strong>
   <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
 </div><div class="rubric-item">
   <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工核校或最终输出。</span>
 </div></div>
 </article>
 <article class="card learning-evidence">
   <span class="label">术语表</span>
-  <h2>把这一课的词翻译成人话</h2>
+  <h2>把这一课的术语转成通俗解释</h2>
   <div class="glossary-grid"><div class="glossary-item">
   <strong>MCP</strong>
   <span>Model Context Protocol，让 AI 应用通过标准方式连接工具、资源和提示。</span>
@@ -2793,7 +2800,7 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">可以直接复制</span>
       <h2>给 AI 的跟做提示</h2>
-      <pre class="copy-prompt"><code>我正在学习「MCP在游戏开发中的使用」，请用新手能听懂的话教我。
+      <pre class="copy-prompt"><code>我正在学习「MCP 在游戏开发中的使用」，请用新手能听懂的话教我。
 先用 120 字以内解释它，不要堆术语。
 再结合这两个场景举例：Unity MCP：让 Agent 从 IDE 连接 Unity，查询场景对象、创建测试关卡、管理资源并生成编辑器内工作流；UEMCP：通过 MCP Server 与 Unreal Editor 插件桥接，让 Agent 读取项目上下文，辅助生成 Actor、Blueprint 流程和自动化检查。
 然后问我 3 个检查理解的问题。
@@ -2802,16 +2809,16 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">自检</span>
       <h2>学完请确认这 4 件事</h2>
-      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「MCP在游戏开发中的使用」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：设计一个“AI 帮我做游戏 UI 和引擎原型”的 MCP 工作流：列出 Figma、Unity 或 Unreal、文件系统、截图验收、人工确认和回滚机制。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「MCP 在游戏开发中的使用」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：设计一个“AI 帮我做游戏 UI 和引擎原型”的 MCP 工作流：列出 Figma、Unity 或 Unreal、文件系统、截图验收、人工确认和回滚机制。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
     </article>
   </aside>
 </div>
 <nav class="pager" aria-label="上一课下一课">
   <a class="btn" href="./lesson-06-04-game-art-assets.html">上一课：第24课 美术资产生成与游戏管线</a>
-  <a class="btn primary" href="./lesson-21-codex-overview.html">下一课：第1课 Codex能做什么</a>
+  <a class="btn primary" href="./lesson-21-codex-overview.html">下一课：第1课 Codex 能做什么</a>
 </nav>
 <section class="callout"><span class="label">延伸阅读</span><h2>想继续分清智能体差异，就看这张对比页</h2><p>如果你现在已经会问：这一步到底该用 Codex、OpenClaw 还是 Hermes Agent，那就去看补充页，把工程交付、常驻助理和长期记忆三种形态一次分清。</p><div class="toolbar"><a class="btn primary" href="../agent-comparison.html">打开智能体对比页</a></div></section>
-<div class="footer">AI学习路线 · 第一性原则版逐课教程</div>
+<div class="footer">AI 学习路线 · 第一性原则版逐课教程</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2821,7 +2828,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2830,7 +2837,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2848,7 +2855,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="./lesson-12-rag-and-qa.html">返回主讲义</a>
     <a href="../course.html#beginner">新手入门</a>
@@ -2435,10 +2441,10 @@ body > [class*="widget"] a {
   <span>2026-06-17</span>
 </div><div class="meta-item meta-item-wide">
   <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；也可以只看页面完成纸面练习</span>
+  <span>任意支持对话式交互的 AI 工具；也可以只看页面完成纸面练习</span>
 </div><div class="meta-item meta-item-wide">
   <strong>隐私边界</strong>
-  <span>练习时使用公开或虚构材料，不上传客户隐私、内部资料、账号信息或未公开策略。</span>
+  <span>练习时使用公开或虚构材料，不上传敏感个人隐私、非公开资料、账号信息或未公开策略。</span>
 </div><div class="meta-item meta-item-wide">
   <strong>来源提示</strong>
   <span>本课强调稳定方法和学习路径；具体工具能力以实际产品为准。</span>
@@ -2454,8 +2460,8 @@ body > [class*="widget"] a {
   </article>
   <article class="worksheet-block">
     <span class="label">2. 概念翻译</span>
-    <h2>把术语翻译成人话</h2>
-    <div class="worksheet-list"><div class="principle-block"><strong>关键点 1</strong><span>模型记忆不等于企业知识库</span></div><div class="principle-block"><strong>关键点 2</strong><span>RAG 解决的是“先检索，再回答”</span></div><div class="principle-block"><strong>关键点 3</strong><span>企业问答的关键是数据来源可追溯</span></div></div>
+    <h2>把术语转成通俗解释</h2>
+    <div class="worksheet-list"><div class="principle-block"><strong>关键点 1</strong><span>模型参数不等于企业知识库</span></div><div class="principle-block"><strong>关键点 2</strong><span>RAG 解决的是“先检索，再回答”</span></div><div class="principle-block"><strong>关键点 3</strong><span>企业问答的关键是数据来源可追溯</span></div></div>
     <label class="writing-label"><span>我自己的 120 字解释</span><textarea class="writing-box large" aria-label="我自己的 120 字解释" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-block">
@@ -2466,7 +2472,7 @@ body > [class*="widget"] a {
       <div><strong>我的场景</strong><span>例如一个真实任务、一个业务流程或一次学习需求。</span></div>
       <div><strong>输入</strong><span>我会给 AI 什么材料、背景、限制或数据。</span></div>
       <div><strong>AI 动作</strong><span>AI 负责生成、总结、分类、检索、执行还是连接工具。</span></div>
-      <div><strong>人工检查</strong><span>我怎么确认结果没有跑偏或出错。</span></div>
+      <div><strong>人工核校</strong><span>我怎么确认结果没有跑偏或出错。</span></div>
       <div><strong>最终输出</strong><span>最后能留下什么文件、话术、流程图、清单或页面。</span></div>
     </div>
   </article>
@@ -2481,7 +2487,7 @@ body > [class*="widget"] a {
     <span class="label">助教示范</span>
     <h2>做一个售后政策问答</h2>
     <p>模型本身不等于你的企业知识库。凡是涉及最新政策、内部制度、商品规则、客服口径的问题，都应该先查资料再回答，并把来源带出来，这就是 RAG 的基本价值。</p>
-    <ol class="walkthrough-list"><li>收集官方售后政策、FAQ 和例外条款。</li><li>把问题交给知识库检索，不让模型只凭记忆回答。</li><li>要求答案包含依据、适用范围和不确定项。</li><li>客服主管抽查高频问题答案。</li></ol>
+    <ol class="walkthrough-list"><li>收集官方售后政策、FAQ 和例外条款。</li><li>把问题交给知识库检索，不让模型脱离外部资料直接生成答案。</li><li>要求答案包含依据、适用范围和不确定项。</li><li>客服主管抽查高频问题答案。</li></ol>
     <label class="writing-label"><span>我照这个案例改成自己的版本</span><textarea class="writing-box large" aria-label="我照这个案例改成自己的版本" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-block">
@@ -2502,13 +2508,13 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>真实素材、目标受众、输出格式、风险边界。</span></div>
       <div><strong>AI 动作</strong><span>生成、改写、总结、检索或转换成一个最小可用样例。</span></div>
-      <div><strong>人工检查</strong><span>核对事实、格式、版权、品牌语气和是否可发布。</span></div>
+      <div><strong>人工核校</strong><span>核对事实、格式、版权、品牌语气和是否可发布。</span></div>
       <div><strong>交付物</strong><span>形成一个日常任务模板或样稿。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-case-card">
     <span class="label">案例 02</span>
@@ -2516,13 +2522,13 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>真实素材、目标受众、输出格式、风险边界。</span></div>
       <div><strong>AI 动作</strong><span>生成、改写、总结、检索或转换成一个最小可用样例。</span></div>
-      <div><strong>人工检查</strong><span>核对事实、格式、版权、品牌语气和是否可发布。</span></div>
+      <div><strong>人工核校</strong><span>核对事实、格式、版权、品牌语气和是否可发布。</span></div>
       <div><strong>交付物</strong><span>形成一个日常任务模板或样稿。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-case-card">
     <span class="label">案例 03</span>
@@ -2530,19 +2536,19 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>真实素材、目标受众、输出格式、风险边界。</span></div>
       <div><strong>AI 动作</strong><span>生成、改写、总结、检索或转换成一个最小可用样例。</span></div>
-      <div><strong>人工检查</strong><span>核对事实、格式、版权、品牌语气和是否可发布。</span></div>
+      <div><strong>人工核校</strong><span>核对事实、格式、版权、品牌语气和是否可发布。</span></div>
       <div><strong>交付物</strong><span>形成一个日常任务模板或样稿。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article></div>
   </article>
   <article class="worksheet-block">
     <span class="label">5. 风险检查</span>
-    <h2>哪些地方不能直接相信</h2>
-    <div class="worksheet-list"><div class="principle-block"><strong>风险 1</strong><span>把企业知识直接寄希望于模型记忆。</span></div><div class="principle-block"><strong>风险 2</strong><span>没有来源也敢直接回答内部问题。</span></div><div class="principle-block"><strong>风险 3</strong><span>只做检索，不做答案结构设计。</span></div></div>
+    <h2>哪些地方需要人工核校</h2>
+    <div class="worksheet-list"><div class="principle-block"><strong>风险 1</strong><span>把企业知识直接寄希望于模型参数。</span></div><div class="principle-block"><strong>风险 2</strong><span>没有来源也敢直接回答内部问题。</span></div><div class="principle-block"><strong>风险 3</strong><span>只做检索，不做答案结构设计。</span></div></div>
     <label class="writing-label"><span>我需要额外验证的内容</span><textarea class="writing-box" aria-label="我需要额外验证的内容" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-block">
@@ -2558,28 +2564,28 @@ body > [class*="widget"] a {
     <label class="writing-label"><span>我的小测答案</span><textarea class="writing-box large" aria-label="我的小测答案" placeholder="在这里写下你的答案。"></textarea></label>
     <div class="quiz-list"><details class="quiz-item">
   <summary>这个问题是否必须查资料？</summary>
-  <p>模型记忆不等于企业知识库</p>
+  <p>模型参数不等于企业知识库</p>
 </details><details class="quiz-item">
   <summary>答案有没有标出来源？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+  <p>先拆输入、AI 动作、人工核校和最终输出，不要直接跳到工具入口或产品端入口。</p>
 </details><details class="quiz-item">
   <summary>知识库里是否有过期或冲突文件？</summary>
-  <p>把企业知识直接寄希望于模型记忆。</p>
+  <p>把企业知识直接寄希望于模型参数。</p>
 </details></div>
   </article>
   <article class="worksheet-block">
     <span class="label">8. 对照改进</span>
     <h2>参考答案和评分标准</h2>
-    <ul class="reference-list"><li>能用自己的话说明：模型本身不等于你的企业知识库。凡是涉及最新政策、内部制度、商品规则、客服口径的问题，都应该先查资料再回答，并把来源带出来，这就是 RAG 的基本价值。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“客服 FAQ”开始。</li><li>最终要留下一个可检查的小产物：选一个业务场景，说明为什么必须接知识库，而不能只问模型。</li></ul>
+    <ul class="reference-list"><li>能用自己的话说明：模型本身不等于你的企业知识库。凡是涉及最新政策、内部制度、商品规则、客服口径的问题，都应该先查资料再回答，并把来源带出来，这就是 RAG 的基本价值。</li><li>能把一个真实场景拆成输入、AI 动作、人工核校和最终输出；可以先从“客服 FAQ”开始。</li><li>最终要留下一个可检查的小产物：选一个业务场景，说明为什么必须接知识库，而不能只问模型。</li></ul>
     <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+  <span>能用通俗语言解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
   <strong>优秀</strong>
   <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
 </div><div class="rubric-item">
   <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工核校或最终输出。</span>
 </div></div>
   </article>
   <article class="worksheet-block">
@@ -2608,7 +2614,7 @@ body > [class*="widget"] a {
     <pre class="copy-prompt"><code>我已经学完「搜索、知识库与问答」，现在要完成本课工作纸。
 请你像助教一样追问我，不要直接替我编答案。
 本课产物是：选一个业务场景，说明为什么必须接知识库，而不能只问模型。
-请按这 5 步带我完成：1. 用人话复述概念；2. 选择一个真实场景；3. 写输入、AI动作、人工检查、输出；4. 标出风险；5. 总结下一步改进。</code></pre>
+请按这 5 步带我完成：1. 用通俗语言复述概念；2. 选择一个真实场景；3. 写输入、AI 动作、人工核校、输出；4. 标出风险；5. 总结下一步改进。</code></pre>
   </article>
   <article class="notes">
     <span class="label">完成后检查</span>
@@ -2620,7 +2626,7 @@ body > [class*="widget"] a {
   <a class="btn" href="./lesson-11-image-and-video-worksheet.html">上一课工作纸</a>
   <a class="btn primary" href="./lesson-13-workflow-worksheet.html">下一课工作纸</a>
 </nav>
-<div class="footer">AI学习路线 · 练习工作纸 · 写下产物才算完成</div>
+<div class="footer">AI 学习路线 · 练习工作纸 · 写下产物才算完成</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2630,7 +2636,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2639,7 +2645,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2657,7 +2663,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

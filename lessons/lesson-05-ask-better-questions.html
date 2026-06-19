@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
     <a href="../course.html#advanced">老鸟进阶</a>
@@ -2405,7 +2411,7 @@ body > [class*="widget"] a {
   <div>
     <div class="eyebrow">第二章：先学会用再学原理 · 第5课</div>
     <h1>第5课：怎么提一个高质量问题</h1>
-    <p class="lead">学会让 AI 更快理解你，减少空泛回答。</p>
+    <p class="lead">学会让 AI 更快匹配你的任务意图，减少空泛回答。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start" data-focus-toggle aria-pressed="false">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
@@ -2429,7 +2435,7 @@ body > [class*="widget"] a {
 <section class="callout" id="start">
   <span class="label">为什么要学</span>
   <h2>核心问题</h2>
-  <p>为什么同一个模型，有的人用得很好，有的人得到的全是废话？</p>
+  <p>为什么同一个模型，有的人用得很好，有的人得到的全是低质量响应？</p>
 </section>
 <section class="card">
   <span class="label">学习元信息</span>
@@ -2445,13 +2451,13 @@ body > [class*="widget"] a {
   <span>2026-06-17</span>
 </div><div class="meta-item meta-item-wide">
   <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；准备一个你最近真的想问的问题</span>
+  <span>任意支持对话式交互的 AI 工具；准备一个你最近真的想问的问题</span>
 </div><div class="meta-item meta-item-wide">
   <strong>隐私边界</strong>
   <span>练习问题请先去掉客户姓名、订单号、手机号、内部价格和未公开策略。</span>
 </div><div class="meta-item meta-item-wide">
   <strong>来源提示</strong>
-  <span>方法课，核心是提问结构；适用于多数聊天式 AI 工具。</span>
+  <span>方法课，核心是提问结构；适用于多数支持对话式交互的 AI 工具。</span>
 </div></div>
 </section>
 <div class="grid">
@@ -2463,12 +2469,12 @@ body > [class*="widget"] a {
   <span class="label">深度讲稿</span>
   <h2>把这一课讲透：先翻译，再演示，再提问</h2>
   <div class="plain-language">
-    <strong>人话解释</strong>
-    <p>高质量问题不是把话说得高级，而是把目标、上下文、约束和验收标准讲清楚。你少让 AI 猜一步，结果就更稳一步。</p>
+    <strong>通俗解释</strong>
+    <p>高质量问题不是把话说得高级，而是把目标、上下文、约束和验收标准讲清楚。少让模型补猜一步，结果就更稳一步。</p>
   </div>
   <div class="deep-script-grid"><div class="deep-script">
   <strong>先展示差问题为什么差</strong>
-  <p>拿“帮我写个文案”做例子。它没有产品、渠道、受众、风格、字数、禁忌和验收标准，模型只能猜，所以结果大概率空泛。</p>
+  <p>以“帮我写个文案”为例。它没有产品、渠道、受众、风格、字数、禁忌和验收标准，模型只能基于缺失信息补全，所以结果大概率空泛。</p>
 </div><div class="deep-script">
   <strong>再套四件套</strong>
   <p>目标说明要交付什么，上下文提供背景材料，约束说明边界和风格，验收标准说明什么叫可用。四件套是新手最先要形成的肌肉记忆。</p>
@@ -2507,8 +2513,9 @@ body > [class*="widget"] a {
 <article class="card">
   <span class="label">检查理解</span>
   <h2>学完后先回答这 3 个问题</h2>
-  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我的问题有没有明确最终交付物？</span></div><div class="check-item"><strong>2</strong><span>我有没有提供足够背景，还是让 AI 自己猜？</span></div><div class="check-item"><strong>3</strong><span>我有没有写清楚什么结果算合格？</span></div></div>
+  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我的问题有没有明确最终交付物？</span></div><div class="check-item"><strong>2</strong><span>我有没有提供足够背景，还是让模型在缺少上下文时补全？</span></div><div class="check-item"><strong>3</strong><span>我有没有写清楚什么结果算合格？</span></div></div>
 </article>
+
     <section class="learner-brief">
       <span class="label">先怎么学</span>
       <h2>按这节课自己的任务跑 4 步</h2>
@@ -2516,7 +2523,7 @@ body > [class*="widget"] a {
       <div class="flow">
         <div class="flow-step">
           <strong>1. AI 会答非所问</strong>
-          <span>先找本课要修的失败模式：为什么同一个模型，有的人用得很好，有的人得到的全是废话？ 把它写成一个你遇到过的差问题。</span>
+          <span>先找本课要修的失败模式：为什么同一个模型，有的人用得很好，有的人得到的全是低质量响应？ 把它写成一个你遇到过的差问题。</span>
         </div>
         <div class="flow-step">
           <strong>2. 四件套提问法</strong>
@@ -2532,7 +2539,7 @@ body > [class*="widget"] a {
         </div></div>
     </section>
     <article class="card">
-      <span class="label">先记住</span>
+      <span class="label">先抓住</span>
       <h2>本课只抓 3 件事</h2>
       <ul><li>高质量提问通常包含目标、上下文、约束、验收标准</li><li>问题越具体，结果越稳定</li><li>先说你要什么，再说不要什么</li></ul>
     </article>
@@ -2544,7 +2551,7 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">可迁移</span>
       <h2>最小原理</h2>
-      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：模糊输入必然带来模糊输出。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：模型不是读心术，它只能根据提供的信息推断。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：验收标准决定结果是否真正能落地。</span></div></div>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：模糊输入必然带来模糊输出。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：模型不会读取你的隐含意图，只能根据提供的信息推断。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：验收标准决定结果是否真正能落地。</span></div></div>
     </article>
     <article class="card">
       <span class="label">怎么学</span>
@@ -2564,7 +2571,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
     <div><b>AI 动作</b><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
-    <div><b>人工检查</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+    <div><b>人工核校</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
     <div><b>交付物</b><span>沉淀一条可复用提示词模板。</span></div>
   </div>
   <p>套用本课方法：任何提问先补四件套：目标、上下文、约束、验收。</p>
@@ -2577,7 +2584,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
     <div><b>AI 动作</b><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
-    <div><b>人工检查</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+    <div><b>人工核校</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
     <div><b>交付物</b><span>沉淀一条可复用提示词模板。</span></div>
   </div>
   <p>套用本课方法：遇到复杂问题时，先交代背景，再说最终要交付什么。</p>
@@ -2590,10 +2597,10 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
     <div><b>AI 动作</b><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
-    <div><b>人工检查</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+    <div><b>人工核校</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
     <div><b>交付物</b><span>沉淀一条可复用提示词模板。</span></div>
   </div>
-  <p>套用本课方法：如果结果还是偏，就先补上下文，而不是只重问一遍。</p>
+  <p>套用本课方法：如果结果仍偏离目标，就先补上下文，而不是只重问一遍。</p>
 </article>
 <article class="case-practice-card guided">
   <div class="case-practice-head">
@@ -2651,7 +2658,7 @@ body > [class*="widget"] a {
     <h3>从差问题到好问题</h3>
     <p><strong>先讲清：</strong>先说你要什么，再说不要什么。</p>
     <p><strong>再落地：</strong>把它放进“做一页汇报”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>如果结果还是偏，就先补上下文，而不是只重问一遍。</p>
+    <p><strong>马上做：</strong>如果结果仍偏离目标，就先补上下文，而不是只重问一遍。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">4</span>
@@ -2693,7 +2700,7 @@ body > [class*="widget"] a {
 <article class="card learning-evidence">
   <span class="label">参考答案</span>
   <h2>不是标准话术，而是判断自己有没有学会</h2>
-  <ul><li>能用自己的话说明：高质量问题不是把话说得高级，而是把目标、上下文、约束和验收标准讲清楚。你少让 AI 猜一步，结果就更稳一步。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“修 Bug”开始。</li><li>最终要留下一个可检查的小产物：把一个你常见的模糊问题改写成高质量问题，至少补足目标、上下文、约束、验收标准。</li></ul>
+  <ul><li>能用自己的话说明：高质量问题不是把话说得高级，而是把目标、上下文、约束和验收标准讲清楚。少让模型补猜一步，结果就更稳一步。</li><li>能把一个真实场景拆成输入、AI 动作、人工核校和最终输出；可以先从“修 Bug”开始。</li><li>最终要留下一个可检查的小产物：把一个你常见的模糊问题改写成高质量问题，至少补足目标、上下文、约束、验收标准。</li></ul>
 </article>
 <article class="card learning-evidence">
   <span class="label">小测验</span>
@@ -2702,8 +2709,8 @@ body > [class*="widget"] a {
   <summary>我的问题有没有明确最终交付物？</summary>
   <p>高质量提问通常包含目标、上下文、约束、验收标准</p>
 </details><details class="quiz-item">
-  <summary>我有没有提供足够背景，还是让 AI 自己猜？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+  <summary>我有没有提供足够背景，还是让模型在缺少上下文时补全？</summary>
+  <p>先拆输入、AI 动作、人工核校和最终输出，不要直接跳到工具入口或产品端入口。</p>
 </details><details class="quiz-item">
   <summary>我有没有写清楚什么结果算合格？</summary>
   <p>一句“帮我做一下这个”就想拿到可用结果。</p>
@@ -2714,26 +2721,26 @@ body > [class*="widget"] a {
   <h2>用 3 档判断本课产物质量</h2>
   <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+  <span>能用通俗语言解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
   <strong>优秀</strong>
   <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
 </div><div class="rubric-item">
   <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工核校或最终输出。</span>
 </div></div>
 </article>
 <article class="card learning-evidence">
   <span class="label">术语表</span>
-  <h2>把这一课的词翻译成人话</h2>
+  <h2>把这一课的术语转成通俗解释</h2>
   <div class="glossary-grid"><div class="glossary-item">
   <strong>本课核心概念</strong>
-  <span>学会让 AI 更快理解你，减少空泛回答。</span>
+  <span>学会让 AI 更快匹配你的任务意图，减少空泛回答。</span>
 </div><div class="glossary-item">
   <strong>输入</strong>
   <span>交给 AI 的背景、材料、约束、数据或示例。</span>
 </div><div class="glossary-item">
-  <strong>人工检查</strong>
+  <strong>人工核校</strong>
   <span>人用事实、逻辑、风险和格式标准确认 AI 输出能不能进入真实工作。</span>
 </div><div class="glossary-item">
   <strong>产物</strong>
@@ -2745,7 +2752,7 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">马上用</span>
       <h2>应用方法</h2>
-      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>任何提问先补四件套：目标、上下文、约束、验收。</span></div><div class="principle-block"><strong>方法 2</strong><span>遇到复杂问题时，先交代背景，再说最终要交付什么。</span></div><div class="principle-block"><strong>方法 3</strong><span>如果结果还是偏，就先补上下文，而不是只重问一遍。</span></div></div>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>任何提问先补四件套：目标、上下文、约束、验收。</span></div><div class="principle-block"><strong>方法 2</strong><span>遇到复杂问题时，先交代背景，再说最终要交付什么。</span></div><div class="principle-block"><strong>方法 3</strong><span>如果结果仍偏离目标，就先补上下文，而不是只重问一遍。</span></div></div>
     </article>
     <article class="card">
       <span class="label">避坑</span>
@@ -2777,11 +2784,11 @@ body > [class*="widget"] a {
   </aside>
 </div>
 <nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-04-ai-boundaries.html">上一课：第4课 AI能做什么不能做什么</a>
+  <a class="btn" href="./lesson-04-ai-boundaries.html">上一课：第4课 AI 能做什么不能做什么</a>
   <a class="btn primary" href="./lesson-06-prompt-basics.html">下一课：第6课 提示词基础</a>
 </nav>
 
-<div class="footer">AI学习路线 · 第一性原则版逐课教程</div>
+<div class="footer">AI 学习路线 · 第一性原则版逐课教程</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2791,7 +2798,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2800,7 +2807,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2818,7 +2825,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

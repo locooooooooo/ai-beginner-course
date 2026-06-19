@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="站点导航">
-  <a class="brand" href="./course.html">AI入门课</a>
+  <a class="brand" href="./course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="./course.html#beginner">新手入门</a>
     <a href="./course.html#advanced">老鸟进阶</a>
@@ -2416,11 +2422,11 @@ body > [class*="widget"] a {
   <aside class="starter-panel">
       <strong>推荐打开顺序</strong>
       <ul>
-        <li>先看“AI学习路线”，理解三大类结构。</li>
+        <li>先看“AI 学习路线”，理解三大类结构。</li>
         <li>再看“第一性原则版”，理解课程为什么这样拆。</li>
-        <li>接着看“模型分类”“大模型与Agent”，补全认知边界。</li>
+        <li>接着看“模型分类”“大模型与 Agent”，补全认知边界。</li>
         <li>然后看“讲法脑图”和“练习脑图”，把课程变成可教可练。</li>
-        <li>最后看“电商AI知识图谱”和“Skill真实用例”，进入落地层。</li>
+        <li>最后看“电商 AI 知识图谱”和“Skill 真实用例”，进入落地层。</li>
       </ul>
   </aside>
 </header>
@@ -2435,9 +2441,12 @@ body > [class*="widget"] a {
   <div class="mindmap-grid">
 <article class="chapter-card">
   <div class="eyebrow">总览</div>
-  <h3>AI学习路线</h3>
+  <h3>AI 学习路线</h3>
   <p>课程总览：新手入门打基础，游戏场景落地学习游戏引擎、Agent、资产管线、MCP 和真实案例库。</p>
-  <img class="gallery-thumb" src="./ai-beginner-20-lessons-course.png" alt="AI学习路线" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./ai-beginner-20-lessons-course.png" data-image-alt="AI 学习路线">
+    <img class="gallery-thumb" src="./ai-beginner-20-lessons-course.png" alt="AI 学习路线" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./ai-beginner-20-lessons-course.png">PNG</a>
     <a class="btn" href="./ai-beginner-20-lessons-course.mmd">MMD</a>
@@ -2447,7 +2456,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">补强</div>
   <h3>第一性原则版</h3>
   <p>把课程升级成第一性拆解结构。</p>
-  <img class="gallery-thumb" src="./first-principles-course-mindmap.png" alt="第一性原则版" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./first-principles-course-mindmap.png" data-image-alt="第一性原则版">
+    <img class="gallery-thumb" src="./first-principles-course-mindmap.png" alt="第一性原则版" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./first-principles-course-mindmap.png">PNG</a>
     <a class="btn" href="./first-principles-course-mindmap.mmd">MMD</a>
@@ -2455,9 +2467,12 @@ body > [class*="widget"] a {
 </article>
 <article class="chapter-card">
   <div class="eyebrow">认知</div>
-  <h3>大模型与AI的区别</h3>
+  <h3>大模型与 AI 的区别</h3>
   <p>讲清 GPT、DeepSeek、图像模型、视频模型的边界与选型逻辑。</p>
-  <img class="gallery-thumb" src="./llm-and-ai-difference-mindmap.png" alt="大模型与AI的区别" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./llm-and-ai-difference-mindmap.png" data-image-alt="大模型与 AI 的区别">
+    <img class="gallery-thumb" src="./llm-and-ai-difference-mindmap.png" alt="大模型与 AI 的区别" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./llm-and-ai-difference-mindmap.png">PNG</a>
     <a class="btn" href="./llm-and-ai-difference-mindmap.mmd">MMD</a>
@@ -2465,9 +2480,12 @@ body > [class*="widget"] a {
 </article>
 <article class="chapter-card">
   <div class="eyebrow">入口</div>
-  <h3>Codex入口理解AI</h3>
+  <h3>Codex 入口理解 AI</h3>
   <p>从 Codex 入口看大模型与 Agent。</p>
-  <img class="gallery-thumb" src="./codex-ai-model-mindmap.png" alt="Codex入口理解AI" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./codex-ai-model-mindmap.png" data-image-alt="Codex 入口理解 AI">
+    <img class="gallery-thumb" src="./codex-ai-model-mindmap.png" alt="Codex 入口理解 AI" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./codex-ai-model-mindmap.png">PNG</a>
     <a class="btn" href="./codex-ai-model-mindmap.mmd">MMD</a>
@@ -2475,9 +2493,12 @@ body > [class*="widget"] a {
 </article>
 <article class="chapter-card">
   <div class="eyebrow">系统</div>
-  <h3>大模型与Agent</h3>
+  <h3>大模型与 Agent</h3>
   <p>Agent、OpenClaw、Hermes、Codex 的关系图。</p>
-  <img class="gallery-thumb" src="./大模型与Agent/ai-model-agent-mindmap.png" alt="大模型与Agent" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./大模型与Agent/ai-model-agent-mindmap.png" data-image-alt="大模型与 Agent">
+    <img class="gallery-thumb" src="./大模型与Agent/ai-model-agent-mindmap.png" alt="大模型与 Agent" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./大模型与Agent/ai-model-agent-mindmap.png">PNG</a>
     <a class="btn" href="./大模型与Agent/ai-model-agent-mindmap.mmd">MMD</a>
@@ -2485,9 +2506,12 @@ body > [class*="widget"] a {
 </article>
 <article class="chapter-card">
   <div class="eyebrow">电商</div>
-  <h3>电商AI知识图谱</h3>
+  <h3>电商 AI 知识图谱</h3>
   <p>内容、获客、私域、客服、复购、复盘。</p>
-  <img class="gallery-thumb" src="./电商AI知识图谱/ecommerce-ai-knowledge-graph.png" alt="电商AI知识图谱" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./电商AI知识图谱/ecommerce-ai-knowledge-graph.png" data-image-alt="电商 AI 知识图谱">
+    <img class="gallery-thumb" src="./电商AI知识图谱/ecommerce-ai-knowledge-graph.png" alt="电商 AI 知识图谱" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./电商AI知识图谱/ecommerce-ai-knowledge-graph.png">PNG</a>
     <a class="btn" href="./电商AI知识图谱/ecommerce-ai-knowledge-graph.mmd">MMD</a>
@@ -2495,9 +2519,12 @@ body > [class*="widget"] a {
 </article>
 <article class="chapter-card">
   <div class="eyebrow">电商</div>
-  <h3>Skill真实用例</h3>
+  <h3>Skill 真实用例</h3>
   <p>把 Skill 讲清楚，并落到真实案例。</p>
-  <img class="gallery-thumb" src="./电商AI知识图谱/skill-explained-mindmap.png" alt="Skill真实用例" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./电商AI知识图谱/skill-explained-mindmap.png" data-image-alt="Skill 真实用例">
+    <img class="gallery-thumb" src="./电商AI知识图谱/skill-explained-mindmap.png" alt="Skill 真实用例" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./电商AI知识图谱/skill-explained-mindmap.png">PNG</a>
     <a class="btn" href="./电商AI知识图谱/skill-explained-mindmap.mmd">MMD</a>
@@ -2505,9 +2532,12 @@ body > [class*="widget"] a {
 </article>
 <article class="chapter-card">
   <div class="eyebrow">PPT</div>
-  <h3>PPT页面结构</h3>
+  <h3>PPT 页面结构</h3>
   <p>每一课对应的讲义页结构。</p>
-  <img class="gallery-thumb" src="./ppt-structure-mindmap.png" alt="PPT页面结构" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./ppt-structure-mindmap.png" data-image-alt="PPT 页面结构">
+    <img class="gallery-thumb" src="./ppt-structure-mindmap.png" alt="PPT 页面结构" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./ppt-structure-mindmap.png">PNG</a>
     <a class="btn" href="./ppt-structure-mindmap.mmd">MMD</a>
@@ -2517,7 +2547,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">分章</div>
   <h3>第一章脑图</h3>
   <p>先把 AI、LLM、Agent、模型家族这些基础概念拆清楚。</p>
-  <img class="gallery-thumb" src="./chapter-01-cognition-mindmap.png" alt="第一章脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-01-cognition-mindmap.png" data-image-alt="第一章脑图">
+    <img class="gallery-thumb" src="./chapter-01-cognition-mindmap.png" alt="第一章脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-01-cognition-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-01-cognition-mindmap.mmd">MMD</a>
@@ -2527,7 +2560,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">分章</div>
   <h3>第二章脑图</h3>
   <p>先学会提问、写提示词、做验证，建立可用输出习惯。</p>
-  <img class="gallery-thumb" src="./chapter-02-prompting-mindmap.png" alt="第二章脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-02-prompting-mindmap.png" data-image-alt="第二章脑图">
+    <img class="gallery-thumb" src="./chapter-02-prompting-mindmap.png" alt="第二章脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-02-prompting-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-02-prompting-mindmap.mmd">MMD</a>
@@ -2537,7 +2573,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">分章</div>
   <h3>第三章脑图</h3>
   <p>把 AI 放进办公、内容、图片、知识库这些日常工作。</p>
-  <img class="gallery-thumb" src="./chapter-03-work-mindmap.png" alt="第三章脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-03-work-mindmap.png" data-image-alt="第三章脑图">
+    <img class="gallery-thumb" src="./chapter-03-work-mindmap.png" alt="第三章脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-03-work-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-03-work-mindmap.mmd">MMD</a>
@@ -2547,7 +2586,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">分章</div>
   <h3>第四章脑图</h3>
   <p>从单次问答升级到工作流、Agent、MCP、Skill。</p>
-  <img class="gallery-thumb" src="./chapter-04-workflow-mindmap.png" alt="第四章脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-04-workflow-mindmap.png" data-image-alt="第四章脑图">
+    <img class="gallery-thumb" src="./chapter-04-workflow-mindmap.png" alt="第四章脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-04-workflow-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-04-workflow-mindmap.mmd">MMD</a>
@@ -2557,7 +2599,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">分章</div>
   <h3>第五章脑图</h3>
   <p>把内容、获客、私域、客服、复购串成电商 AI 系统。</p>
-  <img class="gallery-thumb" src="./chapter-05-ecommerce-mindmap.png" alt="第五章脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-05-ecommerce-mindmap.png" data-image-alt="第五章脑图">
+    <img class="gallery-thumb" src="./chapter-05-ecommerce-mindmap.png" alt="第五章脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-05-ecommerce-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-05-ecommerce-mindmap.mmd">MMD</a>
@@ -2567,7 +2612,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">讲法</div>
   <h3>第一章讲法脑图</h3>
   <p>怎么讲清 AI、LLM、Agent、模型家族。</p>
-  <img class="gallery-thumb" src="./chapter-01-teaching-mindmap.png" alt="第一章讲法脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-01-teaching-mindmap.png" data-image-alt="第一章讲法脑图">
+    <img class="gallery-thumb" src="./chapter-01-teaching-mindmap.png" alt="第一章讲法脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-01-teaching-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-01-teaching-mindmap.mmd">MMD</a>
@@ -2577,7 +2625,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">讲法</div>
   <h3>第二章讲法脑图</h3>
   <p>怎么带新手练提问、提示词和验证。</p>
-  <img class="gallery-thumb" src="./chapter-02-teaching-mindmap.png" alt="第二章讲法脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-02-teaching-mindmap.png" data-image-alt="第二章讲法脑图">
+    <img class="gallery-thumb" src="./chapter-02-teaching-mindmap.png" alt="第二章讲法脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-02-teaching-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-02-teaching-mindmap.mmd">MMD</a>
@@ -2587,7 +2638,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">讲法</div>
   <h3>第三章讲法脑图</h3>
   <p>怎么把 AI 用进办公、内容、图像、知识库。</p>
-  <img class="gallery-thumb" src="./chapter-03-teaching-mindmap.png" alt="第三章讲法脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-03-teaching-mindmap.png" data-image-alt="第三章讲法脑图">
+    <img class="gallery-thumb" src="./chapter-03-teaching-mindmap.png" alt="第三章讲法脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-03-teaching-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-03-teaching-mindmap.mmd">MMD</a>
@@ -2597,7 +2651,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">讲法</div>
   <h3>第四章讲法脑图</h3>
   <p>怎么讲工作流、Agent、MCP、Skill 的顺序。</p>
-  <img class="gallery-thumb" src="./chapter-04-teaching-mindmap.png" alt="第四章讲法脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-04-teaching-mindmap.png" data-image-alt="第四章讲法脑图">
+    <img class="gallery-thumb" src="./chapter-04-teaching-mindmap.png" alt="第四章讲法脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-04-teaching-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-04-teaching-mindmap.mmd">MMD</a>
@@ -2607,7 +2664,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">讲法</div>
   <h3>第五章讲法脑图</h3>
   <p>怎么讲电商内容、获客、私域、客服和复购。</p>
-  <img class="gallery-thumb" src="./chapter-05-teaching-mindmap.png" alt="第五章讲法脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-05-teaching-mindmap.png" data-image-alt="第五章讲法脑图">
+    <img class="gallery-thumb" src="./chapter-05-teaching-mindmap.png" alt="第五章讲法脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-05-teaching-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-05-teaching-mindmap.mmd">MMD</a>
@@ -2617,7 +2677,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">练习</div>
   <h3>第一章练习脑图</h3>
   <p>把 AI、LLM、Agent、模型家族先练会区分。</p>
-  <img class="gallery-thumb" src="./chapter-01-practice-mindmap.png" alt="第一章练习脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-01-practice-mindmap.png" data-image-alt="第一章练习脑图">
+    <img class="gallery-thumb" src="./chapter-01-practice-mindmap.png" alt="第一章练习脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-01-practice-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-01-practice-mindmap.mmd">MMD</a>
@@ -2627,7 +2690,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">练习</div>
   <h3>第二章练习脑图</h3>
   <p>把提问、提示词和验证先练到能用。</p>
-  <img class="gallery-thumb" src="./chapter-02-practice-mindmap.png" alt="第二章练习脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-02-practice-mindmap.png" data-image-alt="第二章练习脑图">
+    <img class="gallery-thumb" src="./chapter-02-practice-mindmap.png" alt="第二章练习脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-02-practice-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-02-practice-mindmap.mmd">MMD</a>
@@ -2637,7 +2703,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">练习</div>
   <h3>第三章练习脑图</h3>
   <p>把办公、内容、图片、知识库练成日常动作。</p>
-  <img class="gallery-thumb" src="./chapter-03-practice-mindmap.png" alt="第三章练习脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-03-practice-mindmap.png" data-image-alt="第三章练习脑图">
+    <img class="gallery-thumb" src="./chapter-03-practice-mindmap.png" alt="第三章练习脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-03-practice-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-03-practice-mindmap.mmd">MMD</a>
@@ -2647,7 +2716,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">练习</div>
   <h3>第四章练习脑图</h3>
   <p>把工作流、Agent、MCP、Skill 练成流程。</p>
-  <img class="gallery-thumb" src="./chapter-04-practice-mindmap.png" alt="第四章练习脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-04-practice-mindmap.png" data-image-alt="第四章练习脑图">
+    <img class="gallery-thumb" src="./chapter-04-practice-mindmap.png" alt="第四章练习脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-04-practice-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-04-practice-mindmap.mmd">MMD</a>
@@ -2657,7 +2729,10 @@ body > [class*="widget"] a {
   <div class="eyebrow">练习</div>
   <h3>第五章练习脑图</h3>
   <p>把电商内容、获客、私域、客服、复购练成系统。</p>
-  <img class="gallery-thumb" src="./chapter-05-practice-mindmap.png" alt="第五章练习脑图" loading="lazy" />
+  <button class="image-zoom-trigger mindmap-zoom-trigger" type="button" data-image-src="./chapter-05-practice-mindmap.png" data-image-alt="第五章练习脑图">
+    <img class="gallery-thumb" src="./chapter-05-practice-mindmap.png" alt="第五章练习脑图" loading="lazy" />
+    <span>放大查看</span>
+  </button>
   <div class="toolbar" style="margin:0;">
     <a class="btn" href="./chapter-05-practice-mindmap.png">PNG</a>
     <a class="btn" href="./chapter-05-practice-mindmap.mmd">MMD</a>
@@ -2678,7 +2753,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2687,7 +2762,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2705,7 +2780,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

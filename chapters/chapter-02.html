@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="章节导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
     <a href="../course.html#advanced">老鸟进阶</a>
@@ -2433,7 +2439,7 @@ body > [class*="widget"] a {
   <span class="lesson-no"><img src="../number-icons/05.png" alt="第5课" loading="lazy" /></span>
   <span class="label">第 5 课</span>
   <h3>怎么提一个高质量问题</h3>
-  <p>学会让 AI 更快理解你，减少空泛回答。</p>
+  <p>学会让 AI 更快匹配你的任务意图，减少空泛回答。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
     <span>把一个你常见的模糊问题改写成高质量问题，至少补足目标、上下文、约束、验收标准。</span>
@@ -2463,7 +2469,7 @@ body > [class*="widget"] a {
   <span class="lesson-no"><img src="../number-icons/08.png" alt="第8课" loading="lazy" /></span>
   <span class="label">第 8 课</span>
   <h3>结果验证与纠错</h3>
-  <p>建立 AI 输出之后的检查流程，避免把错内容直接拿去用。</p>
+  <p>建立 AI 输出之后的核校流程，避免把存在事实性偏离的内容直接投入业务。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
     <span>拿一段 AI 输出，列出 5 个你会检查的点，并说明分别怎么查。</span>
@@ -2478,16 +2484,16 @@ body > [class*="widget"] a {
   </div>
   <div class="case-grid"><article class="case-card">
   <strong>修 Bug</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article><article class="case-card">
   <strong>文章大纲提示词</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article><article class="case-card">
   <strong>先列大纲再写文章</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article><article class="case-card">
   <strong>数字校验</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article></div>
 </section>
 <section id="outputs">
@@ -2519,7 +2525,7 @@ body > [class*="widget"] a {
     <div class="toolbar"><a class="btn primary" href="../course.html">回到课程总览</a></div>
   </article>
 </section>
-<div class="footer">AI学习路线 · 章节导学 · 主讲义和工作纸配套学习</div>
+<div class="footer">AI 学习路线 · 章节导学 · 主讲义和工作纸配套学习</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2529,7 +2535,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2538,7 +2544,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2556,7 +2562,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

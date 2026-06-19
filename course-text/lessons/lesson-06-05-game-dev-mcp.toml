@@ -1,0 +1,109 @@
+# This file is editable lesson text. Run scripts/generate_lessons.py after changing it.
+# Text fields use TOML triple-quoted strings so Chinese punctuation and line breaks are safe.
+
+chapter_no = 6
+no = 25
+slug = """lesson-06-05-game-dev-mcp"""
+title = """MCP 在游戏开发中的使用"""
+goal = """理解 MCP 如何把 AI Agent 接到 Unreal、Unity、Figma、文件系统和内部工具，让游戏开发从对话式建议变成可执行工作流。"""
+big_question = """为什么 MCP 对游戏开发重要？因为游戏项目里最难的不是让 AI 输出回答，而是让它安全地读取项目上下文、调用工具、修改测试场景、读取设计并留下证据。"""
+exercise = """设计一个“AI 帮我做游戏 UI 和引擎原型”的 MCP 工作流：列出 Figma、Unity 或 Unreal、文件系统、截图验收、人工确认和回滚机制。"""
+
+keyPoints = [
+  """MCP 是把 AI 应用和外部工具连接起来的协议，核心是工具、资源、提示和权限边界""",
+  """Unity MCP、UEMCP、Figma MCP 代表三类游戏开发连接：引擎编辑器、项目脚本和设计稿""",
+  """Figma MCP 可以把设计上下文、组件和 Code Connect 信息交给 Codex，适合游戏 UI 从设计稿走到实现清单""",
+  """游戏开发使用 MCP 必须设置权限、日志、人工确认、版本控制和失败回滚""",
+]
+
+structure = [
+  """MCP 用通俗语言怎么理解""",
+  """Unity MCP 与 UEMCP 的引擎场景""",
+  """Figma MCP 的 UI 和设计协作场景""",
+  """Codex、OpenClaw、Hermes Agent 的职责差异""",
+  """游戏 MCP 工作流的安全边界""",
+]
+
+cases = [
+  """Unity MCP：让 Agent 从 IDE 连接 Unity，查询场景对象、创建测试关卡、管理资源并生成编辑器内工作流""",
+  """UEMCP：通过 MCP Server 与 Unreal Editor 插件桥接，让 Agent 读取项目上下文，辅助生成 Actor、Blueprint 流程和自动化检查""",
+  """Figma MCP：让 Agent 读取 UI 设计上下文、组件和变量，把血条、背包、技能按钮翻译成前端或 UMG 实现要求""",
+  """智能体分工：用 Codex 改引擎项目，用 OpenClaw 处理外围资料/沟通任务，用 Hermes Agent 承担长期记忆和持续跟进""",
+]
+
+ppt = [
+  """封面：MCP 在游戏开发中的使用""",
+  """MCP 是什么""",
+  """Unity MCP/UEMCP/Figma MCP""",
+  """从设计到引擎的工作流""",
+  """权限、日志和回滚""",
+  """课堂练习页""",
+]
+
+first_principles = [
+  """先把 MCP 理解成连接层：它让 AI 不只输出文本，还能通过受控工具读取设计上下文、检索项目、修改测试场景和生成证据。""",
+  """游戏项目适合 MCP，因为设计稿、引擎、资源、脚本和测试分散在不同工具里。""",
+  """但 MCP 不是无限授权，越接近真实项目，越需要权限边界、日志、人工确认和回滚。""",
+]
+
+atomic_truths = [
+  """本质一：MCP 解决的是连接和工具调用问题。""",
+  """本质二：游戏开发 MCP 的价值在于跨工具协作，而不是让 AI 获得无限控制权。""",
+  """本质三：安全 MCP 工作流必须能审计、能暂停、能回滚。""",
+]
+
+method = [
+  """先选一个低风险工作流：读取 Figma UI、生成 UI 实现清单、创建测试场景或检查资源命名。""",
+  """明确每个 MCP 工具能读什么、能写什么、哪些动作必须人工确认。""",
+  """把运行日志、变更文件、截图和试玩记录作为验收证据。""",
+]
+
+anti_patterns = [
+  """把 MCP 当成万能插件，一上来给 Agent 全项目写权限。""",
+  """只看工具调用成功，不检查引擎场景、设计还原和运行结果。""",
+  """没有日志和回滚，导致 Agent 改坏资源后无法定位原因。""",
+]
+
+[deep_note.meta]
+duration = """45-60 分钟"""
+difficulty = """进阶"""
+tools = """Codex 或其他支持 MCP 的 Agent；Figma、Unity 或 Unreal 项目可选"""
+privacy = """MCP 会连接真实工具和项目，练习时先用测试文件；写权限、删除、批量重命名和发布动作必须人工确认。"""
+last_reviewed = """2026-06-17"""
+source_note = """本课基于 MCP 官方架构说明、Figma Dev Mode MCP 文档、Unity MCP 趋势和 Unreal 社区 UEMCP 工作流整理；具体服务器能力、授权和 API 会随版本变化。"""
+
+[deep_note]
+plain = """MCP 可以理解成 AI 和工具之间的连接协议。游戏开发里，它能让 Agent 读取 Figma 设计、查询引擎场景、调用脚本或整理文件，但每个工具能读什么、能写什么、何时需要人确认，都必须提前设边界。"""
+checks = [
+  """这个 MCP 工作流只读、可写、还是会影响正式项目？""",
+  """这里更适合用 Codex、OpenClaw 还是 Hermes Agent，为什么？""",
+  """哪些动作必须人工确认？""",
+  """是否留下工具调用日志、变更文件、截图和回滚方式？""",
+]
+
+[[deep_note.teacher_script]]
+title = """先把 MCP 讲成连接层"""
+body = """不要把 MCP 讲成神秘模型。它解决的是 AI 怎么安全地访问外部工具、数据和动作。游戏项目工具很多，所以 MCP 特别有用。"""
+
+[[deep_note.teacher_script]]
+title = """再分三类游戏场景"""
+body = """Figma MCP 适合设计到 UI 实现，Unity MCP 或 UEMCP 适合引擎和编辑器自动化，文件系统和脚本 MCP 适合资源整理、日志和检查。"""
+
+[[deep_note.teacher_script]]
+title = """顺手把智能体职责讲清"""
+body = """这节课不要只讲 MCP 工具，还要顺手讲清不同智能体的职责。Codex 更适合工程交付；OpenClaw 更像常驻个人助理；Hermes Agent 更强调长期记忆、自改进和持续跟进。"""
+
+[[deep_note.teacher_script]]
+title = """最后强调权限"""
+body = """MCP 越强，越要小心。读取设计稿和列文件风险较低，批量改场景、删除资源、提交发布必须有人确认和可回滚。"""
+
+[deep_note.walkthrough]
+scene = """从 Figma 血条设计到引擎 UI 原型"""
+steps = [
+  """Figma MCP：读取血条、技能按钮、背包格子的尺寸、颜色、间距和状态。""",
+  """Agent：生成 UI 实现清单和组件命名，不直接改正式项目。""",
+  """引擎 MCP：在测试场景创建 UI 预制体或 UMG 草稿。""",
+  """验收：截图对比设计稿、记录差异、人工确认后再进入正式分支。""",
+]
+
+[deep_note.worked_example]

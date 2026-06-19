@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
     <a href="../course.html#advanced">老鸟进阶</a>
@@ -2445,10 +2451,10 @@ body > [class*="widget"] a {
   <span>2026-06-17</span>
 </div><div class="meta-item meta-item-wide">
   <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；最好使用同一对话连续多轮练习</span>
+  <span>任意支持对话式交互的 AI 工具；最好使用同一对话连续多轮练习</span>
 </div><div class="meta-item meta-item-wide">
   <strong>隐私边界</strong>
-  <span>多轮练习中不要逐步补出真实客户隐私、内部预算或未公开投放策略。</span>
+  <span>多轮练习中不要逐步补出敏感个人隐私、真实客户资料、内部预算或未公开投放策略。</span>
 </div><div class="meta-item meta-item-wide">
   <strong>来源提示</strong>
   <span>本课强调任务拆解，不依赖特定模型。</span>
@@ -2463,7 +2469,7 @@ body > [class*="widget"] a {
   <span class="label">深度讲稿</span>
   <h2>把这一课讲透：先翻译，再演示，再提问</h2>
   <div class="plain-language">
-    <strong>人话解释</strong>
+    <strong>通俗解释</strong>
     <p>复杂任务要拆成多个可检查的小步骤。先澄清、再规划、再执行、再检查，比一次性让 AI 输出完整方案更稳定。</p>
   </div>
   <div class="deep-script-grid"><div class="deep-script">
@@ -2509,6 +2515,7 @@ body > [class*="widget"] a {
   <h2>学完后先回答这 3 个问题</h2>
   <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我有没有把复杂任务拆成阶段？</span></div><div class="check-item"><strong>2</strong><span>每一阶段有没有可检查的中间产物？</span></div><div class="check-item"><strong>3</strong><span>我有没有先让 AI 澄清，而不是直接让它编完整方案？</span></div></div>
 </article>
+
     <section class="learner-brief">
       <span class="label">先怎么学</span>
       <h2>按这节课自己的任务跑 4 步</h2>
@@ -2532,7 +2539,7 @@ body > [class*="widget"] a {
         </div></div>
     </section>
     <article class="card">
-      <span class="label">先记住</span>
+      <span class="label">先抓住</span>
       <h2>本课只抓 3 件事</h2>
       <ul><li>复杂任务不要一次性全塞给模型</li><li>可以先让模型澄清，再执行</li><li>分步骤输出通常更可靠</li></ul>
     </article>
@@ -2564,7 +2571,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
     <div><b>AI 动作</b><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
-    <div><b>人工检查</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+    <div><b>人工核校</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
     <div><b>交付物</b><span>沉淀一条可复用提示词模板。</span></div>
   </div>
   <p>套用本课方法：先拆，再做；先问清，再执行。</p>
@@ -2577,7 +2584,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
     <div><b>AI 动作</b><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
-    <div><b>人工检查</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+    <div><b>人工核校</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
     <div><b>交付物</b><span>沉淀一条可复用提示词模板。</span></div>
   </div>
   <p>套用本课方法：给每一步设置中间产物，比如大纲、提纲、表格、草稿。</p>
@@ -2590,7 +2597,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>一条模糊需求、必要背景、限制条件和期望格式。</span></div>
     <div><b>AI 动作</b><span>把需求改写成目标清楚、上下文完整、格式明确的提示词。</span></div>
-    <div><b>人工检查</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
+    <div><b>人工核校</b><span>对比改写前后，确认输出是否更接近可直接使用。</span></div>
     <div><b>交付物</b><span>沉淀一条可复用提示词模板。</span></div>
   </div>
   <p>套用本课方法：每一步只改一个关键变量，便于判断问题出在哪。</p>
@@ -2693,7 +2700,7 @@ body > [class*="widget"] a {
 <article class="card learning-evidence">
   <span class="label">参考答案</span>
   <h2>不是标准话术，而是判断自己有没有学会</h2>
-  <ul><li>能用自己的话说明：复杂任务要拆成多个可检查的小步骤。先澄清、再规划、再执行、再检查，比一次性让 AI 输出完整方案更稳定。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“先列大纲再写文章”开始。</li><li>最终要留下一个可检查的小产物：把“帮我做一个新品推广方案”拆成 4 个连续步骤，并写成多轮提示。</li></ul>
+  <ul><li>能用自己的话说明：复杂任务要拆成多个可检查的小步骤。先澄清、再规划、再执行、再检查，比一次性让 AI 输出完整方案更稳定。</li><li>能把一个真实场景拆成输入、AI 动作、人工核校和最终输出；可以先从“先列大纲再写文章”开始。</li><li>最终要留下一个可检查的小产物：把“帮我做一个新品推广方案”拆成 4 个连续步骤，并写成多轮提示。</li></ul>
 </article>
 <article class="card learning-evidence">
   <span class="label">小测验</span>
@@ -2703,7 +2710,7 @@ body > [class*="widget"] a {
   <p>复杂任务不要一次性全塞给模型</p>
 </details><details class="quiz-item">
   <summary>每一阶段有没有可检查的中间产物？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+  <p>先拆输入、AI 动作、人工核校和最终输出，不要直接跳到工具入口或产品端入口。</p>
 </details><details class="quiz-item">
   <summary>我有没有先让 AI 澄清，而不是直接让它编完整方案？</summary>
   <p>把所有要求一口气砸给模型。</p>
@@ -2714,18 +2721,18 @@ body > [class*="widget"] a {
   <h2>用 3 档判断本课产物质量</h2>
   <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+  <span>能用通俗语言解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
   <strong>优秀</strong>
   <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
 </div><div class="rubric-item">
   <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工核校或最终输出。</span>
 </div></div>
 </article>
 <article class="card learning-evidence">
   <span class="label">术语表</span>
-  <h2>把这一课的词翻译成人话</h2>
+  <h2>把这一课的术语转成通俗解释</h2>
   <div class="glossary-grid"><div class="glossary-item">
   <strong>本课核心概念</strong>
   <span>掌握拆任务、分步骤和多轮追问，让复杂任务更稳。</span>
@@ -2733,7 +2740,7 @@ body > [class*="widget"] a {
   <strong>输入</strong>
   <span>交给 AI 的背景、材料、约束、数据或示例。</span>
 </div><div class="glossary-item">
-  <strong>人工检查</strong>
+  <strong>人工核校</strong>
   <span>人用事实、逻辑、风险和格式标准确认 AI 输出能不能进入真实工作。</span>
 </div><div class="glossary-item">
   <strong>产物</strong>
@@ -2781,7 +2788,7 @@ body > [class*="widget"] a {
   <a class="btn primary" href="./lesson-08-verify-results.html">下一课：第8课 结果验证与纠错</a>
 </nav>
 
-<div class="footer">AI学习路线 · 第一性原则版逐课教程</div>
+<div class="footer">AI 学习路线 · 第一性原则版逐课教程</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2791,7 +2798,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2800,7 +2807,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2818,7 +2825,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

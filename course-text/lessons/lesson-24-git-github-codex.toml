@@ -1,0 +1,62 @@
+# This file is editable lesson text. Run scripts/generate_lessons.py after changing it.
+# Text fields use TOML triple-quoted strings so Chinese punctuation and line breaks are safe.
+
+chapter_no = 7
+no = 4
+slug = """lesson-24-git-github-codex"""
+title = """Git、GitHub 与 Codex 协作"""
+goal = """理解 Git 记录本地修改，GitHub 托管和发布代码，Codex 可以帮助提交、推送和验证线上结果。"""
+big_question = """为什么 AI 改完文件还不等于真正发布？因为你还需要版本记录、远端仓库、构建和线上验证。"""
+exercise = """写出一次 GitHub Pages 发布流程：本地生成、检查、提交、推送、线上验证，每一步写出成功证据。"""
+
+keyPoints = [
+  """Git 负责记录本地修改和提交历史""",
+  """GitHub 负责远端托管、协作和 GitHub Pages 发布""",
+  """Codex 可以辅助检查 diff、提交、推送和验证线上链接""",
+]
+
+structure = [
+  """Git 和 GitHub 分别做什么""",
+  """一次发布从本地到线上经历哪些步骤""",
+  """Codex 在提交和推送中能帮什么""",
+  """如何避免覆盖别人或丢失本地修改""",
+]
+
+cases = [
+  """本地新增 codex.html 后，线上没有入口，因为还没 push""",
+  """生成目录不是源码，应该改脚本再重新生成""",
+  """发布后用线上 URL 检查页面是否真的更新""",
+]
+
+ppt = [
+  """封面：Git、GitHub 与 Codex""",
+  """本地与远端""",
+  """从修改到发布""",
+  """Codex 辅助提交""",
+  """冲突和安全边界""",
+  """课堂练习页""",
+]
+
+first_principles = [
+  """先把文件流向拆清楚：源码、生成结果、本地仓库、远端仓库、线上站点。""",
+  """Git 解决记录和回滚，GitHub 解决远端托管和发布，Codex 解决执行和检查。""",
+  """真正完成不是“我改了”，而是线上链接能访问到新结果。""",
+]
+
+atomic_truths = [
+  """本质一：Git 是可回退的修改记录。""",
+  """本质二：GitHub Pages 发布的是远端仓库里的内容。""",
+  """本质三：线上验证是发布闭环的最后一步。""",
+]
+
+method = [
+  """先看 git status，确认哪些文件变了。""",
+  """提交前跑生成、断链、diff 检查。""",
+  """推送后用线上 URL 验证关键页面和关键词。""",
+]
+
+anti_patterns = [
+  """不看 status 就提交一堆无关文件。""",
+  """只改生成目录，不改源码生成器。""",
+  """push 后不查线上页面，以为发布自动成功。""",
+]

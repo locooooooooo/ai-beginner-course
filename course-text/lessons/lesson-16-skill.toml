@@ -1,0 +1,95 @@
+# This file is editable lesson text. Run scripts/generate_lessons.py after changing it.
+# Text fields use TOML triple-quoted strings so Chinese punctuation and line breaks are safe.
+
+chapter_no = 4
+no = 16
+slug = """lesson-16-skill"""
+title = """什么是 Skill"""
+goal = """理解 Skill 不是普通提示词，而是任务方法的可复用资产。"""
+big_question = """为什么团队明明已经会做某件事，换个人或换个 AI 还是会做得不稳定？"""
+exercise = """为“商品详情页文案生成”设计一个最小可用 Skill 结构。"""
+
+keyPoints = [
+  """Skill 固化 SOP、模板、脚本、参考资料和验收标准""",
+  """Skill 解决的是“下次同类任务怎么稳定复用”""",
+  """适合把高频、规则明确、容易出错的任务沉淀下来""",
+]
+
+structure = [
+  """Skill 与提示词区别""",
+  """一个 Skill 的组成""",
+  """真实 Skill 案例""",
+  """电商如何设计 Skill""",
+]
+
+cases = [
+  """openai-docs""",
+  """imagegen""",
+  """电商商品文案 Skill""",
+  """客服政策 Skill""",
+]
+
+ppt = [
+  """封面：Skill""",
+  """Skill 与提示词的区别""",
+  """Skill 的结构""",
+  """真实用例""",
+  """电商 Skill 设计""",
+]
+
+first_principles = [
+  """把知识和流程拆开看：知道怎么做，不代表每次都能稳定做出来。""",
+  """Skill 的存在是为了把经验从个人经验和一次性对话中抽离出来。""",
+  """所以 Skill 的本质是标准化复用，而不是让提示词更花哨。""",
+]
+
+atomic_truths = [
+  """本质一：重复任务必须沉淀方法资产。""",
+  """本质二：稳定流程比灵感更可扩展。""",
+  """本质三：可验证标准是 Skill 的一部分，不是附属品。""",
+]
+
+method = [
+  """优先挑高频、规则明确、出错成本高的任务做 Skill。""",
+  """Skill 里同时写清流程、模板、脚本和验收标准。""",
+  """用真实任务不断迭代 Skill。""",
+]
+
+anti_patterns = [
+  """把 Skill 当成一段花哨提示词。""",
+  """只写流程，不写边界和验收。""",
+  """写完不迭代，导致 Skill 很快过时。""",
+]
+
+[deep_note.meta]
+
+[deep_note]
+plain = """Skill 不是一段高级提示词，而是把一类任务的做法沉淀成可复用资产。它应该包含适用场景、操作步骤、模板、参考资料、脚本和验收清单，让下次同类任务更稳定。"""
+checks = [
+  """这个 Skill 适用于哪类任务？""",
+  """它是否包含模板和验收清单？""",
+  """它如何根据真实失败案例更新？""",
+]
+
+[[deep_note.teacher_script]]
+title = """先区别提示词和 Skill"""
+body = """提示词解决这一次怎么问，Skill 解决以后同类任务怎么稳定做。"""
+
+[[deep_note.teacher_script]]
+title = """Skill 要带验收标准"""
+body = """只有流程没有检查点，复用时还是会跑偏；验收清单是 Skill 的核心部分。"""
+
+[[deep_note.teacher_script]]
+title = """从真实任务中迭代"""
+body = """不要凭空写 Skill，先做几次真实任务，把成功步骤和常见错误沉淀进去。"""
+
+[deep_note.walkthrough]
+scene = """设计商品详情页文案 Skill"""
+steps = [
+  """定义适用场景：新品详情页初稿生成。""",
+  """准备输入模板：商品参数、人群、卖点、禁用词、品牌语气。""",
+  """写执行步骤：资料检查、文案生成、事实校验、人工改稿。""",
+  """写验收清单：规格、价格、承诺、格式、渠道要求。""",
+]
+
+[deep_note.worked_example]

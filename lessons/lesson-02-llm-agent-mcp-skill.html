@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
     <a href="../course.html#advanced">老鸟进阶</a>
@@ -2405,7 +2411,7 @@ body > [class*="widget"] a {
   <div>
     <div class="eyebrow">第一章：先建立正确认知 · 第2课</div>
     <h1>第2课：大模型、LLM、Agent：先听懂分工</h1>
-    <p class="lead">先用大脑、分身、接口、技能卡这组比喻听懂 AI 系统分工，不急着啃协议细节。</p>
+    <p class="lead">先用“语言处理核心、执行系统、连接接口、技能卡”这组比喻厘清 AI 系统分工，不急着啃协议细节。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start" data-focus-toggle aria-pressed="false">开始本课</a>
       <a class="btn" href="#practice">做完练习</a>
@@ -2429,7 +2435,7 @@ body > [class*="widget"] a {
 <section class="callout" id="start">
   <span class="label">为什么要学</span>
   <h2>核心问题</h2>
-  <p>为什么很多人学了一堆名词，最后还是不会落地？因为不知道哪些概念是负责思考，哪些是负责干活、连接和复用。</p>
+  <p>为什么很多人学了一堆名词，最后还是不会落地？因为没有厘清哪些概念负责语言处理、哪些负责执行、连接和复用。</p>
 </section>
 <section class="card">
   <span class="label">学习元信息</span>
@@ -2445,10 +2451,10 @@ body > [class*="widget"] a {
   <span>2026-06-17</span>
 </div><div class="meta-item meta-item-wide">
   <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；建议准备一个自己熟悉的业务流程作例子</span>
+  <span>任意支持对话式交互的 AI 工具；建议准备一个自己熟悉的业务流程作例子</span>
 </div><div class="meta-item meta-item-wide">
   <strong>隐私边界</strong>
-  <span>流程示例可用虚构商品、虚构客户，不要贴真实后台数据或内部接口。</span>
+  <span>流程示例可使用虚构商品、虚构客户和非机密数据；不要粘贴真实后台数据、内部接口或未公开业务规则。</span>
 </div><div class="meta-item meta-item-wide">
   <strong>来源提示</strong>
   <span>本课讲概念分工，不绑定某个厂商实现。</span>
@@ -2459,44 +2465,44 @@ body > [class*="widget"] a {
 
 <article class="card visual-card">
   <span class="label">图解</span>
-  <h2>一张图看懂：LLM、Agent、MCP、Skill 的人话比喻</h2>
+  <h2>一张图看懂：LLM、Agent、MCP、Skill 的通俗比喻</h2>
   <figure class="lesson-visual">
   <button class="image-zoom-trigger" type="button" data-image-src="../lesson-02-llm-agent-mcp-skill-visual.jpg" data-image-alt="LLM Agent 位于中间，左侧连接 MCP，右侧连接 Skill，展示理解执行、工具连接和方法复用之间的关系">
     <img src="../lesson-02-llm-agent-mcp-skill-visual.jpg" alt="LLM Agent 位于中间，左侧连接 MCP，右侧连接 Skill，展示理解执行、工具连接和方法复用之间的关系" loading="lazy" />
     <span>点击放大</span>
   </button>
-  <figcaption>先把它当成四个比喻：大脑、分身、USB 接口和技能卡。MCP 与 Skill 的细节后面再展开。 <a href="../lesson-02-llm-agent-mcp-skill-visual.jpg" target="_blank" rel="noopener noreferrer">打开原图</a></figcaption>
+  <figcaption>先把它当成四个工作角色：语言处理核心、执行系统、USB 接口和技能卡。MCP 与 Skill 的细节后面再展开。 <a href="../lesson-02-llm-agent-mcp-skill-visual.jpg" target="_blank" rel="noopener noreferrer">打开原图</a></figcaption>
 </figure>
   <div class="visual-chain"><div class="visual-node">
-  <span>负责思考和生成</span>
-  <strong>LLM = 大脑</strong>
-  <p>先理解你的话，再生成文字、代码、总结或方案。</p>
+  <span>负责语言处理和生成</span>
+  <strong>LLM = 语言处理核心</strong>
+  <p>解析你的输入，再生成文字、代码、总结或方案。</p>
 </div><div class="visual-node">
   <span>负责替你闭环</span>
-  <strong>Agent = 分身</strong>
+  <strong>Agent = 执行系统</strong>
   <p>不只是回答一句话，而是按目标拆步骤、调用工具、检查结果。</p>
 </div><div class="visual-node">
   <span>负责接外部系统</span>
-  <strong>MCP = USB接口</strong>
+  <strong>MCP = USB 接口</strong>
   <p>先把它理解成数据管道，让 AI 能读取文件、系统或工具。细节放到后面学。</p>
 </div><div class="visual-node">
   <span>负责复用做法</span>
   <strong>Skill = 技能卡</strong>
   <p>把一类任务的步骤、模板、检查清单沉淀下来，下次不用从零开始。</p>
 </div></div>
-  <p class="visual-warning">本课不要求你掌握 MCP 协议细节，也不要求你会写 Skill。先记住分工：LLM 像大脑，Agent 像分身，MCP 像 USB 接口，Skill 像工具箱。</p>
+  <p class="visual-warning">本课不要求你掌握 MCP 协议细节，也不要求你会写 Skill。先把分工放进脑海：LLM 像语言处理核心，Agent 像执行系统，MCP 像 USB 接口，Skill 像工具箱。</p>
 </article>
 
 <article class="card deep-note-card">
   <span class="label">深度讲稿</span>
   <h2>把这一课讲透：先翻译，再演示，再提问</h2>
   <div class="plain-language">
-    <strong>人话解释</strong>
-    <p>LLM 负责理解和生成，Agent 负责围绕目标执行，MCP 负责连接外部工具和数据，Skill 负责把可复用做法沉淀下来。四个词合在一起，才接近一个能落地的 AI 工作系统。</p>
+    <strong>通俗解释</strong>
+    <p>LLM 负责语言解析和生成，Agent 负责围绕目标执行，MCP 负责连接外部工具和数据，Skill 负责把可复用做法沉淀下来。四个词合在一起，才接近一个能落地的 AI 工作系统。</p>
   </div>
   <div class="deep-script-grid"><div class="deep-script">
   <strong>用分工而不是定义解释名词</strong>
-  <p>不要先让学生背 LLM、Agent、MCP、Skill 的标准定义。先问：一个 AI 要真正帮我发文章，需要理解内容、调用发布工具、读取素材库、复用发布 SOP。四个概念就是在这条链路里分工。</p>
+  <p>不要先让学生对照 LLM、Agent、MCP、Skill 的标准定义。先问：一个 AI 系统要真正辅助发布文章，需要解析内容、调用发布工具、读取素材库、复用发布 SOP。四个概念就是在这条链路里分工。</p>
 </div><div class="deep-script">
   <strong>把四层画成一条业务链路</strong>
   <p>LLM 生成草稿，Agent 决定下一步，MCP 连接 CMS 或商品库，Skill 固化标题检查、敏感词检查、发布前验收。学生看到链路后，名词就不再孤立。</p>
@@ -2520,7 +2526,7 @@ body > [class*="widget"] a {
     </div>
     <div class="example-block good">
       <strong>好输入</strong>
-      <p>LLM 负责理解和生成，Agent 负责围绕目标连续执行，MCP 负责连接外部系统和数据，Skill 负责把一类任务的做法沉淀成可复用资产。它们是同一条工作链路里的不同分工。</p>
+      <p>LLM 负责语言解析和生成，Agent 负责围绕目标连续执行，MCP 负责连接外部系统和数据，Skill 负责把一类任务的做法沉淀成可复用资产。它们是同一条工作链路里的不同分工。</p>
     </div>
   </div>
   <div class="example-block">
@@ -2537,6 +2543,7 @@ body > [class*="widget"] a {
   <h2>学完后先回答这 3 个问题</h2>
   <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能不能用一句话说出 LLM 和 Agent 的区别？</span></div><div class="check-item"><strong>2</strong><span>我能不能指出一个流程里哪些地方需要 MCP？</span></div><div class="check-item"><strong>3</strong><span>我能不能把一个常做任务整理成 Skill 的雏形？</span></div></div>
 </article>
+
     <section class="learner-brief">
       <span class="label">先怎么学</span>
       <h2>按这节课自己的任务跑 4 步</h2>
@@ -2551,33 +2558,33 @@ body > [class*="widget"] a {
           <span>抓住这条判断句：大模型是 AI 中的一类基础模型。用它去纠正一个常见误解，而不是继续背名词。</span>
         </div>
         <div class="flow-step">
-          <strong>3. 每个概念的人话比喻</strong>
-          <span>把“让 LLM 写文案草稿”拆成对象、能力、输入、输出四格，确认你不是把产品名当成能力本身。</span>
+          <strong>3. 每个概念的通俗比喻</strong>
+          <span>把“让 LLM 写文案草稿”拆成对象、能力、输入、输出四格，确认你不是把产品端入口当成能力本身。</span>
         </div>
         <div class="flow-step">
           <strong>4. MCP 和 Skill 为什么后面再细讲</strong>
-          <span>用这条方法收尾：碰到新概念时，先问它更像大脑、分身、接口还是技能卡。 本课产物：用“大脑、分身、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</span>
+          <span>用这条方法收尾：碰到新概念时，先问它更像语言处理核心、执行系统、接口还是技能卡。 本课产物：用“语言处理核心、执行系统、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</span>
         </div></div>
     </section>
     <article class="card">
-      <span class="label">先记住</span>
+      <span class="label">先抓住</span>
       <h2>本课只抓 3 件事</h2>
-      <ul><li>大模型是 AI 中的一类基础模型</li><li>LLM 是擅长语言理解与生成的大模型</li><li>Agent 是会调工具、会执行流程的系统</li><li>MCP 本章只先理解成 AI 连接外部系统的数据管道</li><li>Skill 本章只先理解成可复用的专业技能卡或工具箱</li></ul>
+      <ul><li>大模型是 AI 中的一类基础模型</li><li>LLM 是擅长处理语言输入并生成语言输出的大模型</li><li>Agent 是会调工具、会执行流程的系统</li><li>MCP 本章只先理解成 AI 连接外部系统的数据管道</li><li>Skill 本章只先理解成可复用的专业技能卡或工具箱</li></ul>
     </article>
     <article class="card">
       <span class="label">想明白</span>
       <h2>第一性拆解</h2>
-      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先问每个概念解决的最小问题是什么，而不是先背定义。</span></div><div class="principle-block"><strong>拆解 2</strong><span>LLM 解决理解与生成问题，Agent 解决执行闭环问题，MCP 和 Skill 先用连接与复用两个比喻占位。</span></div><div class="principle-block"><strong>拆解 3</strong><span>把四者放回同一条业务链路，先知道谁负责哪段，细节留到后续章节展开。</span></div></div>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>先问每个概念解决的最小问题是什么，而不是先对照标准定义。</span></div><div class="principle-block"><strong>拆解 2</strong><span>LLM 解决语言解析与生成问题，Agent 解决执行闭环问题，MCP 和 Skill 先用连接与复用两个比喻占位。</span></div><div class="principle-block"><strong>拆解 3</strong><span>把四者放回同一条业务链路，先知道谁负责哪段，细节留到后续章节展开。</span></div></div>
     </article>
     <article class="card">
       <span class="label">可迁移</span>
       <h2>最小原理</h2>
-      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：名词存在的意义是分工，不是炫技。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：业务落地通常会涉及理解、执行、连接、复用四件事，但新手要先抓主干。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：单个模型能力不等于完整系统能力。</span></div></div>
+      <div class="truths"><div class="principle-block"><strong>原理 1</strong><span>本质一：名词存在的意义是分工，不是炫技。</span></div><div class="principle-block"><strong>原理 2</strong><span>本质二：业务落地通常会涉及语言处理、执行、连接、复用四件事，但新手要先抓主干。</span></div><div class="principle-block"><strong>原理 3</strong><span>本质三：单个模型能力不等于完整系统能力。</span></div></div>
     </article>
     <article class="card">
       <span class="label">怎么学</span>
       <h2>读完后怎么把它用出来</h2>
-      <ul><li>为什么要先分清这些词</li><li>从大到小的概念关系</li><li>每个概念的人话比喻</li><li>MCP 和 Skill 为什么后面再细讲</li></ul>
+      <ul><li>为什么要先分清这些词</li><li>从大到小的概念关系</li><li>每个概念的通俗比喻</li><li>MCP 和 Skill 为什么后面再细讲</li></ul>
     </article>
 <article class="card case-practice">
   <span class="label">多案例演练</span>
@@ -2592,20 +2599,20 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
     <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>人工核校</b><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
     <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
   </div>
-  <p>套用本课方法：碰到新概念时，先问它更像大脑、分身、接口还是技能卡。</p>
+  <p>套用本课方法：碰到新概念时，先问它更像语言处理核心、执行系统、接口还是技能卡。</p>
 </article>
 <article class="case-practice-card">
   <div class="case-practice-head">
     <span>案例 02</span>
-    <strong>让 Agent 按步骤发文章</strong>
+    <strong>让 Agent 按步骤发布文章</strong>
   </div>
   <div class="case-practice-grid">
     <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
     <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>人工核校</b><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
     <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
   </div>
   <p>套用本课方法：做系统设计时，按四层分工思考，而不是一股脑扔给模型。</p>
@@ -2618,7 +2625,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
     <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>人工核校</b><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
     <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
   </div>
   <p>套用本课方法：画系统图时，先把理解、执行、连接、复用拆开写清楚。</p>
@@ -2631,10 +2638,10 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
     <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>人工核校</b><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
     <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
   </div>
-  <p>套用本课方法：碰到新概念时，先问它更像大脑、分身、接口还是技能卡。</p>
+  <p>套用本课方法：碰到新概念时，先问它更像语言处理核心、执行系统、接口还是技能卡。</p>
 </article>
 <article class="case-practice-card guided">
   <div class="case-practice-head">
@@ -2655,7 +2662,7 @@ body > [class*="widget"] a {
     </div>
     <div class="case-compare-block">
       <b>可用输入</b>
-      <span>LLM 负责理解和生成，Agent 负责围绕目标连续执行，MCP 负责连接外部系统和数据，Skill 负责把一类任务的做法沉淀成可复用资产。它们是同一条工作链路里的不同分工。</span>
+      <span>LLM 负责语言解析和生成，Agent 负责围绕目标连续执行，MCP 负责连接外部系统和数据，Skill 负责把一类任务的做法沉淀成可复用资产。它们是同一条工作链路里的不同分工。</span>
     </div>
     <div class="case-compare-block">
       <b>样例结果</b>
@@ -2676,20 +2683,20 @@ body > [class*="widget"] a {
     <h3>为什么要先分清这些词</h3>
     <p><strong>先讲清：</strong>大模型是 AI 中的一类基础模型。</p>
     <p><strong>再落地：</strong>把它放进“让 LLM 写文案草稿”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>碰到新概念时，先问它更像大脑、分身、接口还是技能卡。</p>
+    <p><strong>马上做：</strong>碰到新概念时，先问它更像语言处理核心、执行系统、接口还是技能卡。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">2</span>
   <div>
     <h3>从大到小的概念关系</h3>
-    <p><strong>先讲清：</strong>LLM 是擅长语言理解与生成的大模型。</p>
-    <p><strong>再落地：</strong>把它放进“让 Agent 按步骤发文章”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
+    <p><strong>先讲清：</strong>LLM 是擅长处理语言输入并生成语言输出的大模型。</p>
+    <p><strong>再落地：</strong>把它放进“让 Agent 按步骤发布文章”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
     <p><strong>马上做：</strong>做系统设计时，按四层分工思考，而不是一股脑扔给模型。</p>
   </div>
 </div><div class="teaching-segment">
   <span class="step-no">3</span>
   <div>
-    <h3>每个概念的人话比喻</h3>
+    <h3>每个概念的通俗比喻</h3>
     <p><strong>先讲清：</strong>Agent 是会调工具、会执行流程的系统。</p>
     <p><strong>再落地：</strong>把它放进“把商品库当作外接数据源”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
     <p><strong>马上做：</strong>画系统图时，先把理解、执行、连接、复用拆开写清楚。</p>
@@ -2700,7 +2707,7 @@ body > [class*="widget"] a {
     <h3>MCP 和 Skill 为什么后面再细讲</h3>
     <p><strong>先讲清：</strong>MCP 本章只先理解成 AI 连接外部系统的数据管道。</p>
     <p><strong>再落地：</strong>把它放进“把电商 SOP 做成技能卡”这个场景里，先找输入，再判断 AI 处理哪一步，最后写清人工怎么验收。</p>
-    <p><strong>马上做：</strong>碰到新概念时，先问它更像大脑、分身、接口还是技能卡。</p>
+    <p><strong>马上做：</strong>碰到新概念时，先问它更像语言处理核心、执行系统、接口还是技能卡。</p>
   </div>
 </div></div>
 </article>
@@ -2714,7 +2721,7 @@ body > [class*="widget"] a {
     </div>
     <div>
       <strong>你再跟做</strong>
-      <span>用“大脑、分身、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</span>
+      <span>用“语言处理核心、执行系统、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</span>
     </div>
     <div>
       <strong>最后验收</strong>
@@ -2734,7 +2741,7 @@ body > [class*="widget"] a {
 <article class="card learning-evidence">
   <span class="label">参考答案</span>
   <h2>不是标准话术，而是判断自己有没有学会</h2>
-  <ul><li>能用自己的话说明：LLM 负责理解和生成，Agent 负责围绕目标执行，MCP 负责连接外部工具和数据，Skill 负责把可复用做法沉淀下来。四个词合在一起，才接近一个能落地的 AI 工作系统。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“让 LLM 写文案草稿”开始。</li><li>最终要留下一个可检查的小产物：用“大脑、分身、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</li></ul>
+  <ul><li>能用自己的话说明：LLM 负责语言解析和生成，Agent 负责围绕目标执行，MCP 负责连接外部工具和数据，Skill 负责把可复用做法沉淀下来。四个词合在一起，才接近一个能落地的 AI 工作系统。</li><li>能把一个真实场景拆成输入、AI 动作、人工核校和最终输出；可以先从“让 LLM 写文案草稿”开始。</li><li>最终要留下一个可检查的小产物：用“语言处理核心、执行系统、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</li></ul>
 </article>
 <article class="card learning-evidence">
   <span class="label">小测验</span>
@@ -2744,7 +2751,7 @@ body > [class*="widget"] a {
   <p>大模型是 AI 中的一类基础模型</p>
 </details><details class="quiz-item">
   <summary>我能不能指出一个流程里哪些地方需要 MCP？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+  <p>先拆输入、AI 动作、人工核校和最终输出，不要直接跳到工具入口或产品端入口。</p>
 </details><details class="quiz-item">
   <summary>我能不能把一个常做任务整理成 Skill 的雏形？</summary>
   <p>把 Agent 和模型混成一个概念。</p>
@@ -2755,26 +2762,26 @@ body > [class*="widget"] a {
   <h2>用 3 档判断本课产物质量</h2>
   <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+  <span>能用通俗语言解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
   <strong>优秀</strong>
   <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
 </div><div class="rubric-item">
   <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工核校或最终输出。</span>
 </div></div>
 </article>
 <article class="card learning-evidence">
   <span class="label">术语表</span>
-  <h2>把这一课的词翻译成人话</h2>
+  <h2>把这一课的术语转成通俗解释</h2>
   <div class="glossary-grid"><div class="glossary-item">
   <strong>本课核心概念</strong>
-  <span>先用大脑、分身、接口、技能卡这组比喻听懂 AI 系统分工，不急着啃协议细节。</span>
+  <span>先用“语言处理核心、执行系统、连接接口、技能卡”这组比喻厘清 AI 系统分工，不急着啃协议细节。</span>
 </div><div class="glossary-item">
   <strong>输入</strong>
   <span>交给 AI 的背景、材料、约束、数据或示例。</span>
 </div><div class="glossary-item">
-  <strong>人工检查</strong>
+  <strong>人工核校</strong>
   <span>人用事实、逻辑、风险和格式标准确认 AI 输出能不能进入真实工作。</span>
 </div><div class="glossary-item">
   <strong>产物</strong>
@@ -2786,7 +2793,7 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">马上用</span>
       <h2>应用方法</h2>
-      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>碰到新概念时，先问它更像大脑、分身、接口还是技能卡。</span></div><div class="principle-block"><strong>方法 2</strong><span>做系统设计时，按四层分工思考，而不是一股脑扔给模型。</span></div><div class="principle-block"><strong>方法 3</strong><span>画系统图时，先把理解、执行、连接、复用拆开写清楚。</span></div></div>
+      <div class="methods"><div class="principle-block"><strong>方法 1</strong><span>碰到新概念时，先问它更像语言处理核心、执行系统、接口还是技能卡。</span></div><div class="principle-block"><strong>方法 2</strong><span>做系统设计时，按四层分工思考，而不是一股脑扔给模型。</span></div><div class="principle-block"><strong>方法 3</strong><span>画系统图时，先把理解、执行、连接、复用拆开写清楚。</span></div></div>
     </article>
     <article class="card">
       <span class="label">避坑</span>
@@ -2797,7 +2804,7 @@ body > [class*="widget"] a {
       <span class="label">完成标准</span>
       <h2>做完这件事才算学会</h2>
       <div class="meta">
-        <div class="meta-item"><strong>本课产物</strong><span>用“大脑、分身、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</span></div>
+        <div class="meta-item"><strong>本课产物</strong><span>用“语言处理核心、执行系统、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</span></div>
         <div class="meta-item"><strong>验收方式</strong><span>能用自己的话解释本课概念，并把它套到一个真实工作或生活场景里。</span></div>
       </div>
     </article>
@@ -2806,23 +2813,23 @@ body > [class*="widget"] a {
       <h2>给 AI 的跟做提示</h2>
       <pre class="copy-prompt"><code>我正在学习「大模型、LLM、Agent：先听懂分工」，请用新手能听懂的话教我。
 先用 120 字以内解释它，不要堆术语。
-再结合这两个场景举例：让 LLM 写文案草稿；让 Agent 按步骤发文章。
+再结合这两个场景举例：让 LLM 写文案草稿；让 Agent 按步骤发布文章。
 然后问我 3 个检查理解的问题。
-最后帮我完成这个练习：用“大脑、分身、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</code></pre>
+最后帮我完成这个练习：用“语言处理核心、执行系统、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</code></pre>
     </article>
     <article class="card">
       <span class="label">自检</span>
       <h2>学完请确认这 4 件事</h2>
-      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「大模型、LLM、Agent：先听懂分工」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：用“大脑、分身、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「大模型、LLM、Agent：先听懂分工」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：用“语言处理核心、执行系统、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
     </article>
   </aside>
 </div>
 <nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-01-ai-overview.html">上一课：第1课 AI是什么</a>
+  <a class="btn" href="./lesson-01-ai-overview.html">上一课：第1课 AI 是什么</a>
   <a class="btn primary" href="./lesson-03-model-families.html">下一课：第3课 主流模型家族</a>
 </nav>
 
-<div class="footer">AI学习路线 · 第一性原则版逐课教程</div>
+<div class="footer">AI 学习路线 · 第一性原则版逐课教程</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2832,7 +2839,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2841,7 +2848,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2859,7 +2866,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

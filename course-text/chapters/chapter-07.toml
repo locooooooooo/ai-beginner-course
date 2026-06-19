@@ -1,0 +1,14 @@
+# This file is editable course text. Run scripts/generate_lessons.py after changing it.
+# Keep ids and lesson slugs stable unless you also update links/assets intentionally.
+
+id = """chapter-7"""
+title = """老鸟进阶：Codex 扩展学习"""
+summary = """把 Codex 当成能交付的软件工作助手来学，掌握多会话、网页制作、GitHub 发布和 Dify 平台自动化。"""
+outcome = """写出一个能交给 Codex 执行的任务说明，并设计一条从本地修改到线上验证的工程化流程。"""
+lessons = [
+  """lesson-21-codex-overview""",
+  """lesson-22-loop-engineering""",
+  """lesson-23-codex-web-design""",
+  """lesson-24-git-github-codex""",
+  """lesson-25-dify-codex-workflow""",
+]

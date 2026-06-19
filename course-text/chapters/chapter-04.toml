@@ -1,0 +1,13 @@
+# This file is editable course text. Run scripts/generate_lessons.py after changing it.
+# Keep ids and lesson slugs stable unless you also update links/assets intentionally.
+
+id = """chapter-4"""
+title = """第四章：从工具使用到工作流"""
+summary = """从单次问答升级到可重复、可执行、可验证的业务流程。"""
+outcome = """画出一条带输入、工具、输出、人工核校和失败处理的 AI 工作流。"""
+lessons = [
+  """lesson-13-workflow""",
+  """lesson-14-agent""",
+  """lesson-15-mcp""",
+  """lesson-16-skill""",
+]

@@ -49,4 +49,4 @@
 
 ## 生成方式
 
-使用 `AI新手20节课/scripts/render_pixel_mindmaps.py` 批量渲染源 `.mmd` 文件，再运行 `AI新手20节课/scripts/generate_lessons.py` 同步到 `site/` 和 `github-pages-publish/`。
+使用 `AI 新手 20 节课/scripts/render_pixel_mindmaps.py` 批量渲染源 `.mmd` 文件，再运行 `AI 新手 20 节课/scripts/generate_lessons.py` 同步到 `site/` 和 `github-pages-publish/`。

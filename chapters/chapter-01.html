@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="章节导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
     <a href="../course.html#advanced">老鸟进阶</a>
@@ -2404,7 +2410,7 @@ body > [class*="widget"] a {
   <div>
     <div class="eyebrow">章节导学 · 第 1 章</div>
     <h1>第一章：先建立正确认知</h1>
-    <p class="lead">先把概念边界理清，避免一上来被术语和产品名带偏。</p>
+    <p class="lead">先把概念边界理清，避免一上来被术语、产品端入口和模型家族带偏。</p>
     <div class="toolbar">
       <a class="btn primary" href="../lessons/lesson-01-ai-overview.html">从本章第一课开始</a>
       <a class="btn" href="#outputs">查看本章产物</a>
@@ -2432,8 +2438,8 @@ body > [class*="widget"] a {
   <div class="chapters"><article class="chapter-card">
   <span class="lesson-no"><img src="../number-icons/01.png" alt="第1课" loading="lazy" /></span>
   <span class="label">第 1 课</span>
-  <h3>AI是什么</h3>
-  <p>理解 AI 不是单一软件，而是一整类让机器完成智能任务的方法与系统。</p>
+  <h3>AI 是什么</h3>
+  <p>理解 AI（人工智能）不是单一软件，而是利用计算系统辅助或替代人类执行复杂智能任务的一类方法与系统。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
     <span>列出你自己工作或生活里 3 个已经在使用 AI 的场景，并判断它们分别属于识别、预测、推荐还是生成。</span>
@@ -2443,10 +2449,10 @@ body > [class*="widget"] a {
   <span class="lesson-no"><img src="../number-icons/02.png" alt="第2课" loading="lazy" /></span>
   <span class="label">第 2 课</span>
   <h3>大模型、LLM、Agent：先听懂分工</h3>
-  <p>先用大脑、分身、接口、技能卡这组比喻听懂 AI 系统分工，不急着啃协议细节。</p>
+  <p>先用“语言处理核心、执行系统、连接接口、技能卡”这组比喻厘清 AI 系统分工，不急着啃协议细节。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
-    <span>用“大脑、分身、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</span>
+    <span>用“语言处理核心、执行系统、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</span>
   </div>
   <div class="toolbar"><a class="btn primary lesson-action-primary" href="../lessons/lesson-02-llm-agent-mcp-skill.html">主讲义</a><a class="btn lesson-action-secondary" href="../lessons/lesson-02-llm-agent-mcp-skill-worksheet.html">工作纸</a></div>
 </article><article class="chapter-card">
@@ -2462,8 +2468,8 @@ body > [class*="widget"] a {
 </article><article class="chapter-card">
   <span class="lesson-no"><img src="../number-icons/04.png" alt="第4课" loading="lazy" /></span>
   <span class="label">第 4 课</span>
-  <h3>AI能做什么不能做什么</h3>
-  <p>建立边界意识，知道 AI 强在哪里，也知道它会错在哪里。</p>
+  <h3>AI 能做什么不能做什么</h3>
+  <p>建立边界意识，知道 AI 适合辅助哪些任务，也知道它可能在哪些环节出现事实性偏离。</p>
   <div class="chapter-outcome">
     <strong>本课产物</strong>
     <span>列出你认为必须人工审批的 5 类 AI 输出，并说明原因。</span>
@@ -2477,17 +2483,17 @@ body > [class*="widget"] a {
     <p>先从熟悉场景理解，不要一上来背抽象定义。</p>
   </div>
   <div class="case-grid"><article class="case-card">
-  <strong>办公软件里的智能写作和总结</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <strong>办公协同中的文本智能生成、校对与会议纪要提炼</strong>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article><article class="case-card">
   <strong>让 LLM 写文案草稿</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article><article class="case-card">
   <strong>GPT 做通用问答、代码和 Agent 编排</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article><article class="case-card">
   <strong>写一篇文章很快但事实可能错</strong>
-  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工检查和最终输出。</p>
+  <p>学习这一章时，把这个场景拆成输入、AI 动作、人工核校和最终输出。</p>
 </article></div>
 </section>
 <section id="outputs">
@@ -2500,7 +2506,7 @@ body > [class*="widget"] a {
     <h2>完成一张自己的 AI 能力分类表：至少列出 6 个真实场景，并标注它们属于识别、预测、推荐、生成、执行还是连接。</h2>
     <p>每节课的小产物都要服务于这个总产物。做完后，把它整理成一份可以复用的模板或清单。</p>
   </article>
-  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>列出你自己工作或生活里 3 个已经在使用 AI 的场景，并判断它们分别属于识别、预测、推荐还是生成。</span></div><div class="check-item"><strong>2</strong><span>用“大脑、分身、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</span></div><div class="check-item"><strong>3</strong><span>从你的使用场景里选 3 个任务，分别判断更适合文本模型、图像模型还是视频模型。</span></div><div class="check-item"><strong>4</strong><span>列出你认为必须人工审批的 5 类 AI 输出，并说明原因。</span></div></div>
+  <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>列出你自己工作或生活里 3 个已经在使用 AI 的场景，并判断它们分别属于识别、预测、推荐还是生成。</span></div><div class="check-item"><strong>2</strong><span>用“语言处理核心、执行系统、USB 接口、技能卡”这四个比喻解释 LLM、Agent、MCP、Skill，再举一个你能想到的真实业务例子。</span></div><div class="check-item"><strong>3</strong><span>从你的使用场景里选 3 个任务，分别判断更适合文本模型、图像模型还是视频模型。</span></div><div class="check-item"><strong>4</strong><span>列出你认为必须人工审批的 5 类 AI 输出，并说明原因。</span></div></div>
 </section>
 <section class="notes-wrap">
   <article class="notes">
@@ -2519,7 +2525,7 @@ body > [class*="widget"] a {
     <div class="toolbar"><a class="btn primary" href="../course.html">回到课程总览</a></div>
   </article>
 </section>
-<div class="footer">AI学习路线 · 章节导学 · 主讲义和工作纸配套学习</div>
+<div class="footer">AI 学习路线 · 章节导学 · 主讲义和工作纸配套学习</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2529,7 +2535,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2538,7 +2544,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2556,7 +2562,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

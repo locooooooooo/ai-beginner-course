@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第16课 什么是Skill</title>
+  <title>第16课 什么是 Skill</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Silkscreen:wght@400;700&display=swap');
 
@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
     <a href="../course.html#advanced">老鸟进阶</a>
@@ -2404,7 +2410,7 @@ body > [class*="widget"] a {
 <header class="hero">
   <div>
     <div class="eyebrow">第四章：从工具使用到工作流 · 第16课</div>
-    <h1>第16课：什么是Skill</h1>
+    <h1>第16课：什么是 Skill</h1>
     <p class="lead">理解 Skill 不是普通提示词，而是任务方法的可复用资产。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start" data-focus-toggle aria-pressed="false">开始本课</a>
@@ -2445,10 +2451,10 @@ body > [class*="widget"] a {
   <span>2026-06-17</span>
 </div><div class="meta-item meta-item-wide">
   <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；也可以只看页面完成纸面练习</span>
+  <span>任意支持对话式交互的 AI 工具；也可以只看页面完成纸面练习</span>
 </div><div class="meta-item meta-item-wide">
   <strong>隐私边界</strong>
-  <span>练习时使用公开或虚构材料，不上传客户隐私、内部资料、账号信息或未公开策略。</span>
+  <span>练习时使用公开或虚构材料，不上传敏感个人隐私、非公开资料、账号信息或未公开策略。</span>
 </div><div class="meta-item meta-item-wide">
   <strong>来源提示</strong>
   <span>本课强调稳定方法和学习路径；具体工具能力以实际产品为准。</span>
@@ -2463,7 +2469,7 @@ body > [class*="widget"] a {
   <span class="label">深度讲稿</span>
   <h2>把这一课讲透：先翻译，再演示，再提问</h2>
   <div class="plain-language">
-    <strong>人话解释</strong>
+    <strong>通俗解释</strong>
     <p>Skill 不是一段高级提示词，而是把一类任务的做法沉淀成可复用资产。它应该包含适用场景、操作步骤、模板、参考资料、脚本和验收清单，让下次同类任务更稳定。</p>
   </div>
   <div class="deep-script-grid"><div class="deep-script">
@@ -2509,6 +2515,7 @@ body > [class*="widget"] a {
   <h2>学完后先回答这 3 个问题</h2>
   <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>这个 Skill 适用于哪类任务？</span></div><div class="check-item"><strong>2</strong><span>它是否包含模板和验收清单？</span></div><div class="check-item"><strong>3</strong><span>它如何根据真实失败案例更新？</span></div></div>
 </article>
+
     <section class="learner-brief">
       <span class="label">先怎么学</span>
       <h2>按这节课自己的任务跑 4 步</h2>
@@ -2532,14 +2539,14 @@ body > [class*="widget"] a {
         </div></div>
     </section>
     <article class="card">
-      <span class="label">先记住</span>
+      <span class="label">先抓住</span>
       <h2>本课只抓 3 件事</h2>
       <ul><li>Skill 固化 SOP、模板、脚本、参考资料和验收标准</li><li>Skill 解决的是“下次同类任务怎么稳定复用”</li><li>适合把高频、规则明确、容易出错的任务沉淀下来</li></ul>
     </article>
     <article class="card">
       <span class="label">想明白</span>
       <h2>第一性拆解</h2>
-      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>把知识和流程拆开看：知道怎么做，不代表每次都能稳定做出来。</span></div><div class="principle-block"><strong>拆解 2</strong><span>Skill 的存在是为了把经验从人脑和一次性聊天中抽离出来。</span></div><div class="principle-block"><strong>拆解 3</strong><span>所以 Skill 的本质是标准化复用，而不是让提示词更花哨。</span></div></div>
+      <div class="principles"><div class="principle-block"><strong>拆解 1</strong><span>把知识和流程拆开看：知道怎么做，不代表每次都能稳定做出来。</span></div><div class="principle-block"><strong>拆解 2</strong><span>Skill 的存在是为了把经验从个人经验和一次性对话中抽离出来。</span></div><div class="principle-block"><strong>拆解 3</strong><span>所以 Skill 的本质是标准化复用，而不是让提示词更花哨。</span></div></div>
     </article>
     <article class="card">
       <span class="label">可迁移</span>
@@ -2564,7 +2571,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
     <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
-    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
+    <div><b>人工核校</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
     <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
   </div>
   <p>套用本课方法：优先挑高频、规则明确、出错成本高的任务做 Skill。</p>
@@ -2577,7 +2584,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
     <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
-    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
+    <div><b>人工核校</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
     <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
   </div>
   <p>套用本课方法：Skill 里同时写清流程、模板、脚本和验收标准。</p>
@@ -2590,7 +2597,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
     <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
-    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
+    <div><b>人工核校</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
     <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
   </div>
   <p>套用本课方法：用真实任务不断迭代 Skill。</p>
@@ -2603,7 +2610,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>业务目标、触发条件、系统资源、权限边界。</span></div>
     <div><b>AI 动作</b><span>规划步骤、调用工具、读取资源、执行动作并观察结果。</span></div>
-    <div><b>人工检查</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
+    <div><b>人工核校</b><span>检查权限、日志、失败处理、审批和回滚是否存在。</span></div>
     <div><b>交付物</b><span>画出一条可复盘的流程链路。</span></div>
   </div>
   <p>套用本课方法：优先挑高频、规则明确、出错成本高的任务做 Skill。</p>
@@ -2706,7 +2713,7 @@ body > [class*="widget"] a {
 <article class="card learning-evidence">
   <span class="label">参考答案</span>
   <h2>不是标准话术，而是判断自己有没有学会</h2>
-  <ul><li>能用自己的话说明：Skill 不是一段高级提示词，而是把一类任务的做法沉淀成可复用资产。它应该包含适用场景、操作步骤、模板、参考资料、脚本和验收清单，让下次同类任务更稳定。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“openai-docs”开始。</li><li>最终要留下一个可检查的小产物：为“商品详情页文案生成”设计一个最小可用 Skill 结构。</li></ul>
+  <ul><li>能用自己的话说明：Skill 不是一段高级提示词，而是把一类任务的做法沉淀成可复用资产。它应该包含适用场景、操作步骤、模板、参考资料、脚本和验收清单，让下次同类任务更稳定。</li><li>能把一个真实场景拆成输入、AI 动作、人工核校和最终输出；可以先从“openai-docs”开始。</li><li>最终要留下一个可检查的小产物：为“商品详情页文案生成”设计一个最小可用 Skill 结构。</li></ul>
 </article>
 <article class="card learning-evidence">
   <span class="label">小测验</span>
@@ -2716,7 +2723,7 @@ body > [class*="widget"] a {
   <p>Skill 固化 SOP、模板、脚本、参考资料和验收标准</p>
 </details><details class="quiz-item">
   <summary>它是否包含模板和验收清单？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+  <p>先拆输入、AI 动作、人工核校和最终输出，不要直接跳到工具入口或产品端入口。</p>
 </details><details class="quiz-item">
   <summary>它如何根据真实失败案例更新？</summary>
   <p>把 Skill 当成一段花哨提示词。</p>
@@ -2727,18 +2734,18 @@ body > [class*="widget"] a {
   <h2>用 3 档判断本课产物质量</h2>
   <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+  <span>能用通俗语言解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
   <strong>优秀</strong>
   <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
 </div><div class="rubric-item">
   <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工核校或最终输出。</span>
 </div></div>
 </article>
 <article class="card learning-evidence">
   <span class="label">术语表</span>
-  <h2>把这一课的词翻译成人话</h2>
+  <h2>把这一课的术语转成通俗解释</h2>
   <div class="glossary-grid"><div class="glossary-item">
   <strong>Skill</strong>
   <span>可复用的任务方法资产。</span>
@@ -2779,7 +2786,7 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">可以直接复制</span>
       <h2>给 AI 的跟做提示</h2>
-      <pre class="copy-prompt"><code>我正在学习「什么是Skill」，请用新手能听懂的话教我。
+      <pre class="copy-prompt"><code>我正在学习「什么是 Skill」，请用新手能听懂的话教我。
 先用 120 字以内解释它，不要堆术语。
 再结合这两个场景举例：openai-docs；imagegen。
 然后问我 3 个检查理解的问题。
@@ -2788,16 +2795,16 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">自检</span>
       <h2>学完请确认这 4 件事</h2>
-      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「什么是Skill」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：为“商品详情页文案生成”设计一个最小可用 Skill 结构。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「什么是 Skill」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：为“商品详情页文案生成”设计一个最小可用 Skill 结构。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
     </article>
   </aside>
 </div>
 <nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-15-mcp.html">上一课：第15课 什么是MCP</a>
+  <a class="btn" href="./lesson-15-mcp.html">上一课：第15课 什么是 MCP</a>
   <a class="btn primary" href="./lesson-17-ecommerce-content.html">下一课：第17课 电商内容生产</a>
 </nav>
 
-<div class="footer">AI学习路线 · 第一性原则版逐课教程</div>
+<div class="footer">AI 学习路线 · 第一性原则版逐课教程</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2807,7 +2814,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2816,7 +2823,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2834,7 +2841,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

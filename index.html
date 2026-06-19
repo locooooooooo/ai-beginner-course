@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI学习路线：新手入门、老鸟进阶、案例库</title>
+  <title>AI 学习路线：新手入门、老鸟进阶、案例库</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Silkscreen:wght@400;700&display=swap');
 
@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="站点导航" id="top">
-  <a class="brand" href="./course.html">AI入门课</a>
+  <a class="brand" href="./course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="#beginner">新手入门</a>
     <a href="#advanced">老鸟进阶</a>
@@ -2410,6 +2416,7 @@ body > [class*="widget"] a {
     </p>
     <div class="toolbar">
       <a class="btn primary" href="./lessons/lesson-01-ai-overview.html">从第 1 课开始</a>
+      <a class="btn" href="./game/index.html">打开互动小游戏</a>
       <a class="btn" href="#path">先看怎么学</a>
     </div>
     <div class="track-grid" aria-label="课程三大类">
@@ -2432,7 +2439,7 @@ body > [class*="widget"] a {
         <span>每一节都带着一个小任务读完</span>
       </div>
       <div class="path-grid">
-        <article class="path-card"><strong>1. 先听懂</strong><span>用生活语言理解概念，先别背缩写和品牌名。</span></article>
+        <article class="path-card"><strong>1. 先听懂</strong><span>用生活语言理解概念，先别让缩写和品牌名抢主线。</span></article>
         <article class="path-card"><strong>2. 跟着做</strong><span>每课都有练习工作纸和小产物，写出来才算完成。</span></article>
         <article class="path-card"><strong>3. 会提问</strong><span>用目标、上下文、约束、验收标准换稳定输出。</span></article>
         <article class="path-card"><strong>4. 会检查</strong><span>判断哪些结果能直接用，哪些必须查证和人审。</span></article>
@@ -2473,13 +2480,13 @@ body > [class*="widget"] a {
 <article class="chapter-card">
   <div class="eyebrow">入门-1</div>
   <h3><a href="./chapters/chapter-01.html">第一章：先建立正确认知</a></h3>
-  <p>先把概念边界理清，避免一上来被术语和产品名带偏。</p>
+  <p>先把概念边界理清，避免一上来被术语、产品端入口和模型家族带偏。</p>
   <div class="chapter-outcome">
     <strong>本章总产物</strong>
     <span>完成一张自己的 AI 能力分类表：至少列出 6 个真实场景，并标注它们属于识别、预测、推荐、生成、执行还是连接。</span>
   </div>
   <div class="toolbar"><a class="btn" href="./chapters/chapter-01.html">先看章节导学</a></div>
-  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-01-ai-overview.html"><span class="lesson-no"><img src="./number-icons/01.png" alt="第1课" loading="lazy" /></span><span><strong>第1课：AI是什么</strong><span>理解 AI 不是单一软件，而是一整类让机器完成智能任务的方法与系统。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-01-ai-overview.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-01-ai-overview-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-02-llm-agent-mcp-skill.html"><span class="lesson-no"><img src="./number-icons/02.png" alt="第2课" loading="lazy" /></span><span><strong>第2课：大模型、LLM、Agent：先听懂分工</strong><span>先用大脑、分身、接口、技能卡这组比喻听懂 AI 系统分工，不急着啃协议细节。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-02-llm-agent-mcp-skill.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-02-llm-agent-mcp-skill-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-03-model-families.html"><span class="lesson-no"><img src="./number-icons/03.png" alt="第3课" loading="lazy" /></span><span><strong>第3课：主流模型家族</strong><span>理解不同模型家族的定位差异，避免把所有模型看成一回事。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-03-model-families.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-03-model-families-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-04-ai-boundaries.html"><span class="lesson-no"><img src="./number-icons/04.png" alt="第4课" loading="lazy" /></span><span><strong>第4课：AI能做什么不能做什么</strong><span>建立边界意识，知道 AI 强在哪里，也知道它会错在哪里。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-04-ai-boundaries.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-04-ai-boundaries-worksheet.html">工作纸</a></div></li></ul>
+  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-01-ai-overview.html"><span class="lesson-no"><img src="./number-icons/01.png" alt="第1课" loading="lazy" /></span><span><strong>第1课：AI 是什么</strong><span>理解 AI（人工智能）不是单一软件，而是利用计算系统辅助或替代人类执行复杂智能任务的一类方法与系统。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-01-ai-overview.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-01-ai-overview-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-02-llm-agent-mcp-skill.html"><span class="lesson-no"><img src="./number-icons/02.png" alt="第2课" loading="lazy" /></span><span><strong>第2课：大模型、LLM、Agent：先听懂分工</strong><span>先用“语言处理核心、执行系统、连接接口、技能卡”这组比喻厘清 AI 系统分工，不急着啃协议细节。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-02-llm-agent-mcp-skill.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-02-llm-agent-mcp-skill-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-03-model-families.html"><span class="lesson-no"><img src="./number-icons/03.png" alt="第3课" loading="lazy" /></span><span><strong>第3课：主流模型家族</strong><span>理解不同模型家族的定位差异，避免把所有模型看成一回事。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-03-model-families.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-03-model-families-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-04-ai-boundaries.html"><span class="lesson-no"><img src="./number-icons/04.png" alt="第4课" loading="lazy" /></span><span><strong>第4课：AI 能做什么不能做什么</strong><span>建立边界意识，知道 AI 适合辅助哪些任务，也知道它可能在哪些环节出现事实性偏离。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-04-ai-boundaries.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-04-ai-boundaries-worksheet.html">工作纸</a></div></li></ul>
 </article>
 <article class="chapter-card">
   <div class="eyebrow">入门-2</div>
@@ -2490,7 +2497,7 @@ body > [class*="widget"] a {
     <span>沉淀一套自己的提问模板和验证清单：能把模糊需求改成高质量提示，并能检查 AI 输出是否可用。</span>
   </div>
   <div class="toolbar"><a class="btn" href="./chapters/chapter-02.html">先看章节导学</a></div>
-  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-05-ask-better-questions.html"><span class="lesson-no"><img src="./number-icons/05.png" alt="第5课" loading="lazy" /></span><span><strong>第5课：怎么提一个高质量问题</strong><span>学会让 AI 更快理解你，减少空泛回答。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-05-ask-better-questions.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-05-ask-better-questions-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-06-prompt-basics.html"><span class="lesson-no"><img src="./number-icons/06.png" alt="第6课" loading="lazy" /></span><span><strong>第6课：提示词基础</strong><span>理解提示词的基本构造，能写出稳定的基础提示。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-06-prompt-basics.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-06-prompt-basics-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-07-prompt-advanced.html"><span class="lesson-no"><img src="./number-icons/07.png" alt="第7课" loading="lazy" /></span><span><strong>第7课：提示词进阶</strong><span>掌握拆任务、分步骤和多轮追问，让复杂任务更稳。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-07-prompt-advanced.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-07-prompt-advanced-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-08-verify-results.html"><span class="lesson-no"><img src="./number-icons/08.png" alt="第8课" loading="lazy" /></span><span><strong>第8课：结果验证与纠错</strong><span>建立 AI 输出之后的检查流程，避免把错内容直接拿去用。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-08-verify-results.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-08-verify-results-worksheet.html">工作纸</a></div></li></ul>
+  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-05-ask-better-questions.html"><span class="lesson-no"><img src="./number-icons/05.png" alt="第5课" loading="lazy" /></span><span><strong>第5课：怎么提一个高质量问题</strong><span>学会让 AI 更快匹配你的任务意图，减少空泛回答。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-05-ask-better-questions.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-05-ask-better-questions-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-06-prompt-basics.html"><span class="lesson-no"><img src="./number-icons/06.png" alt="第6课" loading="lazy" /></span><span><strong>第6课：提示词基础</strong><span>理解提示词的基本构造，能写出稳定的基础提示。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-06-prompt-basics.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-06-prompt-basics-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-07-prompt-advanced.html"><span class="lesson-no"><img src="./number-icons/07.png" alt="第7课" loading="lazy" /></span><span><strong>第7课：提示词进阶</strong><span>掌握拆任务、分步骤和多轮追问，让复杂任务更稳。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-07-prompt-advanced.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-07-prompt-advanced-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-08-verify-results.html"><span class="lesson-no"><img src="./number-icons/08.png" alt="第8课" loading="lazy" /></span><span><strong>第8课：结果验证与纠错</strong><span>建立 AI 输出之后的核校流程，避免把存在事实性偏离的内容直接投入业务。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-08-verify-results.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-08-verify-results-worksheet.html">工作纸</a></div></li></ul>
 </article>
 <article class="chapter-card">
   <div class="eyebrow">入门-3</div>
@@ -2509,10 +2516,10 @@ body > [class*="widget"] a {
   <p>从单次问答升级到可重复、可执行、可验证的业务流程。</p>
   <div class="chapter-outcome">
     <strong>本章总产物</strong>
-    <span>画出一条带输入、工具、输出、人工验收和失败处理的 AI 工作流。</span>
+    <span>画出一条带输入、工具、输出、人工核校和失败处理的 AI 工作流。</span>
   </div>
   <div class="toolbar"><a class="btn" href="./chapters/chapter-04.html">先看章节导学</a></div>
-  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-13-workflow.html"><span class="lesson-no"><img src="./number-icons/13.png" alt="第13课" loading="lazy" /></span><span><strong>第13课：什么是工作流</strong><span>理解 AI 工作流不是问一句答一句，而是一串可重复步骤。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-13-workflow.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-13-workflow-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-14-agent.html"><span class="lesson-no"><img src="./number-icons/14.png" alt="第14课" loading="lazy" /></span><span><strong>第14课：什么是Agent</strong><span>理解 Agent 为什么比普通聊天模型更接近“会做事的人”。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-14-agent.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-14-agent-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-15-mcp.html"><span class="lesson-no"><img src="./number-icons/15.png" alt="第15课" loading="lazy" /></span><span><strong>第15课：什么是MCP</strong><span>理解 MCP 为什么是 AI 真正连接业务系统的重要一层。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-15-mcp.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-15-mcp-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-16-skill.html"><span class="lesson-no"><img src="./number-icons/16.png" alt="第16课" loading="lazy" /></span><span><strong>第16课：什么是Skill</strong><span>理解 Skill 不是普通提示词，而是任务方法的可复用资产。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-16-skill.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-16-skill-worksheet.html">工作纸</a></div></li></ul>
+  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-13-workflow.html"><span class="lesson-no"><img src="./number-icons/13.png" alt="第13课" loading="lazy" /></span><span><strong>第13课：什么是工作流</strong><span>理解 AI 工作流不是问一句答一句，而是一串可重复步骤。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-13-workflow.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-13-workflow-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-14-agent.html"><span class="lesson-no"><img src="./number-icons/14.png" alt="第14课" loading="lazy" /></span><span><strong>第14课：什么是 Agent</strong><span>理解 Agent 为什么不是普通对话式交互模型，而是围绕目标、工具和反馈形成执行闭环的系统。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-14-agent.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-14-agent-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-15-mcp.html"><span class="lesson-no"><img src="./number-icons/15.png" alt="第15课" loading="lazy" /></span><span><strong>第15课：什么是 MCP</strong><span>理解 MCP 为什么是 AI 真正连接业务系统的重要一层。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-15-mcp.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-15-mcp-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-16-skill.html"><span class="lesson-no"><img src="./number-icons/16.png" alt="第16课" loading="lazy" /></span><span><strong>第16课：什么是 Skill</strong><span>理解 Skill 不是普通提示词，而是任务方法的可复用资产。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-16-skill.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-16-skill-worksheet.html">工作纸</a></div></li></ul>
 </article>
 <article class="chapter-card">
   <div class="eyebrow">入门-5</div>
@@ -2523,7 +2530,7 @@ body > [class*="widget"] a {
     <span>完成一张电商 AI 落地路线图：从内容生产、获客私域、客服复购到系统全景，标出先做什么、后做什么。</span>
   </div>
   <div class="toolbar"><a class="btn" href="./chapters/chapter-05.html">先看章节导学</a></div>
-  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-17-ecommerce-content.html"><span class="lesson-no"><img src="./number-icons/17.png" alt="第17课" loading="lazy" /></span><span><strong>第17课：电商内容生产</strong><span>理解 AI 在商品文案、SEO文章、社媒内容和海报上的落地方式。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-17-ecommerce-content.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-17-ecommerce-content-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-18-ecommerce-leads-private-domain.html"><span class="lesson-no"><img src="./number-icons/18.png" alt="第18课" loading="lazy" /></span><span><strong>第18课：电商获客与私域</strong><span>理解 AI 如何帮助评论私信承接、表单入库、欢迎 SOP 和标签分层。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-18-ecommerce-leads-private-domain.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-18-ecommerce-leads-private-domain-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-19-ecommerce-service-retention.html"><span class="lesson-no"><img src="./number-icons/19.png" alt="第19课" loading="lazy" /></span><span><strong>第19课：电商客服与复购</strong><span>理解 AI 在售前、售后、会员运营和复购中的应用方式。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-19-ecommerce-service-retention.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-19-ecommerce-service-retention-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-20-ecommerce-system-view.html"><span class="lesson-no"><img src="./number-icons/20.png" alt="第20课" loading="lazy" /></span><span><strong>第20课：电商AI系统全景</strong><span>把前面 19 节课串起来，形成一张完整的电商 AI 落地地图。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-20-ecommerce-system-view.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-20-ecommerce-system-view-worksheet.html">工作纸</a></div></li></ul>
+  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-17-ecommerce-content.html"><span class="lesson-no"><img src="./number-icons/17.png" alt="第17课" loading="lazy" /></span><span><strong>第17课：电商内容生产</strong><span>理解 AI 在商品文案、SEO 文章、社媒内容和海报上的落地方式。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-17-ecommerce-content.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-17-ecommerce-content-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-18-ecommerce-leads-private-domain.html"><span class="lesson-no"><img src="./number-icons/18.png" alt="第18课" loading="lazy" /></span><span><strong>第18课：电商获客与私域</strong><span>理解 AI 如何帮助评论私信承接、表单入库、欢迎 SOP 和标签分层。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-18-ecommerce-leads-private-domain.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-18-ecommerce-leads-private-domain-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-19-ecommerce-service-retention.html"><span class="lesson-no"><img src="./number-icons/19.png" alt="第19课" loading="lazy" /></span><span><strong>第19课：电商客服与复购</strong><span>理解 AI 在售前、售后、会员运营和复购中的应用方式。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-19-ecommerce-service-retention.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-19-ecommerce-service-retention-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-20-ecommerce-system-view.html"><span class="lesson-no"><img src="./number-icons/20.png" alt="第20课" loading="lazy" /></span><span><strong>第20课：电商 AI 系统全景</strong><span>把前面 19 节课串起来，形成一张完整的电商 AI 落地地图。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-20-ecommerce-system-view.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-20-ecommerce-system-view-worksheet.html">工作纸</a></div></li></ul>
 </article>
 <article class="chapter-card">
   <div class="eyebrow">入门-6</div>
@@ -2534,7 +2541,7 @@ body > [class*="widget"] a {
     <span>设计一个 AI 辅助游戏开发小样方案：包含玩法目标、引擎任务、代码 Agent 分工、美术资产规范、MCP 工具连接和验收清单。</span>
   </div>
   <div class="toolbar"><a class="btn" href="./chapters/chapter-06.html">先看章节导学</a></div>
-  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-06-01-game-ai-landscape.html"><span class="lesson-no"><img src="./number-icons/21.png" alt="第21课" loading="lazy" /></span><span><strong>第21课：游戏行业为什么开始重视AI工作流</strong><span>理解 AI 在游戏开发里的真实位置：它不是替代完整团队，而是把原型、内容、测试和协作变成更短的迭代循环。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-06-01-game-ai-landscape.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-06-01-game-ai-landscape-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-06-02-game-engine-codex.html"><span class="lesson-no"><img src="./number-icons/22.png" alt="第22课" loading="lazy" /></span><span><strong>第22课：用Codex做游戏引擎原型</strong><span>学会把 Unreal、Unity 或 Godot 中的原型任务写成 Codex 能执行、能运行、能验收的小工单。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-06-02-game-engine-codex.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-06-02-game-engine-codex-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-06-03-agent-gameplay-code.html"><span class="lesson-no"><img src="./number-icons/23.png" alt="第23课" loading="lazy" /></span><span><strong>第23课：用Agent编写游戏玩法代码</strong><span>学会把玩法需求拆成状态、输入、事件、数据和测试，让 Agent 生成代码后仍能被人审查和迭代。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-06-03-agent-gameplay-code.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-06-03-agent-gameplay-code-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-06-04-game-art-assets.html"><span class="lesson-no"><img src="./number-icons/24.png" alt="第24课" loading="lazy" /></span><span><strong>第24课：美术资产生成与游戏管线</strong><span>理解 AI 美术在游戏里更适合作为概念、占位、变体和沟通工具，正式上线前必须经过风格、版权、性能和格式管线检查。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-06-04-game-art-assets.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-06-04-game-art-assets-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-06-05-game-dev-mcp.html"><span class="lesson-no"><img src="./number-icons/25.png" alt="第25课" loading="lazy" /></span><span><strong>第25课：MCP在游戏开发中的使用</strong><span>理解 MCP 如何把 AI Agent 接到 Unreal、Unity、Figma、文件系统和内部工具，让游戏开发从聊天建议变成可执行工作流。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-06-05-game-dev-mcp.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-06-05-game-dev-mcp-worksheet.html">工作纸</a></div></li></ul>
+  <ul class="lesson-list"><li class="lesson-item"><a href="./lessons/lesson-06-01-game-ai-landscape.html"><span class="lesson-no"><img src="./number-icons/21.png" alt="第21课" loading="lazy" /></span><span><strong>第21课：游戏行业为什么开始重视 AI 工作流</strong><span>理解 AI 在游戏开发里的真实位置：它不是替代完整团队，而是把原型、内容、测试和协作变成更短的迭代循环。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-06-01-game-ai-landscape.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-06-01-game-ai-landscape-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-06-02-game-engine-codex.html"><span class="lesson-no"><img src="./number-icons/22.png" alt="第22课" loading="lazy" /></span><span><strong>第22课：用 Codex 做游戏引擎原型</strong><span>学会把 Unreal、Unity 或 Godot 中的原型任务写成 Codex 能执行、能运行、能验收的小工单。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-06-02-game-engine-codex.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-06-02-game-engine-codex-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-06-03-agent-gameplay-code.html"><span class="lesson-no"><img src="./number-icons/23.png" alt="第23课" loading="lazy" /></span><span><strong>第23课：用 Agent 编写游戏玩法代码</strong><span>学会把玩法需求拆成状态、输入、事件、数据和测试，让 Agent 生成代码后仍能被人审查和迭代。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-06-03-agent-gameplay-code.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-06-03-agent-gameplay-code-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-06-04-game-art-assets.html"><span class="lesson-no"><img src="./number-icons/24.png" alt="第24课" loading="lazy" /></span><span><strong>第24课：美术资产生成与游戏管线</strong><span>理解 AI 美术在游戏里更适合作为概念、占位、变体和沟通工具，正式上线前必须经过风格、版权、性能和格式管线检查。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-06-04-game-art-assets.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-06-04-game-art-assets-worksheet.html">工作纸</a></div></li><li class="lesson-item"><a href="./lessons/lesson-06-05-game-dev-mcp.html"><span class="lesson-no"><img src="./number-icons/25.png" alt="第25课" loading="lazy" /></span><span><strong>第25课：MCP 在游戏开发中的使用</strong><span>理解 MCP 如何把 AI Agent 接到 Unreal、Unity、Figma、文件系统和内部工具，让游戏开发从对话式建议变成可执行工作流。</span></span></a><div class="lesson-actions"><a class="lesson-action-primary" href="./lessons/lesson-06-05-game-dev-mcp.html">主讲义</a><a class="lesson-action-secondary" href="./lessons/lesson-06-05-game-dev-mcp-worksheet.html">工作纸</a></div></li></ul>
 </article></div>
   </article>
   <article class="track-block" id="advanced">
@@ -2547,8 +2554,8 @@ body > [class*="widget"] a {
 <article class="chapter-card">
   <span class="lesson-no"><img src="./number-icons/01.png" alt="第1课" loading="lazy" /></span>
   <span class="label">第 1 课</span>
-  <h3>Codex能做什么</h3>
-  <p>理解 Codex 不是普通聊天机器人，而是能进入项目现场读、改、跑、验收的 AI 工作助手。</p>
+  <h3>Codex 能做什么</h3>
+  <p>理解 Codex 不是普通对话式交互应用，而是能进入项目现场读取、修改、运行和验证的 AI 工程助手。</p>
   <div class="chapter-outcome">
     <strong>这节课的任务</strong>
     <span>写一个给 Codex 的任务说明，包含目标、范围、验收标准和禁止事项。</span>
@@ -2558,7 +2565,7 @@ body > [class*="widget"] a {
 <article class="chapter-card">
   <span class="lesson-no"><img src="./number-icons/02.png" alt="第2课" loading="lazy" /></span>
   <span class="label">第 2 课</span>
-  <h3>Loop Engineering是什么</h3>
+  <h3>Loop Engineering 是什么</h3>
   <p>理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。</p>
   <div class="chapter-outcome">
     <strong>这节课的任务</strong>
@@ -2569,7 +2576,7 @@ body > [class*="widget"] a {
 <article class="chapter-card">
   <span class="lesson-no"><img src="./number-icons/03.png" alt="第3课" loading="lazy" /></span>
   <span class="label">第 3 课</span>
-  <h3>如何用Codex制作好看的网页</h3>
+  <h3>如何用 Codex 制作好看的网页</h3>
   <p>学会把目标用户、页面结构、视觉规范和移动端验收交给 Codex，让网页既能看又能用。</p>
   <div class="chapter-outcome">
     <strong>这节课的任务</strong>
@@ -2580,7 +2587,7 @@ body > [class*="widget"] a {
 <article class="chapter-card">
   <span class="lesson-no"><img src="./number-icons/04.png" alt="第4课" loading="lazy" /></span>
   <span class="label">第 4 课</span>
-  <h3>Git、GitHub与Codex协作</h3>
+  <h3>Git、GitHub 与 Codex 协作</h3>
   <p>理解 Git 记录本地修改，GitHub 托管和发布代码，Codex 可以帮助提交、推送和验证线上结果。</p>
   <div class="chapter-outcome">
     <strong>这节课的任务</strong>
@@ -2591,8 +2598,8 @@ body > [class*="widget"] a {
 <article class="chapter-card">
   <span class="lesson-no"><img src="./number-icons/05.png" alt="第5课" loading="lazy" /></span>
   <span class="label">第 5 课</span>
-  <h3>你真的会用Dify吗？</h3>
-  <p>学会用 Codex 搭建 Dify 平台、完成 Docker 部署，并把 Wiki 发布、Bug 汇总和自动 Code Review 做成自动化流程。</p>
+  <h3>你真的会用 Dify 吗？</h3>
+  <p>学会用 Codex 搭建 Dify 平台，完成 Docker 部署，并把 Wiki 发布、Bug 汇总和自动 Code Review 做成自动化工作流。</p>
   <div class="chapter-outcome">
     <strong>这节课的任务</strong>
     <span>设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。</span>
@@ -2696,7 +2703,7 @@ body > [class*="widget"] a {
     <p>不是先把所有概念背完，而是每课做出一个小结果，边做边建立理解。</p>
     <ul>
       <li>每节课先回答核心问题，再看概念定义。</li>
-      <li>每次只抓 3 个重点，不要求一次记住所有名词。</li>
+      <li>每次只抓 3 个重点，不要求一次掌握所有名词。</li>
       <li>每课必须做一个小产物，别只停留在“看懂了”。</li>
       <li>涉及钱、售后、法律、健康的输出，必须先验证。</li>
     </ul>
@@ -2725,7 +2732,7 @@ body > [class*="widget"] a {
     </div>
   </div>
   <figure class="community-qr">
-    <img src="./qq-group-qrcode.jpg" alt="AI新手探索交流群 QQ 群二维码，群号 960759630" loading="lazy" />
+    <img src="./qq-group-qrcode.jpg" alt="AI 新手探索交流群 QQ 群二维码，群号 960759630" loading="lazy" />
     <figcaption>扫码加入群聊</figcaption>
   </figure>
 </section>
@@ -2742,6 +2749,7 @@ body > [class*="widget"] a {
         <a class="btn" href="./mindmap-hub.html">打开脑图资源库</a>
         <a class="btn" href="./codex.html">进入老鸟进阶</a>
         <a class="btn" href="./case-library.html">进入案例库</a>
+        <a class="btn" href="./game/index.html">进入互动小游戏</a>
         <a class="btn" href="./ai-beginner-20-lessons-course.png">打开课程总脑图</a>
         <a class="btn" href="./course-system.html">查看课程规范</a>
       </div>
@@ -2760,6 +2768,10 @@ body > [class*="widget"] a {
         <div class="resource-mini-item">
           <strong>案例库</strong>
           <span>按任务类型查真实案例，直接看任务怎么被推进成文件、页面、视频和发布结果。</span>
+        </div>
+        <div class="resource-mini-item">
+          <strong>互动小游戏</strong>
+          <span>用吃金币小游戏体验 Token、Prompt、Agent 等课程概念，适合作为开课热身。</span>
         </div>
         <div class="resource-mini-item">
           <strong>课程文字系统</strong>
@@ -2782,7 +2794,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2791,7 +2803,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2809,7 +2821,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

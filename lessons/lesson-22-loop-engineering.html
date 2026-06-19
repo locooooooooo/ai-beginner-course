@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第2课 Loop Engineering是什么</title>
+  <title>第2课 Loop Engineering 是什么</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Silkscreen:wght@400;700&display=swap');
 
@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="../course.html#beginner">新手入门</a>
     <a href="../course.html#advanced">老鸟进阶</a>
@@ -2404,7 +2410,7 @@ body > [class*="widget"] a {
 <header class="hero">
   <div>
     <div class="eyebrow">老鸟进阶：Codex 扩展学习 · 第2课</div>
-    <h1>第2课：Loop Engineering是什么</h1>
+    <h1>第2课：Loop Engineering 是什么</h1>
     <p class="lead">理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。</p>
     <div class="toolbar">
       <a class="btn primary" href="#start" data-focus-toggle aria-pressed="false">开始本课</a>
@@ -2445,10 +2451,10 @@ body > [class*="widget"] a {
   <span>2026-06-17</span>
 </div><div class="meta-item meta-item-wide">
   <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；也可以只看页面完成纸面练习</span>
+  <span>任意支持对话式交互的 AI 工具；也可以只看页面完成纸面练习</span>
 </div><div class="meta-item meta-item-wide">
   <strong>隐私边界</strong>
-  <span>练习时使用公开或虚构材料，不上传客户隐私、内部资料、账号信息或未公开策略。</span>
+  <span>练习时使用公开或虚构材料，不上传敏感个人隐私、非公开资料、账号信息或未公开策略。</span>
 </div><div class="meta-item meta-item-wide">
   <strong>来源提示</strong>
   <span>本课强调稳定方法和学习路径；具体工具能力以实际产品为准。</span>
@@ -2459,6 +2465,7 @@ body > [class*="widget"] a {
 
 
 
+
     <section class="learner-brief">
       <span class="label">先怎么学</span>
       <h2>按这节课自己的任务跑 4 步</h2>
@@ -2466,7 +2473,7 @@ body > [class*="widget"] a {
       <div class="flow">
         <div class="flow-step">
           <strong>1. Loop Engineering 的定义</strong>
-          <span>先把“Loop Engineering是什么”放回概念地图：它解决什么问题，和相邻概念有什么边界。</span>
+          <span>先把“Loop Engineering 是什么”放回概念地图：它解决什么问题，和相邻概念有什么边界。</span>
         </div>
         <div class="flow-step">
           <strong>2. 一次性大提示容易失败</strong>
@@ -2474,7 +2481,7 @@ body > [class*="widget"] a {
         </div>
         <div class="flow-step">
           <strong>3. 设计一轮 Loop</strong>
-          <span>把“网页改版：先改首页，再截图验收，再修移动端问题”拆成对象、能力、输入、输出四格，确认你不是把产品名当成能力本身。</span>
+          <span>把“网页改版：先改首页，再截图验收，再修移动端问题”拆成对象、能力、输入、输出四格，确认你不是把产品端入口当成能力本身。</span>
         </div>
         <div class="flow-step">
           <strong>4. 用验收结果进入下一轮</strong>
@@ -2482,7 +2489,7 @@ body > [class*="widget"] a {
         </div></div>
     </section>
     <article class="card">
-      <span class="label">先记住</span>
+      <span class="label">先抓住</span>
       <h2>本课只抓 3 件事</h2>
       <ul><li>Loop Engineering 的基本循环是目标、执行、验收、修正</li><li>每一轮都要缩小范围，留下可验证结果</li><li>复杂项目要把内容、实现、测试和发布拆成多轮推进</li></ul>
     </article>
@@ -2514,7 +2521,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
     <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>人工核校</b><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
     <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
   </div>
   <p>套用本课方法：每轮只设一个主目标。</p>
@@ -2527,7 +2534,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
     <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>人工核校</b><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
     <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
   </div>
   <p>套用本课方法：先定义验收方式，再让 Codex 执行。</p>
@@ -2540,7 +2547,7 @@ body > [class*="widget"] a {
   <div class="case-practice-grid">
     <div><b>输入</b><span>场景名、使用对象、用户真正要完成的任务。</span></div>
     <div><b>AI 动作</b><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-    <div><b>人工检查</b><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+    <div><b>人工核校</b><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
     <div><b>交付物</b><span>留下一行能力分类记录。</span></div>
   </div>
   <p>套用本课方法：把失败原因写进下一轮输入。</p>
@@ -2606,7 +2613,7 @@ body > [class*="widget"] a {
 <article class="card">
   <span class="label">下一步</span>
   <h2>学完后怎么继续扩展</h2>
-  <p class="small-note">下一课会进入“如何用Codex制作好看的网页”，你要带着本课产物继续往下用。</p>
+  <p class="small-note">下一课会进入“如何用 Codex 制作好看的网页”，你要带着本课产物继续往下用。</p>
   <div class="toolbar">
     <a class="btn primary" href="./lesson-22-loop-engineering-worksheet.html">打开本课练习工作纸</a>
   </div>
@@ -2615,7 +2622,7 @@ body > [class*="widget"] a {
 <article class="card learning-evidence">
   <span class="label">参考答案</span>
   <h2>不是标准话术，而是判断自己有没有学会</h2>
-  <ul><li>能用自己的话说明：理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“网页改版：先改首页，再截图验收，再修移动端问题”开始。</li><li>最终要留下一个可检查的小产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</li></ul>
+  <ul><li>能用自己的话说明：理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。</li><li>能把一个真实场景拆成输入、AI 动作、人工核校和最终输出；可以先从“网页改版：先改首页，再截图验收，再修移动端问题”开始。</li><li>最终要留下一个可检查的小产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</li></ul>
 </article>
 <article class="card learning-evidence">
   <span class="label">小测验</span>
@@ -2625,7 +2632,7 @@ body > [class*="widget"] a {
   <p>Loop Engineering 的基本循环是目标、执行、验收、修正</p>
 </details><details class="quiz-item">
   <summary>把这节课放进真实场景时，第一步应该拆什么？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+  <p>先拆输入、AI 动作、人工核校和最终输出，不要直接跳到工具入口或产品端入口。</p>
 </details><details class="quiz-item">
   <summary>这一课最容易犯的错误是什么？</summary>
   <p>一轮里塞太多目标。</p>
@@ -2636,18 +2643,18 @@ body > [class*="widget"] a {
   <h2>用 3 档判断本课产物质量</h2>
   <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+  <span>能用通俗语言解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
   <strong>优秀</strong>
   <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
 </div><div class="rubric-item">
   <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工核校或最终输出。</span>
 </div></div>
 </article>
 <article class="card learning-evidence">
   <span class="label">术语表</span>
-  <h2>把这一课的词翻译成人话</h2>
+  <h2>把这一课的术语转成通俗解释</h2>
   <div class="glossary-grid"><div class="glossary-item">
   <strong>本课核心概念</strong>
   <span>理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。</span>
@@ -2655,7 +2662,7 @@ body > [class*="widget"] a {
   <strong>输入</strong>
   <span>交给 AI 的背景、材料、约束、数据或示例。</span>
 </div><div class="glossary-item">
-  <strong>人工检查</strong>
+  <strong>人工核校</strong>
   <span>人用事实、逻辑、风险和格式标准确认 AI 输出能不能进入真实工作。</span>
 </div><div class="glossary-item">
   <strong>产物</strong>
@@ -2672,7 +2679,7 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">避坑</span>
       <h2>反常识提醒</h2>
-      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>一轮里塞太多目标。</span></div><div class="principle-block"><strong>误区 2</strong><span>没有截图、测试、链接或人工检查就进入下一轮。</span></div><div class="principle-block"><strong>误区 3</strong><span>每次都从零开始，不复用上一轮结论。</span></div></div>
+      <div class="anti-patterns"><div class="principle-block"><strong>误区 1</strong><span>一轮里塞太多目标。</span></div><div class="principle-block"><strong>误区 2</strong><span>没有截图、测试、链接或人工核校就进入下一轮。</span></div><div class="principle-block"><strong>误区 3</strong><span>每次都从零开始，不复用上一轮结论。</span></div></div>
     </article>
     <article class="card" id="practice">
       <span class="label">完成标准</span>
@@ -2685,7 +2692,7 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">可以直接复制</span>
       <h2>给 AI 的跟做提示</h2>
-      <pre class="copy-prompt"><code>我正在学习「Loop Engineering是什么」，请用新手能听懂的话教我。
+      <pre class="copy-prompt"><code>我正在学习「Loop Engineering 是什么」，请用新手能听懂的话教我。
 先用 120 字以内解释它，不要堆术语。
 再结合这两个场景举例：网页改版：先改首页，再截图验收，再修移动端问题；课程生成：先出目录，再补讲义，再补工作纸，再查断链。
 然后问我 3 个检查理解的问题。
@@ -2694,16 +2701,16 @@ body > [class*="widget"] a {
     <article class="card">
       <span class="label">自检</span>
       <h2>学完请确认这 4 件事</h2>
-      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「Loop Engineering是什么」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+      <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「Loop Engineering 是什么」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
     </article>
   </aside>
 </div>
 <nav class="pager" aria-label="上一课下一课">
-  <a class="btn" href="./lesson-21-codex-overview.html">上一课：第1课 Codex能做什么</a>
-  <a class="btn primary" href="./lesson-23-codex-web-design.html">下一课：第3课 如何用Codex制作好看的网页</a>
+  <a class="btn" href="./lesson-21-codex-overview.html">上一课：第1课 Codex 能做什么</a>
+  <a class="btn primary" href="./lesson-23-codex-web-design.html">下一课：第3课 如何用 Codex 制作好看的网页</a>
 </nav>
 
-<div class="footer">AI学习路线 · 第一性原则版逐课教程</div>
+<div class="footer">AI 学习路线 · 第一性原则版逐课教程</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2713,7 +2720,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2722,7 +2729,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2740,7 +2747,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">

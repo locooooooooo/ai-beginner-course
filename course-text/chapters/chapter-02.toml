@@ -1,0 +1,13 @@
+# This file is editable course text. Run scripts/generate_lessons.py after changing it.
+# Keep ids and lesson slugs stable unless you also update links/assets intentionally.
+
+id = """chapter-2"""
+title = """第二章：先学会用再学原理"""
+summary = """围绕提问、提示词和验证，建立新手最先需要的使用能力。"""
+outcome = """沉淀一套自己的提问模板和验证清单：能把模糊需求改成高质量提示，并能检查 AI 输出是否可用。"""
+lessons = [
+  """lesson-05-ask-better-questions""",
+  """lesson-06-prompt-basics""",
+  """lesson-07-prompt-advanced""",
+  """lesson-08-verify-results""",
+]

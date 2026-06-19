@@ -1,0 +1,62 @@
+# This file is editable lesson text. Run scripts/generate_lessons.py after changing it.
+# Text fields use TOML triple-quoted strings so Chinese punctuation and line breaks are safe.
+
+chapter_no = 7
+no = 5
+slug = """lesson-25-dify-codex-workflow"""
+title = """你真的会用 Dify 吗？"""
+goal = """学会用 Codex 搭建 Dify 平台，完成 Docker 部署，并把 Wiki 发布、Bug 汇总和自动 Code Review 做成自动化工作流。"""
+big_question = """为什么 Dify 不只是一个对话式交互应用搭建器，而是可以和 Codex 一起组成自动化工作流编排入口？"""
+exercise = """设计一个 Dify + Codex 自动化方案：先写 Docker 部署步骤，再画出 Wiki 发布、Bug 飞书文档、自动 Code Review 三条流程。"""
+
+keyPoints = [
+  """Dify 适合把模型、知识库、工具调用和流程编排做成可复用应用""",
+  """Codex 适合搭建、排错、改配置、写脚本和验证部署结果""",
+  """Dify + Codex 可以把 Wiki 发布、Bug 汇总、Code Review 串成团队流程""",
+]
+
+structure = [
+  """Dify 能做什么""",
+  """用 Codex 部署 Dify 的步骤""",
+  """三条自动化流程：Wiki、Bug、Review""",
+  """权限、日志和运维边界""",
+]
+
+cases = [
+  """Wiki 发布 Workflow：Codex 生成和校验内容，Dify 编排发布步骤并记录结果""",
+  """Bug 飞书文档：用户反馈进入 Dify，Codex 归纳、分类并生成修复任务""",
+  """自动 Code Review：Dify 触发检查，Codex 输出风险点和测试建议""",
+]
+
+ppt = [
+  """封面：你真的会用 Dify 吗""",
+  """Dify 平台定位""",
+  """Codex 部署 Dify""",
+  """三条自动化流程""",
+  """权限和运维""",
+  """课堂练习页""",
+]
+
+first_principles = [
+  """先把 Dify 看成流程入口，而不是一个简单对话框。""",
+  """Codex 负责工程侧：部署、配置、脚本、日志和验证。""",
+  """Dify 负责应用侧：模型、知识库、工具、流程和团队入口。""",
+]
+
+atomic_truths = [
+  """本质一：Dify 把 AI 能力包装成可复用应用。""",
+  """本质二：Codex 把部署和工程维护变成可执行任务。""",
+  """本质三：自动化流程必须有权限、日志和人工确认。""",
+]
+
+method = [
+  """先用 Docker 跑起 Dify，并记录环境变量和访问地址。""",
+  """再设计流程输入、处理、输出和失败处理。""",
+  """最后让 Codex 写脚本、检查配置并验证每条流程。""",
+]
+
+anti_patterns = [
+  """只会点界面，不知道部署和数据在哪里。""",
+  """把生产账号、密钥和发布权限直接交给自动流程。""",
+  """没有日志和回滚，自动化失败后无法追踪。""",
+]

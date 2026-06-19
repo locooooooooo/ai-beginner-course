@@ -1,0 +1,13 @@
+# This file is editable course text. Run scripts/generate_lessons.py after changing it.
+# Keep ids and lesson slugs stable unless you also update links/assets intentionally.
+
+id = """chapter-1"""
+title = """第一章：先建立正确认知"""
+summary = """先把概念边界理清，避免一上来被术语、产品端入口和模型家族带偏。"""
+outcome = """完成一张自己的 AI 能力分类表：至少列出 6 个真实场景，并标注它们属于识别、预测、推荐、生成、执行还是连接。"""
+lessons = [
+  """lesson-01-ai-overview""",
+  """lesson-02-llm-agent-mcp-skill""",
+  """lesson-03-model-families""",
+  """lesson-04-ai-boundaries""",
+]

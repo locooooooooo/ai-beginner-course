@@ -1,0 +1,13 @@
+# This file is editable course text. Run scripts/generate_lessons.py after changing it.
+# Keep ids and lesson slugs stable unless you also update links/assets intentionally.
+
+id = """chapter-5"""
+title = """第五章：电商场景落地"""
+summary = """把模型、Agent、MCP、Skill 组合起来，形成电商 AI 系统视角。"""
+outcome = """完成一张电商 AI 落地路线图：从内容生产、获客私域、客服复购到系统全景，标出先做什么、后做什么。"""
+lessons = [
+  """lesson-17-ecommerce-content""",
+  """lesson-18-ecommerce-leads-private-domain""",
+  """lesson-19-ecommerce-service-retention""",
+  """lesson-20-ecommerce-system-view""",
+]

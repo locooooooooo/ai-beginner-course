@@ -1,0 +1,13 @@
+# This file is editable course text. Run scripts/generate_lessons.py after changing it.
+# Keep ids and lesson slugs stable unless you also update links/assets intentionally.
+
+id = """chapter-3"""
+title = """第三章：把 AI 用进日常工作"""
+summary = """从办公、内容、图像、知识检索切入，先形成可见的使用成果。"""
+outcome = """做出一个可复用的日常任务模板，用于会议纪要、文案草稿、图片提示词或知识库问答。"""
+lessons = [
+  """lesson-09-office-and-learning""",
+  """lesson-10-content-creation""",
+  """lesson-11-image-and-video""",
+  """lesson-12-rag-and-qa""",
+]

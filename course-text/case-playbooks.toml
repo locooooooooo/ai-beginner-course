@@ -1,0 +1,38 @@
+# Shared case-practice copy used by lesson pages and worksheets.
+# Track keys are selected by lesson number/slug in generate_lessons.py.
+
+[concept]
+input = """场景名、使用对象、用户真正要完成的任务。"""
+ai_action = """判断它属于识别、预测、推荐、生成、执行还是连接。"""
+human_check = """核校有没有把产品名称、模型家族和能力本身混在一起。"""
+deliverable = """留下一行能力分类记录。"""
+
+[ecommerce]
+input = """商品、用户、渠道、订单或客服上下文。"""
+ai_action = """生成内容、承接线索、分层用户、辅助回复或经营复盘。"""
+human_check = """确认平台规则、价格政策、售后承诺和用户授权没有越界。"""
+deliverable = """沉淀一段电商 SOP 或落地路线图。"""
+
+[game]
+input = """玩法目标、引擎版本、项目范围、资产规格、权限边界和验收标准。"""
+ai_action = """拆工单、生成代码草稿、制作占位资产、读取设计或调用 MCP 工具并收集证据。"""
+human_check = """核对试玩手感、代码风险、版权来源、性能预算、平台披露和回滚方式。"""
+deliverable = """交付一个可运行原型、玩法代码需求、资产管线表或 MCP 工作流图。"""
+
+[prompt]
+input = """一条模糊需求、必要背景、限制条件和期望格式。"""
+ai_action = """把需求改写成目标清楚、上下文完整、格式明确的提示词。"""
+human_check = """对比改写前后，确认输出是否更接近可直接使用。"""
+deliverable = """沉淀一条可复用提示词模板。"""
+
+[scenario]
+input = """真实素材、目标受众、输出格式、风险边界。"""
+ai_action = """生成、改写、总结、检索或转换成一个最小可用样例。"""
+human_check = """核对事实、格式、版权、品牌语气和是否可发布。"""
+deliverable = """形成一个日常任务模板或样稿。"""
+
+[workflow]
+input = """业务目标、触发条件、系统资源、权限边界。"""
+ai_action = """规划步骤、调用工具、读取资源、执行动作并观察结果。"""
+human_check = """检查权限、日志、失败处理、审批和回滚是否存在。"""
+deliverable = """画出一条可复盘的流程链路。"""

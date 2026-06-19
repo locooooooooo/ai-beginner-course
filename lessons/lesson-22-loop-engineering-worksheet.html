@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第2课练习工作纸 Loop Engineering是什么</title>
+  <title>第2课练习工作纸 Loop Engineering 是什么</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Silkscreen:wght@400;700&display=swap');
 
@@ -1594,6 +1594,12 @@ li { margin-bottom: 8px; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
+.mindmap-zoom-trigger {
+  margin: 12px 0;
+}
+.mindmap-zoom-trigger .gallery-thumb {
+  margin: 0;
+}
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; display: block; border-radius: var(--radius); border: 1px solid var(--line); background: #ffffff; margin: 12px 0; }
 .course-hero { padding-top: 40px; }
 .worksheet-hero { align-items: center; }
@@ -2369,7 +2375,7 @@ body > [class*="widget"] a {
     </section>
     <section class="rail-card">
       <strong>新手学习节奏</strong>
-      <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+      <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
       <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
       <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
     </section>
@@ -2380,7 +2386,7 @@ body > [class*="widget"] a {
   </aside>
   <main class="wrap">
 <nav class="topbar" aria-label="课程导航">
-  <a class="brand" href="../course.html">AI入门课</a>
+  <a class="brand" href="../course.html">AI 入门课</a>
   <div class="navlinks">
     <a href="./lesson-22-loop-engineering.html">返回主讲义</a>
     <a href="../course.html#beginner">新手入门</a>
@@ -2404,7 +2410,7 @@ body > [class*="widget"] a {
 <header class="hero worksheet-hero">
   <div>
     <div class="eyebrow">老鸟进阶：Codex 扩展学习 · 第2课工作纸</div>
-    <h1>第2课练习工作纸：Loop Engineering是什么</h1>
+    <h1>第2课练习工作纸：Loop Engineering 是什么</h1>
     <p class="lead">这页不是再讲一遍课，而是让你把本课写成自己的可用产物。打开后按空格填写，最后再回主讲义自检。</p>
     <div class="toolbar">
       <a class="btn primary" href="#worksheet">开始填写</a>
@@ -2435,10 +2441,10 @@ body > [class*="widget"] a {
   <span>2026-06-17</span>
 </div><div class="meta-item meta-item-wide">
   <strong>需要工具</strong>
-  <span>任意聊天式 AI 工具；也可以只看页面完成纸面练习</span>
+  <span>任意支持对话式交互的 AI 工具；也可以只看页面完成纸面练习</span>
 </div><div class="meta-item meta-item-wide">
   <strong>隐私边界</strong>
-  <span>练习时使用公开或虚构材料，不上传客户隐私、内部资料、账号信息或未公开策略。</span>
+  <span>练习时使用公开或虚构材料，不上传敏感个人隐私、非公开资料、账号信息或未公开策略。</span>
 </div><div class="meta-item meta-item-wide">
   <strong>来源提示</strong>
   <span>本课强调稳定方法和学习路径；具体工具能力以实际产品为准。</span>
@@ -2454,7 +2460,7 @@ body > [class*="widget"] a {
   </article>
   <article class="worksheet-block">
     <span class="label">2. 概念翻译</span>
-    <h2>把术语翻译成人话</h2>
+    <h2>把术语转成通俗解释</h2>
     <div class="worksheet-list"><div class="principle-block"><strong>关键点 1</strong><span>Loop Engineering 的基本循环是目标、执行、验收、修正</span></div><div class="principle-block"><strong>关键点 2</strong><span>每一轮都要缩小范围，留下可验证结果</span></div><div class="principle-block"><strong>关键点 3</strong><span>复杂项目要把内容、实现、测试和发布拆成多轮推进</span></div></div>
     <label class="writing-label"><span>我自己的 120 字解释</span><textarea class="writing-box large" aria-label="我自己的 120 字解释" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
@@ -2466,7 +2472,7 @@ body > [class*="widget"] a {
       <div><strong>我的场景</strong><span>例如一个真实任务、一个业务流程或一次学习需求。</span></div>
       <div><strong>输入</strong><span>我会给 AI 什么材料、背景、限制或数据。</span></div>
       <div><strong>AI 动作</strong><span>AI 负责生成、总结、分类、检索、执行还是连接工具。</span></div>
-      <div><strong>人工检查</strong><span>我怎么确认结果没有跑偏或出错。</span></div>
+      <div><strong>人工核校</strong><span>我怎么确认结果没有跑偏或出错。</span></div>
       <div><strong>最终输出</strong><span>最后能留下什么文件、话术、流程图、清单或页面。</span></div>
     </div>
   </article>
@@ -2489,13 +2495,13 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>场景名、使用对象、用户真正要完成的任务。</span></div>
       <div><strong>AI 动作</strong><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-      <div><strong>人工检查</strong><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+      <div><strong>人工核校</strong><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
       <div><strong>交付物</strong><span>留下一行能力分类记录。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-case-card">
     <span class="label">案例 02</span>
@@ -2503,13 +2509,13 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>场景名、使用对象、用户真正要完成的任务。</span></div>
       <div><strong>AI 动作</strong><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-      <div><strong>人工检查</strong><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+      <div><strong>人工核校</strong><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
       <div><strong>交付物</strong><span>留下一行能力分类记录。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-case-card">
     <span class="label">案例 03</span>
@@ -2517,19 +2523,19 @@ body > [class*="widget"] a {
     <div class="worksheet-case-grid">
       <div><strong>输入</strong><span>场景名、使用对象、用户真正要完成的任务。</span></div>
       <div><strong>AI 动作</strong><span>判断它属于识别、预测、推荐、生成、执行还是连接。</span></div>
-      <div><strong>人工检查</strong><span>检查有没有把产品名、模型名和能力本身混在一起。</span></div>
+      <div><strong>人工核校</strong><span>核校有没有把产品名称、模型家族和能力本身混在一起。</span></div>
       <div><strong>交付物</strong><span>留下一行能力分类记录。</span></div>
     </div>
     <p>把这个案例改成你自己的版本，再填写下面的空格。</p>
     <label class="writing-label"><span>我的真实场景</span><textarea class="writing-box large" aria-label="我的真实场景" placeholder="在这里写下你的答案。"></textarea></label>
     <label class="writing-label"><span>我的输入材料</span><textarea class="writing-box large" aria-label="我的输入材料" placeholder="在这里写下你的答案。"></textarea></label>
-    <label class="writing-label"><span>我的人工检查</span><textarea class="writing-box large" aria-label="我的人工检查" placeholder="在这里写下你的答案。"></textarea></label>
+    <label class="writing-label"><span>我的人工核校</span><textarea class="writing-box large" aria-label="我的人工核校" placeholder="在这里写下你的答案。"></textarea></label>
   </article></div>
   </article>
   <article class="worksheet-block">
     <span class="label">5. 风险检查</span>
-    <h2>哪些地方不能直接相信</h2>
-    <div class="worksheet-list"><div class="principle-block"><strong>风险 1</strong><span>一轮里塞太多目标。</span></div><div class="principle-block"><strong>风险 2</strong><span>没有截图、测试、链接或人工检查就进入下一轮。</span></div><div class="principle-block"><strong>风险 3</strong><span>每次都从零开始，不复用上一轮结论。</span></div></div>
+    <h2>哪些地方需要人工核校</h2>
+    <div class="worksheet-list"><div class="principle-block"><strong>风险 1</strong><span>一轮里塞太多目标。</span></div><div class="principle-block"><strong>风险 2</strong><span>没有截图、测试、链接或人工核校就进入下一轮。</span></div><div class="principle-block"><strong>风险 3</strong><span>每次都从零开始，不复用上一轮结论。</span></div></div>
     <label class="writing-label"><span>我需要额外验证的内容</span><textarea class="writing-box" aria-label="我需要额外验证的内容" placeholder="在这里写下你的答案。"></textarea></label>
   </article>
   <article class="worksheet-block">
@@ -2548,7 +2554,7 @@ body > [class*="widget"] a {
   <p>Loop Engineering 的基本循环是目标、执行、验收、修正</p>
 </details><details class="quiz-item">
   <summary>把这节课放进真实场景时，第一步应该拆什么？</summary>
-  <p>先拆输入、AI 动作、人工检查和最终输出，不要直接跳到工具名或产品名。</p>
+  <p>先拆输入、AI 动作、人工核校和最终输出，不要直接跳到工具入口或产品端入口。</p>
 </details><details class="quiz-item">
   <summary>这一课最容易犯的错误是什么？</summary>
   <p>一轮里塞太多目标。</p>
@@ -2557,16 +2563,16 @@ body > [class*="widget"] a {
   <article class="worksheet-block">
     <span class="label">8. 对照改进</span>
     <h2>参考答案和评分标准</h2>
-    <ul class="reference-list"><li>能用自己的话说明：理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。</li><li>能把一个真实场景拆成输入、AI 动作、人工检查和最终输出；可以先从“网页改版：先改首页，再截图验收，再修移动端问题”开始。</li><li>最终要留下一个可检查的小产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</li></ul>
+    <ul class="reference-list"><li>能用自己的话说明：理解 Loop Engineering 是一种循环式工作方法：计划、执行、验收、修正，再进入下一轮。</li><li>能把一个真实场景拆成输入、AI 动作、人工核校和最终输出；可以先从“网页改版：先改首页，再截图验收，再修移动端问题”开始。</li><li>最终要留下一个可检查的小产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</li></ul>
     <div class="rubric-grid"><div class="rubric-item">
   <strong>通过</strong>
-  <span>能用人话解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
+  <span>能用通俗语言解释本课概念，能套进一个真实场景，并完成本课产物草稿。</span>
 </div><div class="rubric-item">
   <strong>优秀</strong>
   <span>除了完成产物，还写清风险、验收标准和下一次可复用的模板或清单。</span>
 </div><div class="rubric-item">
   <strong>需要重做</strong>
-  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工检查或最终输出。</span>
+  <span>只复制定义或页面原文，没有自己的场景、输入材料、人工核校或最终输出。</span>
 </div></div>
   </article>
   <article class="worksheet-block">
@@ -2579,7 +2585,7 @@ body > [class*="widget"] a {
   <strong>输入</strong>
   <span>交给 AI 的背景、材料、约束、数据或示例。</span>
 </div><div class="glossary-item">
-  <strong>人工检查</strong>
+  <strong>人工核校</strong>
   <span>人用事实、逻辑、风险和格式标准确认 AI 输出能不能进入真实工作。</span>
 </div><div class="glossary-item">
   <strong>产物</strong>
@@ -2592,22 +2598,22 @@ body > [class*="widget"] a {
   <article class="notes">
     <span class="label">助教提示</span>
     <h3>可以复制给 AI 陪练</h3>
-    <pre class="copy-prompt"><code>我已经学完「Loop Engineering是什么」，现在要完成本课工作纸。
+    <pre class="copy-prompt"><code>我已经学完「Loop Engineering 是什么」，现在要完成本课工作纸。
 请你像助教一样追问我，不要直接替我编答案。
 本课产物是：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。
-请按这 5 步带我完成：1. 用人话复述概念；2. 选择一个真实场景；3. 写输入、AI动作、人工检查、输出；4. 标出风险；5. 总结下一步改进。</code></pre>
+请按这 5 步带我完成：1. 用通俗语言复述概念；2. 选择一个真实场景；3. 写输入、AI 动作、人工核校、输出；4. 标出风险；5. 总结下一步改进。</code></pre>
   </article>
   <article class="notes">
     <span class="label">完成后检查</span>
     <h3>本课通过标准</h3>
-    <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「Loop Engineering是什么」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
+    <div class="checklist-grid"><div class="check-item"><strong>1</strong><span>我能用一句话解释「Loop Engineering 是什么」解决什么问题。</span></div><div class="check-item"><strong>2</strong><span>我能举出一个自己的工作或生活例子，而不是只复述页面原文。</span></div><div class="check-item"><strong>3</strong><span>我已经完成本课产物：为“把一个旧网页改成手机友好教程站”设计 3 轮 Loop，每轮写清目标和验收证据。</span></div><div class="check-item"><strong>4</strong><span>我知道这类 AI 输出什么时候可以直接用，什么时候必须验证。</span></div></div>
   </article>
 </section>
 <nav class="pager" aria-label="上一课下一课工作纸">
   <a class="btn" href="./lesson-21-codex-overview-worksheet.html">上一课工作纸</a>
   <a class="btn primary" href="./lesson-23-codex-web-design-worksheet.html">下一课工作纸</a>
 </nav>
-<div class="footer">AI学习路线 · 练习工作纸 · 写下产物才算完成</div>
+<div class="footer">AI 学习路线 · 练习工作纸 · 写下产物才算完成</div>
     <details class="mobile-rail-drawer">
       <summary>学习辅助面板</summary>
       <div class="mobile-rail-content">
@@ -2617,7 +2623,7 @@ body > [class*="widget"] a {
         </section>
         <section class="rail-card">
           <strong>新手学习节奏</strong>
-          <div class="rail-step"><b>1</b><span>先用人话复述核心问题。</span></div>
+          <div class="rail-step"><b>1</b><span>先用通俗语言复述核心问题。</span></div>
           <div class="rail-step"><b>2</b><span>再看案例，把概念放进真实任务。</span></div>
           <div class="rail-step"><b>3</b><span>最后打开工作纸，写下自己的版本。</span></div>
         </section>
@@ -2626,7 +2632,7 @@ body > [class*="widget"] a {
           <ul>
             <li>能解释给非技术朋友听。</li>
             <li>能套进一个自己的场景。</li>
-            <li>知道哪里必须人工检查。</li>
+            <li>知道哪里必须人工核校。</li>
           </ul>
         </section>
         <section class="rail-card rail-links">
@@ -2644,7 +2650,7 @@ body > [class*="widget"] a {
       <ul>
         <li>能解释给非技术朋友听。</li>
         <li>能套进一个自己的场景。</li>
-        <li>知道哪里必须人工检查。</li>
+        <li>知道哪里必须人工核校。</li>
       </ul>
     </section>
     <section class="rail-card rail-links">
